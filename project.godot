@@ -11,8 +11,18 @@ config_version=5
 [application]
 
 config/name="Sketch Spell Survivors"
+run/main_scene="uid://dp1bn4tu70hr6"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
+
+[autoload]
+
+PlayerInfo="*res://scripts/autoloads/player_info.gd"
+
+[global_group]
+
+Enemy="any kind of enemy"
+Player="the player. should only ever be one, preferably"
 
 [input]
 
@@ -40,6 +50,11 @@ player_right={
 , Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":0,"axis_value":1.0,"script":null)
 ]
 }
+
+[layer_names]
+
+2d_physics/layer_1="Player"
+2d_physics/layer_2="Enemy"
 
 [rendering]
 

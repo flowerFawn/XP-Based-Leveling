@@ -1,7 +1,26 @@
-[gd_scene load_steps=2 format=3 uid="uid://dp1bn4tu70hr6"]
+[gd_scene load_steps=4 format=3 uid="uid://dp1bn4tu70hr6"]
 
 [ext_resource type="PackedScene" uid="uid://dt2i2obb5kodu" path="res://scenes/character.tscn" id="1_nnsk1"]
+[ext_resource type="PackedScene" uid="uid://bedklbg6qvuot" path="res://scenes/game_controller.tscn" id="2_rwgxs"]
+
+[sub_resource type="GDScript" id="GDScript_nnsk1"]
+resource_name = "quick world thing"
+script/source = "extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	var rnd:RandomNumberGenerator = RandomNumberGenerator.new()
+	for x in range(0, 100):
+		var e:Enemy = Enemy.new_enemy(preload(\"uid://bg3osrk3a4ni5\"))
+		e.position = Vector2(rnd.randi_range(0, 1920), rnd.randi_range(0, 1080))
+		add_child(e)
+"
 
 [node name="Node2D" type="Node2D"]
+script = SubResource("GDScript_nnsk1")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_nnsk1")]
+position = Vector2(927, 412)
+
+[node name="GameController" parent="." instance=ExtResource("2_rwgxs")]

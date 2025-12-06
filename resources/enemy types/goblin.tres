@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="EnemyType" load_steps=4 format=3 uid="uid://bg3osrk3a4ni5"]
+
+[ext_resource type="Resource" uid="uid://cj6251nhvsiy8" path="res://resources/movement types/straight_enemy_movement.tres" id="1_nv008"]
+[ext_resource type="Script" uid="uid://58cfsa1tna1q" path="res://scripts/resources/base resources/enemy_type.gd" id="2_ed3jj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nv008"]
+
+[resource]
+script = ExtResource("2_ed3jj")
+movement_type = ExtResource("1_nv008")
+speed = 100.0
+contact_damage = 10.0
+shape = SubResource("CircleShape2D_nv008")
+metadata/_custom_type_script = "uid://58cfsa1tna1q"
