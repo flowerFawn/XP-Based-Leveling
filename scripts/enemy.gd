@@ -34,7 +34,7 @@ func collision_entered(body:Node2D):
 	if body.is_in_group(&"Player"):
 		var player:Player = body
 		player.take_damage(enemy_type.contact_damage)
-		queue_free()
+		die()
 #endregion
 #region MOVEMENT
 func move(velocity:Vector2) -> void:
@@ -55,9 +55,21 @@ static func new_enemy(enemy_type:EnemyType) -> Enemy:
 	
 func intialise_enemy() -> void:
 	active_speed = enemy_type.speed
+	active_health = enemy_type.base_health
 	node_collision.shape = enemy_type.collision
 	node_sprite.texture = enemy_type.sprite
 	
 	
 	connect("body_entered", collision_entered)
+#endregion
+
+#region HEALTH
+func take_damage(amount:float) -> void:
+	active_health -= amount
+	if active_health <= 0:
+		die()
+	
+func die() -> void:
+	queue_free()
+	
 #endregion

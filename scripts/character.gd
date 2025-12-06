@@ -3,6 +3,12 @@ class_name Player
 var speed:int = 500
 var active_health:float = 100
 
+var spells:Array[Spell] = []
+var casting_spells:bool = true
+
+func _ready() -> void:
+	add_spell(preload("uid://dh4308dsgb1xc"))
+
 func _physics_process(delta: float) -> void:
 	var movement_vector = speed * get_direction()
 	move_and_collide(movement_vector * delta)
@@ -22,4 +28,21 @@ func take_damage(amount:float) -> void:
 		
 func die():
 	print("You died! sucks to suck buddy")
+	queue_free()
+#endregion
+
+#region SPELLS
+func add_spell(spell:Spell) -> void:
+	spell.cast(self)
+	spells.append(spell)
+	if spell.cooldown != 0:
+		loop_spell(spell)
+		
+func loop_spell(spell:Spell) -> void:
+	var spell_timer: Timer = Timer.new()
+	add_child(spell_timer)
+	while casting_spells:
+		spell_timer.start(spell.cooldown)
+		await spell_timer.timeout
+		spell.cast(self)
 #endregion

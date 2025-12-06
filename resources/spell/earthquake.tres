@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="SpellEarthquake" load_steps=2 format=3 uid="uid://dh4308dsgb1xc"]
+
+[ext_resource type="Script" uid="uid://dqtj3553eq3ci" path="res://scripts/resources/inherited resources/spells/earthquake.gd" id="1_n651w"]
+
+[resource]
+script = ExtResource("1_n651w")
+cooldown = 1.0
+metadata/_custom_type_script = "uid://dqtj3553eq3ci"
