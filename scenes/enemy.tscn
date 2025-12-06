@@ -3,14 +3,17 @@
 [ext_resource type="Script" uid="uid://dde8uqg54ddvd" path="res://scripts/enemy.gd" id="1_7p1mj"]
 [ext_resource type="Texture2D" uid="uid://dc1k28qljxgix" path="res://icon.svg" id="2_md0e3"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_md0e3"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_md0e3"]
+radius = 0.01
 
-[node name="Enemy" type="Area2D" groups=["Enemy"]]
+[node name="Enemy" type="Area2D" node_paths=PackedStringArray("node_sprite", "node_collision") groups=["Enemy"]]
 collision_layer = 2
 script = ExtResource("1_7p1mj")
-
-[node name="EnemyCollision" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_md0e3")
+node_sprite = NodePath("Icon")
+node_collision = NodePath("EnemyCollision")
 
 [node name="Icon" type="Sprite2D" parent="."]
 texture = ExtResource("2_md0e3")
+
+[node name="EnemyCollision" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_md0e3")

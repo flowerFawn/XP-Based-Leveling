@@ -17,4 +17,9 @@ func get_direction() -> Vector2:
 #region HEALTH
 func take_damage(amount:float) -> void:
 	active_health -= amount
+	if active_health <= 0:
+		die()
+		
+func die():
+	print("You died! sucks to suck buddy")
 #endregion

@@ -2,6 +2,9 @@ extends Area2D
 class_name Enemy
 ##The enemy type resource that this enemy will be
 @export var enemy_type:EnemyType
+##Nodes the enemy needs to be able to reference
+@export var node_sprite:Sprite2D
+@export var node_collision:CollisionShape2D
 
 ##For the constructor
 const enemy_scene_preload = preload("uid://kpbomqm3o7r0")
@@ -13,6 +16,7 @@ var active_speed:float
 var active_health:float
 
 
+##so we don't recalculate direction every frame lol
 var current_direction:Vector2
 
 
@@ -26,13 +30,15 @@ func _physics_process(delta: float) -> void:
 	
 #region COLLISION
 func collision_entered(body:Node2D):
+	#If the enemy collides with the player, it does damage and then disappears
 	if body.is_in_group(&"Player"):
 		var player:Player = body
 		player.take_damage(enemy_type.contact_damage)
-		#queue_free()
+		queue_free()
 #endregion
 #region MOVEMENT
 func move(velocity:Vector2) -> void:
+	#no move and slide
 	position += velocity
 	
 func update_direction() -> void:
@@ -49,6 +55,8 @@ static func new_enemy(enemy_type:EnemyType) -> Enemy:
 	
 func intialise_enemy() -> void:
 	active_speed = enemy_type.speed
+	node_collision.shape = enemy_type.collision
+	node_sprite.texture = enemy_type.sprite
 	
 	
 	connect("body_entered", collision_entered)

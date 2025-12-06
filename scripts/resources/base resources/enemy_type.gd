@@ -12,7 +12,14 @@ class_name EnemyType
 ##The amount of damage done when colliding with the player, and then dying
 @export var contact_damage:float
 
+@export_group("Health")
+##How much damage the enemy can take before dying
+@export var base_health:float
 
 @export_group("Shape")
 ##The hitbox of the enemy
-@export var shape:Shape2D
+@export var collision:Shape2D
+
+@export_group("Appearance")
+##The image used for the enemy
+@export var sprite:Texture2D
