@@ -17,7 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-PlayerInfo="*res://scripts/autoloads/player_info.gd"
+GameInfo="*res://scripts/autoloads/game_info.gd"
 
 [global_group]
 

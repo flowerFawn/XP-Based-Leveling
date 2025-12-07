@@ -4,21 +4,39 @@ var speed:int = 500
 var active_health:float = 100
 
 var spells:Array[Spell] = []
-var casting_spells:bool = true
 
 func _ready() -> void:
+	GameInfo.player = self
+	add_spell(preload("uid://ciomfgvjduepp"))
 	add_spell(preload("uid://dh4308dsgb1xc"))
+	add_spell(preload("uid://7vmgb80p33sl"))
 
 func _physics_process(delta: float) -> void:
 	var movement_vector = speed * get_direction()
 	move_and_collide(movement_vector * delta)
-	PlayerInfo.update_info(self)
+	GameInfo.update_player_info(self)
 
 	
 func get_direction() -> Vector2:
 	var direction:Vector2 = Vector2(Input.get_axis("player_left", "player_right"), Input.get_axis("player_up", "player_down")).normalized()
 	direction = Vector2(direction.x * abs(Input.get_axis("player_left", "player_right")), direction.y * abs(Input.get_axis("player_up", "player_down")))
 	return direction
+	
+func get_closest_enemy() -> Vector2:
+	var enemy_point:Vector2
+	var lowest_distance_squared:float = 0
+	var first_check = true
+	for enemy:Enemy in get_tree().get_nodes_in_group(&"Enemy"):
+		if first_check:
+			enemy_point = enemy.global_position
+			lowest_distance_squared = global_position.distance_squared_to(enemy.global_position)
+			first_check = false
+			continue
+		if global_position.distance_squared_to(enemy.global_position) < lowest_distance_squared:
+			enemy_point = enemy.global_position
+			lowest_distance_squared = global_position.distance_squared_to(enemy.global_position)
+	return enemy_point
+		
 
 #region HEALTH
 func take_damage(amount:float) -> void:
@@ -33,16 +51,8 @@ func die():
 
 #region SPELLS
 func add_spell(spell:Spell) -> void:
-	spell.cast(self)
 	spells.append(spell)
-	if spell.cooldown != 0:
-		loop_spell(spell)
+	add_child(SpellHandler.new(spell))
 		
-func loop_spell(spell:Spell) -> void:
-	var spell_timer: Timer = Timer.new()
-	add_child(spell_timer)
-	while casting_spells:
-		spell_timer.start(spell.cooldown)
-		await spell_timer.timeout
-		spell.cast(self)
+
 #endregion

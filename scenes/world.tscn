@@ -11,16 +11,20 @@ script/source = "extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var rnd:RandomNumberGenerator = RandomNumberGenerator.new()
-	for x in range(0, 30):
+	for x in range(0, 1000):
 		var e:Enemy = Enemy.new_enemy(preload(\"uid://bg3osrk3a4ni5\"))
 		e.position = Vector2(rnd.randi_range(0, 1920), rnd.randi_range(0, 1080))
-		add_child(e)
+		add_child(e, true)
+		
+	GameInfo.projectile_holder = $ProjectileHolder
 "
 
 [node name="Node2D" type="Node2D"]
 script = SubResource("GDScript_nnsk1")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_nnsk1")]
-position = Vector2(927, 412)
+position = Vector2(1399, 1557)
 
 [node name="GameController" parent="." instance=ExtResource("2_rwgxs")]
+
+[node name="ProjectileHolder" type="Node2D" parent="."]

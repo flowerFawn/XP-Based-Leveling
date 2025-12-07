@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="EnemyMovementReverse" load_steps=2 format=3 uid="uid://bdqlvr5dgs8j3"]
 
-[ext_resource type="Script" uid="uid://dkj60s41gi5g8" path="res://scripts/resources/inherited resources/movement types/movement_reverse.gd" id="1_hkypa"]
+[ext_resource type="Script" uid="uid://dkj60s41gi5g8" path="res://scripts/resources/inherited resources/enemy movement types/e_movement_reverse.gd" id="1_hkypa"]
 
 [resource]
 script = ExtResource("1_hkypa")

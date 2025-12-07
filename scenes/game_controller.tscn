@@ -5,9 +5,9 @@
 [node name="GameController" type="Node"]
 script = ExtResource("1_vq0e2")
 
-[node name="EnemyDirectionUpdateTimer" type="Timer" parent="."]
+[node name="DirectionUpdateTimer" type="Timer" parent="."]
 wait_time = 0.5
 autostart = true
 ignore_time_scale = true
 
-[connection signal="timeout" from="EnemyDirectionUpdateTimer" to="." method="update_enemy_directions"]
+[connection signal="timeout" from="DirectionUpdateTimer" to="." method="update_directions"]

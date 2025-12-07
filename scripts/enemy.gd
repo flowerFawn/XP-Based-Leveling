@@ -42,7 +42,7 @@ func move(velocity:Vector2) -> void:
 	position += velocity
 	
 func update_direction() -> void:
-	current_direction = enemy_type.movement_type.get_enemy_direction(global_position, PlayerInfo.player_position)
+	current_direction = enemy_type.movement_type.get_enemy_direction(global_position, GameInfo.player_position)
 	
 	
 #endregion
