@@ -12,6 +12,9 @@ class_name EnemyType
 ##The amount of damage done when colliding with the player, and then dying
 @export var contact_damage:float
 
+##The base xp awarded upon defeating this enemy
+@export var xp_reward:float
+
 @export_group("Health")
 ##How much damage the enemy can take before dying
 @export var base_health:float

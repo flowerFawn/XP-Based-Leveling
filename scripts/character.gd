@@ -3,13 +3,12 @@ class_name Player
 var speed:int = 500
 var active_health:float = 100
 
-var spells:Array[Spell] = []
+##Dictionary that stores the spells and their associated spell handlers. 
+##This is a dictionary so that the spellhandlers can be found using their associated spell resource.
+var spells:Dictionary[Spell, SpellHandler] = {}
 
 func _ready() -> void:
 	GameInfo.player = self
-	add_spell(preload("uid://ciomfgvjduepp"))
-	add_spell(preload("uid://dh4308dsgb1xc"))
-	add_spell(preload("uid://7vmgb80p33sl"))
 
 func _physics_process(delta: float) -> void:
 	var movement_vector = speed * get_direction()
@@ -50,9 +49,28 @@ func die():
 #endregion
 
 #region SPELLS
+##Actually creates the spellhandler and starts the casting loop
+func start_spell(spell:Spell) -> void:
+	var new_spellhandler = SpellHandler.new(spell)
+	add_child(new_spellhandler, true)
+	spells[spell] = new_spellhandler
+	
+##Removes a spell and stops it running. mainly used for lower upgrades of spells
+func remove_spell(spell:Spell) -> void:
+	if not spells.has(spell):
+		print("This spell is not there to be removed!")
+		return
+	spells[spell].free()
+	#spells.erase(spell)
+	
+##Handles starting a spell, and removing a lower upgrade
 func add_spell(spell:Spell) -> void:
-	spells.append(spell)
-	add_child(SpellHandler.new(spell))
-		
+	if spell.level > 1:
+		for old_spell:Spell in spells.keys():
+			if old_spell.next_upgrade == spell:
+				remove_spell(old_spell)
+				break
+	start_spell(spell)
+	
 
 #endregion

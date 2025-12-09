@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="SpellBolt" load_steps=4 format=3 uid="uid://dduhilr7qte0h"]
+
+[ext_resource type="Script" uid="uid://cyuaiwt5dess3" path="res://scripts/resources/inherited resources/spells/s_bolt.gd" id="1_y6wjd"]
+[ext_resource type="Texture2D" uid="uid://xmadt3jeoget" path="res://assets/bolt.png" id="2_tm2tl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y6wjd"]
+radius = 40.0
+
+[resource]
+script = ExtResource("1_y6wjd")
+level = 2
+spell_id = &"bolt"
+cooldown = 0.25
+damage = 7.0
+projectile_speed = 45.0
+shape = SubResource("CircleShape2D_y6wjd")
+texture = ExtResource("2_tm2tl")
+metadata/_custom_type_script = "uid://cyuaiwt5dess3"

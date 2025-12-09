@@ -70,6 +70,7 @@ func take_damage(amount:float) -> void:
 		die()
 	
 func die() -> void:
+	SpellShop.spell_xp += enemy_type.xp_reward
 	queue_free()
 	
 #endregion

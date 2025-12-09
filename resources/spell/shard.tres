@@ -1,8 +1,0 @@
-[gd_resource type="Resource" script_class="SpellShard" load_steps=2 format=3 uid="uid://7vmgb80p33sl"]
-
-[ext_resource type="Script" uid="uid://cruvp1vxd4ktu" path="res://scripts/resources/inherited resources/spells/s_shard.gd" id="1_btl4p"]
-
-[resource]
-script = ExtResource("1_btl4p")
-cooldown = 0.05
-metadata/_custom_type_script = "uid://cruvp1vxd4ktu"

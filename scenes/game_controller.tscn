@@ -10,4 +10,9 @@ wait_time = 0.5
 autostart = true
 ignore_time_scale = true
 
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 4.0
+autostart = true
+
 [connection signal="timeout" from="DirectionUpdateTimer" to="." method="update_directions"]
+[connection signal="timeout" from="SpawnTimer" to="." method="spawn_enemies"]

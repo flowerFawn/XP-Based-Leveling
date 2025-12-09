@@ -9,12 +9,15 @@ var active_direction:Vector2
 var remaining_pierce:int
 var start_position
 
-func _init(speed:float, damage:float, shape:Shape2D, direction:Vector2, new_start_position:Vector2 = Vector2.ZERO, max_pierce:int = 0) -> void:
+func _init(speed:float, damage:float, shape:Shape2D, direction:Vector2, sprite:Texture2D, new_start_position:Vector2 = Vector2.ZERO, max_pierce:int = 0) -> void:
 	set_collision_layer_value(1, false)
 	set_collision_mask_value(1, false)
 	set_collision_mask_value(2, true)
 	var node_collision = CollisionShape2D.new()
 	add_child(node_collision)
+	var node_sprite = Sprite2D.new()
+	node_sprite.texture = sprite
+	add_child(node_sprite)
 	node_collision.shape = shape
 	active_damage = damage
 	active_speed = speed
@@ -27,9 +30,15 @@ func _init(speed:float, damage:float, shape:Shape2D, direction:Vector2, new_star
 	else:
 		start_position = new_start_position
 	connect("area_entered", hit_something)
+	
 
 func _ready() -> void:
 	global_position = start_position
+	var decay_timer:Timer = Timer.new()
+	add_child(decay_timer)
+	##Time the projectile exists until it decays
+	decay_timer.start(1)
+	decay_timer.timeout.connect(decay)
 
 func _physics_process(delta: float) -> void:
 	var direction:Vector2 = get_direction()
@@ -51,5 +60,7 @@ func hit_something(body:Node2D):
 			queue_free()
 		var enemy:Enemy = body
 		enemy.take_damage(active_damage)
-		print("YAY")
 	
+##Destroys the projectile, to avoid large amounts of particles causing lag
+func decay() -> void:
+	queue_free()
