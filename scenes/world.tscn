@@ -1,27 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://dp1bn4tu70hr6"]
+[gd_scene load_steps=5 format=3 uid="uid://dp1bn4tu70hr6"]
 
+[ext_resource type="Script" uid="uid://b0pcojyqof33i" path="res://scenes/world_controller.gd" id="1_4wyf3"]
 [ext_resource type="PackedScene" uid="uid://dt2i2obb5kodu" path="res://scenes/character.tscn" id="1_nnsk1"]
 [ext_resource type="PackedScene" uid="uid://bedklbg6qvuot" path="res://scenes/game_controller.tscn" id="2_rwgxs"]
+[ext_resource type="PackedScene" uid="uid://bol0i1wwwklsj" path="res://scenes/menu/spell_option_menu.tscn" id="4_k0juu"]
 
-[sub_resource type="GDScript" id="GDScript_nnsk1"]
-resource_name = "quick world thing"
-script/source = "extends Node2D
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	var rnd:RandomNumberGenerator = RandomNumberGenerator.new()
-	for x in range(0, 0):
-		var e:Enemy = Enemy.new_enemy(preload(\"uid://bg3osrk3a4ni5\"))
-		e.position = Vector2(rnd.randi_range(0, 1920), rnd.randi_range(0, 1080))
-		add_child(e, true)
-		
-	GameInfo.projectile_holder = $ProjectileHolder
-	GameInfo.enemy_holder = $EnemyHolder
-"
-
-[node name="Node2D" type="Node2D"]
-script = SubResource("GDScript_nnsk1")
+[node name="WorldController" type="Node2D" node_paths=PackedStringArray("projectile_holder", "enemy_holder", "game_controller", "spell_option_menu")]
+script = ExtResource("1_4wyf3")
+projectile_holder = NodePath("ProjectileHolder")
+enemy_holder = NodePath("EnemyHolder")
+game_controller = NodePath("GameController")
+spell_option_menu = NodePath("SpellOptionMenu/SpellOptionMenu")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_nnsk1")]
 position = Vector2(1399, 1557)
@@ -31,3 +20,8 @@ position = Vector2(1399, 1557)
 [node name="ProjectileHolder" type="Node2D" parent="."]
 
 [node name="EnemyHolder" type="Node2D" parent="."]
+
+[node name="SpellOptionMenu" parent="." instance=ExtResource("4_k0juu")]
+process_mode = 3
+
+[editable path="SpellOptionMenu"]

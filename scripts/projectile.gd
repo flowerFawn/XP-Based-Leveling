@@ -42,6 +42,7 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	var direction:Vector2 = get_direction()
+	rotation = direction.angle()
 	move(direction * active_speed)
 	
 func get_direction() -> Vector2:
