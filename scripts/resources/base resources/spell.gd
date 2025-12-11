@@ -3,9 +3,15 @@ class_name Spell
 ##The resource used for spells that are repeatedly cast as attacks. Contains the functions to cast the spell.
 ##These variables tend to be used differently by different spells, and not all fields will be used by all spells.
 @export_group("Technical")
-##The level of this spell, starting at 1. Important for removing the previous level of spell
-@export_range(1, 20) var level:int 
-@export var spell_id:StringName
+##The level of this spell, starting at 1. Important for removing the previous level of spell, and menus
+@export_range(1, 20) var level:int  = 1
+##Name of the spell in text, shown in menus
+@export var spell_id:String
+##The second half of the description in menus, unique to each level. this is added to the end of the description
+##The part before this is the base description, set in the class itself
+@export var level_description:String
+##The Image used in 
+@export var icon:Texture2D
 ##The spell that will be added to the spell pool when this spell is chosen. If left null there are no more upgrades to this spell
 @export var next_upgrade:Spell
 @export_group("Effects")
@@ -20,6 +26,9 @@ class_name Spell
 @export var texture:Texture2D
 ##Scale that may be used with a purely visual effect
 @export var visual_scale:float = 1
+
+var base_description:String = "Base spell class that others inherit from. 
+Contains many useful subroutines. If you're seeing this, the description of a spell wasn't set properly"
 
 func cast(player:Player, spell_handler:SpellHandler) -> void:
 	print("A")

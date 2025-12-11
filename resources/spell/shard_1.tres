@@ -8,7 +8,8 @@
 
 [resource]
 script = ExtResource("2_4q8fg")
-spell_id = &"shard"
+level = 1
+spell_id = "Shard"
 next_upgrade = ExtResource("1_ynue0")
 cooldown = 0.5
 damage = 1.0

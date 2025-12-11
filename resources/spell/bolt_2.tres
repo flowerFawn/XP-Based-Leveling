@@ -9,7 +9,8 @@ radius = 40.0
 [resource]
 script = ExtResource("1_y6wjd")
 level = 2
-spell_id = &"bolt"
+spell_id = "Bolt"
+level_description = "Gain Speed"
 cooldown = 0.25
 damage = 7.0
 projectile_speed = 45.0

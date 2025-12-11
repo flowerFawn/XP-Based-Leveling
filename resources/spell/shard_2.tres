@@ -9,7 +9,7 @@ radius = 15.0
 [resource]
 script = ExtResource("1_qt6js")
 level = 2
-spell_id = &"shard"
+spell_id = "Shard"
 cooldown = 0.05
 damage = 5.0
 shape = SubResource("CircleShape2D_qt6js")

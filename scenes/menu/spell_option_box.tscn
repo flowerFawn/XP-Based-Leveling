@@ -12,18 +12,24 @@ button = NodePath("SpellButton")
 
 [node name="SpellName" type="Label" parent="."]
 layout_mode = 2
-size_flags_vertical = 7
+size_flags_horizontal = 4
+size_flags_vertical = 3
 
 [node name="SpellIcon" type="TextureRect" parent="."]
 layout_mode = 2
+size_flags_horizontal = 4
 size_flags_vertical = 7
+stretch_mode = 2
 
-[node name="SpellDesc" type="Label" parent="."]
+[node name="SpellDesc" type="RichTextLabel" parent="."]
 layout_mode = 2
-size_flags_vertical = 7
+size_flags_vertical = 3
+bbcode_enabled = true
+fit_content = true
 
 [node name="SpellButton" type="Button" parent="."]
 layout_mode = 2
 size_flags_vertical = 7
+text = "Learn"
 
 [connection signal="pressed" from="SpellButton" to="." method="_on_spell_button_pressed"]

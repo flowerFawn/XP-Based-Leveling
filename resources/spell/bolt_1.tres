@@ -9,7 +9,7 @@ radius = 30.0
 
 [resource]
 script = ExtResource("1_tpysc")
-spell_id = &"bolt"
+spell_id = "Bolt"
 next_upgrade = ExtResource("1_w25f6")
 cooldown = 0.3
 damage = 6.0
