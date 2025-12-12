@@ -3,11 +3,10 @@ class_name Enemy
 ##The enemy type resource that this enemy will be
 @export var enemy_type:EnemyType
 ##Nodes the enemy needs to be able to reference
-@export var node_sprite:Sprite2D
-@export var node_collision:CollisionShape2D
+var node_sprite:Sprite2D
+var node_collision:CollisionShape2D
 
-##For the constructor
-const enemy_scene_preload = preload("uid://kpbomqm3o7r0")
+
 
 ##Active versions of stats, so that a single resource can be used for every enemy type but individual enemies still change stats
 
@@ -23,7 +22,8 @@ var current_direction:Vector2
 
 
 
-
+func misc_setup() -> void:
+	pass
 	
 func _physics_process(delta: float) -> void:
 	move(current_direction * active_speed * delta)
@@ -48,7 +48,14 @@ func update_direction() -> void:
 #endregion
 #region CONSTRUCTOR
 static func new_enemy(enemy_type:EnemyType) -> Enemy:
-	var new_enemy_instance:Enemy = enemy_scene_preload.instantiate()
+	var new_enemy_instance:Enemy = Enemy.new()
+	if enemy_type.unique_script != null:
+		new_enemy_instance.set_script(enemy_type.unique_script)
+	new_enemy_instance.add_to_group(&"Enemy")
+	new_enemy_instance.node_sprite = Sprite2D.new()
+	new_enemy_instance.node_collision = CollisionShape2D.new()
+	new_enemy_instance.add_child(new_enemy_instance.node_sprite)
+	new_enemy_instance.add_child(new_enemy_instance.node_collision)
 	new_enemy_instance.enemy_type = enemy_type
 	new_enemy_instance.intialise_enemy()
 	return new_enemy_instance
@@ -58,7 +65,7 @@ func intialise_enemy() -> void:
 	active_health = enemy_type.base_health
 	node_collision.shape = enemy_type.collision
 	node_sprite.texture = enemy_type.sprite
-	
+	misc_setup()
 	
 	connect("body_entered", collision_entered)
 #endregion
