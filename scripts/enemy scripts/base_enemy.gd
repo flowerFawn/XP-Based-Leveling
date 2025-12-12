@@ -52,6 +52,8 @@ static func new_enemy(enemy_type:EnemyType) -> Enemy:
 	if enemy_type.unique_script != null:
 		new_enemy_instance.set_script(enemy_type.unique_script)
 	new_enemy_instance.add_to_group(&"Enemy")
+	new_enemy_instance.set_collision_layer_value(1, false)
+	new_enemy_instance.set_collision_layer_value(2, true)
 	new_enemy_instance.node_sprite = Sprite2D.new()
 	new_enemy_instance.node_collision = CollisionShape2D.new()
 	new_enemy_instance.add_child(new_enemy_instance.node_sprite)

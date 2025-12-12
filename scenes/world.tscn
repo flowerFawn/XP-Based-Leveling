@@ -14,6 +14,7 @@ spell_option_menu = NodePath("SpellOptionMenu/SpellOptionMenu")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_nnsk1")]
 position = Vector2(1399, 1557)
+collision_mask = 0
 
 [node name="GameController" parent="." instance=ExtResource("2_rwgxs")]
 

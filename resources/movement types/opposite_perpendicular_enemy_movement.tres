@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="EnemyMovementRotated" load_steps=2 format=3 uid="uid://c1002bulcsc64"]
+
+[ext_resource type="Script" uid="uid://cpy1fruup6071" path="res://scripts/resources/inherited resources/enemy movement types/e_movement_perpendicular.gd" id="1_7iicp"]
+
+[resource]
+script = ExtResource("1_7iicp")
+rotation_amount = 270.0
+metadata/_custom_type_script = "uid://cpy1fruup6071"

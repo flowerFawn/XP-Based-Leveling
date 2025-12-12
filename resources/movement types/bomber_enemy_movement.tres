@@ -1,7 +1,0 @@
-[gd_resource type="Resource" script_class="EnemyMovementBomber" load_steps=2 format=3 uid="uid://boghcrttgnp6l"]
-
-[ext_resource type="Script" uid="uid://cpy1fruup6071" path="res://scripts/resources/inherited resources/enemy movement types/e_movement_bomber.gd" id="1_5pxsw"]
-
-[resource]
-script = ExtResource("1_5pxsw")
-metadata/_custom_type_script = "uid://cpy1fruup6071"
