@@ -1,5 +1,7 @@
 extends CharacterBody2D
 class_name Player
+
+@export var node_sprite:Sprite2D
 var speed:int = 500
 var active_health:float = 100
 ##The previous direction of the player. This can have values as zero
@@ -29,6 +31,8 @@ func get_direction() -> Vector2:
 		accurate_orientation = direction.snappedf(1)
 	if direction.x != 0:
 		x_orientation = round(direction.x)
+		node_sprite.flip_h = x_orientation > 0
+			
 	if direction.y != 0:
 		y_orientation - round(direction.y)
 	return direction

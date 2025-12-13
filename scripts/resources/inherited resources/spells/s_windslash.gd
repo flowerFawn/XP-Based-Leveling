@@ -21,7 +21,6 @@ func do_slash(player, spell_handler, other_direction:bool = false) -> void:
 	await spell_handler.get_tree().physics_frame
 	shapecast.force_shapecast_update()
 	for enemy:Enemy in get_shapecast_colliders(shapecast):
-		print(enemy)
 		enemy.take_damage(damage)
 	shapecast.queue_free()
 	var flipped_sprite:bool = player.x_orientation > 0
