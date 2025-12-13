@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="DeathExplosion" load_steps=4 format=3 uid="uid://dkojg7se37iio"]
+
+[ext_resource type="Texture2D" uid="uid://btq8q6sag06fk" path="res://assets/placeholders/explosion.png" id="1_najpy"]
+[ext_resource type="Script" uid="uid://ck34qaofp1ap" path="res://scripts/resources/inherited resources/death effect/de_explode.gd" id="1_pipw1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_najpy"]
+radius = 200.0
+
+[resource]
+script = ExtResource("1_pipw1")
+explosion_shape = SubResource("CircleShape2D_najpy")
+explosion_damage = 8.0
+explosion_texture = ExtResource("1_najpy")
+metadata/_custom_type_script = "uid://ck34qaofp1ap"

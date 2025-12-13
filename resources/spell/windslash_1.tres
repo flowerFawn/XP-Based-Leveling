@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cpkamubmxnpfa" path="res://scripts/resources/inherited resources/spells/s_windslash.gd" id="1_f44ng"]
 [ext_resource type="Resource" uid="uid://pmeyf3est3gv" path="res://resources/spell/windslash_2.tres" id="1_iunwg"]
-[ext_resource type="Texture2D" uid="uid://ciyc5edifs2db" path="res://assets/windslash.png" id="2_b0tia"]
+[ext_resource type="Texture2D" uid="uid://ciyc5edifs2db" path="res://assets/placeholders/windslash.png" id="2_b0tia"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f44ng"]
 size = Vector2(20, 200)

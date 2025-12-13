@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmufs1e6bafrg"
-path="res://.godot/imported/trianglewizard.png-b0b24409acedecda4c981cdbbadf218e.ctex"
+uid="uid://bs2aw6atyld2d"
+path="res://.godot/imported/earthquake.png-196482d9cb279eb01ec3a7e904800cf2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/trianglewizard.png"
-dest_files=["res://.godot/imported/trianglewizard.png-b0b24409acedecda4c981cdbbadf218e.ctex"]
+source_file="res://assets/placeholders/earthquake.png"
+dest_files=["res://.godot/imported/earthquake.png-196482d9cb279eb01ec3a7e904800cf2.ctex"]
 
 [params]
 

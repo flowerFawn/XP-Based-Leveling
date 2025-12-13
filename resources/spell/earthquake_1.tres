@@ -2,7 +2,7 @@
 
 [ext_resource type="Resource" uid="uid://ylm4vp0kumm5" path="res://resources/spell/earthquake_2.tres" id="1_bfrpe"]
 [ext_resource type="Script" uid="uid://dqtj3553eq3ci" path="res://scripts/resources/inherited resources/spells/s_earthquake.gd" id="1_n651w"]
-[ext_resource type="Texture2D" uid="uid://bs2aw6atyld2d" path="res://assets/earthquake.png" id="3_g4o1b"]
+[ext_resource type="Texture2D" uid="uid://bs2aw6atyld2d" path="res://assets/placeholders/earthquake.png" id="3_g4o1b"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cae2g"]
 radius = 200.0

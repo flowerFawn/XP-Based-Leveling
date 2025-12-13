@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cf8meehm5l0yh"
-path="res://.godot/imported/goblin.png-61d54b8a74eb2a340d8f75faefb5f8d8.ctex"
+uid="uid://xmadt3jeoget"
+path="res://.godot/imported/bolt.png-cd6766b384236303c90cb4fe1f6081b3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/goblin.png"
-dest_files=["res://.godot/imported/goblin.png-61d54b8a74eb2a340d8f75faefb5f8d8.ctex"]
+source_file="res://assets/placeholders/bolt.png"
+dest_files=["res://.godot/imported/bolt.png-cd6766b384236303c90cb4fe1f6081b3.ctex"]
 
 [params]
 

@@ -18,8 +18,7 @@ var active_health:float
 ##so we don't recalculate direction every frame lol
 var current_direction:Vector2
 
-
-
+var dying:bool = false
 
 
 func misc_setup() -> void:
@@ -80,7 +79,12 @@ func take_damage(amount:float) -> void:
 		die()
 	
 func die() -> void:
+	if dying:
+		return
+	dying = true
 	SpellShop.spell_xp += enemy_type.xp_reward
+	if enemy_type.death_effect != null:
+		await enemy_type.death_effect.cause_effect(self)
 	queue_free()
 	
 #endregion

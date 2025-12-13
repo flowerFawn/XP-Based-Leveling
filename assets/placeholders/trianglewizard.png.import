@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xmadt3jeoget"
-path="res://.godot/imported/bolt.png-a88800290d20614b604374a0367f73f8.ctex"
+uid="uid://bmufs1e6bafrg"
+path="res://.godot/imported/trianglewizard.png-08dad379ff18783ed1d9e1669328e4fe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/bolt.png"
-dest_files=["res://.godot/imported/bolt.png-a88800290d20614b604374a0367f73f8.ctex"]
+source_file="res://assets/placeholders/trianglewizard.png"
+dest_files=["res://.godot/imported/trianglewizard.png-08dad379ff18783ed1d9e1669328e4fe.ctex"]
 
 [params]
 

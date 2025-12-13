@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://n0tbfppan7pj"
-path="res://.godot/imported/shard.png-9b07a4cef2a4cd6c0e7e4d4210bf27cb.ctex"
+uid="uid://cf8meehm5l0yh"
+path="res://.godot/imported/goblin.png-75a1244a87a4a15ff95641af876b7906.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/shard.png"
-dest_files=["res://.godot/imported/shard.png-9b07a4cef2a4cd6c0e7e4d4210bf27cb.ctex"]
+source_file="res://assets/placeholders/goblin.png"
+dest_files=["res://.godot/imported/goblin.png-75a1244a87a4a15ff95641af876b7906.ctex"]
 
 [params]
 

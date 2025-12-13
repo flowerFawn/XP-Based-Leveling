@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ciyc5edifs2db"
-path="res://.godot/imported/windslash.png-b512ca48c7de265cf8d49afaca415e0d.ctex"
+uid="uid://n0tbfppan7pj"
+path="res://.godot/imported/shard.png-5d45a669e57c56059f3832253e41274a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/windslash.png"
-dest_files=["res://.godot/imported/windslash.png-b512ca48c7de265cf8d49afaca415e0d.ctex"]
+source_file="res://assets/placeholders/shard.png"
+dest_files=["res://.godot/imported/shard.png-5d45a669e57c56059f3832253e41274a.ctex"]
 
 [params]
 

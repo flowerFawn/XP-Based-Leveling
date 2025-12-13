@@ -2,7 +2,7 @@
 
 [ext_resource type="Resource" uid="uid://br1igtqgj1q16" path="res://resources/spell/shard_3.tres" id="1_otu5e"]
 [ext_resource type="Script" uid="uid://cruvp1vxd4ktu" path="res://scripts/resources/inherited resources/spells/s_shard.gd" id="1_qt6js"]
-[ext_resource type="Texture2D" uid="uid://n0tbfppan7pj" path="res://assets/shard.png" id="2_env62"]
+[ext_resource type="Texture2D" uid="uid://n0tbfppan7pj" path="res://assets/placeholders/shard.png" id="2_env62"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ynue0"]
 

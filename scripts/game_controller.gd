@@ -8,14 +8,16 @@ var enemy_type_array:Array[EnemyType] = [
 	preload("uid://7mdhf8llrlod"), #3 - goblin type 4
 	preload("uid://c6qqqoynid1fh"), #4 - goblin bomber
 	preload("uid://dqunbnln7x2n0"), #5 - loot goblin
+	preload("uid://dc0p6fukw7bp6"), #6 - martyr
 ]
 var enemy_type_weights_array:PackedFloat32Array = PackedFloat32Array([
 	1,
 	1,
 	1,
 	1,
-	0.2,
-	0.05
+	0.3,
+	0.05,
+	0.3
 ])
 var enemy_count:float = 2
 

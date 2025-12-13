@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="SpellShard" load_steps=4 format=3 uid="uid://br1igtqgj1q16"]
 
 [ext_resource type="Script" uid="uid://cruvp1vxd4ktu" path="res://scripts/resources/inherited resources/spells/s_shard.gd" id="1_6d8q1"]
-[ext_resource type="Texture2D" uid="uid://n0tbfppan7pj" path="res://assets/shard.png" id="2_16juc"]
+[ext_resource type="Texture2D" uid="uid://n0tbfppan7pj" path="res://assets/placeholders/shard.png" id="2_16juc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ynue0"]
 

@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="SpellWindSlash" load_steps=4 format=3 uid="uid://pmeyf3est3gv"]
 
 [ext_resource type="Script" uid="uid://cpkamubmxnpfa" path="res://scripts/resources/inherited resources/spells/s_windslash.gd" id="1_gwhyu"]
-[ext_resource type="Texture2D" uid="uid://ciyc5edifs2db" path="res://assets/windslash.png" id="2_4ihi7"]
+[ext_resource type="Texture2D" uid="uid://ciyc5edifs2db" path="res://assets/placeholders/windslash.png" id="2_4ihi7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f44ng"]
 size = Vector2(20, 100)

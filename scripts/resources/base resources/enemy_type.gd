@@ -15,6 +15,9 @@ class_name EnemyType
 ##The base xp awarded upon defeating this enemy
 @export var xp_reward:float
 
+##The effect to be called upon death
+@export var death_effect:DeathEffect
+
 @export_group("Health")
 ##How much damage the enemy can take before dying
 @export var base_health:float
