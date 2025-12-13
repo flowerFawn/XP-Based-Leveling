@@ -16,7 +16,12 @@ class_name Spell
 ##Time in seconds between the cast being called. if this is set to 0, it will only be cast once
 @export var cooldown:float
 @export var damage:float
+##How quickly a projectile travels. May also be used for the length of a shapecast
 @export var projectile_speed:float
+##How many projectiles are created, per cast
+@export var projectile_count:int = 1
+##An option delay between the creation of multiple projectiles in the same casting, in seconds.
+@export var multi_projectile_delay:float = 0
 ##The shape used for this spell. This includes hitboxes for things like earthquake, or projectile hitboxes
 @export var shape:Shape2D
 @export_group("Appearance")

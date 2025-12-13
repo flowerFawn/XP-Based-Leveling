@@ -10,11 +10,11 @@ radius = 40.0
 [resource]
 script = ExtResource("1_y6wjd")
 level = 2
-level_description = "Gain Speed"
+level_description = "Increased damage"
 next_upgrade = ExtResource("1_psg8p")
-cooldown = 0.25
-damage = 7.0
-projectile_speed = 45.0
+cooldown = 2.0
+damage = 10.0
+projectile_speed = 40.0
 shape = SubResource("CircleShape2D_y6wjd")
 texture = ExtResource("2_tm2tl")
 metadata/_custom_type_script = "uid://cyuaiwt5dess3"

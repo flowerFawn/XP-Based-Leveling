@@ -9,10 +9,9 @@ radius = 30.0
 
 [resource]
 script = ExtResource("1_tpysc")
-spell_id = "Bolt"
 next_upgrade = ExtResource("1_w25f6")
-cooldown = 0.3
-damage = 6.0
+cooldown = 2.0
+damage = 9.0
 projectile_speed = 40.0
 shape = SubResource("CircleShape2D_w25f6")
 texture = ExtResource("3_v0md5")

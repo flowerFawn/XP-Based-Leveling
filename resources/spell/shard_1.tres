@@ -8,11 +8,9 @@
 
 [resource]
 script = ExtResource("2_4q8fg")
-level = 1
-spell_id = "Shard"
 next_upgrade = ExtResource("1_ynue0")
-cooldown = 0.5
-damage = 1.0
+cooldown = 0.4
+damage = 5.0
 projectile_speed = 60.0
 shape = SubResource("CircleShape2D_ynue0")
 texture = ExtResource("3_4q8fg")
