@@ -3,6 +3,7 @@ extends Control
 
 @export var fade_texture_rect:TextureRect
 @export var front_texture_rect:TextureRect
+@export var play_button:Button
 var menu_slides:Dictionary[StringName, Texture2D] = {
 	&"Play":preload("uid://cmhl2o814xr2s"),
 	&"Settings":preload("uid://ccyaul5gqpvdi"),
@@ -13,12 +14,15 @@ var menu_slides:Dictionary[StringName, Texture2D] = {
 var visuals_tween:Tween
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	play_button.grab_focus()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func button_pressed(button_function:StringName) -> void:
+	match button_function:
+		&"Play":
+			get_tree().change_scene_to_packed(preload("uid://dp1bn4tu70hr6"))
+		&"Quit":
+			get_tree().quit()
 
 
 func _menu_button_hovered(button_function:StringName) -> void:
