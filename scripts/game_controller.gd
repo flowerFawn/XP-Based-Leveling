@@ -18,10 +18,18 @@ func spawn_enemies() -> void:
 	enemy_count += 1
 		
 func spawn_enemy():
-	var spawn_position:Vector2 = GameInfo.player_position
-	while spawn_position.distance_squared_to(GameInfo.player_position) < 300 ** 2:
-		spawn_position = Vector2(GameInfo.rnd.randi_range(GameInfo.player_position.x - 1000, GameInfo.player_position.x + 1000),
-		GameInfo.rnd.randi_range(GameInfo.player_position.y - 1000, GameInfo.player_position.y + 1000))
+	const CAMERA_DISTANCE_VECTOR:Vector2 = Vector2(2350, 1350)
+	var spawn_position:Vector2
+	var spawn_offset:Vector2
+	var player_position:Vector2 = GameInfo.player_position
+	var neg_constant:int = [-1, 1][GameInfo.rnd.randi_range(0, 1)]
+	var appears_from_centre:bool = [false, true][GameInfo.rnd.randi_range(0, 1)]
+	if appears_from_centre:
+		spawn_offset = Vector2(GameInfo.rnd.randi_range(-2300, 2300),neg_constant * CAMERA_DISTANCE_VECTOR.y)
+	else:
+		spawn_offset = Vector2(neg_constant * CAMERA_DISTANCE_VECTOR.x ,GameInfo.rnd.randi_range(-2300, 2300))
+	spawn_position = player_position + spawn_offset
+	print(spawn_position)
 	var new_enemy:Enemy = Enemy.new_enemy(preload("uid://bg3osrk3a4ni5"))
 	#var new_enemy:Enemy = Enemy.new_enemy(preload("uid://c6qqqoynid1fh"))
 	#var new_enemy:Enemy = Enemy.new_enemy(preload("uid://dqunbnln7x2n0"))
