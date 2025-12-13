@@ -48,7 +48,7 @@ func add_spell_to_pool(spell:Spell) -> void:
 	
 func _ready() -> void:
 	await get_tree().process_frame
-	award_spell_option()
+	#award_spell_option()
 	
 func give_spell(spell:Spell):
 	current_spell_pool.erase(spell)

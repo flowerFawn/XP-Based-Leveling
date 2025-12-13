@@ -1,0 +1,89 @@
+[gd_scene load_steps=2 format=3 uid="uid://dj5n2ohldosah"]
+
+[ext_resource type="Script" uid="uid://b0r1anwr8lchp" path="res://scripts/menu/main_menu.gd" id="1_nl8w3"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="MainMenu" type="Control" parent="." node_paths=PackedStringArray("fade_texture_rect", "front_texture_rect")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nl8w3")
+fade_texture_rect = NodePath("VBoxContainer/HBoxContainer/Control/FadeTextureRect")
+front_texture_rect = NodePath("VBoxContainer/HBoxContainer/Control/FrontTextureRect")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect2" type="TextureRect" parent="MainMenu/VBoxContainer"]
+custom_minimum_size = Vector2(0, 148)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainMenu/VBoxContainer"]
+custom_minimum_size = Vector2(0, 500)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PlayButton" type="Button" parent="MainMenu/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="SettingsButton" type="Button" parent="MainMenu/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="BestiaryButton" type="Button" parent="MainMenu/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="CreditsButton" type="Button" parent="MainMenu/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="QuitButton" type="Button" parent="MainMenu/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Control" type="Control" parent="MainMenu/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(700, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="FrontTextureRect" type="TextureRect" parent="MainMenu/VBoxContainer/HBoxContainer/Control"]
+custom_minimum_size = Vector2(700, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+
+[node name="FadeTextureRect" type="TextureRect" parent="MainMenu/VBoxContainer/HBoxContainer/Control"]
+custom_minimum_size = Vector2(700, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+
+[connection signal="mouse_entered" from="MainMenu/VBoxContainer/HBoxContainer/VBoxContainer/PlayButton" to="MainMenu" method="_menu_button_hovered" binds= [&"Play"]]
+[connection signal="mouse_entered" from="MainMenu/VBoxContainer/HBoxContainer/VBoxContainer/SettingsButton" to="MainMenu" method="_menu_button_hovered" binds= [&"Settings"]]
+[connection signal="mouse_entered" from="MainMenu/VBoxContainer/HBoxContainer/VBoxContainer/BestiaryButton" to="MainMenu" method="_menu_button_hovered" binds= [&"Bestiary"]]
+[connection signal="mouse_entered" from="MainMenu/VBoxContainer/HBoxContainer/VBoxContainer/CreditsButton" to="MainMenu" method="_menu_button_hovered" binds= [&"Credits"]]
+[connection signal="mouse_entered" from="MainMenu/VBoxContainer/HBoxContainer/VBoxContainer/QuitButton" to="MainMenu" method="_menu_button_hovered" binds= [&"Quit"]]
