@@ -69,6 +69,13 @@ player_right={
 2d_physics/layer_1="Player"
 2d_physics/layer_2="Enemy"
 
+[physics]
+
+2d/run_on_separate_thread=true
+2d/physics_engine="GodotPhysics2D"
+3d/physics_engine="Dummy"
+2d/solver/solver_iterations=1
+
 [rendering]
 
 renderer/rendering_method="mobile"

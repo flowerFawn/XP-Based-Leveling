@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="SpellEarthquake" load_steps=4 format=3 uid="uid://cycqof555mc8a"]
+
+[ext_resource type="Script" uid="uid://dqtj3553eq3ci" path="res://scripts/resources/inherited resources/spells/s_earthquake.gd" id="1_nbsq4"]
+[ext_resource type="Texture2D" uid="uid://bs2aw6atyld2d" path="res://assets/earthquake.png" id="2_d5mal"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cae2g"]
+radius = 300.0
+
+[resource]
+script = ExtResource("1_nbsq4")
+level = 3
+cooldown = 1.0
+damage = 30.0
+shape = SubResource("CircleShape2D_cae2g")
+texture = ExtResource("2_d5mal")
+visual_scale = 1.1
+metadata/_custom_type_script = "uid://dqtj3553eq3ci"

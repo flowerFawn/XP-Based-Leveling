@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="SpellShard" load_steps=4 format=3 uid="uid://cpoi8gjs165jf"]
+[gd_resource type="Resource" script_class="SpellShard" load_steps=5 format=3 uid="uid://cpoi8gjs165jf"]
 
+[ext_resource type="Resource" uid="uid://br1igtqgj1q16" path="res://resources/spell/shard_3.tres" id="1_otu5e"]
 [ext_resource type="Script" uid="uid://cruvp1vxd4ktu" path="res://scripts/resources/inherited resources/spells/s_shard.gd" id="1_qt6js"]
 [ext_resource type="Texture2D" uid="uid://n0tbfppan7pj" path="res://assets/shard.png" id="2_env62"]
 
@@ -9,9 +10,10 @@ radius = 15.0
 [resource]
 script = ExtResource("1_qt6js")
 level = 2
-spell_id = "Shard"
+next_upgrade = ExtResource("1_otu5e")
 cooldown = 0.05
 damage = 5.0
+projectile_speed = 60.0
 shape = SubResource("CircleShape2D_qt6js")
 texture = ExtResource("2_env62")
 metadata/_custom_type_script = "uid://cruvp1vxd4ktu"

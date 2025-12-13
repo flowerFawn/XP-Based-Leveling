@@ -9,13 +9,9 @@ radius = 200.0
 
 [resource]
 script = ExtResource("1_n651w")
-level = 1
-spell_id = "Earthquake"
 next_upgrade = ExtResource("1_bfrpe")
 cooldown = 5.0
 damage = 12.0
-projectile_speed = null
 shape = SubResource("CircleShape2D_cae2g")
 texture = ExtResource("3_g4o1b")
-visual_scale = null
 metadata/_custom_type_script = "uid://dqtj3553eq3ci"

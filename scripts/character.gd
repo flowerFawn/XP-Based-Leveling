@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name Player
 var speed:int = 500
-var active_health:float = 100
+var active_health:float = 1000000000000
 
 ##Dictionary that stores the spells and their associated spell handlers. 
 ##This is a dictionary so that the spellhandlers can be found using their associated spell resource.
