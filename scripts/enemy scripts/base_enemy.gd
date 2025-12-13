@@ -33,8 +33,9 @@ func collision_entered(body:Node2D):
 	#If the enemy collides with the player, it does damage and then disappears
 	if body.is_in_group(&"Player"):
 		var player:Player = body
-		player.take_damage(enemy_type.contact_damage)
-		die()
+		if enemy_type.contact_damage > 0:
+			player.take_damage(enemy_type.contact_damage)
+			die()
 #endregion
 #region MOVEMENT
 func move(velocity:Vector2) -> void:

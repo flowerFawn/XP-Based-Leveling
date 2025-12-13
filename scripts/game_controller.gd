@@ -1,7 +1,23 @@
 extends Node
 class_name GameController
 
-var enemy_count = 5
+var enemy_type_array:Array[EnemyType] = [
+	preload("uid://bg3osrk3a4ni5"), #0 - goblin type 1
+	preload("uid://cr5n22p055thh"), #1 - gobin type 2
+	preload("uid://cbke16rl4k8ar"), #2 - goblin type 3
+	preload("uid://7mdhf8llrlod"), #3 - goblin type 4
+	preload("uid://c6qqqoynid1fh"), #4 - goblin bomber
+	preload("uid://dqunbnln7x2n0"), #5 - loot goblin
+]
+var enemy_type_weights_array:PackedFloat32Array = PackedFloat32Array([
+	1,
+	1,
+	1,
+	1,
+	0.2,
+	0.05
+])
+var enemy_count:float = 2
 
 func update_directions() -> void:
 	#updates enemies heading towards the player
@@ -13,9 +29,9 @@ func update_directions() -> void:
 
 
 func spawn_enemies() -> void:
-	for enemy_to_spawn:int in range(0, enemy_count):
+	for enemy_to_spawn:int in range(ceili(enemy_count)):
 		spawn_enemy()
-	enemy_count += 1
+	enemy_count += 0.3
 		
 func spawn_enemy():
 	const CAMERA_DISTANCE_VECTOR:Vector2 = Vector2(2350, 1350)
@@ -29,8 +45,20 @@ func spawn_enemy():
 	else:
 		spawn_offset = Vector2(neg_constant * CAMERA_DISTANCE_VECTOR.x ,GameInfo.rnd.randi_range(-2300, 2300))
 	spawn_position = player_position + spawn_offset
-	var new_enemy:Enemy = Enemy.new_enemy(preload("uid://bg3osrk3a4ni5"))
-	#var new_enemy:Enemy = Enemy.new_enemy(preload("uid://c6qqqoynid1fh"))
-	#var new_enemy:Enemy = Enemy.new_enemy(preload("uid://dqunbnln7x2n0"))
+	var new_enemy:Enemy = Enemy.new_enemy(pick_weighted_random_enemy(GameInfo.player_level))
 	GameInfo.enemy_holder.add_child(new_enemy)
 	new_enemy.global_position = spawn_position
+
+func pick_weighted_random_enemy(level:int) -> EnemyType:
+	var enemy_type:EnemyType
+	enemy_type = enemy_type_array[GameInfo.rnd.rand_weighted(enemy_type_weights_array)]
+	return enemy_type
+	
+	
+	
+	
+	
+	
+	
+	
+	
