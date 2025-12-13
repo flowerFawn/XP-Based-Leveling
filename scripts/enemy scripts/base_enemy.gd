@@ -6,8 +6,6 @@ class_name Enemy
 var node_sprite:Sprite2D
 var node_collision:CollisionShape2D
 
-
-
 ##Active versions of stats, so that a single resource can be used for every enemy type but individual enemies still change stats
 
 var active_speed:float
@@ -55,6 +53,8 @@ static func new_enemy(enemy_type:EnemyType) -> Enemy:
 	new_enemy_instance.set_collision_layer_value(1, false)
 	new_enemy_instance.set_collision_layer_value(2, true)
 	new_enemy_instance.node_sprite = Sprite2D.new()
+	new_enemy_instance.node_sprite.material = ShaderMaterial.new()
+	new_enemy_instance.node_sprite.material.shader = preload("uid://6bjklt2wni63")
 	new_enemy_instance.node_collision = CollisionShape2D.new()
 	new_enemy_instance.add_child(new_enemy_instance.node_sprite)
 	new_enemy_instance.add_child(new_enemy_instance.node_collision)
@@ -75,8 +75,19 @@ func intialise_enemy() -> void:
 #region HEALTH
 func take_damage(amount:float) -> void:
 	active_health -= amount
+	visual_damage(amount)
 	if active_health <= 0:
 		die()
+
+
+func visual_damage(damage:float) -> void:
+	GameInfo.projectile_holder.create_damage_label(global_position, floor(damage))
+	#makes the node turn red for a moment
+	node_sprite.material.set_shader_parameter(&"harmed", true)
+	await get_tree().create_timer(0.3).timeout
+	node_sprite.material.set_shader_parameter(&"harmed", false)
+	
+	
 	
 func die() -> void:
 	if dying:

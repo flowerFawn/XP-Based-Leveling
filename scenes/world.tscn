@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dp1bn4tu70hr6"]
+[gd_scene load_steps=6 format=3 uid="uid://dp1bn4tu70hr6"]
 
 [ext_resource type="Script" uid="uid://b0pcojyqof33i" path="res://scripts/world_controller.gd" id="1_4wyf3"]
 [ext_resource type="PackedScene" uid="uid://dt2i2obb5kodu" path="res://scenes/character.tscn" id="1_nnsk1"]
 [ext_resource type="PackedScene" uid="uid://bedklbg6qvuot" path="res://scenes/game_controller.tscn" id="2_rwgxs"]
+[ext_resource type="Script" uid="uid://c3kqgg7wrwhyb" path="res://scenes/projectile_holder.gd" id="4_71j4m"]
 [ext_resource type="PackedScene" uid="uid://bol0i1wwwklsj" path="res://scenes/menu/spell_option_menu.tscn" id="4_k0juu"]
 
 [node name="WorldController" type="Node2D" node_paths=PackedStringArray("projectile_holder", "enemy_holder", "game_controller", "spell_option_menu")]
@@ -19,10 +20,16 @@ collision_mask = 0
 [node name="GameController" parent="." instance=ExtResource("2_rwgxs")]
 
 [node name="ProjectileHolder" type="Node2D" parent="."]
+script = ExtResource("4_71j4m")
+
+[node name="DPSTimer" type="Timer" parent="ProjectileHolder"]
+autostart = true
 
 [node name="EnemyHolder" type="Node2D" parent="."]
 
 [node name="SpellOptionMenu" parent="." instance=ExtResource("4_k0juu")]
 process_mode = 3
+
+[connection signal="timeout" from="ProjectileHolder/DPSTimer" to="ProjectileHolder" method="_on_dps_timer_timeout"]
 
 [editable path="SpellOptionMenu"]
