@@ -9,7 +9,7 @@ var active_direction:Vector2
 var remaining_pierce:int
 var start_position
 
-func _init(speed:float, damage:float, shape:Shape2D, direction:Vector2, sprite:Texture2D, new_start_position:Vector2 = Vector2.ZERO, max_pierce:int = 0) -> void:
+func _init(speed:float, damage:float, shape:Shape2D, direction:Vector2, sprite:Texture2D, max_pierce:int = 0, new_start_position:Vector2 = Vector2.ZERO) -> void:
 	set_collision_layer_value(1, false)
 	set_collision_mask_value(1, false)
 	set_collision_mask_value(2, true)

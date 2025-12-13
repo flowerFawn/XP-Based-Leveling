@@ -6,11 +6,11 @@ var spell_xp:float = 0:
 		spell_xp = value
 		if spell_xp >= next_required_xp:
 			spell_xp -= next_required_xp
-			next_required_xp *= 10
+			next_required_xp *= 2
 			call_deferred(&"award_spell_option")
 var next_required_xp:float = 10
 var current_spell_pool:Array[Spell] = [load("uid://7vmgb80p33sl"), 
-load("uid://ciomfgvjduepp"), load("uid://dh4308dsgb1xc")]
+load("uid://ciomfgvjduepp"), load("uid://dh4308dsgb1xc"), load("uid://bb3wur6d4qxcf")]
 
 #Not used outside of testing
 #func award_random_spell() -> void:

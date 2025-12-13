@@ -1,7 +1,13 @@
 extends CharacterBody2D
 class_name Player
 var speed:int = 500
-var active_health:float = 1000000000000
+var active_health:float = 100
+##The previous direction of the player. This can have values as zero
+var accurate_orientation:Vector2 = Vector2(1, 0)
+##The last non-zero direction of the player on the x axis. Should always be 1 or -1
+var x_orientation:int = 1
+##The last non-zero direction of the player on the y axis. Should always be 1 or -1
+var y_orientation:int = 1
 
 ##Dictionary that stores the spells and their associated spell handlers. 
 ##This is a dictionary so that the spellhandlers can be found using their associated spell resource.
@@ -19,6 +25,12 @@ func _physics_process(delta: float) -> void:
 func get_direction() -> Vector2:
 	var direction:Vector2 = Vector2(Input.get_axis("player_left", "player_right"), Input.get_axis("player_up", "player_down")).normalized()
 	direction = Vector2(direction.x * abs(Input.get_axis("player_left", "player_right")), direction.y * abs(Input.get_axis("player_up", "player_down")))
+	if not direction.is_zero_approx():
+		accurate_orientation = direction.snappedf(1)
+	if direction.x != 0:
+		x_orientation = round(direction.x)
+	if direction.y != 0:
+		y_orientation - round(direction.y)
 	return direction
 	
 func get_closest_enemy() -> Vector2:

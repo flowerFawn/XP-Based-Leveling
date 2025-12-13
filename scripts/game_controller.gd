@@ -29,7 +29,6 @@ func spawn_enemy():
 	else:
 		spawn_offset = Vector2(neg_constant * CAMERA_DISTANCE_VECTOR.x ,GameInfo.rnd.randi_range(-2300, 2300))
 	spawn_position = player_position + spawn_offset
-	print(spawn_position)
 	var new_enemy:Enemy = Enemy.new_enemy(preload("uid://bg3osrk3a4ni5"))
 	#var new_enemy:Enemy = Enemy.new_enemy(preload("uid://c6qqqoynid1fh"))
 	#var new_enemy:Enemy = Enemy.new_enemy(preload("uid://dqunbnln7x2n0"))
