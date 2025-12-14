@@ -68,9 +68,24 @@ func intialise_enemy() -> void:
 	node_collision.shape = enemy_type.collision
 	node_sprite.texture = enemy_type.sprite
 	misc_setup()
+	if enemy_type.spawn_sound != null:
+		play_spawn_sound(enemy_type.spawn_sound)
 	
 	connect("body_entered", collision_entered)
 #endregion
+
+func play_spawn_sound(sound:AudioStream):
+	var audio_player:AudioStreamPlayer2D = AudioStreamPlayer2D.new()
+	audio_player.max_distance = 100000
+	print("making noise")
+	audio_player.stream = sound
+	add_child(audio_player)
+	await audio_player.tree_entered
+	audio_player.play()
+	await audio_player.finished
+	print("made noise")
+	audio_player.queue_free()
+	
 
 #region HEALTH
 func take_damage(amount:float) -> void:

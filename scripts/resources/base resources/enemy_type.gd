@@ -34,3 +34,5 @@ class_name EnemyType
 ##The script that will replace the base enemy script. Should inherit from Enemy.
 ##Prefer to use only values, but some mechanics will require a slightly different script (eg. bombers)
 @export var unique_script:GDScript
+##Sound effect that plays upon spawning. If this is short, prefer wav files.
+@export var spawn_sound:AudioStream
