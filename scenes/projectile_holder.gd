@@ -20,7 +20,6 @@ func create_damage_label(label_position:Vector2, damage:int) -> void:
 	if damage_done_this_second >= GameInfo.player_level * 100:
 		damage_label.set(&"theme_override_colors/font_color", Color.DARK_RED)
 	damage_label.global_position = label_position
-	
 	var position_tween:Tween = create_tween()
 	position_tween.set_ease(Tween.EASE_IN_OUT)
 	position_tween.set_trans(Tween.TRANS_QUAD)
@@ -29,9 +28,6 @@ func create_damage_label(label_position:Vector2, damage:int) -> void:
 		label_position.y - GameInfo.rnd.randi_range(100, 150))
 	position_tween.tween_property(damage_label, "global_position", final_offset, 1)
 	await position_tween.finished
+	damage_done_this_second -= damage
 	damage_label.queue_free()
 	
-
-
-func _on_dps_timer_timeout() -> void:
-	damage_done_this_second = 0

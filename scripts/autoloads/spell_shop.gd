@@ -4,11 +4,14 @@ var spell_option_menu:SpellOptionMenu
 var spell_xp:float = 0:
 	set(value):
 		spell_xp = value
+		GameInfo.game_ui.xp_progress.value = spell_xp
 		if spell_xp >= next_required_xp:
 			spell_xp -= next_required_xp
 			next_required_xp *= 2
 			GameInfo.player_level += 1
 			call_deferred(&"award_spell_option")
+			GameInfo.game_ui.xp_progress.value = spell_xp
+			GameInfo.game_ui.xp_progress.max_value = next_required_xp
 var next_required_xp:float = 10
 var current_spell_pool:Array[Spell] = [load("uid://7vmgb80p33sl"), 
 load("uid://ciomfgvjduepp"), load("uid://dh4308dsgb1xc"), load("uid://bb3wur6d4qxcf")]
@@ -45,10 +48,7 @@ func pop_random_spell() -> Spell:
 	
 func add_spell_to_pool(spell:Spell) -> void:
 	current_spell_pool.append(spell)
-	
-func _ready() -> void:
-	await get_tree().process_frame
-	#award_spell_option()
+
 	
 func give_spell(spell:Spell):
 	current_spell_pool.erase(spell)

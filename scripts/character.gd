@@ -2,8 +2,10 @@ extends CharacterBody2D
 class_name Player
 
 @export var node_sprite:Sprite2D
+@export var node_progress:ProgressBar
 var speed:int = 500
 var active_health:float = 100
+var max_health:float = 100
 ##The previous direction of the player. This can have values as zero
 var accurate_orientation:Vector2 = Vector2(1, 0)
 ##The last non-zero direction of the player on the x axis. Should always be 1 or -1
@@ -17,6 +19,9 @@ var spells:Dictionary[Spell, SpellHandler] = {}
 
 func _ready() -> void:
 	GameInfo.player = self
+	node_progress.min_value = 0
+	node_progress.max_value = max_health
+	node_progress.value = active_health
 
 func _physics_process(delta: float) -> void:
 	var movement_vector = speed * get_direction()
@@ -56,6 +61,7 @@ func get_closest_enemy() -> Vector2:
 #region HEALTH
 func take_damage(amount:float) -> void:
 	active_health -= amount
+	node_progress.value = active_health
 	if active_health <= 0:
 		die()
 		

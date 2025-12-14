@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://cnhp8six32rd7"]
+
+[ext_resource type="Script" uid="uid://cl1n7grol70i3" path="res://scenes/menu/in_game_ui.gd" id="1_ws5as"]
+[ext_resource type="Texture2D" uid="uid://co8am7svj24am" path="res://assets/placeholders/xp_progress.png" id="1_y3m3p"]
+[ext_resource type="Texture2D" uid="uid://ccxsabshh0hx5" path="res://assets/placeholders/xp_progress_under.png" id="2_wspi5"]
+[ext_resource type="Texture2D" uid="uid://bd7dci6fcskf5" path="res://assets/placeholders/xp_progress_over.png" id="3_ib547"]
+
+[node name="InGameUI" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="." node_paths=PackedStringArray("xp_progress")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+mouse_behavior_recursive = 1
+script = ExtResource("1_ws5as")
+xp_progress = NodePath("VBoxContainer/XPProgress")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="XPProgress" type="TextureProgressBar" parent="Control/VBoxContainer"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_vertical = 0
+max_value = 10.0
+texture_under = ExtResource("2_wspi5")
+texture_over = ExtResource("3_ib547")
+texture_progress = ExtResource("1_y3m3p")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
