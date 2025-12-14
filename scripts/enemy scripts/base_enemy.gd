@@ -41,7 +41,10 @@ func move(velocity:Vector2) -> void:
 	
 func update_direction() -> void:
 	current_direction = enemy_type.movement_type.get_enemy_direction(global_position, GameInfo.player_position)
-	
+	if global_position.x < GameInfo.player_position.x:
+		node_sprite.flip_h = true
+	else:
+		node_sprite.flip_h = false
 	
 #endregion
 #region CONSTRUCTOR
@@ -55,6 +58,8 @@ static func new_enemy(enemy_type:EnemyType) -> Enemy:
 	new_enemy_instance.node_sprite = Sprite2D.new()
 	new_enemy_instance.node_sprite.material = ShaderMaterial.new()
 	new_enemy_instance.node_sprite.material.shader = preload("uid://6bjklt2wni63")
+	#this is so the 200x200 pixel sprites by default take up the 100x100 pixel space we want them to
+	new_enemy_instance.node_sprite.scale = Vector2(0.5, 0.5)
 	new_enemy_instance.node_collision = CollisionShape2D.new()
 	new_enemy_instance.add_child(new_enemy_instance.node_sprite)
 	new_enemy_instance.add_child(new_enemy_instance.node_collision)
