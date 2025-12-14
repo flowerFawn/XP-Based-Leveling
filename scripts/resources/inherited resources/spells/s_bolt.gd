@@ -12,4 +12,4 @@ func cast(player:Player, spell_handler:SpellHandler) -> void:
 		shoot_bolt()
 
 func shoot_bolt():
-	GameInfo.projectile_holder.add_child(PlayerProjectile.new(projectile_speed, damage, shape, get_direction_to_nearest_enemy(), texture, 1))
+	GameInfo.projectile_holder.add_child(PlayerProjectile.new(projectile_speed, damage, shape, get_direction_to_nearest_enemy(), texture, projectile_pierce))

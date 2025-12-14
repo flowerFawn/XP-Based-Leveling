@@ -13,6 +13,7 @@ level_description = "Lower Cooldown"
 cooldown = 1.6
 damage = 10.0
 projectile_speed = 40.0
+projectile_pierce = 1
 shape = SubResource("CircleShape2D_y6wjd")
 texture = ExtResource("2_ivx7u")
 metadata/_custom_type_script = "uid://cyuaiwt5dess3"

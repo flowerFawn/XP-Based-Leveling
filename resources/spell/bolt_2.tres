@@ -15,6 +15,7 @@ next_upgrade = ExtResource("1_psg8p")
 cooldown = 2.0
 damage = 10.0
 projectile_speed = 40.0
+projectile_pierce = 1
 shape = SubResource("CircleShape2D_y6wjd")
 texture = ExtResource("2_tm2tl")
 metadata/_custom_type_script = "uid://cyuaiwt5dess3"

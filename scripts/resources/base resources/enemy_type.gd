@@ -36,3 +36,7 @@ class_name EnemyType
 @export var unique_script:GDScript
 ##Sound effect that plays upon spawning. If this is short, prefer wav files.
 @export var spawn_sound:AudioStream
+##Time until the enemy disappears, after spawning. Disappearing is different from dying
+##Disappearing plays a different animation, causes no death effect, and gives no xp reward
+##If this is set to 0, this never happens
+@export var disappear_time:float = 0

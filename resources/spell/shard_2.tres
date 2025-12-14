@@ -15,6 +15,7 @@ cooldown = 0.4
 damage = 5.0
 projectile_speed = 60.0
 projectile_count = 3
+projectile_pierce = 2
 shape = SubResource("CircleShape2D_ynue0")
 texture = ExtResource("2_env62")
 metadata/_custom_type_script = "uid://cruvp1vxd4ktu"

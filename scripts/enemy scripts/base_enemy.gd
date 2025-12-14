@@ -70,7 +70,8 @@ func intialise_enemy() -> void:
 	misc_setup()
 	if enemy_type.spawn_sound != null:
 		play_spawn_sound(enemy_type.spawn_sound)
-	
+	if enemy_type.disappear_time > 0:
+		disappear_after_time(enemy_type.disappear_time)
 	connect("body_entered", collision_entered)
 #endregion
 
@@ -85,6 +86,11 @@ func play_spawn_sound(sound:AudioStream):
 	await audio_player.finished
 	print("made noise")
 	audio_player.queue_free()
+	
+func disappear_after_time(time:float):
+	await tree_entered
+	await get_tree().create_timer(time).timeout
+	disappear()
 	
 
 #region HEALTH
@@ -113,4 +119,7 @@ func die() -> void:
 		await enemy_type.death_effect.cause_effect(self)
 	queue_free()
 	
+##Disappearing is different from dying, in that it causes no death effect and no xp reward
+func disappear():
+	queue_free()
 #endregion

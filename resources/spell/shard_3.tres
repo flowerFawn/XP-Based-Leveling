@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="SpellShard" load_steps=4 format=3 uid="uid://br1igtqgj1q16"]
+[gd_resource type="Resource" script_class="SpellShard" load_steps=5 format=3 uid="uid://br1igtqgj1q16"]
 
 [ext_resource type="Script" uid="uid://cruvp1vxd4ktu" path="res://scripts/resources/inherited resources/spells/s_shard.gd" id="1_6d8q1"]
+[ext_resource type="Resource" uid="uid://cudhxsxhqenmq" path="res://resources/spell/shard_4.tres" id="1_16juc"]
 [ext_resource type="Texture2D" uid="uid://n0tbfppan7pj" path="res://assets/placeholders/shard.png" id="2_16juc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ynue0"]
@@ -9,10 +10,12 @@
 script = ExtResource("1_6d8q1")
 level = 3
 level_description = "Add two more shard projectiles"
+next_upgrade = ExtResource("1_16juc")
 cooldown = 0.4
 damage = 5.0
 projectile_speed = 60.0
 projectile_count = 5
+projectile_pierce = 2
 shape = SubResource("CircleShape2D_ynue0")
 texture = ExtResource("2_16juc")
 metadata/_custom_type_script = "uid://cruvp1vxd4ktu"

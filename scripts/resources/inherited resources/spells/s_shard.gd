@@ -14,4 +14,4 @@ func cast(player:Player, spell_handler:SpellHandler) -> void:
 		await spell_handler.get_tree().create_timer(multi_projectile_delay).timeout
 
 func shoot_shard():
-	GameInfo.projectile_holder.add_child(PlayerProjectile.new(projectile_speed, damage, shape, get_random_angle_vector(), texture))
+	GameInfo.projectile_holder.add_child(PlayerProjectile.new(projectile_speed, damage, shape, get_random_angle_vector(), texture, projectile_pierce))
