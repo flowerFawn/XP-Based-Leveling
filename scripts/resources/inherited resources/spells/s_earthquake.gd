@@ -2,7 +2,7 @@ extends Spell
 class_name SpellEarthquake
 
 func _init() -> void:
-	spell_id = "Earthquake"
+	ability_name = "Earthquake"
 	base_description = "Creates a localised earthquake around you, damaging nearby enemies"
 
 func cast(player:Player, spell_handler:SpellHandler) -> void:

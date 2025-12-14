@@ -8,12 +8,12 @@ radius = 45.0
 
 [resource]
 script = ExtResource("1_ifegb")
-level = 3
-level_description = "Lower Cooldown"
 cooldown = 1.6
 damage = 10.0
 projectile_speed = 40.0
 projectile_pierce = 1
 shape = SubResource("CircleShape2D_y6wjd")
 texture = ExtResource("2_ivx7u")
+level_description = "Lower Cooldown"
+level = 3
 metadata/_custom_type_script = "uid://cyuaiwt5dess3"

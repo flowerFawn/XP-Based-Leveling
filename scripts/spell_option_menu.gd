@@ -1,43 +1,43 @@
 extends HBoxContainer
-class_name SpellOptionMenu
-const SPELL_OPTION_BOX:PackedScene = preload("uid://cs5x04qv7e47i")
+class_name AbilityOptionMenu
+const ability_OPTION_BOX:PackedScene = preload("uid://cs5x04qv7e47i")
 
 func _input(event: InputEvent) -> void:
 	pass
 
-##The different spells will be unique
-func show_random_spell_options(option_count:int = 3) -> void:
+##The different abilitys will be unique
+func show_random_ability_options(option_count:int = 3) -> void:
 	get_tree().paused = true
-	var new_spell_option_box:SpellOptionBox
+	var new_ability_option_box:AbilityOptionBox
 	visible = true
-	var spells_already_picked:Array[Spell]
-	var spell:Spell
+	var abilitys_already_picked:Array[Ability]
+	var ability:Ability
 	for n in range(0, option_count):
-		spell = SpellShop.get_random_spell(spells_already_picked)
-		spells_already_picked.append(spell)
-		new_spell_option_box = SPELL_OPTION_BOX.instantiate()
-		new_spell_option_box.set_spell(spell)
-		new_spell_option_box.spell_picked.connect(spell_chosen)
-		add_child(new_spell_option_box)
-	var first_box:SpellOptionBox = get_child(0)
+		ability = SpellShop.get_random_ability(abilitys_already_picked)
+		abilitys_already_picked.append(ability)
+		new_ability_option_box = ability_OPTION_BOX.instantiate()
+		new_ability_option_box.set_ability(ability)
+		new_ability_option_box.ability_picked.connect(spell_chosen)
+		add_child(new_ability_option_box)
+	var first_box:AbilityOptionBox = get_child(0)
 	first_box.select_box()
 
-func show_set_spell_options(spells:Array[Spell]):
+func show_set_spell_options(abilities:Array[Ability]):
 	get_tree().paused = true
-	var new_spell_option_box:SpellOptionBox
+	var new_ability_option_box:AbilityOptionBox
 	visible = true
-	for spell in spells:
-		new_spell_option_box = SPELL_OPTION_BOX.instantiate()
-		new_spell_option_box.set_spell(spell)
-		new_spell_option_box.spell_picked.connect(spell_chosen)
-		add_child(new_spell_option_box)
-	var first_box:SpellOptionBox = get_child(0)
+	for ability in abilities:
+		new_ability_option_box = ability_OPTION_BOX.instantiate()
+		new_ability_option_box.set_spell(ability)
+		new_ability_option_box.spell_picked.connect(spell_chosen)
+		add_child(new_ability_option_box)
+	var first_box:AbilityOptionBox = get_child(0)
 	first_box.select_box()
 	
 		
-func spell_chosen(spell:Spell):
+func spell_chosen(ability:Ability):
 	for child in get_children():
 		child.queue_free()
-	SpellShop.give_spell(spell)
+	SpellShop.give_ability(ability)
 	visible = false
 	get_tree().paused = false

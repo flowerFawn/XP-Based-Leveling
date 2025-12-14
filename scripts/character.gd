@@ -86,7 +86,13 @@ func remove_spell(spell:Spell) -> void:
 	#spells.erase(spell)
 	
 ##Handles starting a spell, and removing a lower upgrade
-func add_spell(spell:Spell) -> void:
+func add_ability(ability:Ability) -> void:
+	if ability is Spell:
+		add_spell(ability)
+	elif ability is MagicItem: 
+		add_magic_item(ability)
+	
+func add_spell(spell:Spell):
 	if spell.level > 1:
 		for old_spell:Spell in spells.keys():
 			if old_spell.next_upgrade == spell:
@@ -94,5 +100,7 @@ func add_spell(spell:Spell) -> void:
 				break
 	start_spell(spell)
 	
+func add_magic_item(magic_item:MagicItem):
+	pass
 
 #endregion

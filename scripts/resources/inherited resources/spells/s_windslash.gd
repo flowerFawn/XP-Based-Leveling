@@ -2,7 +2,7 @@ extends Spell
 class_name SpellWindSlash
 
 func _init() -> void:
-	spell_id = "Wind Slash"
+	ability_name = "Wind Slash"
 	base_description = "Create a slash of wind"
 	
 func cast(player:Player, spell_handler:SpellHandler) -> void:

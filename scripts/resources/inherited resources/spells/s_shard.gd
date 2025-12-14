@@ -3,7 +3,7 @@ class_name SpellShard
 
 
 func _init() -> void:
-	spell_id = "Shard"
+	ability_name = "Shard"
 	base_description = "Shoots flurry of shards in all directions, randomly"
 
 func cast(player:Player, spell_handler:SpellHandler) -> void:

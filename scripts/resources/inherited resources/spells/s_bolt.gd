@@ -2,7 +2,7 @@ extends Spell
 class_name SpellBolt
 
 func _init() -> void:
-	spell_id = "Bolt"
+	ability_name = "Bolt"
 	base_description = "Shoots a bolt"
 
 func cast(player:Player, spell_handler:SpellHandler) -> void:

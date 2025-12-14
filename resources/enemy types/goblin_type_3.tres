@@ -2,7 +2,7 @@
 
 [ext_resource type="Resource" uid="uid://cj6251nhvsiy8" path="res://resources/movement types/straight_enemy_movement.tres" id="1_5huh1"]
 [ext_resource type="Script" uid="uid://58cfsa1tna1q" path="res://scripts/resources/base resources/enemy_type.gd" id="2_8ncid"]
-[ext_resource type="Texture2D" uid="uid://cf8meehm5l0yh" path="res://assets/placeholders/goblin.png" id="3_8sn4s"]
+[ext_resource type="Texture2D" uid="uid://07whejpe2a7c" path="res://assets/placeholders/endearingly pathetic goblin sprite 1.png" id="3_5huh1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nv008"]
 radius = 60.0
@@ -15,5 +15,5 @@ contact_damage = 12.0
 xp_reward = 1.0
 base_health = 12.0
 collision = SubResource("CircleShape2D_nv008")
-sprite = ExtResource("3_8sn4s")
+sprite = ExtResource("3_5huh1")
 metadata/_custom_type_script = "uid://58cfsa1tna1q"
