@@ -16,6 +16,7 @@ var y_orientation:int = 1
 ##Dictionary that stores the spells and their associated spell handlers. 
 ##This is a dictionary so that the spellhandlers can be found using their associated spell resource.
 var spells:Dictionary[Spell, SpellHandler] = {}
+var magic_items:Array[MagicItem] = []
 
 func _ready() -> void:
 	GameInfo.player = self
@@ -60,7 +61,8 @@ func get_closest_enemy() -> Vector2:
 
 #region HEALTH
 func take_damage(amount:float) -> void:
-	active_health -= amount
+	var affected_damage:float = SpellShop.run_through_magic_items(amount, &"affect_incoming_damage")
+	active_health -= affected_damage
 	node_progress.value = active_health
 	if active_health <= 0:
 		die()
@@ -70,7 +72,7 @@ func die():
 	queue_free()
 #endregion
 
-#region SPELLS
+#region ABILITIES
 ##Actually creates the spellhandler and starts the casting loop
 func start_spell(spell:Spell) -> void:
 	var new_spellhandler = SpellHandler.new(spell)
@@ -83,7 +85,7 @@ func remove_spell(spell:Spell) -> void:
 		print("This spell is not there to be removed!")
 		return
 	spells[spell].free()
-	#spells.erase(spell)
+	spells.erase(spell)
 	
 ##Handles starting a spell, and removing a lower upgrade
 func add_ability(ability:Ability) -> void:
@@ -92,7 +94,7 @@ func add_ability(ability:Ability) -> void:
 	elif ability is MagicItem: 
 		add_magic_item(ability)
 	
-func add_spell(spell:Spell):
+func add_spell(spell:Spell) -> void:
 	if spell.level > 1:
 		for old_spell:Spell in spells.keys():
 			if old_spell.next_upgrade == spell:
@@ -100,7 +102,22 @@ func add_spell(spell:Spell):
 				break
 	start_spell(spell)
 	
-func add_magic_item(magic_item:MagicItem):
-	pass
+func add_magic_item(magic_item:MagicItem) -> void:
+	if magic_item.level > 1:
+		for old_magic_item:MagicItem in magic_items:
+			if old_magic_item.next_upgrade == old_magic_item:
+				remove_magic_item(old_magic_item)
+				break
+	start_magic_item(magic_item)
+				
+func remove_magic_item(magic_item:MagicItem) -> void:
+	if not magic_item in magic_items:
+		print("Magic item not already there!")
+		return
+	magic_items.erase(magic_item)
+	
+func start_magic_item(magic_item:MagicItem) -> void:
+	magic_items.append(magic_item)
+	
 
 #endregion

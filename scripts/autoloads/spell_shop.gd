@@ -14,7 +14,7 @@ var spell_xp:float = 0:
 			GameInfo.game_ui.xp_progress.max_value = next_required_xp
 var next_required_xp:float = 10
 var current_ability_pool:Array[Ability] = [load("uid://7vmgb80p33sl"), 
-load("uid://ciomfgvjduepp"), load("uid://dh4308dsgb1xc"), load("uid://bb3wur6d4qxcf")]
+load("uid://ciomfgvjduepp"), load("uid://dh4308dsgb1xc"), load("uid://bb3wur6d4qxcf"), load("uid://fdx6pmmkh50r")]
 
 #Not used outside of testing
 #func award_random_spell() -> void:
@@ -61,3 +61,10 @@ func give_ability(ability:Ability):
 #currently always gives 3, maybe change the count?
 func award_ability_option() -> void:
 	spell_option_menu.show_random_ability_options()
+	
+func run_through_magic_items(value:Variant, method:StringName) -> Variant:
+	var new_value = value
+	for magic_item in GameInfo.player.magic_items:
+		if magic_item.has_method(method):
+			new_value = magic_item.call(method, new_value)
+	return new_value
