@@ -14,7 +14,11 @@ var spell_xp:float = 0:
 			GameInfo.game_ui.xp_progress.max_value = next_required_xp
 var next_required_xp:float = 10
 var current_ability_pool:Array[Ability] = [load("uid://7vmgb80p33sl"), 
-load("uid://ciomfgvjduepp"), load("uid://dh4308dsgb1xc"), load("uid://bb3wur6d4qxcf"), load("uid://fdx6pmmkh50r")]
+load("uid://ciomfgvjduepp"), 
+load("uid://dh4308dsgb1xc"), 
+load("uid://bb3wur6d4qxcf"), 
+load("uid://fdx6pmmkh50r"), 
+load("uid://cnpu8eq5ibo8b")]
 
 #Not used outside of testing
 #func award_random_spell() -> void:
