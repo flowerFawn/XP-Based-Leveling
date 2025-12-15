@@ -1,6 +1,8 @@
 extends Node
 class_name GameController
 
+var time_elapsed:float = 0
+
 var enemy_type_array:Array[EnemyType] = [
 	preload("uid://bg3osrk3a4ni5"), #0 - goblin type 1
 	preload("uid://cr5n22p055thh"), #1 - gobin type 2
@@ -10,15 +12,18 @@ var enemy_type_array:Array[EnemyType] = [
 	preload("uid://dqunbnln7x2n0"), #5 - loot goblin
 	preload("uid://dc0p6fukw7bp6"), #6 - martyr
 ]
-var enemy_type_weights_array:PackedFloat32Array = PackedFloat32Array([
-	1,
-	1,
-	1,
-	1,
-	0.3,
-	0.05,
-	0.3
+##List of polynomials and sine functions for determining enemy weights based on time survived
+var enemy_type_weight_functions_array:Array[Callable] = ([
+	func (x) -> float: return -0.05 * x * (x - 40) + 1,
+	func (x) -> float: return -0.0005 * (x-25) * (x-500),
+	func (x) -> float: return -0.0005 * (x-25) * (x-500),
+	func (x) -> float: return -0.0005 * (x-25) * (x-500),
+	func (x) -> float: return sin(x * 0.02) * 1.5,
+	func (x) -> float: return sin(x * 0.05) * 0.1,
+	func (x) -> float: return sin(x * 0.01) * 1.5
 ])
+##The most recently calculated enemy weights, based on enemy type weight functions array
+var enemy_type_current_weight_array:PackedFloat32Array = PackedFloat32Array([])
 var enemy_count:float = 2
 
 func update_directions() -> void:
@@ -31,6 +36,7 @@ func update_directions() -> void:
 
 
 func spawn_enemies() -> void:
+	update_enemy_weights(time_elapsed)
 	for enemy_to_spawn:int in range(ceili(enemy_count)):
 		spawn_enemy()
 	enemy_count += 0.3
@@ -53,10 +59,25 @@ func spawn_enemy():
 
 func pick_weighted_random_enemy(level:int) -> EnemyType:
 	var enemy_type:EnemyType
-	enemy_type = enemy_type_array[GameInfo.rnd.rand_weighted(enemy_type_weights_array)]
+	enemy_type = enemy_type_array[GameInfo.rnd.rand_weighted(enemy_type_current_weight_array)]
 	return enemy_type
 	
+func update_enemy_weights(seconds_survived:float) -> void:
+	#This should be the index within the enemy type functions array, which should map on
+	var new_weights_array:PackedFloat32Array = PackedFloat32Array([])
+	var enemy_weight:float
+	for i in range(len(enemy_type_weight_functions_array)):
+		enemy_weight = enemy_type_weight_functions_array[i].call(seconds_survived)
+		if enemy_weight > 0:
+			new_weights_array.append(enemy_weight)
+		else:
+			new_weights_array.append(0)
+	print(new_weights_array)
+	enemy_type_current_weight_array = new_weights_array
 	
+func _process(delta: float) -> void:
+	time_elapsed += delta
+	GameInfo.game_ui.timer_label.text = "%02d:%02d" % [int(floor(time_elapsed / 60)), int(round(fmod(time_elapsed, 60)))]
 	
 	
 	

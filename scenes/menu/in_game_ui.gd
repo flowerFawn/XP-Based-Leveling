@@ -2,6 +2,7 @@ extends Control
 class_name InGameUI
 
 @export var xp_progress:TextureProgressBar
+@export var timer_label:Label
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

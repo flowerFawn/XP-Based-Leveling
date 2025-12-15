@@ -7,6 +7,6 @@ size = Vector2(100, 100)
 
 [resource]
 script = ExtResource("1_vk4wj")
-icon = SubResource("PlaceholderTexture2D_vk4wj")
 cooldown = 1.0
+icon = SubResource("PlaceholderTexture2D_vk4wj")
 metadata/_custom_type_script = "uid://c7qc8cmh1q51h"
