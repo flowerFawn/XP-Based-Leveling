@@ -9,9 +9,10 @@ radius = 200.0
 
 [resource]
 script = ExtResource("1_n651w")
-next_upgrade = ExtResource("1_bfrpe")
 cooldown = 5.0
 damage = 12.0
 shape = SubResource("CircleShape2D_cae2g")
 texture = ExtResource("3_g4o1b")
+rarity = 2
+next_upgrade = ExtResource("1_bfrpe")
 metadata/_custom_type_script = "uid://dqtj3553eq3ci"

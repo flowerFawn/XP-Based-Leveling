@@ -6,5 +6,6 @@
 [resource]
 script = ExtResource("1_bvoge")
 damage_increase = 1.05
+rarity = 2
 next_upgrade = ExtResource("1_gdfa4")
 metadata/_custom_type_script = "uid://dbdyiwijocnoa"

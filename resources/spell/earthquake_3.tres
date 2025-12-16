@@ -8,10 +8,11 @@ radius = 300.0
 
 [resource]
 script = ExtResource("1_nbsq4")
-level = 3
 cooldown = 1.0
 damage = 30.0
 shape = SubResource("CircleShape2D_cae2g")
 texture = ExtResource("2_d5mal")
 visual_scale = 1.1
+level = 3
+rarity = 2
 metadata/_custom_type_script = "uid://dqtj3553eq3ci"

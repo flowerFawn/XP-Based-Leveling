@@ -12,6 +12,7 @@ func show_random_ability_options(option_count:int = 3) -> void:
 	visible = true
 	var abilitys_already_picked:Array[Ability]
 	var ability:Ability
+	SpellShop.update_ability_weights()
 	for n in range(0, option_count):
 		ability = SpellShop.get_random_ability(abilitys_already_picked)
 		abilitys_already_picked.append(ability)

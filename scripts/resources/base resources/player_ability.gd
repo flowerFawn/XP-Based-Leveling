@@ -8,8 +8,8 @@ class_name Ability
 @export var level_description:String
 ##The level of this spell, starting at 1. Important for removing the previous level of spell, and menus
 @export_range(1, 20) var level:int  = 1
-
-
+##The rarity of the ability. The weight given to it is the reciprocal of this * reciprocal of level
+@export var rarity:int = 1
 ##The Image used in the menu
 @export var icon:Texture2D
 ##The ability that will be added to the ability pool when this ability is chosen. If left null there are no more upgrades to this ability

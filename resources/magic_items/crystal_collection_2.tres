@@ -7,4 +7,5 @@ script = ExtResource("1_l3j1j")
 damage_increase = 1.1
 level_description = "Increases damage boost"
 level = 2
+rarity = 2
 metadata/_custom_type_script = "uid://dbdyiwijocnoa"
