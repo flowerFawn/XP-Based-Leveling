@@ -7,18 +7,19 @@ var spell_xp:float = 0:
 		GameInfo.game_ui.xp_progress.value = spell_xp
 		if spell_xp >= next_required_xp:
 			spell_xp -= next_required_xp
-			next_required_xp *= 2
+			next_required_xp *= 0.9
 			GameInfo.player_level += 1
 			call_deferred(&"award_ability_option")
 			GameInfo.game_ui.xp_progress.value = spell_xp
 			GameInfo.game_ui.xp_progress.max_value = next_required_xp
-var next_required_xp:float = 10
+var next_required_xp:float = 2
 var current_ability_pool:Array[Ability] = [load("uid://7vmgb80p33sl"), 
 load("uid://ciomfgvjduepp"), 
 load("uid://dh4308dsgb1xc"), 
 load("uid://bb3wur6d4qxcf"), 
 load("uid://fdx6pmmkh50r"), 
-load("uid://cnpu8eq5ibo8b")]
+load("uid://cnpu8eq5ibo8b"),
+load("uid://buu4u5w3e3yf3")]
 
 #Not used outside of testing
 #func award_random_spell() -> void:

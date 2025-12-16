@@ -105,19 +105,27 @@ func add_spell(spell:Spell) -> void:
 func add_magic_item(magic_item:MagicItem) -> void:
 	if magic_item.level > 1:
 		for old_magic_item:MagicItem in magic_items:
-			if old_magic_item.next_upgrade == old_magic_item:
+			if old_magic_item.next_upgrade == magic_item:
 				remove_magic_item(old_magic_item)
 				break
 	start_magic_item(magic_item)
 				
 func remove_magic_item(magic_item:MagicItem) -> void:
+	print("yup")
 	if not magic_item in magic_items:
 		print("Magic item not already there!")
 		return
 	magic_items.erase(magic_item)
 	
 func start_magic_item(magic_item:MagicItem) -> void:
-	magic_items.append(magic_item)
+	var n:int = 0
+	for existing_magic_item in magic_items:
+		if existing_magic_item.application_order > magic_item.application_order:
+			break
+		else:
+			n += 1
+	magic_items.insert(n ,magic_item)
+	
 	
 
 #endregion

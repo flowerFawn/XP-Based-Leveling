@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="MIBastionsAndBugbearsHandbook" load_steps=3 format=3 uid="uid://jty3ynw153f3"]
+
+[ext_resource type="Resource" uid="uid://be2k6nn0fshr1" path="res://resources/magic_items/bnb_handbook_3.tres" id="1_aroew"]
+[ext_resource type="Script" uid="uid://65wm4f0srytb" path="res://scripts/resources/inherited resources/magic items/usable/bastions_and_bugbears_handbook.gd" id="1_r4dm3"]
+
+[resource]
+script = ExtResource("1_r4dm3")
+flat_damage_boost = 2
+application_order = 10
+level = 2
+next_upgrade = ExtResource("1_aroew")
+metadata/_custom_type_script = "uid://65wm4f0srytb"
