@@ -8,11 +8,11 @@ size = Vector2(20, 100)
 
 [resource]
 script = ExtResource("1_gwhyu")
-level = 2
-level_description = "Attacks a second time"
 cooldown = 1.5
 damage = 10.0
 projectile_speed = 200.0
 shape = SubResource("RectangleShape2D_f44ng")
 texture = ExtResource("2_4ihi7")
+level_description = "Attacks a second time"
+level = 2
 metadata/_custom_type_script = "uid://cpkamubmxnpfa"

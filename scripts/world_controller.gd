@@ -11,4 +11,3 @@ func _ready() -> void:
 	GameInfo.enemy_holder = enemy_holder
 	GameInfo.game_ui = game_ui
 	SpellShop.spell_option_menu = spell_option_menu
-	SpellShop.award_ability_option()

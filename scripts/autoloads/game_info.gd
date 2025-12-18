@@ -8,6 +8,7 @@ var game_ui:InGameUI
 var enemy_holder:Node2D
 var player_level:int = 1
 var closest_enemy_to_player_point:Vector2
+var character:Character
 
 
 func update_player_info(player:Player) -> void:

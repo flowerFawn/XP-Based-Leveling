@@ -20,7 +20,7 @@ func _ready() -> void:
 func button_pressed(button_function:StringName) -> void:
 	match button_function:
 		&"Play":
-			get_tree().change_scene_to_packed(preload("uid://dp1bn4tu70hr6"))
+			get_tree().change_scene_to_packed(preload("uid://caihircp2d6qc"))
 		&"Quit":
 			get_tree().quit()
 

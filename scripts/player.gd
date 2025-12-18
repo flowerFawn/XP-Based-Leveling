@@ -20,10 +20,16 @@ var magic_items:Array[MagicItem] = []
 
 func _ready() -> void:
 	GameInfo.player = self
+	set_character(GameInfo.character)
 	node_progress.min_value = 0
 	node_progress.max_value = max_health
 	node_progress.value = active_health
-
+	
+func set_character(character:Character) -> void:
+	add_ability(character.starting_spell)
+	add_ability(character.starting_magic_item)
+	SpellShop.current_ability_pool = character.starting_ability_pool.abilities.duplicate()
+	
 func _physics_process(delta: float) -> void:
 	var movement_vector = speed * get_direction()
 	move_and_collide(movement_vector * delta)

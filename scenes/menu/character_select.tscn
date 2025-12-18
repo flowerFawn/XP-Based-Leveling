@@ -1,0 +1,140 @@
+[gd_scene load_steps=5 format=3 uid="uid://caihircp2d6qc"]
+
+[ext_resource type="Script" uid="uid://do146oyuisrlu" path="res://scripts/menu/character_select_menu.gd" id="1_0frw4"]
+[ext_resource type="Theme" uid="uid://cdjlu0ryhrw2y" path="res://resources/built-in/themes/character_select.tres" id="1_vffxf"]
+[ext_resource type="Script" uid="uid://bd3o2cswmjmgn" path="res://scripts/controls/character_select_button.gd" id="2_fts7l"]
+[ext_resource type="Resource" uid="uid://ml6ajkpkur4j" path="res://resources/characters/archmage.tres" id="2_vffxf"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="CharacterSelect" type="Control" parent="." node_paths=PackedStringArray("node_start_button")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0frw4")
+node_start_button = NodePath("VBoxContainer/Button")
+
+[node name="GridContainer" type="GridContainer" parent="CharacterSelect"]
+custom_minimum_size = Vector2(0, -0.405)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25
+anchor_right = 0.75
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+columns = 4
+
+[node name="CharacterSelectButton" type="Button" parent="CharacterSelect/GridContainer"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+theme = ExtResource("1_vffxf")
+action_mode = 0
+expand_icon = true
+script = ExtResource("2_fts7l")
+represents_character = ExtResource("2_vffxf")
+metadata/_custom_type_script = "uid://bd3o2cswmjmgn"
+
+[node name="CharacterSelectButton2" type="Button" parent="CharacterSelect/GridContainer"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+theme = ExtResource("1_vffxf")
+action_mode = 0
+expand_icon = true
+script = ExtResource("2_fts7l")
+represents_character = ExtResource("2_vffxf")
+metadata/_custom_type_script = "uid://bd3o2cswmjmgn"
+
+[node name="CharacterSelectButton3" type="Button" parent="CharacterSelect/GridContainer"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+theme = ExtResource("1_vffxf")
+action_mode = 0
+expand_icon = true
+script = ExtResource("2_fts7l")
+represents_character = ExtResource("2_vffxf")
+metadata/_custom_type_script = "uid://bd3o2cswmjmgn"
+
+[node name="CharacterSelectButton4" type="Button" parent="CharacterSelect/GridContainer"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+theme = ExtResource("1_vffxf")
+action_mode = 0
+expand_icon = true
+script = ExtResource("2_fts7l")
+represents_character = ExtResource("2_vffxf")
+metadata/_custom_type_script = "uid://bd3o2cswmjmgn"
+
+[node name="CharacterSelectButton5" type="Button" parent="CharacterSelect/GridContainer"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+theme = ExtResource("1_vffxf")
+action_mode = 0
+expand_icon = true
+script = ExtResource("2_fts7l")
+represents_character = ExtResource("2_vffxf")
+metadata/_custom_type_script = "uid://bd3o2cswmjmgn"
+
+[node name="CharacterSelectButton6" type="Button" parent="CharacterSelect/GridContainer"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+theme = ExtResource("1_vffxf")
+action_mode = 0
+expand_icon = true
+script = ExtResource("2_fts7l")
+represents_character = ExtResource("2_vffxf")
+metadata/_custom_type_script = "uid://bd3o2cswmjmgn"
+
+[node name="CharacterSelectButton7" type="Button" parent="CharacterSelect/GridContainer"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+theme = ExtResource("1_vffxf")
+action_mode = 0
+expand_icon = true
+script = ExtResource("2_fts7l")
+represents_character = ExtResource("2_vffxf")
+metadata/_custom_type_script = "uid://bd3o2cswmjmgn"
+
+[node name="CharacterSelectButton8" type="Button" parent="CharacterSelect/GridContainer"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+theme = ExtResource("1_vffxf")
+action_mode = 0
+expand_icon = true
+script = ExtResource("2_fts7l")
+represents_character = ExtResource("2_vffxf")
+metadata/_custom_type_script = "uid://bd3o2cswmjmgn"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CharacterSelect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25
+anchor_top = 0.5
+anchor_right = 0.75
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CharacterSelect/VBoxContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_vertical = 7
+
+[node name="Button" type="Button" parent="CharacterSelect/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 7
+disabled = true
+text = "Begin!"
+
+[node name="BackButton" type="Button" parent="CharacterSelect"]
+layout_mode = 0
+offset_right = 113.0
+offset_bottom = 104.0
+text = "Back
+"
+
+[connection signal="pressed" from="CharacterSelect/VBoxContainer/Button" to="CharacterSelect" method="start_game_proper"]
+[connection signal="pressed" from="CharacterSelect/BackButton" to="CharacterSelect" method="_on_back_button_pressed"]
