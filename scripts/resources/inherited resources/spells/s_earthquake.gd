@@ -5,7 +5,7 @@ func _init() -> void:
 	ability_name = "Earthquake"
 	base_description = "Creates a localised earthquake around you, damaging nearby enemies"
 
-func cast(player:Player, spell_handler:SpellHandler) -> void:
+func cast() -> void:
 	var shapecast:ShapeCast2D
 	shapecast = create_shapecast(shape)
 	player.add_child(shapecast)

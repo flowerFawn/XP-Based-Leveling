@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="MIMagicalRevolver" load_steps=2 format=3 uid="uid://pav17delc8ek"]
+
+[ext_resource type="Script" uid="uid://bfk2l7r80cua0" path="res://scripts/resources/inherited resources/magic items/usable/magic_revolver.gd" id="1_xkigi"]
+
+[resource]
+script = ExtResource("1_xkigi")
+extra_projectiles = 2
+level = 2
+rarity = 2
+metadata/_custom_type_script = "uid://bfk2l7r80cua0"

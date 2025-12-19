@@ -5,13 +5,15 @@ func _init() -> void:
 	ability_name = "Wind Slash"
 	base_description = "Create a slash of wind"
 	
-func cast(player:Player, spell_handler:SpellHandler) -> void:
-	do_slash(player, spell_handler)
-	if level >= 2:
-		do_slash(player, spell_handler, true)
+func cast() -> void:
+	var flip:bool = false
+	for n in range(projectile_count):
+		do_slash(flip)
+		flip = not flip
+		await wait_time(multi_projectile_delay)
 		
 
-func do_slash(player, spell_handler, other_direction:bool = false) -> void:
+func do_slash(other_direction:bool = false) -> void:
 	var flip_again:int = 1
 	var shapecast:ShapeCast2D = create_shapecast(shape)
 	if other_direction:

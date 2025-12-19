@@ -13,6 +13,7 @@ cooldown = 2.0
 damage = 9.0
 projectile_speed = 40.0
 projectile_pierce = 1
+multi_projectile_delay = 0.1
 shape = SubResource("CircleShape2D_w25f6")
 texture = ExtResource("3_v0md5")
 next_upgrade = ExtResource("1_v0md5")

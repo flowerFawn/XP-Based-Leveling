@@ -10,6 +10,7 @@
 
 [resource]
 script = ExtResource("1_bsn0i")
+name = "Archmage"
 starting_ability_pool = ExtResource("4_62uj4")
 starting_spell = ExtResource("3_3fcys")
 starting_magic_item = ExtResource("2_gurd5")

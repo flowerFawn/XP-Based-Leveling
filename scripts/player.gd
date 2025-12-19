@@ -81,9 +81,11 @@ func die():
 #region ABILITIES
 ##Actually creates the spellhandler and starts the casting loop
 func start_spell(spell:Spell) -> void:
-	var new_spellhandler = SpellHandler.new(spell)
-	add_child(new_spellhandler, true)
+	var new_spellhandler:SpellHandler = SpellHandler.new(spell)
+	spell.player = self
+	spell.spell_handler = new_spellhandler
 	spells[spell] = new_spellhandler
+	add_child(new_spellhandler, true)
 	
 ##Removes a spell and stops it running. mainly used for lower upgrades of spells
 func remove_spell(spell:Spell) -> void:

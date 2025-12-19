@@ -14,6 +14,6 @@ func _ready() -> void:
 		start(spell.cooldown)
 	
 func trigger_spell() -> void:
-	spell.cast(GameInfo.player, self)
+	spell.cast()
 	
 	

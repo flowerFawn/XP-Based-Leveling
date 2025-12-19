@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="AbilityPool" load_steps=9 format=3 uid="uid://bpa7drmk0sban"]
+
+[ext_resource type="Script" uid="uid://i4vxs0c4oet7" path="res://scripts/resources/base resources/player_ability.gd" id="1_yyggw"]
+[ext_resource type="Script" uid="uid://cppbyt13invqd" path="res://scripts/resources/base resources/ability_pool.gd" id="2_8tfyf"]
+[ext_resource type="Resource" uid="uid://7vmgb80p33sl" path="res://resources/spell/shard_1.tres" id="2_y8ce4"]
+[ext_resource type="Resource" uid="uid://ciomfgvjduepp" path="res://resources/spell/bolt_1.tres" id="3_in45v"]
+[ext_resource type="Resource" uid="uid://dh4308dsgb1xc" path="res://resources/spell/earthquake_1.tres" id="4_mqlwa"]
+[ext_resource type="Resource" uid="uid://bb3wur6d4qxcf" path="res://resources/spell/windslash_1.tres" id="5_s4t2w"]
+[ext_resource type="Resource" uid="uid://cnpu8eq5ibo8b" path="res://resources/magic_items/crystal_collection_1.tres" id="6_8tevm"]
+[ext_resource type="Resource" uid="uid://buu4u5w3e3yf3" path="res://resources/magic_items/bnb_handbook_1.tres" id="7_ymv1d"]
+
+[resource]
+script = ExtResource("2_8tfyf")
+abilities = Array[ExtResource("1_yyggw")]([ExtResource("2_y8ce4"), ExtResource("3_in45v"), ExtResource("4_mqlwa"), ExtResource("5_s4t2w"), ExtResource("6_8tevm"), ExtResource("7_ymv1d")])
+metadata/_custom_type_script = "uid://cppbyt13invqd"

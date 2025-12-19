@@ -3,7 +3,6 @@ class_name Spell
 ##The resource used for spells that are repeatedly cast as attacks. Contains the functions to cast the spell.
 ##These variables tend to be used differently by different spells, and not all fields will be used by all spells.
 
-
 @export_group("Effects")
 ##Time in seconds between the cast being called. if this is set to 0, it will only be cast once
 @export var cooldown:float
@@ -11,7 +10,9 @@ class_name Spell
 ##How quickly a projectile travels. May also be used for the length of a shapecast
 @export var projectile_speed:float
 ##How many projectiles are created, per cast
-@export var projectile_count:int = 1
+@export var projectile_count:int = 1:
+	get:
+		return SpellShop.run_through_magic_items(projectile_count, &"affect_projectile_count")
 ##How many enemies a projectile can pierce through before disappearing. If set to zero this is infinite
 @export var projectile_pierce:int = 0
 ##An option delay between the creation of multiple projectiles in the same casting, in seconds.
@@ -25,11 +26,11 @@ class_name Spell
 @export var visual_scale:float = 1
 
 
+var spell_handler:SpellHandler
+var player:Player
 
-func cast(player:Player, spell_handler:SpellHandler) -> void:
+func cast() -> void:
 	print("A")
-
-
 #region USEFUL SPELL FUNCTIONS
 	
 func get_random_angle_vector() -> Vector2:
@@ -38,7 +39,9 @@ func get_random_angle_vector() -> Vector2:
 func get_direction_to_nearest_enemy() -> Vector2:
 	return GameInfo.player_position.direction_to(GameInfo.closest_enemy_to_player_point)
 
-
+##you need to await this function if you want to await it
+func wait_time(time:float) -> void:
+	await spell_handler.get_tree().create_timer(time).timeout
 	
 	
 

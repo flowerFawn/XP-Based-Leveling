@@ -6,7 +6,7 @@ func _init() -> void:
 	ability_name = "Shard"
 	base_description = "Shoots flurry of shards in all directions, randomly"
 
-func cast(player:Player, spell_handler:SpellHandler) -> void:
+func cast() -> void:
 	if not GameInfo.projectile_holder:
 		return
 	for n in range(projectile_count):
