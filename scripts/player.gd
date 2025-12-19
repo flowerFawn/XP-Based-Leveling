@@ -26,9 +26,9 @@ func _ready() -> void:
 	node_progress.value = active_health
 	
 func set_character(character:Character) -> void:
-	add_ability(character.starting_spell)
-	add_ability(character.starting_magic_item)
 	SpellShop.current_ability_pool = character.starting_ability_pool.abilities.duplicate()
+	SpellShop.give_ability(character.starting_spell)
+	SpellShop.give_ability(character.starting_magic_item)
 	
 func _physics_process(delta: float) -> void:
 	var movement_vector = speed * get_direction()

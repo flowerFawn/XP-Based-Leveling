@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="SpellBolt" load_steps=4 format=3 uid="uid://dduhilr7qte0h"]
+[gd_resource type="Resource" script_class="SpellBolt" load_steps=5 format=3 uid="uid://dduhilr7qte0h"]
 
+[ext_resource type="Resource" uid="uid://cvil8snk4wdft" path="res://resources/spell/bolt_3.tres" id="1_psg8p"]
 [ext_resource type="Script" uid="uid://cyuaiwt5dess3" path="res://scripts/resources/inherited resources/spells/s_bolt.gd" id="1_y6wjd"]
 [ext_resource type="Texture2D" uid="uid://xmadt3jeoget" path="res://assets/placeholders/bolt.png" id="2_tm2tl"]
 
@@ -16,4 +17,5 @@ shape = SubResource("CircleShape2D_y6wjd")
 texture = ExtResource("2_tm2tl")
 level_description = "Increased damage"
 level = 2
+next_upgrade = ExtResource("1_psg8p")
 metadata/_custom_type_script = "uid://cyuaiwt5dess3"
