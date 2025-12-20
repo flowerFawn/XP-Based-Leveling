@@ -33,6 +33,13 @@ var player:Player
 
 func cast() -> void:
 	print("A")
+	
+func initial_spell_setup() -> void:
+	pass
+	
+func clean_up_for_removal() -> void:
+	pass
+
 #region USEFUL SPELL FUNCTIONS
 	
 func get_random_angle_vector() -> Vector2:

@@ -7,7 +7,7 @@
 [ext_resource type="Resource" uid="uid://1p35pb8pnkv7" path="res://resources/characters/shard.tres" id="5_0frw4"]
 [ext_resource type="Resource" uid="uid://dguulqdo5x3a8" path="res://resources/characters/sacred_light.tres" id="6_m7y3p"]
 [ext_resource type="Resource" uid="uid://bon0kci1aeje0" path="res://resources/characters/windslash.tres" id="6_nbeft"]
-[ext_resource type="Resource" uid="uid://bd2xytxkapqbj" path="res://resources/characters/volt.tres" id="7_i4i37"]
+[ext_resource type="Resource" uid="uid://bd2xytxkapqbj" path="res://resources/characters/static_sphere.tres" id="7_i4i37"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 

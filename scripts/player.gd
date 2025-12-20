@@ -92,7 +92,8 @@ func remove_spell(spell:Spell) -> void:
 	if not spells.has(spell):
 		print("This spell is not there to be removed!")
 		return
-	spells[spell].free()
+	spell.clean_up_for_removal()
+	spells[spell].queue_free()
 	spells.erase(spell)
 	
 ##Handles starting a spell, and removing a lower upgrade

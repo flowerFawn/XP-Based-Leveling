@@ -9,6 +9,7 @@ func _init(new_spell:Spell) -> void:
 
 #Done after joining the scene tree, so the timer can be started
 func _ready() -> void:
+	spell.initial_spell_setup()
 	trigger_spell()
 	if not spell.cooldown == 0:
 		start(spell.cooldown)

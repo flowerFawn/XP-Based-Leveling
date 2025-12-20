@@ -1,5 +1,5 @@
 extends Spell
-class_name SpellVolt
+class_name SpellOldVolt
 
 func _init() -> void:
 	base_description = "Creates a line of electrical energy that harms enemies it passes through"
