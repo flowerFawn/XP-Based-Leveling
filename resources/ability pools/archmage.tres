@@ -1,15 +1,16 @@
-[gd_resource type="Resource" script_class="AbilityPool" load_steps=9 format=3 uid="uid://bwwyvlsexinen"]
+[gd_resource type="Resource" script_class="AbilityPool" load_steps=10 format=3 uid="uid://bwwyvlsexinen"]
 
 [ext_resource type="Script" uid="uid://i4vxs0c4oet7" path="res://scripts/resources/base resources/player_ability.gd" id="1_xsy38"]
 [ext_resource type="Script" uid="uid://cppbyt13invqd" path="res://scripts/resources/base resources/ability_pool.gd" id="2_8mi3s"]
-[ext_resource type="Resource" uid="uid://ciomfgvjduepp" path="res://resources/spell/bolt_1.tres" id="2_leepg"]
+[ext_resource type="Resource" uid="uid://ciomfgvjduepp" path="res://resources/spell/magic_missile_1.tres" id="2_b3faa"]
 [ext_resource type="Resource" uid="uid://7vmgb80p33sl" path="res://resources/spell/shard_1.tres" id="3_b3faa"]
 [ext_resource type="Resource" uid="uid://bb3wur6d4qxcf" path="res://resources/spell/windslash_1.tres" id="4_ootwi"]
 [ext_resource type="Resource" uid="uid://buu4u5w3e3yf3" path="res://resources/magic_items/bnb_handbook_1.tres" id="5_sbktm"]
 [ext_resource type="Resource" uid="uid://fdx6pmmkh50r" path="res://resources/magic_items/teachers_pet_1.tres" id="6_nowvb"]
 [ext_resource type="Resource" uid="uid://cnpu8eq5ibo8b" path="res://resources/magic_items/crystal_collection_1.tres" id="7_wmgg2"]
+[ext_resource type="Resource" uid="uid://cbh1n057q23bg" path="res://resources/spell/firebolt_1.tres" id="8_ootwi"]
 
 [resource]
 script = ExtResource("2_8mi3s")
-abilities = Array[ExtResource("1_xsy38")]([ExtResource("2_leepg"), ExtResource("3_b3faa"), ExtResource("4_ootwi"), ExtResource("5_sbktm"), ExtResource("6_nowvb"), ExtResource("7_wmgg2")])
+abilities = Array[ExtResource("1_xsy38")]([ExtResource("2_b3faa"), ExtResource("3_b3faa"), ExtResource("4_ootwi"), ExtResource("5_sbktm"), ExtResource("6_nowvb"), ExtResource("7_wmgg2"), ExtResource("8_ootwi")])
 metadata/_custom_type_script = "uid://cppbyt13invqd"

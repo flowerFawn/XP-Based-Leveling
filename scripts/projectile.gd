@@ -8,8 +8,9 @@ var active_speed:float
 var active_direction:Vector2
 var remaining_pierce:int
 var start_position
+var position_offset:Vector2
 
-func _init(speed:float, damage:float, shape:Shape2D, direction:Vector2, sprite:Texture2D, max_pierce:int = 0, new_start_position:Vector2 = Vector2.ZERO) -> void:
+func _init(speed:float, damage:float, shape:Shape2D, direction:Vector2, sprite:Texture2D, max_pierce:int = 0, offset:Vector2 = Vector2.ZERO,new_start_position:Vector2 = Vector2.ZERO) -> void:
 	set_collision_layer_value(1, false)
 	set_collision_mask_value(1, false)
 	set_collision_mask_value(2, true)
@@ -23,6 +24,7 @@ func _init(speed:float, damage:float, shape:Shape2D, direction:Vector2, sprite:T
 	active_speed = speed
 	active_direction = direction.normalized()
 	remaining_pierce = max_pierce
+	position_offset = offset
 	#not start position is true when it is equal to Vector2.ZERO (0, 0)
 	#this means by default it will begin at the player position
 	if not start_position:
@@ -33,7 +35,7 @@ func _init(speed:float, damage:float, shape:Shape2D, direction:Vector2, sprite:T
 	
 
 func _ready() -> void:
-	global_position = start_position
+	global_position = start_position + position_offset
 	var decay_timer:Timer = Timer.new()
 	add_child(decay_timer)
 	##Time the projectile exists until it decays

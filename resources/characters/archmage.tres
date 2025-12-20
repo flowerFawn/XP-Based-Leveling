@@ -3,8 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://clmxcj044sejr" path="res://assets/placeholders/big_wizard_placeholder.png" id="1_3fcys"]
 [ext_resource type="Script" uid="uid://dse7vf0l5vfv0" path="res://scripts/resources/base resources/character.gd" id="1_bsn0i"]
 [ext_resource type="Resource" uid="uid://fdx6pmmkh50r" path="res://resources/magic_items/teachers_pet_1.tres" id="2_gurd5"]
-[ext_resource type="Resource" uid="uid://ciomfgvjduepp" path="res://resources/spell/bolt_1.tres" id="3_3fcys"]
 [ext_resource type="Resource" uid="uid://bwwyvlsexinen" path="res://resources/ability pools/archmage.tres" id="4_62uj4"]
+[ext_resource type="Resource" uid="uid://cbh1n057q23bg" path="res://resources/spell/firebolt_1.tres" id="5_3fcys"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tkcu6"]
 
@@ -12,7 +12,7 @@
 script = ExtResource("1_bsn0i")
 name = "Archmage"
 starting_ability_pool = ExtResource("4_62uj4")
-starting_spell = ExtResource("3_3fcys")
+starting_spell = ExtResource("5_3fcys")
 starting_magic_item = ExtResource("2_gurd5")
 animations = SubResource("SpriteFrames_tkcu6")
 icon = ExtResource("1_3fcys")

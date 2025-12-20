@@ -82,6 +82,10 @@ func _ready() -> void:
 func update_ability_weights() -> void:
 	current_ability_weights = current_ability_pool.map(calculate_ability_rarity)
 
+##Does the calculation for ability rarity. Believe it or not
+##It is the reciprocal of the square root of the level, all multiplied by the reciprocal of the rarity
+##This calculation should be the most simplified possible version, but mayhaps slow due to the square root?
+##wgaf
 func calculate_ability_rarity(ability:Ability) -> float:
-	return (1.0 / ability.level) * (1.0 / ability.rarity)
+	return (1.0 / (sqrt(ability.level) * ability.rarity))
 	
