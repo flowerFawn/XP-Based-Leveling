@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Character" load_steps=6 format=3 uid="uid://bd2xytxkapqbj"]
+
+[ext_resource type="Script" uid="uid://dse7vf0l5vfv0" path="res://scripts/resources/base resources/character.gd" id="1_l5ufh"]
+[ext_resource type="Texture2D" uid="uid://dx2cxtrybrv2t" path="res://assets/placeholders/electricity.png" id="1_o62do"]
+[ext_resource type="Resource" uid="uid://bpa7drmk0sban" path="res://resources/ability pools/standard.tres" id="2_fcbqn"]
+[ext_resource type="Resource" uid="uid://buu4u5w3e3yf3" path="res://resources/magic_items/bnb_handbook_1.tres" id="3_o62do"]
+[ext_resource type="Resource" uid="uid://dm58b6x6tb618" path="res://resources/spell/volt_1.tres" id="4_hal56"]
+
+[resource]
+script = ExtResource("1_l5ufh")
+starting_ability_pool = ExtResource("2_fcbqn")
+starting_spell = ExtResource("4_hal56")
+starting_magic_item = ExtResource("3_o62do")
+icon = ExtResource("1_o62do")
+metadata/_custom_type_script = "uid://dse7vf0l5vfv0"

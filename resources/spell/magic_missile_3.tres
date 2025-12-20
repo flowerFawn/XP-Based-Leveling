@@ -1,13 +1,13 @@
 [gd_resource type="Resource" script_class="SpellMagicMissile" load_steps=4 format=3 uid="uid://cvil8snk4wdft"]
 
-[ext_resource type="Script" uid="uid://cyuaiwt5dess3" path="res://scripts/resources/inherited resources/spells/s_bolt.gd" id="1_ifegb"]
+[ext_resource type="Script" uid="uid://cyuaiwt5dess3" path="res://scripts/resources/inherited resources/spells/s_magic_missile.gd" id="1_xf42f"]
 [ext_resource type="Texture2D" uid="uid://xmadt3jeoget" path="res://assets/placeholders/bolt.png" id="2_ivx7u"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y6wjd"]
 radius = 45.0
 
 [resource]
-script = ExtResource("1_ifegb")
+script = ExtResource("1_xf42f")
 cooldown = 1.6
 damage = 10.0
 projectile_speed = 40.0

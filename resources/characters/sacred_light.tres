@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Character" load_steps=6 format=3 uid="uid://dguulqdo5x3a8"]
+
+[ext_resource type="Script" uid="uid://dse7vf0l5vfv0" path="res://scripts/resources/base resources/character.gd" id="1_ex4cu"]
+[ext_resource type="Texture2D" uid="uid://37lbvgmhev70" path="res://assets/placeholders/sacred_light.png" id="1_v2168"]
+[ext_resource type="Resource" uid="uid://bpa7drmk0sban" path="res://resources/ability pools/standard.tres" id="3_foqyw"]
+[ext_resource type="Resource" uid="uid://buu4u5w3e3yf3" path="res://resources/magic_items/bnb_handbook_1.tres" id="4_xechd"]
+[ext_resource type="Resource" uid="uid://c1ujqmd5kcxjw" path="res://resources/spell/sacred_light_1.tres" id="5_4g57b"]
+
+[resource]
+script = ExtResource("1_ex4cu")
+starting_ability_pool = ExtResource("3_foqyw")
+starting_spell = ExtResource("5_4g57b")
+starting_magic_item = ExtResource("4_xechd")
+icon = ExtResource("1_v2168")
+metadata/_custom_type_script = "uid://dse7vf0l5vfv0"

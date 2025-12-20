@@ -12,7 +12,7 @@ var spell_xp:float = 0:
 			call_deferred(&"award_ability_option")
 			GameInfo.game_ui.xp_progress.value = spell_xp
 			GameInfo.game_ui.xp_progress.max_value = next_required_xp
-var next_required_xp:float = 10
+var next_required_xp:float = 5
 @export var current_ability_pool:Array[Ability] = [load("uid://7vmgb80p33sl"), 
 load("uid://ciomfgvjduepp"), 
 load("uid://dh4308dsgb1xc"), 

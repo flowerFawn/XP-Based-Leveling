@@ -6,7 +6,9 @@ class_name Spell
 @export_group("Effects")
 ##Time in seconds between the cast being called. if this is set to 0, it will only be cast once
 @export var cooldown:float
-@export var damage:float
+@export var damage:float:
+	get:
+		return SpellShop.run_through_magic_items(damage, &"affect_outgoing_damage")
 ##How quickly a projectile travels. May also be used for the length of a shapecast
 @export var projectile_speed:float
 ##How many projectiles are created, per cast

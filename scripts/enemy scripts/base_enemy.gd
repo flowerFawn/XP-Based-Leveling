@@ -100,9 +100,8 @@ func disappear_after_time(time:float):
 
 #region HEALTH
 func take_damage(amount:float) -> void:
-	var affected_damage:float = SpellShop.run_through_magic_items(amount, &"affect_outgoing_damage")
 	active_health -= amount
-	visual_damage(affected_damage)
+	visual_damage(amount)
 	if active_health <= 0:
 		die()
 

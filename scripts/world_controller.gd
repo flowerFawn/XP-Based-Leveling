@@ -11,3 +11,5 @@ func _ready() -> void:
 	GameInfo.enemy_holder = enemy_holder
 	GameInfo.game_ui = game_ui
 	SpellShop.spell_option_menu = spell_option_menu
+	
+	game_ui.xp_progress.max_value = SpellShop.next_required_xp

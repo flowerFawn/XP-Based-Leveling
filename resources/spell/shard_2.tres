@@ -8,14 +8,15 @@
 
 [resource]
 script = ExtResource("1_qt6js")
-level = 2
-level_description = "Add two more shard projectiles"
-next_upgrade = ExtResource("1_otu5e")
-cooldown = 0.4
-damage = 5.0
+cooldown = 1.0
+damage = 4.0
 projectile_speed = 60.0
 projectile_count = 3
 projectile_pierce = 2
+multi_projectile_delay = 0.05
 shape = SubResource("CircleShape2D_ynue0")
 texture = ExtResource("2_env62")
+level_description = "Add two more shard projectiles"
+level = 2
+next_upgrade = ExtResource("1_otu5e")
 metadata/_custom_type_script = "uid://cruvp1vxd4ktu"

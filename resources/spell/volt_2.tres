@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="SpellVolt" load_steps=3 format=3 uid="uid://bp6x3lirjyyol"]
+
+[ext_resource type="Script" uid="uid://c5fmj23e652h8" path="res://scripts/resources/inherited resources/spells/s_volt.gd" id="1_bgio2"]
+[ext_resource type="Texture2D" uid="uid://dx2cxtrybrv2t" path="res://assets/placeholders/electricity.png" id="2_2cjqj"]
+
+[resource]
+script = ExtResource("1_bgio2")
+cooldown = 1.0
+damage = 8.0
+projectile_speed = 800.0
+projectile_count = 2
+multi_projectile_delay = 0.1
+texture = ExtResource("2_2cjqj")
+level = 2
+metadata/_custom_type_script = "uid://c5fmj23e652h8"

@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="SpellSacredLight" load_steps=5 format=3 uid="uid://c1ujqmd5kcxjw"]
+
+[ext_resource type="Script" uid="uid://b2dkid11uh6v2" path="res://scripts/resources/inherited resources/spells/s_sacred_light.gd" id="1_2uycv"]
+[ext_resource type="Resource" uid="uid://dsyiid455ik23" path="res://resources/spell/sacred_light_2.tres" id="1_068u6"]
+[ext_resource type="Texture2D" uid="uid://37lbvgmhev70" path="res://assets/placeholders/sacred_light.png" id="2_dyg6q"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_068u6"]
+radius = 25.0
+
+[resource]
+script = ExtResource("1_2uycv")
+rotation_change = 90.0
+rotation_time = 2.0
+cooldown = 4.0
+damage = 8.0
+projectile_speed = 300.0
+shape = SubResource("CircleShape2D_068u6")
+texture = ExtResource("2_dyg6q")
+next_upgrade = ExtResource("1_068u6")
+metadata/_custom_type_script = "uid://b2dkid11uh6v2"

@@ -10,7 +10,7 @@ var remaining_pierce:int
 var start_position
 var position_offset:Vector2
 
-func _init(speed:float, damage:float, shape:Shape2D, direction:Vector2, sprite:Texture2D, max_pierce:int = 0, offset:Vector2 = Vector2.ZERO,new_start_position:Vector2 = Vector2.ZERO) -> void:
+func _init(speed:float, damage:float, shape:Shape2D, direction:Vector2, sprite:Texture2D, max_pierce:int = 0, offset:Vector2 = Vector2.ZERO, decay_time:float = 1,new_start_position:Vector2 = Vector2.ZERO) -> void:
 	set_collision_layer_value(1, false)
 	set_collision_mask_value(1, false)
 	set_collision_mask_value(2, true)
@@ -25,6 +25,8 @@ func _init(speed:float, damage:float, shape:Shape2D, direction:Vector2, sprite:T
 	active_direction = direction.normalized()
 	remaining_pierce = max_pierce
 	position_offset = offset
+	if decay_time > 0:
+		start_decay_timer(decay_time)
 	#not start position is true when it is equal to Vector2.ZERO (0, 0)
 	#this means by default it will begin at the player position
 	if not start_position:
@@ -36,11 +38,6 @@ func _init(speed:float, damage:float, shape:Shape2D, direction:Vector2, sprite:T
 
 func _ready() -> void:
 	global_position = start_position + position_offset
-	var decay_timer:Timer = Timer.new()
-	add_child(decay_timer)
-	##Time the projectile exists until it decays
-	decay_timer.start(1)
-	decay_timer.timeout.connect(decay)
 
 func _physics_process(delta: float) -> void:
 	var direction:Vector2 = get_direction()
@@ -65,5 +62,7 @@ func hit_something(body:Node2D):
 		enemy.take_damage(active_damage)
 	
 ##Destroys the projectile, to avoid large amounts of particles causing lag
-func decay() -> void:
+func start_decay_timer(time_till_decay:float) -> void:
+	await tree_entered
+	await get_tree().create_timer(time_till_decay).timeout
 	queue_free()
