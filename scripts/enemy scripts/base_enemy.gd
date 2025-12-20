@@ -5,6 +5,7 @@ class_name Enemy
 ##Nodes the enemy needs to be able to reference
 var node_sprite:Sprite2D
 var node_collision:CollisionShape2D
+var hit_this_second
 
 ##Active versions of stats, so that a single resource can be used for every enemy type but individual enemies still change stats
 
@@ -101,9 +102,17 @@ func disappear_after_time(time:float):
 #region HEALTH
 func take_damage(amount:float) -> void:
 	active_health -= amount
+	if not hit_this_second:
+		register_was_hit_this_second()
 	visual_damage(amount)
 	if active_health <= 0:
 		die()
+		
+func register_was_hit_this_second() -> void:
+	hit_this_second = true
+	MagicItemInfo.register_enemy_hit_this_second()
+	await get_tree().create_timer(1).timeout
+	hit_this_second = false
 
 
 func visual_damage(damage:float) -> void:

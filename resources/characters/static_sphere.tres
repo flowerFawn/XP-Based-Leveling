@@ -3,13 +3,13 @@
 [ext_resource type="Texture2D" uid="uid://b0wntjnflxovc" path="res://assets/placeholders/static_sphere.png" id="1_1paso"]
 [ext_resource type="Script" uid="uid://dse7vf0l5vfv0" path="res://scripts/resources/base resources/character.gd" id="1_l5ufh"]
 [ext_resource type="Resource" uid="uid://bpa7drmk0sban" path="res://resources/ability pools/standard.tres" id="2_fcbqn"]
-[ext_resource type="Resource" uid="uid://buu4u5w3e3yf3" path="res://resources/magic_items/bnb_handbook_1.tres" id="3_o62do"]
+[ext_resource type="Resource" uid="uid://w0ho83q0d1wt" path="res://resources/magic items/conductive_controller_1.tres" id="4_1paso"]
 [ext_resource type="Resource" uid="uid://b0hqt4bjas0qh" path="res://resources/spell/static_sphere_1.tres" id="5_m32i7"]
 
 [resource]
 script = ExtResource("1_l5ufh")
 starting_ability_pool = ExtResource("2_fcbqn")
 starting_spell = ExtResource("5_m32i7")
-starting_magic_item = ExtResource("3_o62do")
+starting_magic_item = ExtResource("4_1paso")
 icon = ExtResource("1_1paso")
 metadata/_custom_type_script = "uid://dse7vf0l5vfv0"

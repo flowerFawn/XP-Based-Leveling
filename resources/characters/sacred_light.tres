@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dse7vf0l5vfv0" path="res://scripts/resources/base resources/character.gd" id="1_ex4cu"]
 [ext_resource type="Texture2D" uid="uid://37lbvgmhev70" path="res://assets/placeholders/sacred_light.png" id="1_v2168"]
 [ext_resource type="Resource" uid="uid://bpa7drmk0sban" path="res://resources/ability pools/standard.tres" id="3_foqyw"]
-[ext_resource type="Resource" uid="uid://buu4u5w3e3yf3" path="res://resources/magic_items/bnb_handbook_1.tres" id="4_xechd"]
+[ext_resource type="Resource" uid="uid://buu4u5w3e3yf3" path="res://resources/magic items/bnb_handbook_1.tres" id="4_xechd"]
 [ext_resource type="Resource" uid="uid://c1ujqmd5kcxjw" path="res://resources/spell/sacred_light_1.tres" id="5_4g57b"]
 
 [resource]

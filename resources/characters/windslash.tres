@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dse7vf0l5vfv0" path="res://scripts/resources/base resources/character.gd" id="1_jfa2w"]
 [ext_resource type="Texture2D" uid="uid://ciyc5edifs2db" path="res://assets/placeholders/windslash.png" id="1_u616n"]
 [ext_resource type="Resource" uid="uid://bpa7drmk0sban" path="res://resources/ability pools/standard.tres" id="3_idsvq"]
-[ext_resource type="Resource" uid="uid://buu4u5w3e3yf3" path="res://resources/magic_items/bnb_handbook_1.tres" id="4_ar3qq"]
+[ext_resource type="Resource" uid="uid://buu4u5w3e3yf3" path="res://resources/magic items/bnb_handbook_1.tres" id="4_ar3qq"]
 [ext_resource type="Resource" uid="uid://bb3wur6d4qxcf" path="res://resources/spell/windslash_1.tres" id="5_vg6yu"]
 
 [resource]

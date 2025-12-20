@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="MITeachersPet" load_steps=3 format=3 uid="uid://fdx6pmmkh50r"]
 
 [ext_resource type="Script" uid="uid://cama1y0lq66rl" path="res://scripts/resources/inherited resources/magic items/usable/teachers_pet.gd" id="1_th2jp"]
-[ext_resource type="Resource" uid="uid://cavui4lskgvsp" path="res://resources/magic_items/teachers_pet_2.tres" id="1_uksqy"]
+[ext_resource type="Resource" uid="uid://cavui4lskgvsp" path="res://resources/magic items/teachers_pet_2.tres" id="1_uksqy"]
 
 [resource]
 script = ExtResource("1_th2jp")

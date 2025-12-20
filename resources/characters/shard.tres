@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://n0tbfppan7pj" path="res://assets/placeholders/shard.png" id="1_o8s6k"]
 [ext_resource type="Script" uid="uid://dse7vf0l5vfv0" path="res://scripts/resources/base resources/character.gd" id="1_orhn5"]
 [ext_resource type="Resource" uid="uid://bpa7drmk0sban" path="res://resources/ability pools/standard.tres" id="3_q8oqf"]
-[ext_resource type="Resource" uid="uid://cmuy48b8p10l" path="res://resources/magic_items/magic_revolver_1.tres" id="4_xv5lu"]
+[ext_resource type="Resource" uid="uid://cmuy48b8p10l" path="res://resources/magic items/magic_revolver_1.tres" id="4_xv5lu"]
 [ext_resource type="Resource" uid="uid://7vmgb80p33sl" path="res://resources/spell/shard_1.tres" id="5_8xpge"]
 
 [resource]

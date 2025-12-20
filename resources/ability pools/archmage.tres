@@ -5,9 +5,9 @@
 [ext_resource type="Resource" uid="uid://ciomfgvjduepp" path="res://resources/spell/magic_missile_1.tres" id="2_b3faa"]
 [ext_resource type="Resource" uid="uid://7vmgb80p33sl" path="res://resources/spell/shard_1.tres" id="3_b3faa"]
 [ext_resource type="Resource" uid="uid://bb3wur6d4qxcf" path="res://resources/spell/windslash_1.tres" id="4_ootwi"]
-[ext_resource type="Resource" uid="uid://buu4u5w3e3yf3" path="res://resources/magic_items/bnb_handbook_1.tres" id="5_sbktm"]
-[ext_resource type="Resource" uid="uid://fdx6pmmkh50r" path="res://resources/magic_items/teachers_pet_1.tres" id="6_nowvb"]
-[ext_resource type="Resource" uid="uid://cnpu8eq5ibo8b" path="res://resources/magic_items/crystal_collection_1.tres" id="7_wmgg2"]
+[ext_resource type="Resource" uid="uid://buu4u5w3e3yf3" path="res://resources/magic items/bnb_handbook_1.tres" id="5_sbktm"]
+[ext_resource type="Resource" uid="uid://fdx6pmmkh50r" path="res://resources/magic items/teachers_pet_1.tres" id="6_nowvb"]
+[ext_resource type="Resource" uid="uid://cnpu8eq5ibo8b" path="res://resources/magic items/crystal_collection_1.tres" id="7_wmgg2"]
 [ext_resource type="Resource" uid="uid://cbh1n057q23bg" path="res://resources/spell/firebolt_1.tres" id="8_ootwi"]
 
 [resource]
