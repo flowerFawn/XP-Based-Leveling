@@ -11,7 +11,6 @@ autostart = true
 ignore_time_scale = true
 
 [node name="SpawnTimer" type="Timer" parent="."]
-wait_time = 2.0
 autostart = true
 
 [connection signal="timeout" from="DirectionUpdateTimer" to="." method="update_directions"]
