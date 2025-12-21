@@ -8,6 +8,7 @@
 
 [resource]
 script = ExtResource("1_jfa2w")
+description = "starts with the wind slash spell."
 starting_ability_pool = ExtResource("3_idsvq")
 starting_spell = ExtResource("5_vg6yu")
 starting_magic_item = ExtResource("4_ar3qq")

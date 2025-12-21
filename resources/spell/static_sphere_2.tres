@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="SpellStaticSphere" load_steps=4 format=3 uid="uid://dtdadlm74qre4"]
+[gd_resource type="Resource" script_class="SpellStaticSphere" load_steps=5 format=3 uid="uid://dtdadlm74qre4"]
 
 [ext_resource type="Script" uid="uid://cc7u28p7m70hs" path="res://scripts/resources/inherited resources/spells/s_static_sphere.gd" id="1_racq7"]
+[ext_resource type="Resource" uid="uid://c1drtvl16qs35" path="res://resources/spell/static_sphere_3.tres" id="1_vdxk8"]
 [ext_resource type="Texture2D" uid="uid://b0wntjnflxovc" path="res://assets/placeholders/static_sphere.png" id="2_vdxk8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4ykdj"]
@@ -13,5 +14,7 @@ damage = 2.0
 shape = SubResource("CircleShape2D_4ykdj")
 texture = ExtResource("2_vdxk8")
 visual_scale = 0.75
+level_description = "Increased radius."
 level = 2
+next_upgrade = ExtResource("1_vdxk8")
 metadata/_custom_type_script = "uid://cc7u28p7m70hs"

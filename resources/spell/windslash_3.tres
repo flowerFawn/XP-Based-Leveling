@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="SpellWindSlash" load_steps=5 format=3 uid="uid://byybf67rnefbu"]
+
+[ext_resource type="Script" uid="uid://cpkamubmxnpfa" path="res://scripts/resources/inherited resources/spells/s_windslash.gd" id="1_n1nsv"]
+[ext_resource type="Resource" uid="uid://cxudoootomklr" path="res://resources/spell/windslash_4.tres" id="1_opl6u"]
+[ext_resource type="Texture2D" uid="uid://ciyc5edifs2db" path="res://assets/placeholders/windslash.png" id="2_opl6u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f44ng"]
+size = Vector2(20, 250)
+
+[resource]
+script = ExtResource("1_n1nsv")
+cooldown = 2.0
+damage = 12.0
+projectile_speed = 500.0
+projectile_count = 2
+multi_projectile_delay = 0.5
+shape = SubResource("RectangleShape2D_f44ng")
+texture = ExtResource("2_opl6u")
+visual_scale = 1.2
+level_description = "Increased area. Slightly increased damage."
+level = 3
+next_upgrade = ExtResource("1_opl6u")
+metadata/_custom_type_script = "uid://cpkamubmxnpfa"

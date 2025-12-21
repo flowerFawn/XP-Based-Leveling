@@ -9,9 +9,10 @@ size = Vector2(20, 200)
 
 [resource]
 script = ExtResource("1_f44ng")
-cooldown = 1.5
+cooldown = 2.0
 damage = 10.0
 projectile_speed = 400.0
+multi_projectile_delay = 0.5
 shape = SubResource("RectangleShape2D_f44ng")
 texture = ExtResource("2_b0tia")
 next_upgrade = ExtResource("1_iunwg")

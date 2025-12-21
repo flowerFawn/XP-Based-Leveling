@@ -11,8 +11,8 @@ radius = 50.0
 [resource]
 script = ExtResource("1_6kc8s")
 movement_type = ExtResource("1_4ejvi")
-speed = 80.0
-xp_reward = 20.0
+speed = 60.0
+xp_reward = 30.0
 base_health = 100.0
 collision = SubResource("CircleShape2D_r0plg")
 sprite = ExtResource("3_vs4ks")

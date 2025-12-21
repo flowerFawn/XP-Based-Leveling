@@ -5,7 +5,7 @@ class_name Ability
 @export_group("Technical")
 ##The second half of the description in menus, unique to each level. this is added to the end of the description
 ##The part before this is the base description, set in the class itself
-@export var level_description:String
+@export_multiline var level_description:String
 ##The level of this spell, starting at 1. Important for removing the previous level of spell, and menus
 @export_range(1, 20) var level:int  = 1
 ##The rarity of the ability. The weight given to it is the reciprocal of this * reciprocal of level

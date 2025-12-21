@@ -16,4 +16,4 @@ func _ready() -> void:
 	
 func _pick_this_character() -> void:
 	GameInfo.character = represents_character
-	emit_signal(&"character_option_picked")
+	character_option_picked.emit(represents_character)

@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="SpellSacredLight" load_steps=4 format=3 uid="uid://cb8yap36kq6j1"]
+
+[ext_resource type="Script" uid="uid://b2dkid11uh6v2" path="res://scripts/resources/inherited resources/spells/s_sacred_light.gd" id="1_8qxuu"]
+[ext_resource type="Texture2D" uid="uid://37lbvgmhev70" path="res://assets/placeholders/sacred_light.png" id="2_7fb0d"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_068u6"]
+radius = 25.0
+
+[resource]
+script = ExtResource("1_8qxuu")
+rotation_change = 135.0
+rotation_time = 3.0
+cooldown = 5.0
+damage = 8.0
+projectile_speed = 300.0
+projectile_count = 2
+shape = SubResource("CircleShape2D_068u6")
+texture = ExtResource("2_7fb0d")
+level_description = "Projectiles last longer"
+level = 3
+metadata/_custom_type_script = "uid://b2dkid11uh6v2"

@@ -8,6 +8,7 @@
 
 [resource]
 script = ExtResource("1_l5ufh")
+description = "Using a strange device that conducts the electricity from her spells to other goblins, name deals more damage the more enemies she is hitting at once. She starts with the static sphere spell."
 starting_ability_pool = ExtResource("2_fcbqn")
 starting_spell = ExtResource("5_m32i7")
 starting_magic_item = ExtResource("4_1paso")

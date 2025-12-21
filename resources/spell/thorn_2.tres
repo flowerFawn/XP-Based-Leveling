@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="SpellThorns" load_steps=4 format=3 uid="uid://b2qfbq106qsse"]
+[gd_resource type="Resource" script_class="SpellThorns" load_steps=5 format=3 uid="uid://b2qfbq106qsse"]
 
+[ext_resource type="Resource" uid="uid://ce17ul8txx4wh" path="res://resources/spell/thorn_3.tres" id="1_k2uix"]
 [ext_resource type="Script" uid="uid://c8b6qbje158fi" path="res://scripts/resources/inherited resources/spells/s_thorns.gd" id="1_ps8qw"]
 [ext_resource type="Texture2D" uid="uid://blxqdo7j3aerc" path="res://assets/placeholders/thorns.png" id="2_k2uix"]
 
@@ -10,10 +11,17 @@ radius = 100.0
 script = ExtResource("1_ps8qw")
 thorn_bush_trigger_timer = 1.0
 thorn_bush_decay_time = 6.0
-cooldown = 7.0
+thorn_bush_speed_multiplier = 0.8
+cooldown = 10.0
 damage = 4.0
+projectile_speed = null
+projectile_pierce = null
+multi_projectile_delay = null
 shape = SubResource("CircleShape2D_x72et")
 texture = ExtResource("2_k2uix")
 visual_scale = 1.3
+level_description = null
+level = 2
 rarity = 2
+next_upgrade = ExtResource("1_k2uix")
 metadata/_custom_type_script = "uid://c8b6qbje158fi"

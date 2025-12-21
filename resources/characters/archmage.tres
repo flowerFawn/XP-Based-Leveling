@@ -11,6 +11,7 @@
 [resource]
 script = ExtResource("1_bsn0i")
 name = "Archmage"
+description = "The struggling archmage of the tutor group. In his old age, his memory has faded and he can no longer cast advanced and niche spells, but he is still an effective caster. He is protected from harm by a very overenthusiatic young student that accompanies him. In his pocket. He begins with the firebolt spell."
 starting_ability_pool = ExtResource("4_62uj4")
 starting_spell = ExtResource("5_3fcys")
 starting_magic_item = ExtResource("2_gurd5")

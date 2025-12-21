@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Character" load_steps=6 format=3 uid="uid://cest0luawtgth"]
+
+[ext_resource type="Texture2D" uid="uid://xmadt3jeoget" path="res://assets/placeholders/bolt.png" id="1_2haky"]
+[ext_resource type="Script" uid="uid://dse7vf0l5vfv0" path="res://scripts/resources/base resources/character.gd" id="1_iqo07"]
+[ext_resource type="Resource" uid="uid://bpa7drmk0sban" path="res://resources/ability pools/standard.tres" id="3_qhy8m"]
+[ext_resource type="Resource" uid="uid://buu4u5w3e3yf3" path="res://resources/magic items/bnb_handbook_1.tres" id="4_qc46d"]
+[ext_resource type="Resource" uid="uid://ciomfgvjduepp" path="res://resources/spell/magic_missile_1.tres" id="5_nwenp"]
+
+[resource]
+script = ExtResource("1_iqo07")
+description = "Starts with the magic missile spell"
+starting_ability_pool = ExtResource("3_qhy8m")
+starting_spell = ExtResource("5_nwenp")
+starting_magic_item = ExtResource("4_qc46d")
+icon = ExtResource("1_2haky")
+metadata/_custom_type_script = "uid://dse7vf0l5vfv0"

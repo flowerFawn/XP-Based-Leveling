@@ -16,5 +16,6 @@ projectile_pierce = 1
 multi_projectile_delay = 0.1
 shape = SubResource("CircleShape2D_gcpki")
 texture = ExtResource("2_tqhiu")
-level = 2
+level_description = "Shoots another projectile."
+level = 3
 metadata/_custom_type_script = "uid://ov4ev345t4bi"

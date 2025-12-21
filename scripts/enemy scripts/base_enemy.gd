@@ -125,7 +125,22 @@ func visual_damage(damage:float) -> void:
 	await get_tree().create_timer(0.3).timeout
 	node_sprite.material.set_shader_parameter(&"harmed", false)
 	
-	
+##if the time_till_reversed = 0 then it will never be reversed. Due to the nature of mathematical operations, if this is mixed with the multiplicative version on the same property, it may not be properly returned to it's original state
+##However there are like 1000000000 enemies onscreen anyway and they'll die in like 10 seconds anyway wgaf
+func change_value_additive(value:StringName, amount:float, time_till_reversed:float = 0) -> void:
+	set(value, get(value) + amount)
+	if time_till_reversed > 0:
+		await get_tree().create_timer(time_till_reversed).timeout
+		set(value, get(value) - amount)
+		
+##if the time_till_reversed = 0 then it will never be reversed. Due to the nature of mathematical operations, if this is mixed with the additive version on the same property, it may not be properly returned to it's original state
+##However there are like 1000000000 enemies onscreen anyway and they'll die in like 10 seconds anyway wgaf
+func change_value_multiplicative(value:StringName, multiplier:float, time_till_reversed:float = 0) -> void:
+	set(value, get(value) * multiplier)
+	if time_till_reversed > 0:
+		await get_tree().create_timer(time_till_reversed).timeout
+		set(value, get(value) / multiplier)
+
 	
 func die() -> void:
 	if dying:

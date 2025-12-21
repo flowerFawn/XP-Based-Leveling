@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="SpellStaticSphere" load_steps=5 format=3 uid="uid://c1drtvl16qs35"]
+
+[ext_resource type="Resource" uid="uid://dlmtgy2xsgclc" path="res://resources/spell/static_sphere_4.tres" id="1_ibrvp"]
+[ext_resource type="Script" uid="uid://cc7u28p7m70hs" path="res://scripts/resources/inherited resources/spells/s_static_sphere.gd" id="1_jpdvm"]
+[ext_resource type="Texture2D" uid="uid://b0wntjnflxovc" path="res://assets/placeholders/static_sphere.png" id="2_ibrvp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4ykdj"]
+radius = 200.0
+
+[resource]
+script = ExtResource("1_jpdvm")
+cooldown = 1.0
+damage = 3.0
+shape = SubResource("CircleShape2D_4ykdj")
+texture = ExtResource("2_ibrvp")
+visual_scale = 0.75
+level_description = "Increased damage."
+level = 3
+next_upgrade = ExtResource("1_ibrvp")
+metadata/_custom_type_script = "uid://cc7u28p7m70hs"

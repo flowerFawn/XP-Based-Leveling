@@ -1,20 +1,22 @@
-[gd_resource type="Resource" script_class="SpellWindSlash" load_steps=4 format=3 uid="uid://pmeyf3est3gv"]
+[gd_resource type="Resource" script_class="SpellWindSlash" load_steps=5 format=3 uid="uid://pmeyf3est3gv"]
 
+[ext_resource type="Resource" uid="uid://byybf67rnefbu" path="res://resources/spell/windslash_3.tres" id="1_4ihi7"]
 [ext_resource type="Script" uid="uid://cpkamubmxnpfa" path="res://scripts/resources/inherited resources/spells/s_windslash.gd" id="1_gwhyu"]
 [ext_resource type="Texture2D" uid="uid://ciyc5edifs2db" path="res://assets/placeholders/windslash.png" id="2_4ihi7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f44ng"]
-size = Vector2(20, 100)
+size = Vector2(20, 200)
 
 [resource]
 script = ExtResource("1_gwhyu")
-cooldown = 1.5
+cooldown = 2.0
 damage = 10.0
-projectile_speed = 200.0
+projectile_speed = 400.0
 projectile_count = 2
 multi_projectile_delay = 0.5
 shape = SubResource("RectangleShape2D_f44ng")
 texture = ExtResource("2_4ihi7")
 level_description = "Attacks a second time"
 level = 2
+next_upgrade = ExtResource("1_4ihi7")
 metadata/_custom_type_script = "uid://cpkamubmxnpfa"

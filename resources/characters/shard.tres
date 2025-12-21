@@ -9,6 +9,7 @@
 [resource]
 script = ExtResource("1_orhn5")
 name = "Sterling"
+description = "Mastering the ancient art of fanning the hammer, Sterling creates many projectiles with their magical revolver. They begin with the shard spell."
 starting_ability_pool = ExtResource("3_q8oqf")
 starting_spell = ExtResource("5_8xpge")
 starting_magic_item = ExtResource("4_xv5lu")

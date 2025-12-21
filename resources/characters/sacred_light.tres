@@ -8,6 +8,7 @@
 
 [resource]
 script = ExtResource("1_ex4cu")
+description = "Probably a deus vult tradlarper who would say Caesar's legion had a point. Starts with the sacred light spell"
 starting_ability_pool = ExtResource("3_foqyw")
 starting_spell = ExtResource("5_4g57b")
 starting_magic_item = ExtResource("4_xechd")

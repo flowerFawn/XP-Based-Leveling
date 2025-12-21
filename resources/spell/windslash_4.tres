@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="SpellWindSlash" load_steps=4 format=3 uid="uid://cxudoootomklr"]
+
+[ext_resource type="Script" uid="uid://cpkamubmxnpfa" path="res://scripts/resources/inherited resources/spells/s_windslash.gd" id="1_nfxd7"]
+[ext_resource type="Texture2D" uid="uid://ciyc5edifs2db" path="res://assets/placeholders/windslash.png" id="2_1o5yo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f44ng"]
+size = Vector2(20, 250)
+
+[resource]
+script = ExtResource("1_nfxd7")
+cooldown = 2.0
+damage = 12.0
+projectile_speed = 500.0
+projectile_count = 3
+multi_projectile_delay = 0.5
+shape = SubResource("RectangleShape2D_f44ng")
+texture = ExtResource("2_1o5yo")
+visual_scale = 1.2
+level_description = "Attacks an additional time"
+level = 3
+metadata/_custom_type_script = "uid://cpkamubmxnpfa"

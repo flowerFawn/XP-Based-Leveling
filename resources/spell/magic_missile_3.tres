@@ -4,17 +4,18 @@
 [ext_resource type="Texture2D" uid="uid://xmadt3jeoget" path="res://assets/placeholders/bolt.png" id="2_ivx7u"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y6wjd"]
-radius = 45.0
+radius = 40.0
 
 [resource]
 script = ExtResource("1_xf42f")
-cooldown = 1.6
+cooldown = 2.0
 damage = 10.0
 projectile_speed = 40.0
-projectile_pierce = 1
+projectile_count = 3
+projectile_pierce = 2
 multi_projectile_delay = 0.1
 shape = SubResource("CircleShape2D_y6wjd")
 texture = ExtResource("2_ivx7u")
-level_description = "Lower Cooldown"
+level_description = "Pierces an additional enemy. Shoots an additional projectile."
 level = 3
 metadata/_custom_type_script = "uid://cyuaiwt5dess3"

@@ -5,12 +5,12 @@
 [ext_resource type="Texture2D" uid="uid://xmadt3jeoget" path="res://assets/placeholders/bolt.png" id="3_v0md5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_w25f6"]
-radius = 30.0
+radius = 40.0
 
 [resource]
 script = ExtResource("2_wtx20")
 cooldown = 2.0
-damage = 9.0
+damage = 10.0
 projectile_speed = 40.0
 projectile_pierce = 1
 multi_projectile_delay = 0.1

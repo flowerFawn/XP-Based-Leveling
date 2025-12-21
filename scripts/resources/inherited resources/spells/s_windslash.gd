@@ -28,4 +28,4 @@ func do_slash(other_direction:bool = false) -> void:
 	var flipped_sprite:bool = player.x_orientation > 0
 	if other_direction:
 		flipped_sprite = not flipped_sprite
-	create_visual_effect(texture, Vector2(player.global_position.x + (projectile_speed * 0.5 * player.x_orientation * flip_again), player.global_position.y), visual_scale, flipped_sprite)
+	create_visual_effect(texture, Vector2(player.global_position.x + (projectile_speed * 0.5 * player.x_orientation * flip_again), player.global_position.y), visual_scale, flipped_sprite, 0.5)

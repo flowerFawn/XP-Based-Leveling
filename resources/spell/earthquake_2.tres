@@ -5,16 +5,15 @@
 [ext_resource type="Texture2D" uid="uid://bs2aw6atyld2d" path="res://assets/placeholders/earthquake.png" id="2_lcan7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cae2g"]
-radius = 240.0
+radius = 200.0
 
 [resource]
 script = ExtResource("1_bm52a")
 cooldown = 4.0
-damage = 15.0
+damage = 12.0
 shape = SubResource("CircleShape2D_cae2g")
 texture = ExtResource("2_lcan7")
-visual_scale = 1.1
+level_description = "Decreased cooldown"
 level = 2
-rarity = 2
 next_upgrade = ExtResource("1_jl0nq")
 metadata/_custom_type_script = "uid://dqtj3553eq3ci"
