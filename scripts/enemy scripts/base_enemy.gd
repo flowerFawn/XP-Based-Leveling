@@ -29,7 +29,7 @@ func _physics_process(delta: float) -> void:
 #region COLLISION
 func collision_entered(body:Node2D):
 	#If the enemy collides with the player, it does damage and then disappears
-	if body.is_in_group(&"Player"):
+	if body.is_in_group(&"Player") and enemy_type.collides_with_player:
 		var player:Player = body
 		if enemy_type.contact_damage > 0:
 			player.take_damage(enemy_type.contact_damage)

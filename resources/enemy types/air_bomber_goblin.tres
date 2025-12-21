@@ -13,7 +13,6 @@ radius = 50.0
 script = ExtResource("1_1anod")
 movement_type = ExtResource("1_vxydo")
 speed = 750.0
-contact_damage = 1.0
 xp_reward = 0.1
 death_effect = ExtResource("1_e1w52")
 base_health = 5.0

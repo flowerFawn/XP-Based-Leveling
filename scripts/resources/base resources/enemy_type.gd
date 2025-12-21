@@ -40,3 +40,5 @@ class_name EnemyType
 ##Disappearing plays a different animation, causes no death effect, and gives no xp reward
 ##If this is set to 0, this never happens
 @export var disappear_time:float = 0
+##If the enemy will collide with the player and die. Only should be false for things like loot goblins. Should not deal damage if this is false
+@export var collides_with_player:bool = true

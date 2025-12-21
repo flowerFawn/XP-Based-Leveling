@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="SpellThorns" load_steps=4 format=3 uid="uid://clpu6qm1sv44b"]
+
+[ext_resource type="Script" uid="uid://c8b6qbje158fi" path="res://scripts/resources/inherited resources/spells/s_thorns.gd" id="1_ookwd"]
+[ext_resource type="Texture2D" uid="uid://blxqdo7j3aerc" path="res://assets/placeholders/thorns.png" id="2_ft4cd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x72et"]
+radius = 75.0
+
+[resource]
+script = ExtResource("1_ookwd")
+thorn_bush_trigger_timer = 1.0
+thorn_bush_decay_time = 4.0
+cooldown = 7.0
+damage = 4.0
+shape = SubResource("CircleShape2D_x72et")
+texture = ExtResource("2_ft4cd")
+rarity = 2
+metadata/_custom_type_script = "uid://c8b6qbje158fi"

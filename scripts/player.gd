@@ -67,11 +67,12 @@ func get_closest_enemy() -> Vector2:
 
 #region HEALTH
 func take_damage(amount:float) -> void:
-	var affected_damage:float = SpellShop.run_through_magic_items(amount, &"affect_incoming_damage")
-	active_health -= affected_damage
-	node_progress.value = active_health
-	if active_health <= 0:
-		die()
+	if amount > 0:
+		var affected_damage:float = SpellShop.run_through_magic_items(amount, &"affect_incoming_damage")
+		active_health -= affected_damage
+		node_progress.value = active_health
+		if active_health <= 0:
+			die()
 		
 func die():
 	print("You died! sucks to suck buddy")

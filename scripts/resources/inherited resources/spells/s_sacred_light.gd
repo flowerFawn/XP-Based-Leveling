@@ -8,6 +8,8 @@ class_name SpellSacredLight
 ##The total time the sacred light takes to reach it's final rotation
 @export var rotation_time:float
 
+var active_spell_rotators:Array[Node2D] = []
+
 func _init() -> void:
 	base_description = "A bright sacred light circles you, harming evil goblins caught in it's divine presence."
 	ability_name = "Sacred Light"
@@ -21,5 +23,11 @@ func cast() -> void:
 		spell_rotator.add_child(new_projectile)
 		new_projectile.position = Vector2.RIGHT.rotated(deg_to_rad(GameInfo.rnd.randi_range(0, 360))) * projectile_speed
 	rotation_tween.tween_property(spell_rotator, "rotation", deg_to_rad(rotation_change), rotation_time)
+	active_spell_rotators.append(spell_rotator)
 	await rotation_tween.finished
+	active_spell_rotators.erase(spell_rotator)
 	spell_rotator.queue_free()
+	
+func clean_up_for_removal() -> void:
+	for rotator:Node2D in active_spell_rotators:
+		rotator.queue_free()

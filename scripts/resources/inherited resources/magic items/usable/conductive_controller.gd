@@ -9,6 +9,4 @@ func _init() -> void:
 	ability_name = "Conductive Controller"
 
 func affect_outgoing_damage(prior_damage:float) -> float:
-	print(prior_damage)
-	print(prior_damage * (1 + (percentage_increase_per_enemy * MagicItemInfo.enemies_hit_this_second)))
 	return prior_damage * (1 + (percentage_increase_per_enemy * MagicItemInfo.enemies_hit_this_second))

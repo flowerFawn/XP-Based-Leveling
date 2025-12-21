@@ -23,7 +23,6 @@ func initial_spell_setup() -> void:
 	static_sphere_area.area_entered.connect(damage_in_sphere)
 	
 func cast() -> void:
-	print(static_sphere_area.get_overlapping_areas())
 	for enemy in static_sphere_area.get_overlapping_areas():
 		damage_in_sphere(enemy)
 		
