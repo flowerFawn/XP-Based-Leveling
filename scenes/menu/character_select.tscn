@@ -149,6 +149,7 @@ layout_mode = 2
 custom_minimum_size = Vector2(0, 200)
 layout_mode = 2
 size_flags_vertical = 7
+autowrap_mode = 3
 
 [node name="Button" type="Button" parent="CharacterSelect/VBoxContainer"]
 layout_mode = 2
