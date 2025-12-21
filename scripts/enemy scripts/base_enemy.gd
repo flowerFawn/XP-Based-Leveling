@@ -46,6 +46,9 @@ func update_direction() -> void:
 		node_sprite.flip_h = true
 	else:
 		node_sprite.flip_h = false
+	#makes the enemy disappear if they are 5000 or more units away from the player. mayhaps add a qualifier in enemy type for if they disappear?
+	if (global_position.x - GameInfo.player_position.x) ** 2 + (global_position.y - GameInfo.player_position.y) ** 2 > 5000 ** 2:
+		disappear()
 	
 #endregion
 #region CONSTRUCTOR

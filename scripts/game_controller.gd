@@ -24,7 +24,6 @@ var enemy_type_weight_functions_array:Array[Callable] = ([
 ])
 ##The most recently calculated enemy weights, based on enemy type weight functions array
 var enemy_type_current_weight_array:PackedFloat32Array = PackedFloat32Array([])
-var enemy_count:float = 2
 
 func update_directions() -> void:
 	#updates enemies heading towards the player
@@ -36,10 +35,14 @@ func update_directions() -> void:
 
 
 func spawn_enemies() -> void:
+	var total_enemy_count:int = len(get_tree().get_nodes_in_group(&"Enemy"))
+	var enemy_quota:int = (time_elapsed * 0.2) + 8
+	var enemies_to_spawn:int = ceili((enemy_quota - total_enemy_count) * 0.1)
+	print((enemy_quota - total_enemy_count) * 0.1)
+	print("total: ", total_enemy_count, "quota: ",enemy_quota, "spawning: ", enemies_to_spawn)
 	update_enemy_weights(time_elapsed)
-	for enemy_to_spawn:int in range(ceili(enemy_count)):
+	for enemy_to_spawn:int in range(enemies_to_spawn):
 		spawn_enemy()
-	enemy_count += 0.3
 		
 func spawn_enemy():
 	const CAMERA_DISTANCE_VECTOR:Vector2 = Vector2(2350, 1350)
