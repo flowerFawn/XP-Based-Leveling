@@ -6,4 +6,5 @@
 script = ExtResource("1_lg128")
 percentage_increase_per_enemy = 0.1
 level = 2
+rarity = 2
 metadata/_custom_type_script = "uid://dn2cenp4tb56"

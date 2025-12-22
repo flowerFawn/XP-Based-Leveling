@@ -3,6 +3,7 @@ class_name Player
 
 @export var node_sprite:Sprite2D
 @export var node_progress:ProgressBar
+@export var node_red_flash_timer:Timer
 var speed:int = 500
 var active_health:float = 100
 var max_health:float = 100
@@ -24,6 +25,7 @@ func _ready() -> void:
 	node_progress.min_value = 0
 	node_progress.max_value = max_health
 	node_progress.value = active_health
+	node_red_flash_timer.timeout.connect(stop_flash)
 	
 func set_character(character:Character) -> void:
 	SpellShop.current_ability_pool = character.starting_ability_pool.abilities.duplicate()
@@ -69,11 +71,22 @@ func get_closest_enemy() -> Vector2:
 func take_damage(amount:float) -> void:
 	if amount > 0:
 		var affected_damage:float = SpellShop.run_through_magic_items(amount, &"affect_incoming_damage")
+		
 		active_health -= affected_damage
 		node_progress.value = active_health
+		if affected_damage > 0:
+			visual_damage()
 		if active_health <= 0:
 			die()
 		
+func visual_damage() -> void:
+	const TIME_TO_FLASH:float = 0.2
+	node_sprite.material.set_shader_parameter(&"harmed", true)
+	node_red_flash_timer.start(TIME_TO_FLASH)
+	
+func stop_flash() -> void:
+	node_sprite.material.set_shader_parameter(&"harmed", false)
+	
 func die():
 	print("You died! sucks to suck buddy")
 	queue_free()

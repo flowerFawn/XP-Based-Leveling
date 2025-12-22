@@ -11,10 +11,11 @@ size = Vector2(150, 150)
 shader = ExtResource("2_lrhn5")
 shader_parameter/harmed = false
 
-[node name="CharacterBody2D" type="CharacterBody2D" node_paths=PackedStringArray("node_sprite", "node_progress") groups=["Player"]]
+[node name="CharacterBody2D" type="CharacterBody2D" node_paths=PackedStringArray("node_sprite", "node_progress", "node_red_flash_timer") groups=["Player"]]
 script = ExtResource("1_rkhd4")
 node_sprite = NodePath("Trianglewizard")
 node_progress = NodePath("ProgressBar")
+node_red_flash_timer = NodePath("RedFlashTimer")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_rkhd4")
@@ -31,13 +32,16 @@ texture = ExtResource("3_lrhn5")
 [node name="ProgressBar" type="ProgressBar" parent="."]
 anchors_preset = -1
 anchor_right = 0.5
-offset_left = -76.0
-offset_top = 49.5
-offset_right = 76.0
-offset_bottom = 76.5
+offset_left = -110.0
+offset_top = 76.5
+offset_right = 110.0
+offset_bottom = 120.0
 grow_horizontal = 2
 grow_vertical = 2
 show_percentage = false
 
 [node name="AudioListener2D" type="AudioListener2D" parent="."]
 current = true
+
+[node name="RedFlashTimer" type="Timer" parent="."]
+wait_time = 0.3

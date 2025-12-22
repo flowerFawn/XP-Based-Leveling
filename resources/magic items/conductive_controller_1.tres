@@ -6,5 +6,6 @@
 [resource]
 script = ExtResource("1_4odem")
 percentage_increase_per_enemy = 0.05
+rarity = 2
 next_upgrade = ExtResource("1_dhy58")
 metadata/_custom_type_script = "uid://dn2cenp4tb56"
