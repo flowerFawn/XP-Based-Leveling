@@ -1,0 +1,34 @@
+[gd_scene load_steps=11 format=3 uid="uid://cbx2d77h30sx7"]
+
+[ext_resource type="Script" uid="uid://4tym74f6xthj" path="res://scripts/menu/opening_slides.gd" id="1_fwivr"]
+[ext_resource type="Texture2D" uid="uid://dkl3hjf61fibr" path="res://assets/placeholders/slide_1.png" id="2_gck53"]
+[ext_resource type="Texture2D" uid="uid://b6q2ygd4ff77b" path="res://assets/placeholders/slide_2.png" id="3_ceswh"]
+[ext_resource type="Texture2D" uid="uid://cgag8irry1e0k" path="res://assets/placeholders/slide_3.png" id="4_bbhs1"]
+[ext_resource type="Texture2D" uid="uid://bqpggcf1o6c2x" path="res://assets/placeholders/slide_4.png" id="5_1nypa"]
+[ext_resource type="Texture2D" uid="uid://cls1rq37hspmu" path="res://assets/placeholders/slide_5.png" id="6_nya0i"]
+[ext_resource type="Texture2D" uid="uid://bubl5cjfc3bpo" path="res://assets/placeholders/slide_6.png" id="7_ku122"]
+[ext_resource type="Texture2D" uid="uid://dswnga55xj6vh" path="res://assets/placeholders/slide_7.png" id="8_bsbj0"]
+[ext_resource type="Texture2D" uid="uid://cchhunueywo22" path="res://assets/placeholders/slide_8.png" id="9_vesus"]
+[ext_resource type="Texture2D" uid="uid://ime21a7p7q3" path="res://assets/placeholders/slide_9.png" id="10_ob7yx"]
+
+[node name="Control" type="Control" node_paths=PackedStringArray("last_slide_rect", "next_slide_rect")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fwivr")
+slides = Array[Texture2D]([ExtResource("2_gck53"), ExtResource("3_ceswh"), ExtResource("4_bbhs1"), ExtResource("5_1nypa"), ExtResource("6_nya0i"), ExtResource("7_ku122"), ExtResource("8_bsbj0"), ExtResource("9_vesus"), ExtResource("10_ob7yx")])
+last_slide_rect = NodePath("LastSlideRect")
+next_slide_rect = NodePath("NextSlideRect")
+
+[node name="NextSlideRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LastSlideRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0

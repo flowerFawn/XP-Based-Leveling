@@ -20,11 +20,11 @@ config/icon="res://icon.svg"
 GameInfo="*res://scripts/autoloads/game_info.gd"
 SpellShop="*res://scripts/autoloads/spell_shop.gd"
 MagicItemInfo="*res://scripts/autoloads/magic_item_info.gd"
+Config="*res://scripts/autoloads/config.gd"
 
 [display]
 
 window/stretch/mode="canvas_items"
-window/vsync/vsync_mode=0
 
 [global_group]
 
