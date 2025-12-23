@@ -28,7 +28,7 @@ class_name EnemyType
 
 @export_group("Appearance")
 ##The image used for the enemy
-@export var sprite:Texture2D
+@export var animations:SpriteFrames
 
 @export_group("Advanced")
 ##The script that will replace the base enemy script. Should inherit from Enemy.

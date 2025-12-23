@@ -3,7 +3,7 @@ class_name Enemy
 ##The enemy type resource that this enemy will be
 @export var enemy_type:EnemyType
 ##Nodes the enemy needs to be able to reference
-var node_sprite:Sprite2D
+var node_sprite:AnimatedSprite2D
 var node_collision:CollisionShape2D
 var hit_this_second
 
@@ -60,7 +60,7 @@ static func new_enemy(enemy_type:EnemyType) -> Enemy:
 	new_enemy_instance.add_to_group(&"Enemy")
 	new_enemy_instance.set_collision_layer_value(1, false)
 	new_enemy_instance.set_collision_layer_value(2, true)
-	new_enemy_instance.node_sprite = Sprite2D.new()
+	new_enemy_instance.node_sprite = AnimatedSprite2D.new()
 	new_enemy_instance.node_sprite.material = ShaderMaterial.new()
 	new_enemy_instance.node_sprite.material.shader = preload("uid://6bjklt2wni63")
 	#this is so the 200x200 pixel sprites by default take up the 100x100 pixel space we want them to
@@ -76,13 +76,14 @@ func intialise_enemy() -> void:
 	active_speed = enemy_type.speed
 	active_health = enemy_type.base_health
 	node_collision.shape = enemy_type.collision
-	node_sprite.texture = enemy_type.sprite
+	node_sprite.sprite_frames = enemy_type.animations
 	misc_setup()
 	if enemy_type.spawn_sound != null:
 		play_spawn_sound(enemy_type.spawn_sound)
 	if enemy_type.disappear_time > 0:
 		disappear_after_time(enemy_type.disappear_time)
 	connect("body_entered", collision_entered)
+	node_sprite.play(&"walk")
 #endregion
 
 func play_spawn_sound(sound:AudioStream):

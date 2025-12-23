@@ -2,10 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://clmxcj044sejr" path="res://assets/placeholders/big_wizard_placeholder.png" id="1_3fcys"]
 [ext_resource type="Script" uid="uid://dse7vf0l5vfv0" path="res://scripts/resources/base resources/character.gd" id="1_bsn0i"]
-[ext_resource type="Texture2D" uid="uid://wc4jbptx4hg3" path="res://assets/placeholders/walk_1.png" id="1_glieb"]
-[ext_resource type="Texture2D" uid="uid://ctawsdmgf8sb5" path="res://assets/placeholders/walk_2.png" id="2_5cdnv"]
+[ext_resource type="Texture2D" uid="uid://c5knnb2e1dqrm" path="res://assets/placeholders/Archwizard 0.5.png" id="1_glieb"]
+[ext_resource type="Texture2D" uid="uid://cslhbbgv6swq4" path="res://assets/placeholders/Archwizard 1 fixed updated.png" id="2_glieb"]
 [ext_resource type="Resource" uid="uid://fdx6pmmkh50r" path="res://resources/magic items/teachers_pet_1.tres" id="2_gurd5"]
-[ext_resource type="Texture2D" uid="uid://p85tbgjjc7h8" path="res://assets/placeholders/walk_3.png" id="3_h05kn"]
+[ext_resource type="Texture2D" uid="uid://dggrwubnlimpa" path="res://assets/placeholders/Archwizard 2 fixed.png" id="3_5cdnv"]
 [ext_resource type="Resource" uid="uid://bwwyvlsexinen" path="res://resources/ability pools/archmage.tres" id="4_62uj4"]
 [ext_resource type="Resource" uid="uid://cbh1n057q23bg" path="res://resources/spell/firebolt_1.tres" id="5_3fcys"]
 
@@ -16,10 +16,10 @@ animations = [{
 "texture": ExtResource("1_glieb")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_5cdnv")
+"texture": ExtResource("2_glieb")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_h05kn")
+"texture": ExtResource("3_5cdnv")
 }],
 "loop": true,
 "name": &"walk",
