@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Sketch Spell Survivors"
-run/main_scene="uid://dj5n2ohldosah"
+run/main_scene="uid://cbx2d77h30sx7"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
 

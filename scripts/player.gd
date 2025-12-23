@@ -45,7 +45,6 @@ func fake_background(movement:Vector2) -> void:
 	var scroll_change:Vector2 = Vector2(
 	movement.x / node_fake_background.size.x, movement.y / node_fake_background.size.y)
 	shader.set_shader_parameter(&"scroll_uv", previous_scroll + scroll_change)
-	print(shader.get_shader_parameter(&"scroll_uv"))
 	
 func get_direction() -> Vector2:
 	var direction:Vector2 = Vector2(Input.get_axis("player_left", "player_right"), Input.get_axis("player_up", "player_down")).normalized()

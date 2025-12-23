@@ -88,6 +88,7 @@ size_flags_horizontal = 3
 [connection signal="pressed" from="MainMenu/VBoxContainer/HBoxContainer/VBoxContainer/PlayButton" to="MainMenu" method="button_pressed" binds= [&"Play"]]
 [connection signal="focus_entered" from="MainMenu/VBoxContainer/HBoxContainer/VBoxContainer/SettingsButton" to="MainMenu" method="_menu_button_hovered" binds= [&"Settings"]]
 [connection signal="mouse_entered" from="MainMenu/VBoxContainer/HBoxContainer/VBoxContainer/SettingsButton" to="MainMenu" method="_menu_button_hovered" binds= [&"Settings"]]
+[connection signal="pressed" from="MainMenu/VBoxContainer/HBoxContainer/VBoxContainer/SettingsButton" to="MainMenu" method="button_pressed" binds= [&"Settings"]]
 [connection signal="focus_entered" from="MainMenu/VBoxContainer/HBoxContainer/VBoxContainer/BestiaryButton" to="MainMenu" method="_menu_button_hovered" binds= [&"Bestiary"]]
 [connection signal="mouse_entered" from="MainMenu/VBoxContainer/HBoxContainer/VBoxContainer/BestiaryButton" to="MainMenu" method="_menu_button_hovered" binds= [&"Bestiary"]]
 [connection signal="focus_entered" from="MainMenu/VBoxContainer/HBoxContainer/VBoxContainer/CreditsButton" to="MainMenu" method="_menu_button_hovered" binds= [&"Credits"]]

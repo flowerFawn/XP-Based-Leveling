@@ -21,6 +21,8 @@ func button_pressed(button_function:StringName) -> void:
 	match button_function:
 		&"Play":
 			get_tree().change_scene_to_packed(preload("uid://caihircp2d6qc"))
+		&"Settings":
+			get_tree().change_scene_to_packed(load("uid://dgjvvqwas3gcv"))
 		&"Quit":
 			get_tree().quit()
 
