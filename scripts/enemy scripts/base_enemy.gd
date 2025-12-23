@@ -24,7 +24,8 @@ func misc_setup() -> void:
 	pass
 	
 func _physics_process(delta: float) -> void:
-	move(current_direction * active_speed * delta)
+	if not dying:
+		move(current_direction * active_speed * delta)
 	
 #region COLLISION
 func collision_entered(body:Node2D):
@@ -146,9 +147,11 @@ func die() -> void:
 	if dying:
 		return
 	dying = true
+	node_collision.disabled = true
 	SpellShop.spell_xp += enemy_type.xp_reward
 	if enemy_type.death_effect != null:
 		await enemy_type.death_effect.cause_effect(self)
+	await get_tree().create_timer(0.2).timeout
 	queue_free()
 	
 ##Disappearing is different from dying, in that it causes no death effect and no xp reward

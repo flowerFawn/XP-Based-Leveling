@@ -21,16 +21,5 @@ func do_volt(n:int) -> void:
 	draw_line_from_player(new_raycast.target_position)
 	new_raycast.queue_free()
 		
-##This should be a local position
-func draw_line_from_player(end_position:Vector2) -> void:
-	var line:VisualEffectLine = VisualEffectLine.new()
-	line.add_point(Vector2.ZERO)
-	line.add_point(end_position)
-	line.width = 100
-	line.texture = texture
-	line.texture_mode = Line2D.LINE_TEXTURE_TILE
-	line.texture_repeat = CanvasItem.TEXTURE_REPEAT_ENABLED
-	GameInfo.projectile_holder.add_child(line)
-	line.global_position = player.global_position
-	line.start_decay_timer(1)
+
 	

@@ -55,5 +55,22 @@ func wait_time(time:float) -> void:
 func get_random_offset(intensity:float = 1.0) -> Vector2:
 	return Vector2(GameInfo.rnd.randi_range(-150, 150), GameInfo.rnd.randi_range(-150, 150)) * intensity
 	
+##This should be a local position
+func draw_line_from_player(end_position:Vector2, width = 100, decay:float = 1) -> void:
+	draw_line_between_points(player.global_position, end_position, width, decay)
+	
+##start should be a global position, end should be a local position
+func draw_line_between_points(start:Vector2, end:Vector2, width:int = 100, decay:float = 1) -> void:
+	var line:VisualEffectLine = VisualEffectLine.new()
+	line.add_point(Vector2.ZERO)
+	line.add_point(end)
+	line.width = width
+	line.texture = texture
+	line.texture_mode = Line2D.LINE_TEXTURE_TILE
+	line.texture_repeat = CanvasItem.TEXTURE_REPEAT_ENABLED
+	GameInfo.projectile_holder.add_child(line)
+	line.global_position = start
+	line.start_decay_timer(decay)
+	
 
 #endregion

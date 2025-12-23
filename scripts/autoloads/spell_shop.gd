@@ -61,14 +61,17 @@ func give_ability(ability:Ability):
 	
 #currently always gives 3, maybe change the count?
 func award_ability_option() -> void:
-	spell_option_menu.show_random_ability_options()
+	spell_option_menu.show_random_ability_options(10)
 	
 func run_through_magic_items(value:Variant, method:StringName) -> Variant:
 	var new_value = value
-	for magic_item in GameInfo.player.magic_items:
-		if magic_item.has_method(method):
-			new_value = magic_item.call(method, new_value)
-	return new_value
+	if GameInfo.player:
+		for magic_item in GameInfo.player.magic_items:
+			if magic_item.has_method(method):
+				new_value = magic_item.call(method, new_value)
+		return new_value
+	else:
+		return value
 	
 func _ready() -> void:
 	update_ability_weights()

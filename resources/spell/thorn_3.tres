@@ -10,9 +10,9 @@ radius = 100.0
 [resource]
 script = ExtResource("1_rw7l6")
 thorn_bush_trigger_timer = 1.0
-thorn_bush_decay_time = 6.0
+thorn_bush_decay_time = 8.0
 thorn_bush_speed_multiplier = 0.8
-cooldown = 10.0
+cooldown = 15.0
 damage = 4.0
 projectile_speed = null
 projectile_count = 2

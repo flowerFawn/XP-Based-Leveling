@@ -59,20 +59,27 @@ func get_direction() -> Vector2:
 		y_orientation - round(direction.y)
 	return direction
 	
-func get_closest_enemy() -> Vector2:
-	var enemy_point:Vector2
+func get_closest_enemy_position() -> Vector2:
+	var closest_enemy = get_closest_enemy()
+	if closest_enemy:
+		return get_closest_enemy().global_position
+	else:
+		return Vector2.ZERO
+	
+func get_closest_enemy() -> Enemy:
+	var closest_enemy:Enemy
 	var lowest_distance_squared:float = 0
 	var first_check = true
 	for enemy:Enemy in get_tree().get_nodes_in_group(&"Enemy"):
 		if first_check:
-			enemy_point = enemy.global_position
+			closest_enemy = enemy
 			lowest_distance_squared = global_position.distance_squared_to(enemy.global_position)
 			first_check = false
 			continue
 		if global_position.distance_squared_to(enemy.global_position) < lowest_distance_squared:
-			enemy_point = enemy.global_position
+			closest_enemy = enemy
 			lowest_distance_squared = global_position.distance_squared_to(enemy.global_position)
-	return enemy_point
+	return closest_enemy
 		
 
 #region HEALTH

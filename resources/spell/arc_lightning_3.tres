@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="SpellArcLightning" load_steps=5 format=3 uid="uid://d1y0nsndlphlu"]
+
+[ext_resource type="Resource" uid="uid://bu8qllynssw3t" path="res://resources/spell/arc_lightning_4.tres" id="1_5kw01"]
+[ext_resource type="Script" uid="uid://c8l8posic1hw8" path="res://scripts/resources/inherited resources/spells/s_arc_lightning.gd" id="1_xlbqu"]
+[ext_resource type="Texture2D" uid="uid://dx2cxtrybrv2t" path="res://assets/placeholders/electricity.png" id="2_5kw01"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1ronj"]
+radius = 400.0
+
+[resource]
+script = ExtResource("1_xlbqu")
+cooldown = 4.0
+damage = 6.0
+projectile_pierce = 20
+multi_projectile_delay = 0.05
+shape = SubResource("CircleShape2D_1ronj")
+texture = ExtResource("2_5kw01")
+level = 3
+rarity = 2
+next_upgrade = ExtResource("1_5kw01")
+metadata/_custom_type_script = "uid://c8l8posic1hw8"
