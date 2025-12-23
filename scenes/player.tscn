@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dt2i2obb5kodu"]
+[gd_scene load_steps=10 format=3 uid="uid://dt2i2obb5kodu"]
 
 [ext_resource type="Script" uid="uid://cprrck25bqwpi" path="res://scripts/player.gd" id="1_rkhd4"]
 [ext_resource type="Shader" uid="uid://wmypgnrpgule" path="res://scripts/shaders/player.gdshader" id="2_qhqgy"]
@@ -13,13 +13,17 @@ size = Vector2(150, 150)
 shader = ExtResource("2_qhqgy")
 shader_parameter/harmed = false
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qlg0r"]
+shader = ExtResource("2_qhqgy")
+shader_parameter/harmed = false
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tuyoq"]
 shader = ExtResource("4_qlg0r")
 shader_parameter/scroll_uv = Vector2(0, 0)
 
 [node name="CharacterBody2D" type="CharacterBody2D" node_paths=PackedStringArray("node_sprite", "node_progress", "node_red_flash_timer", "node_fake_background") groups=["Player"]]
 script = ExtResource("1_rkhd4")
-node_sprite = NodePath("Trianglewizard")
+node_sprite = NodePath("AnimatedSprite2D")
 node_progress = NodePath("ProgressBar")
 node_red_flash_timer = NodePath("RedFlashTimer")
 node_fake_background = NodePath("FakeBackgroundRect")
@@ -31,9 +35,13 @@ shape = SubResource("RectangleShape2D_rkhd4")
 zoom = Vector2(0.25, 0.25)
 
 [node name="Trianglewizard" type="Sprite2D" parent="."]
+visible = false
 material = SubResource("ShaderMaterial_my7n2")
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_lrhn5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_qlg0r")
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 anchors_preset = -1

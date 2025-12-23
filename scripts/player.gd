@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name Player
 
-@export var node_sprite:Sprite2D
+@export var node_sprite:AnimatedSprite2D
 @export var node_progress:ProgressBar
 @export var node_red_flash_timer:Timer
 @export var node_fake_background:TextureRect
@@ -32,6 +32,8 @@ func set_character(character:Character) -> void:
 	SpellShop.current_ability_pool = character.starting_ability_pool.abilities.duplicate()
 	SpellShop.give_ability(character.starting_spell)
 	SpellShop.give_ability(character.starting_magic_item)
+	node_sprite.sprite_frames = character.animations
+	node_sprite.play(&"walk")
 	
 func _physics_process(delta: float) -> void:
 	var movement_vector = speed * get_direction()
@@ -51,9 +53,12 @@ func get_direction() -> Vector2:
 	direction = Vector2(direction.x * abs(Input.get_axis("player_left", "player_right")), direction.y * abs(Input.get_axis("player_up", "player_down")))
 	if not direction.is_zero_approx():
 		accurate_orientation = direction.snappedf(1)
+		node_sprite.play()
+	else:
+		node_sprite.pause()
 	if direction.x != 0:
 		x_orientation = round(direction.x)
-		node_sprite.flip_h = x_orientation > 0
+		node_sprite.flip_h = x_orientation < 0
 			
 	if direction.y != 0:
 		y_orientation - round(direction.y)
