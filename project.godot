@@ -24,6 +24,7 @@ MagicItemInfo="*res://scripts/autoloads/magic_item_info.gd"
 [display]
 
 window/stretch/mode="canvas_items"
+window/vsync/vsync_mode=0
 
 [global_group]
 

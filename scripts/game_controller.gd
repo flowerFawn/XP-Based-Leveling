@@ -16,8 +16,8 @@ var enemy_type_and_weights_dict:Dictionary[EnemyType, Callable] = ({
 	preload("uid://dihnof1qd7oc1"):func (x) -> float: return -0.0005 * (x-180) * (x-420), #7 - mid goblin 1 
 	preload("uid://b5vdf6igrbsnr"):func (x) -> float: return -0.0005 * (x-180) * (x-420), #8 - mid goblin 2
 	preload("uid://diyifwsqyg152"):func (x) -> float: return -0.0005 * (x-180) * (x-420), #9 - mid goblin 3
-	preload("uid://b5oji5bg8ylg0"):func (x) -> float: return -0.0003 * (x-200) * (x-460), #10 - mid grunt
-	preload("uid://d2vrg8gthvpw3"):func (x) -> float: return -0.0003 * (x-200) * (x-460), #11 - mid hammerm
+	preload("uid://b5oji5bg8ylg0"):func (x) -> float: return -0.0002 * (x-200) * (x-460), #10 - mid grunt
+	preload("uid://d2vrg8gthvpw3"):func (x) -> float: return -0.0003 * (x-200) * (x-460), #11 - mid hammer
 })
 ##The most recently calculated enemy weights, based on enemy type weight functions array
 var enemy_type_current_weight_array:PackedFloat32Array = PackedFloat32Array([])

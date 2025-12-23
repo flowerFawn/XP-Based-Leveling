@@ -4,6 +4,7 @@ class_name Player
 @export var node_sprite:Sprite2D
 @export var node_progress:ProgressBar
 @export var node_red_flash_timer:Timer
+@export var node_fake_background:TextureRect
 var speed:int = 500
 var active_health:float = 100
 var max_health:float = 100
@@ -35,8 +36,16 @@ func set_character(character:Character) -> void:
 func _physics_process(delta: float) -> void:
 	var movement_vector = speed * get_direction()
 	move_and_collide(movement_vector * delta)
+	fake_background(movement_vector * delta)
 	GameInfo.update_player_info(self)
 
+func fake_background(movement:Vector2) -> void:
+	var shader:ShaderMaterial = node_fake_background.material
+	var previous_scroll:Vector2 = shader.get_shader_parameter(&"scroll_uv")
+	var scroll_change:Vector2 = Vector2(
+	movement.x / node_fake_background.size.x, movement.y / node_fake_background.size.y)
+	shader.set_shader_parameter(&"scroll_uv", previous_scroll + scroll_change)
+	print(shader.get_shader_parameter(&"scroll_uv"))
 	
 func get_direction() -> Vector2:
 	var direction:Vector2 = Vector2(Input.get_axis("player_left", "player_right"), Input.get_axis("player_up", "player_down")).normalized()
