@@ -1,9 +1,8 @@
-[gd_resource type="Resource" script_class="EnemyType" load_steps=7 format=3 uid="uid://c6qqqoynid1fh"]
+[gd_resource type="Resource" script_class="EnemyType" load_steps=6 format=3 uid="uid://c6qqqoynid1fh"]
 
 [ext_resource type="Script" uid="uid://58cfsa1tna1q" path="res://scripts/resources/base resources/enemy_type.gd" id="1_1anod"]
 [ext_resource type="Resource" uid="uid://d17rqm0p4fegy" path="res://resources/death effects/bomber_explosion.tres" id="1_e1w52"]
 [ext_resource type="Resource" uid="uid://cj6251nhvsiy8" path="res://resources/movement types/straight_enemy_movement.tres" id="1_vxydo"]
-[ext_resource type="Texture2D" uid="uid://dc1k28qljxgix" path="res://icon.svg" id="3_vxydo"]
 [ext_resource type="Script" uid="uid://bdiusejrixhwa" path="res://scripts/enemy scripts/e_script_bomber.gd" id="4_vxydo"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nwiga"]
@@ -17,6 +16,5 @@ xp_reward = 0.1
 death_effect = ExtResource("1_e1w52")
 base_health = 5.0
 collision = SubResource("CircleShape2D_nwiga")
-sprite = ExtResource("3_vxydo")
 unique_script = ExtResource("4_vxydo")
 metadata/_custom_type_script = "uid://58cfsa1tna1q"

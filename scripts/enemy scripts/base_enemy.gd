@@ -34,7 +34,7 @@ func collision_entered(body:Node2D):
 		var player:Player = body
 		if enemy_type.contact_damage > 0:
 			player.take_damage(enemy_type.contact_damage)
-			die()
+			die(&"attack")
 #endregion
 #region MOVEMENT
 func move(velocity:Vector2) -> void:
@@ -111,7 +111,7 @@ func take_damage(amount:float) -> void:
 		register_was_hit_this_second()
 	visual_damage(amount)
 	if active_health <= 0:
-		die()
+		die(&"die")
 		
 func register_was_hit_this_second() -> void:
 	hit_this_second = true
@@ -144,7 +144,7 @@ func change_value_multiplicative(value:StringName, multiplier:float, time_till_r
 		set(value, get(value) / multiplier)
 
 	
-func die() -> void:
+func die(animation:StringName) -> void:
 	if dying:
 		return
 	dying = true
@@ -152,10 +152,16 @@ func die() -> void:
 	SpellShop.spell_xp += enemy_type.xp_reward
 	if enemy_type.death_effect != null:
 		await enemy_type.death_effect.cause_effect(self)
-	await get_tree().create_timer(0.2).timeout
+	await death_animation(animation)
 	queue_free()
 	
 ##Disappearing is different from dying, in that it causes no death effect and no xp reward
 func disappear():
+	await death_animation(&"die")
 	queue_free()
 #endregion
+
+func death_animation(animation:StringName) -> void:
+	const TIME_DEATH_DISPLAYED:float = 0.5
+	node_sprite.play(animation)
+	await get_tree().create_timer(TIME_DEATH_DISPLAYED).timeout

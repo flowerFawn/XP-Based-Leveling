@@ -9,7 +9,7 @@ func update_direction() -> void:
 		target_position = GameInfo.player_position
 	#if it has reached it's target position, hit the ground, and exploded
 	if (target_position.x - global_position.x) ** 2 + (target_position.y - global_position.y) ** 2 < 80 ** 2:
-		die()
+		die(&"die")
 
 func misc_setup() -> void:
 	const TIME_TILL_EXPLODES:float = 4.0
