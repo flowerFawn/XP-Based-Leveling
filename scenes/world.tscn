@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dp1bn4tu70hr6"]
+[gd_scene load_steps=8 format=3 uid="uid://dp1bn4tu70hr6"]
 
 [ext_resource type="Script" uid="uid://b0pcojyqof33i" path="res://scripts/world_controller.gd" id="1_4wyf3"]
 [ext_resource type="PackedScene" uid="uid://dt2i2obb5kodu" path="res://scenes/player.tscn" id="1_nnsk1"]
@@ -6,13 +6,15 @@
 [ext_resource type="Script" uid="uid://c3kqgg7wrwhyb" path="res://scripts/projectile_holder.gd" id="4_71j4m"]
 [ext_resource type="PackedScene" uid="uid://bol0i1wwwklsj" path="res://scenes/menu/spell_option_menu.tscn" id="4_k0juu"]
 [ext_resource type="PackedScene" uid="uid://cnhp8six32rd7" path="res://scenes/menu/in_game_ui.tscn" id="6_qfnet"]
+[ext_resource type="PackedScene" uid="uid://c7fre1iwwkd4x" path="res://scenes/menu/pause_menu.tscn" id="7_i7141"]
 
-[node name="WorldController" type="Node2D" node_paths=PackedStringArray("projectile_holder", "enemy_holder", "game_controller", "game_ui", "spell_option_menu")]
+[node name="WorldController" type="Node2D" node_paths=PackedStringArray("projectile_holder", "enemy_holder", "game_controller", "game_ui", "pause_menu", "spell_option_menu")]
 script = ExtResource("1_4wyf3")
 projectile_holder = NodePath("ProjectileHolder")
 enemy_holder = NodePath("EnemyHolder")
 game_controller = NodePath("GameController")
 game_ui = NodePath("InGameUI/Control")
+pause_menu = NodePath("PauseMenu/PauseMenu")
 spell_option_menu = NodePath("SpellOptionMenu/SpellOptionMenu")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_nnsk1")]
@@ -31,5 +33,11 @@ process_mode = 3
 
 [node name="InGameUI" parent="." instance=ExtResource("6_qfnet")]
 
+[node name="PauseMenu" parent="." instance=ExtResource("7_i7141")]
+
+[node name="PauseMenu" parent="PauseMenu" index="0"]
+visible = false
+
 [editable path="SpellOptionMenu"]
 [editable path="InGameUI"]
+[editable path="PauseMenu"]

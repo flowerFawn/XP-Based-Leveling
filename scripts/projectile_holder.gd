@@ -5,7 +5,6 @@ var damage_done_this_second:int = 0
 
 func create_damage_label(label_position:Vector2, damage:int) -> void:
 	#damage marker
-	damage_done_this_second
 	var damage_label:Label = Label.new()
 	
 	damage_done_this_second += damage
@@ -27,7 +26,9 @@ func create_damage_label(label_position:Vector2, damage:int) -> void:
 		label_position.x + GameInfo.rnd.randi_range(-100, 100),
 		label_position.y - GameInfo.rnd.randi_range(100, 150))
 	position_tween.tween_property(damage_label, "global_position", final_offset, 1)
+	GameInfo.game_ui.set_dps_counter(damage_done_this_second)
 	await position_tween.finished
 	damage_done_this_second -= damage
 	damage_label.queue_free()
+	GameInfo.game_ui.set_dps_counter(damage_done_this_second)
 	

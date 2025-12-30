@@ -75,7 +75,7 @@ func update_enemy_weights(seconds_survived:float) -> void:
 	
 func _process(delta: float) -> void:
 	time_elapsed += delta
-	GameInfo.game_ui.timer_label.text = "%02d:%02d" % [int(floor(time_elapsed / 60)), int(round(fmod(time_elapsed, 60)))]
+	GameInfo.game_ui.set_timer(time_elapsed)
 	
 	
 	

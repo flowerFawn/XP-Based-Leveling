@@ -9,6 +9,7 @@ var spell_xp:float = 0:
 			spell_xp -= next_required_xp
 			next_required_xp += 10
 			GameInfo.player_level += 1
+			GameInfo.game_ui.set_level_counter(GameInfo.player_level)
 			call_deferred(&"award_ability_option")
 			GameInfo.game_ui.xp_progress.value = spell_xp
 			GameInfo.game_ui.xp_progress.max_value = next_required_xp

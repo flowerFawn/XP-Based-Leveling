@@ -158,6 +158,7 @@ func die(animation:StringName) -> void:
 	SpellShop.spell_xp += enemy_type.xp_reward
 	if enemy_type.death_effect != null:
 		await enemy_type.death_effect.cause_effect(self)
+	MagicItemInfo.register_kill()
 	await death_animation(animation)
 	queue_free()
 	
