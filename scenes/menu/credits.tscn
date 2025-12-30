@@ -1,0 +1,79 @@
+[gd_scene load_steps=2 format=3 uid="uid://bd7helba444mi"]
+
+[ext_resource type="Script" uid="uid://clsi7xxwcnco8" path="res://scripts/menu/credits.gd" id="1_4y82v"]
+
+[node name="Control" type="Control" node_paths=PackedStringArray("credits_container", "background_color")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4y82v")
+credits_container = NodePath("CreditsText")
+background_color = NodePath("Background")
+
+[node name="CreditsText" type="VBoxContainer" parent="."]
+z_index = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 226.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CreditsText"]
+layout_mode = 2
+bbcode_enabled = true
+text = "Kris \"Beyond.Adonis\" Barton
+drawing and shit
+
+April \"flowerFawn\" Parker:
+programming and shit
+
+Many Funny names:
+being comedic for their presence here
+
+Perhaps we do what they do in the og fallout games and have a secret credits if you hold shift? with quotes and jokes
+
+
+
+
+
+
+Copyright (c) 2014-present Godot Engine contributors.
+  Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the \"Software\"), to deal
+  in the Software without restriction, including without limitation the rights
+  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in all
+  copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  SOFTWARE.
+
+  -- Godot Engine <https://godotengine.org>"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0885599, 0.0885599, 0.0885599, 1)

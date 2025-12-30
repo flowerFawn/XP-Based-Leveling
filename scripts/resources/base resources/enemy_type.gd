@@ -1,6 +1,7 @@
 extends Resource
 class_name EnemyType
 
+@export var enemy_name:String
 ##Properties regarding movement
 @export_group("Movement")
 ##How the enemy moves. This determines direction, not speed

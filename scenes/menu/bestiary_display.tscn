@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://pqjleu8sthqp"]
+
+[ext_resource type="Script" uid="uid://dc135j0xbfyn7" path="res://scripts/menu/bestiary_display.gd" id="1_rhj4j"]
+[ext_resource type="Texture2D" uid="uid://07whejpe2a7c" path="res://assets/placeholders/endearingly pathetic goblin sprite 1.png" id="2_yvsus"]
+
+[node name="VBoxContainer" type="VBoxContainer" node_paths=PackedStringArray("node_texture", "node_label")]
+offset_left = -150.0
+offset_top = -167.0
+offset_right = 150.0
+offset_bottom = 167.0
+pivot_offset = Vector2(50, 50)
+script = ExtResource("1_rhj4j")
+node_texture = NodePath("EnemyTexture")
+node_label = NodePath("Label")
+
+[node name="EnemyTexture" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("2_yvsus")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="."]
+custom_minimum_size = Vector2(300, 30)
+layout_mode = 2
+text = "Name Goes Here!"
+horizontal_alignment = 1

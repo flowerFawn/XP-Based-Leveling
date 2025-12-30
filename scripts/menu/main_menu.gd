@@ -4,6 +4,8 @@ extends Control
 @export var fade_texture_rect:TextureRect
 @export var front_texture_rect:TextureRect
 @export var play_button:Button
+@export var big_fade_rect:ColorRect
+
 var menu_slides:Dictionary[StringName, Texture2D] = {
 	&"Play":preload("uid://cmhl2o814xr2s"),
 	&"Settings":preload("uid://ccyaul5gqpvdi"),
@@ -14,7 +16,9 @@ var menu_slides:Dictionary[StringName, Texture2D] = {
 var visuals_tween:Tween
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	var fade_tween:Tween = create_tween()
 	play_button.grab_focus()
+	fade_tween.tween_property(big_fade_rect, "color", Color(0, 0, 0, 0), 0.5)
 
 
 func button_pressed(button_function:StringName) -> void:
@@ -23,6 +27,10 @@ func button_pressed(button_function:StringName) -> void:
 			get_tree().change_scene_to_packed(preload("uid://caihircp2d6qc"))
 		&"Settings":
 			get_tree().change_scene_to_packed(load("uid://dgjvvqwas3gcv"))
+		&"Bestiary":
+			get_tree().change_scene_to_packed(load("uid://bdm4suav3p5q6"))
+		&"Credits":
+			get_tree().change_scene_to_packed(load("uid://bd7helba444mi"))
 		&"Quit":
 			get_tree().quit()
 
