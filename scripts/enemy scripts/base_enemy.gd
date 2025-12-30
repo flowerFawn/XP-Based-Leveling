@@ -34,7 +34,13 @@ func collision_entered(body:Node2D):
 		var player:Player = body
 		if enemy_type.contact_damage > 0:
 			player.take_damage(enemy_type.contact_damage)
-			die(&"attack")
+			node_sprite.play(&"attack")
+			node_collision.disabled = true
+			await get_tree().create_timer(enemy_type.damage_cooldown).timeout
+			node_sprite.play(&"walk")
+			node_collision.disabled = false
+			
+			
 #endregion
 #region MOVEMENT
 func move(velocity:Vector2) -> void:

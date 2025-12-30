@@ -10,9 +10,10 @@ class_name EnemyType
 @export var speed:float
 
 @export_group("Effects")
-##The amount of damage done when colliding with the player, and then dying
+##The amount of damage done when colliding with the player
 @export var contact_damage:float
-
+##Time (in seconds) the enemy is disabled before being able to attack again
+@export var damage_cooldown:float = 0.25
 ##The base xp awarded upon defeating this enemy
 @export var xp_reward:float
 

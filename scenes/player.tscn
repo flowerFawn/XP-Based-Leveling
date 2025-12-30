@@ -7,7 +7,7 @@
 [ext_resource type="Shader" uid="uid://dq1q8mvtamyn3" path="res://scripts/shaders/fake_background.gdshader" id="4_qlg0r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rkhd4"]
-size = Vector2(150, 150)
+size = Vector2(250, 250)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_my7n2"]
 shader = ExtResource("2_qhqgy")
@@ -44,7 +44,6 @@ texture = ExtResource("3_lrhn5")
 material = SubResource("ShaderMaterial_qlg0r")
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
-visible = false
 anchors_preset = -1
 anchor_right = 0.5
 offset_left = -110.0
