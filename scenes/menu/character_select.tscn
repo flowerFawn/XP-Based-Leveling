@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://caihircp2d6qc"]
+[gd_scene load_steps=12 format=3 uid="uid://caihircp2d6qc"]
 
 [ext_resource type="Script" uid="uid://do146oyuisrlu" path="res://scripts/menu/character_select_menu.gd" id="1_0frw4"]
-[ext_resource type="Theme" uid="uid://cdjlu0ryhrw2y" path="res://resources/built-in/themes/character_select.tres" id="1_vffxf"]
+[ext_resource type="Theme" uid="uid://jtelj6fw1ph" path="res://resources/built-in/themes/character_select.tres" id="1_vffxf"]
 [ext_resource type="Script" uid="uid://bd3o2cswmjmgn" path="res://scripts/controls/character_select_button.gd" id="2_fts7l"]
 [ext_resource type="Resource" uid="uid://ml6ajkpkur4j" path="res://resources/characters/archmage.tres" id="2_vffxf"]
+[ext_resource type="Theme" uid="uid://cdjlu0ryhrw2y" path="res://resources/built-in/themes/character_select_button.tres" id="3_8f1j4"]
 [ext_resource type="Resource" uid="uid://1p35pb8pnkv7" path="res://resources/characters/shard.tres" id="5_0frw4"]
 [ext_resource type="Resource" uid="uid://dguulqdo5x3a8" path="res://resources/characters/sacred_light.tres" id="6_m7y3p"]
 [ext_resource type="Resource" uid="uid://bon0kci1aeje0" path="res://resources/characters/windslash.tres" id="6_nbeft"]
@@ -20,6 +21,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_vffxf")
 script = ExtResource("1_0frw4")
 node_start_button = NodePath("VBoxContainer/Button")
 node_name_label = NodePath("VBoxContainer/NameLabel")
@@ -34,6 +36,7 @@ anchor_right = 0.75
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("3_8f1j4")
 columns = 4
 
 [node name="CharacterSelectButton" type="Button" parent="CharacterSelect/GridContainer"]
@@ -41,7 +44,6 @@ custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource("1_vffxf")
 action_mode = 0
 expand_icon = true
 script = ExtResource("2_fts7l")
@@ -53,7 +55,6 @@ custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource("1_vffxf")
 action_mode = 0
 expand_icon = true
 script = ExtResource("2_fts7l")
@@ -65,7 +66,6 @@ custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource("1_vffxf")
 action_mode = 0
 expand_icon = true
 script = ExtResource("2_fts7l")
@@ -77,7 +77,6 @@ custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource("1_vffxf")
 action_mode = 0
 expand_icon = true
 script = ExtResource("2_fts7l")
@@ -89,7 +88,6 @@ custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource("1_vffxf")
 action_mode = 0
 expand_icon = true
 script = ExtResource("2_fts7l")
@@ -101,7 +99,6 @@ custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource("1_vffxf")
 action_mode = 0
 expand_icon = true
 script = ExtResource("2_fts7l")
@@ -113,7 +110,6 @@ custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource("1_vffxf")
 action_mode = 0
 expand_icon = true
 script = ExtResource("2_fts7l")
@@ -125,7 +121,6 @@ custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource("1_vffxf")
 action_mode = 0
 expand_icon = true
 script = ExtResource("2_fts7l")

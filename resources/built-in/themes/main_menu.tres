@@ -3,5 +3,10 @@
 [ext_resource type="StyleBox" uid="uid://de0icf8c5krx2" path="res://resources/built-in/themes/theme assets/ms_gold_stylebox.tres" id="1_u3l2f"]
 
 [resource]
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/styles/disabled = ExtResource("1_u3l2f")
+Button/styles/focus = ExtResource("1_u3l2f")
+Button/styles/hover = ExtResource("1_u3l2f")
 Button/styles/normal = ExtResource("1_u3l2f")
+Button/styles/pressed = ExtResource("1_u3l2f")
 VBoxContainer/constants/separation = 10
