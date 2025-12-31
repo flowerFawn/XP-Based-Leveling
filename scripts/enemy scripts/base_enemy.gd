@@ -18,13 +18,15 @@ var active_health:float
 var current_direction:Vector2
 
 var dying:bool = false
+var hitstopped:bool = false
+var active_hitstops:int = 0
 
 
 func misc_setup() -> void:
 	pass
 	
 func _physics_process(delta: float) -> void:
-	if not dying:
+	if not dying and not hitstopped:
 		move(current_direction * active_speed * delta)
 	
 #region COLLISION
@@ -116,6 +118,14 @@ func take_damage(amount:float) -> void:
 	if not hit_this_second:
 		register_was_hit_this_second()
 	visual_damage(amount)
+	node_sprite.material.set_shader_parameter(&"harmed", true)
+	hitstopped = true
+	active_hitstops += 1
+	await get_tree().create_timer(enemy_type.hitstop_time).timeout
+	active_hitstops -= 1
+	if active_hitstops <= 0:
+		node_sprite.material.set_shader_parameter(&"harmed", false)
+		hitstopped = false
 	if active_health <= 0:
 		die(&"die")
 		
@@ -128,10 +138,6 @@ func register_was_hit_this_second() -> void:
 
 func visual_damage(damage:float) -> void:
 	GameInfo.projectile_holder.create_damage_label(global_position, floor(damage))
-	#makes the node turn red for a moment
-	node_sprite.material.set_shader_parameter(&"harmed", true)
-	await get_tree().create_timer(0.3).timeout
-	node_sprite.material.set_shader_parameter(&"harmed", false)
 	
 ##if the time_till_reversed = 0 then it will never be reversed. Due to the nature of mathematical operations, if this is mixed with the multiplicative version on the same property, it may not be properly returned to it's original state
 ##However there are like 1000000000 enemies onscreen anyway and they'll die in like 10 seconds anyway wgaf

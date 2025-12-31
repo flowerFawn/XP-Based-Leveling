@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://b0r1anwr8lchp" path="res://scripts/menu/main_menu.gd" id="1_nl8w3"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
+process_mode = 3
 
 [node name="MainMenu" type="Control" parent="." node_paths=PackedStringArray("fade_texture_rect", "front_texture_rect", "play_button", "big_fade_rect")]
 layout_mode = 3

@@ -8,7 +8,8 @@ class_name EnemyType
 @export var movement_type:EnemyMovementType
 ##How quickly the enemy moves. This is per second, due to the fact it is multiplied by delta
 @export var speed:float
-
+##Time (in seconds) the enemy stops moving (and turns red) after being damaged
+@export var hitstop_time:float = 0.2
 @export_group("Effects")
 ##The amount of damage done when colliding with the player
 @export var contact_damage:float
@@ -16,7 +17,6 @@ class_name EnemyType
 @export var damage_cooldown:float = 0.25
 ##The base xp awarded upon defeating this enemy
 @export var xp_reward:float
-
 ##The effect to be called upon death
 @export var death_effect:DeathEffect
 
