@@ -1,0 +1,37 @@
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://bbd4wu6mpdafv"]
+
+[ext_resource type="Texture2D" uid="uid://dqhg4oqbn5q8q" path="res://assets/placeholders/wood grain.png" id="1_1rsbc"]
+[ext_resource type="Texture2D" uid="uid://cgeicr0n006yi" path="res://assets/placeholders/good_bookcase.png" id="1_1xd5y"]
+[ext_resource type="Texture2D" uid="uid://ia3yeq3r8p7y" path="res://assets/placeholders/small_wizard_icon.png" id="3_edlow"]
+[ext_resource type="Texture2D" uid="uid://befrf0xm7yjus" path="res://assets/placeholders/ladder.png" id="4_edlow"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cqw41"]
+texture = ExtResource("1_1rsbc")
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1rsbc"]
+texture = ExtResource("1_1xd5y")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pk1qi"]
+texture = ExtResource("3_edlow")
+expand_margin_left = 30.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nokan"]
+texture = ExtResource("4_edlow")
+expand_margin_left = 30.0
+axis_stretch_vertical = 1
+
+[resource]
+GridContainer/constants/h_separation = 0
+GridContainer/constants/v_separation = 0
+Panel/styles/panel = SubResource("StyleBoxTexture_cqw41")
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_1rsbc")
+VScrollBar/styles/grabber = SubResource("StyleBoxTexture_pk1qi")
+VScrollBar/styles/scroll = SubResource("StyleBoxTexture_nokan")

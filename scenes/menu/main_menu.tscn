@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://dj5n2ohldosah"]
+[gd_scene load_steps=3 format=3 uid="uid://dj5n2ohldosah"]
 
+[ext_resource type="Theme" uid="uid://c5px4ysqh3xs1" path="res://resources/built-in/themes/main_menu.tres" id="1_3rkf3"]
 [ext_resource type="Script" uid="uid://b0r1anwr8lchp" path="res://scripts/menu/main_menu.gd" id="1_nl8w3"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
@@ -12,6 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_3rkf3")
 script = ExtResource("1_nl8w3")
 fade_texture_rect = NodePath("VBoxContainer/HBoxContainer/Control/FadeTextureRect")
 front_texture_rect = NodePath("VBoxContainer/HBoxContainer/Control/FrontTextureRect")
@@ -43,6 +45,7 @@ size_flags_horizontal = 3
 [node name="PlayButton" type="Button" parent="MainMenu/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+text = "Play"
 
 [node name="SettingsButton" type="Button" parent="MainMenu/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -86,6 +89,7 @@ grow_vertical = 2
 size_flags_horizontal = 3
 
 [node name="FadeRect" type="ColorRect" parent="MainMenu"]
+visible = false
 z_index = 10
 layout_mode = 1
 anchors_preset = 15

@@ -71,7 +71,6 @@ func update_enemy_weights(seconds_survived:float) -> void:
 		else:
 			new_weights_array.append(0)
 	enemy_type_current_weight_array = new_weights_array
-	print(enemy_type_current_weight_array)
 	
 func _process(delta: float) -> void:
 	time_elapsed += delta

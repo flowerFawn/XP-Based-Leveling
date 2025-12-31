@@ -1,35 +1,46 @@
-[gd_scene load_steps=2 format=3 uid="uid://cs5x04qv7e47i"]
+[gd_scene load_steps=3 format=3 uid="uid://cs5x04qv7e47i"]
 
+[ext_resource type="Theme" uid="uid://0x14wap1qyvs" path="res://resources/built-in/themes/pause.tres" id="1_3ljot"]
 [ext_resource type="Script" uid="uid://c7yn1pfg4o48w" path="res://scripts/spell_option_box.gd" id="1_yofxw"]
 
-[node name="SpellOptionBox" type="VBoxContainer" node_paths=PackedStringArray("name_label", "icon", "desc_label", "button")]
+[node name="PanelContainer" type="PanelContainer" node_paths=PackedStringArray("name_label", "icon", "desc_label", "button")]
+process_mode = 3
+offset_right = 53.0
+offset_bottom = 66.0
 size_flags_horizontal = 3
-script = ExtResource("1_yofxw")
-name_label = NodePath("SpellName")
-icon = NodePath("SpellIcon")
-desc_label = NodePath("SpellDesc")
-button = NodePath("SpellButton")
-
-[node name="SpellName" type="Label" parent="."]
-layout_mode = 2
-size_flags_horizontal = 4
 size_flags_vertical = 3
+theme = ExtResource("1_3ljot")
+script = ExtResource("1_yofxw")
+name_label = NodePath("SpellOptionBox/SpellName")
+icon = NodePath("SpellOptionBox/SpellIcon")
+desc_label = NodePath("SpellOptionBox/SpellDesc")
+button = NodePath("SpellOptionBox/SpellButton")
 
-[node name="SpellIcon" type="TextureRect" parent="."]
+[node name="SpellOptionBox" type="VBoxContainer" parent="."]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 7
+size_flags_horizontal = 3
+
+[node name="SpellName" type="Label" parent="SpellOptionBox"]
+custom_minimum_size = Vector2(212, 0)
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="SpellIcon" type="TextureRect" parent="SpellOptionBox"]
+layout_mode = 2
+size_flags_vertical = 3
 stretch_mode = 2
 
-[node name="SpellDesc" type="RichTextLabel" parent="."]
+[node name="SpellDesc" type="RichTextLabel" parent="SpellOptionBox"]
 layout_mode = 2
 size_flags_vertical = 3
 bbcode_enabled = true
 fit_content = true
 
-[node name="SpellButton" type="Button" parent="."]
+[node name="SpellButton" type="Button" parent="SpellOptionBox"]
 layout_mode = 2
-size_flags_vertical = 7
+size_flags_vertical = 3
 text = "Learn"
 
-[connection signal="pressed" from="SpellButton" to="." method="_on_spell_button_pressed"]
+[connection signal="pressed" from="SpellOptionBox/SpellButton" to="." method="_on_spell_button_pressed"]

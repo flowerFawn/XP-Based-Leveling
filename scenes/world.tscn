@@ -15,7 +15,7 @@ enemy_holder = NodePath("EnemyHolder")
 game_controller = NodePath("GameController")
 game_ui = NodePath("InGameUI/Control")
 pause_menu = NodePath("PauseMenu/PauseMenu")
-spell_option_menu = NodePath("SpellOptionMenu/SpellOptionMenu")
+spell_option_menu = NodePath("CanvasLayer/PanelContainer/SpellOptionMenu")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_nnsk1")]
 position = Vector2(1399, 1557)
@@ -28,8 +28,10 @@ script = ExtResource("4_71j4m")
 
 [node name="EnemyHolder" type="Node2D" parent="."]
 
-[node name="SpellOptionMenu" parent="." instance=ExtResource("4_k0juu")]
-process_mode = 3
+[node name="CanvasLayer" parent="." instance=ExtResource("4_k0juu")]
+
+[node name="PanelContainer" parent="CanvasLayer" index="0"]
+visible = false
 
 [node name="InGameUI" parent="." instance=ExtResource("6_qfnet")]
 
@@ -38,6 +40,6 @@ process_mode = 3
 [node name="PauseMenu" parent="PauseMenu" index="0"]
 visible = false
 
-[editable path="SpellOptionMenu"]
+[editable path="CanvasLayer"]
 [editable path="InGameUI"]
 [editable path="PauseMenu"]

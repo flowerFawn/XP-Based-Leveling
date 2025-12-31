@@ -9,13 +9,13 @@ func _input(event: InputEvent) -> void:
 func show_random_ability_options(option_count:int = 3) -> void:
 	get_tree().paused = true
 	var new_ability_option_box:AbilityOptionBox
-	visible = true
-	var abilitys_already_picked:Array[Ability]
+	get_parent().visible = true
+	var abilities_already_picked:Array[Ability]
 	var ability:Ability
 	SpellShop.update_ability_weights()
 	for n in range(0, option_count):
-		ability = SpellShop.get_random_ability(abilitys_already_picked)
-		abilitys_already_picked.append(ability)
+		ability = SpellShop.get_random_ability(abilities_already_picked)
+		abilities_already_picked.append(ability)
 		new_ability_option_box = ability_OPTION_BOX.instantiate()
 		new_ability_option_box.set_ability(ability)
 		new_ability_option_box.ability_picked.connect(spell_chosen)
@@ -40,5 +40,5 @@ func spell_chosen(ability:Ability):
 	for child in get_children():
 		child.queue_free()
 	SpellShop.give_ability(ability)
-	visible = false
+	get_parent().visible = false
 	get_tree().paused = false

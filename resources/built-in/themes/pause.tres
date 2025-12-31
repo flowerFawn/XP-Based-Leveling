@@ -1,0 +1,9 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://0x14wap1qyvs"]
+
+[ext_resource type="StyleBox" uid="uid://de0icf8c5krx2" path="res://resources/built-in/themes/theme assets/ms_gold_stylebox.tres" id="1_7a8ig"]
+
+[resource]
+Button/styles/normal = ExtResource("1_7a8ig")
+Label/font_sizes/font_size = 32
+PanelContainer/styles/panel = ExtResource("1_7a8ig")
+VBoxContainer/constants/separation = 4
