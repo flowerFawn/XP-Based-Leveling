@@ -81,7 +81,7 @@ func get_closest_enemy() -> Enemy:
 			lowest_distance_squared = global_position.distance_squared_to(enemy.global_position)
 			first_check = false
 			continue
-		if global_position.distance_squared_to(enemy.global_position) < lowest_distance_squared:
+		if global_position.distance_squared_to(enemy.global_position) < lowest_distance_squared and not enemy.dying:
 			closest_enemy = enemy
 			lowest_distance_squared = global_position.distance_squared_to(enemy.global_position)
 	return closest_enemy

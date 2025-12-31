@@ -46,7 +46,7 @@ func get_random_angle_vector() -> Vector2:
 	return Vector2.RIGHT.rotated(randf_range(0, 2 * PI))
 	
 func get_direction_to_nearest_enemy() -> Vector2:
-	return GameInfo.player_position.direction_to(GameInfo.closest_enemy_to_player_point)
+	return GameInfo.player.get_closest_enemy_position()
 
 ##you need to await this function if you want to await it
 func wait_time(time:float) -> void:

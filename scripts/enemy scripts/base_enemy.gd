@@ -165,12 +165,17 @@ func die(animation:StringName) -> void:
 		return
 	dying = true
 	node_collision.disabled = true
-	SpellShop.spell_xp += enemy_type.xp_reward
+	leave_xp()
 	if enemy_type.death_effect != null:
 		await enemy_type.death_effect.cause_effect(self)
 	MagicItemInfo.register_kill()
 	await death_animation(animation)
 	queue_free()
+	
+func leave_xp() -> void:
+	var xp_orb:XPOrb = XPOrb.new(enemy_type.xp_reward)
+	GameInfo.projectile_holder.add_child(xp_orb)
+	xp_orb.global_position = global_position
 	
 ##Disappearing is different from dying, in that it causes no death effect and no xp reward
 func disappear():
