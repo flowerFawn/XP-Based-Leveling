@@ -5,6 +5,7 @@ class_name Enemy
 ##Nodes the enemy needs to be able to reference
 var node_sprite:AnimatedSprite2D
 var node_collision:CollisionShape2D
+var node_audio:AudioStreamPlayer2D
 var hit_this_second
 
 ##Active versions of stats, so that a single resource can be used for every enemy type but individual enemies still change stats
@@ -74,8 +75,12 @@ static func new_enemy(enemy_type:EnemyType) -> Enemy:
 	#this is so the 200x200 pixel sprites by default take up the 100x100 pixel space we want them to
 	new_enemy_instance.node_sprite.scale = Vector2(0.5, 0.5)
 	new_enemy_instance.node_collision = CollisionShape2D.new()
+	new_enemy_instance.node_audio = AudioStreamPlayer2D.new()
+	new_enemy_instance.node_audio.max_distance = 100000
+	new_enemy_instance.node_audio.max_polyphony = 25
 	new_enemy_instance.add_child(new_enemy_instance.node_sprite)
 	new_enemy_instance.add_child(new_enemy_instance.node_collision)
+	new_enemy_instance.add_child(new_enemy_instance.node_audio)
 	new_enemy_instance.enemy_type = enemy_type
 	new_enemy_instance.intialise_enemy()
 	return new_enemy_instance
@@ -87,26 +92,23 @@ func intialise_enemy() -> void:
 	node_sprite.sprite_frames = enemy_type.animations
 	misc_setup()
 	if enemy_type.spawn_sound != null:
-		play_spawn_sound(enemy_type.spawn_sound)
+		play_sound(enemy_type.spawn_sound)
 	if enemy_type.disappear_time > 0:
 		disappear_after_time(enemy_type.disappear_time)
 	connect("body_entered", collision_entered)
 	node_sprite.play(&"walk")
 #endregion
 
-func play_spawn_sound(sound:AudioStream):
-	var audio_player:AudioStreamPlayer2D = AudioStreamPlayer2D.new()
-	audio_player.max_distance = 100000
-	print("making noise")
-	audio_player.stream = sound
-	add_child(audio_player)
-	await audio_player.tree_entered
-	audio_player.play()
-	await audio_player.finished
-	print("made noise")
-	audio_player.queue_free()
 	
-func disappear_after_time(time:float):
+func play_sound(sound:AudioStream) -> void:
+	node_audio.stream = sound
+	node_audio.pitch_scale = GameInfo.rnd.randf_range(0.7, 1.3)
+	node_audio.play()
+	
+func pick_random_hurt_sound() -> AudioStreamWAV:
+	return GameInfo.enemy_damage_noises.pick_random()
+	
+func disappear_after_time(time:float) -> void:
 	await tree_entered
 	await get_tree().create_timer(time).timeout
 	disappear()
@@ -118,6 +120,10 @@ func take_damage(amount:float) -> void:
 	if not hit_this_second:
 		register_was_hit_this_second()
 	visual_damage(amount)
+	play_sound(pick_random_hurt_sound())
+	if active_health <= 0:
+		die(&"die")
+		return
 	node_sprite.material.set_shader_parameter(&"harmed", true)
 	hitstopped = true
 	active_hitstops += 1
@@ -126,8 +132,6 @@ func take_damage(amount:float) -> void:
 	if active_hitstops <= 0:
 		node_sprite.material.set_shader_parameter(&"harmed", false)
 		hitstopped = false
-	if active_health <= 0:
-		die(&"die")
 		
 func register_was_hit_this_second() -> void:
 	hit_this_second = true
