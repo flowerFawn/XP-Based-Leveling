@@ -4,6 +4,7 @@ class_name XPOrb
 var xp_value:float
 var collision_node:CollisionShape2D
 static var sprite:Texture2D = preload("uid://dqqbt1crw78ej")
+static var pick_up_noise:AudioStreamWAV = preload("uid://dl7g12irdi3xl")
 
 func _init(given_xp_amount:float):
 	collision_node = CollisionShape2D.new()
@@ -24,5 +25,6 @@ func be_picked_up(body:Node2D) -> void:
 	pickup_tween.set_trans(Tween.TRANS_BACK)
 	pickup_tween.tween_property(self, "global_position", GameInfo.player_position, 0.25)
 	await pickup_tween.finished
+	AudioHandler.play_sound(pick_up_noise, Vector2.ZERO, 2, 1)
 	SpellShop.spell_xp += xp_value
 	queue_free()

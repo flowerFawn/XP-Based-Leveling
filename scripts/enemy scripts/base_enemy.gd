@@ -5,7 +5,6 @@ class_name Enemy
 ##Nodes the enemy needs to be able to reference
 var node_sprite:AnimatedSprite2D
 var node_collision:CollisionShape2D
-var node_audio:AudioStreamPlayer2D
 var hit_this_second
 
 ##Active versions of stats, so that a single resource can be used for every enemy type but individual enemies still change stats
@@ -75,12 +74,8 @@ static func new_enemy(enemy_type:EnemyType) -> Enemy:
 	#this is so the 200x200 pixel sprites by default take up the 100x100 pixel space we want them to
 	new_enemy_instance.node_sprite.scale = Vector2(0.5, 0.5)
 	new_enemy_instance.node_collision = CollisionShape2D.new()
-	new_enemy_instance.node_audio = AudioStreamPlayer2D.new()
-	new_enemy_instance.node_audio.max_distance = 100000
-	new_enemy_instance.node_audio.max_polyphony = 25
 	new_enemy_instance.add_child(new_enemy_instance.node_sprite)
 	new_enemy_instance.add_child(new_enemy_instance.node_collision)
-	new_enemy_instance.add_child(new_enemy_instance.node_audio)
 	new_enemy_instance.enemy_type = enemy_type
 	new_enemy_instance.intialise_enemy()
 	return new_enemy_instance
@@ -101,9 +96,7 @@ func intialise_enemy() -> void:
 
 	
 func play_sound(sound:AudioStream) -> void:
-	node_audio.stream = sound
-	node_audio.pitch_scale = GameInfo.rnd.randf_range(0.7, 1.3)
-	node_audio.play()
+	AudioHandler.play_sound(sound, global_position, 2)
 	
 func pick_random_hurt_sound() -> AudioStreamWAV:
 	return GameInfo.enemy_damage_noises.pick_random()

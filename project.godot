@@ -21,6 +21,7 @@ GameInfo="*res://scripts/autoloads/game_info.gd"
 SpellShop="*res://scripts/autoloads/spell_shop.gd"
 MagicItemInfo="*res://scripts/autoloads/magic_item_info.gd"
 Config="*res://scripts/autoloads/config.gd"
+AudioHandler="*res://scripts/autoloads/audio_handler.gd"
 
 [display]
 
