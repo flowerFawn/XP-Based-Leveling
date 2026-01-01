@@ -10,6 +10,8 @@ func _init(given_xp_amount:float):
 	collision_node = CollisionShape2D.new()
 	var sprite_node:Sprite2D = Sprite2D.new()
 	var shape:Shape2D = CircleShape2D.new()
+	set_collision_layer_value(1, false)
+	set_collision_layer_value(3, true)
 	shape.radius = 50
 	collision_node.shape = shape
 	sprite_node.texture = sprite

@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="SpellMeteorShower" load_steps=5 format=3 uid="uid://bkf6nc55r187d"]
+
+[ext_resource type="Texture2D" uid="uid://c7vjb5acfyglb" path="res://assets/placeholders/meteor_explosion.png" id="1_17lxf"]
+[ext_resource type="Script" uid="uid://d0hbenaiagewi" path="res://scripts/resources/inherited resources/spells/s_meteor_shower.gd" id="2_fppp8"]
+[ext_resource type="Texture2D" uid="uid://bplyhya2ccvqt" path="res://assets/placeholders/meteor.png" id="3_ejci8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x3ado"]
+radius = 400.0
+
+[resource]
+script = ExtResource("2_fppp8")
+time_till_impact = 2.0
+explosion_texture = ExtResource("1_17lxf")
+cooldown = 8.0
+damage = 20.0
+projectile_count = 2
+multi_projectile_delay = 0.25
+shape = SubResource("CircleShape2D_x3ado")
+texture = ExtResource("3_ejci8")
+visual_scale = 1.3
+level_description = "Increased size
+"
+level = 3
+metadata/_custom_type_script = "uid://d0hbenaiagewi"

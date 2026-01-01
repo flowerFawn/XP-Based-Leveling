@@ -115,7 +115,7 @@ func take_damage(amount:float) -> void:
 	visual_damage(amount)
 	play_sound(pick_random_hurt_sound())
 	if active_health <= 0:
-		die(&"die")
+		die()
 		return
 	node_sprite.material.set_shader_parameter(&"harmed", true)
 	hitstopped = true
@@ -153,7 +153,7 @@ func change_value_multiplicative(value:StringName, multiplier:float, time_till_r
 		set(value, get(value) / multiplier)
 
 	
-func die(animation:StringName) -> void:
+func die() -> void:
 	if dying:
 		return
 	dying = true
@@ -162,7 +162,7 @@ func die(animation:StringName) -> void:
 	if enemy_type.death_effect != null:
 		await enemy_type.death_effect.cause_effect(self)
 	MagicItemInfo.register_kill()
-	await death_animation(animation)
+	await death_animation()
 	queue_free()
 	
 func leave_xp() -> void:
@@ -172,11 +172,11 @@ func leave_xp() -> void:
 	
 ##Disappearing is different from dying, in that it causes no death effect and no xp reward
 func disappear():
-	await death_animation(&"die")
+	await death_animation()
 	queue_free()
 #endregion
 
-func death_animation(animation:StringName) -> void:
+func death_animation() -> void:
 	const TIME_DEATH_DISPLAYED:float = 0.5
-	node_sprite.play(animation)
+	node_sprite.play(&"die")
 	await get_tree().create_timer(TIME_DEATH_DISPLAYED).timeout

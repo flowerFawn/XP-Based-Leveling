@@ -17,5 +17,6 @@ func cause_effect(enemy:Enemy) -> void:
 	await enemy.get_tree().physics_frame
 	shapecast.force_shapecast_update()
 	for body in get_shapecast_colliders(shapecast):
-		body.take_damage(explosion_damage)
+		if body is Enemy:
+			body.take_damage(explosion_damage)
 	create_visual_effect(explosion_texture, enemy.global_position)

@@ -2,10 +2,11 @@ extends Resource
 class_name FunctionalResource
 ##Class that contains useful functions others might need, so those functions don't need to be copy pasted
 
-##This creates a shapecast that will hit enemies, reconfigure it if you want it to hit a different group.
+##This creates a shapecast that will hit only enemies, reconfigure it if you want it to hit a different group.
 func create_shapecast(shape:Shape2D) -> ShapeCast2D:
 	var shapecast = ShapeCast2D.new()
 	shapecast.shape = shape
+	shapecast.set_collision_mask_value(1, false)
 	shapecast.set_collision_mask_value(2, true)
 	shapecast.collide_with_areas = true
 	shapecast.collide_with_bodies = false
@@ -16,6 +17,7 @@ func create_shapecast(shape:Shape2D) -> ShapeCast2D:
 func create_raycast() -> RayCast2D:
 	var raycast = RayCast2D.new()
 	raycast.target_position = Vector2.ZERO
+	raycast.set_collision_mask_value(1, false)
 	raycast.set_collision_mask_value(2, true)
 	raycast.collide_with_areas = true
 	raycast.collide_with_bodies = false

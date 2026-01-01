@@ -40,18 +40,9 @@ func spawn_enemies() -> void:
 		spawn_enemy()
 		
 func spawn_enemy():
-	const CAMERA_DISTANCE_VECTOR:Vector2 = Vector2(2350, 1350)
 	var spawn_position:Vector2
-	var spawn_offset:Vector2
-	var player_position:Vector2 = GameInfo.player_position
-	var neg_constant:int = [-1, 1][GameInfo.rnd.randi_range(0, 1)]
-	var appears_from_centre:bool = [false, true][GameInfo.rnd.randi_range(0, 1)]
-	if appears_from_centre:
-		spawn_offset = Vector2(GameInfo.rnd.randi_range(-2300, 2300),neg_constant * CAMERA_DISTANCE_VECTOR.y)
-	else:
-		spawn_offset = Vector2(neg_constant * CAMERA_DISTANCE_VECTOR.x ,GameInfo.rnd.randi_range(-2300, 2300))
-	spawn_position = player_position + spawn_offset
 	var new_enemy:Enemy = Enemy.new_enemy(pick_weighted_random_enemy())
+	spawn_position = GameInfo.get_global_player_offset_position()
 	GameInfo.enemy_holder.add_child(new_enemy)
 	new_enemy.global_position = spawn_position
 
