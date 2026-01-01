@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://b0wntjnflxovc" path="res://assets/placeholders/static_sphere.png" id="2_2bfwo"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4ykdj"]
-radius = 150.0
+radius = 200.0
 
 [resource]
 script = ExtResource("1_3b2kb")
