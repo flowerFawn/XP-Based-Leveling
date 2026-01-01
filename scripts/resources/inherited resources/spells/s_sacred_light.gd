@@ -17,11 +17,16 @@ func _init() -> void:
 func cast() -> void:
 	var spell_rotator:Node2D = Node2D.new()
 	var rotation_tween:Tween = spell_handler.create_tween()
+	var start_rotation:float
+	var rotation_offset:float
 	player.add_child(spell_rotator)
-	for n in projectile_count:
+	start_rotation = deg_to_rad(GameInfo.rnd.randi_range(0, 360))
+	rotation_offset = (2 * PI) / projectile_count
+	#n will start at 0
+	for n in range(projectile_count):
 		var new_projectile:PlayerProjectile = PlayerProjectile.new(0, damage, shape, Vector2.RIGHT, texture, 0, Vector2.ZERO, 0)
 		spell_rotator.add_child(new_projectile)
-		new_projectile.position = Vector2.RIGHT.rotated(deg_to_rad(GameInfo.rnd.randi_range(0, 360))) * projectile_speed
+		new_projectile.position = Vector2.RIGHT.rotated(start_rotation + (rotation_offset * n)) * projectile_speed
 	rotation_tween.tween_property(spell_rotator, "rotation", deg_to_rad(rotation_change), rotation_time)
 	active_spell_rotators.append(spell_rotator)
 	await rotation_tween.finished
