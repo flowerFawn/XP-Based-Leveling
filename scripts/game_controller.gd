@@ -69,7 +69,7 @@ func update_enemy_weights(seconds_survived:float) -> void:
 	enemy_type_current_weight_array = new_weights_array
 	
 func _process(delta: float) -> void:
-	time_elapsed += delta * 10
+	time_elapsed += delta
 	GameInfo.game_ui.set_timer(time_elapsed)
 	
 	

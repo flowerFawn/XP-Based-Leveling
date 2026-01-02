@@ -25,7 +25,6 @@ AudioHandler="*res://scripts/autoloads/audio_handler.gd"
 
 [display]
 
-window/size/mode=3
 window/stretch/mode="canvas_items"
 
 [global_group]

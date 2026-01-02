@@ -38,8 +38,12 @@ func collision_entered(body:Node2D):
 		node_sprite.play(&"attack")
 		node_collision.disabled = true
 		await get_tree().create_timer(enemy_type.damage_cooldown).timeout
-		node_sprite.play(&"walk")
-		node_collision.disabled = false
+		if enemy_type.dies_on_collision:
+			die()
+			return
+		else:
+			node_sprite.play(&"walk")
+			node_collision.disabled = false
 			
 			
 #endregion

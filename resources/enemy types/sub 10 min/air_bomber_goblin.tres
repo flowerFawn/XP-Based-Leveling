@@ -10,11 +10,14 @@ radius = 50.0
 
 [resource]
 script = ExtResource("3_erqsf")
+enemy_name = "Goblin Bomber"
 movement_type = ExtResource("2_a7mkc")
 speed = 750.0
+damage_cooldown = 0.1
 xp_reward = 0.1
 death_effect = ExtResource("1_5pt6f")
 base_health = 5.0
 collision = SubResource("CircleShape2D_nwiga")
 unique_script = ExtResource("4_5ofq4")
+dies_on_collision = true
 metadata/_custom_type_script = "uid://58cfsa1tna1q"

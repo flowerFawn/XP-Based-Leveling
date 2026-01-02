@@ -44,3 +44,6 @@ class_name EnemyType
 @export var disappear_time:float = 0
 ##If the enemy will collide with the player and die. Only should be false for things like loot goblins. Should not deal damage if this is false
 @export var collides_with_player:bool = true
+##If the enemy will die on contact with the player.
+##Generally this should be false, and only be true for enemies trying to die for an effect (such as the martyr)
+@export var dies_on_collision:bool = false
