@@ -3,7 +3,7 @@
 [ext_resource type="Theme" uid="uid://bbd4wu6mpdafv" path="res://resources/built-in/themes/bestiary.tres" id="1_0gnlr"]
 [ext_resource type="Script" uid="uid://chlx85cu547yq" path="res://scripts/menu/bestiary.gd" id="1_8of4q"]
 [ext_resource type="Script" uid="uid://58cfsa1tna1q" path="res://scripts/resources/base resources/enemy_type.gd" id="2_ydr6e"]
-[ext_resource type="Resource" uid="uid://bg3osrk3a4ni5" path="res://resources/enemy types/goblin_type_1.tres" id="3_0gnlr"]
+[ext_resource type="Resource" uid="uid://bg3osrk3a4ni5" path="res://resources/enemy types/sub 10 min/goblin_type_1.tres" id="3_0gnlr"]
 
 [node name="Bestiary" type="Control" node_paths=PackedStringArray("grid_container")]
 layout_mode = 3

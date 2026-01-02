@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="EnemyType" load_steps=5 format=3 uid="uid://dc0p6fukw7bp6"]
+
+[ext_resource type="Resource" uid="uid://dkojg7se37iio" path="res://resources/death effects/martyr_explosion.tres" id="1_26a6o"]
+[ext_resource type="Resource" uid="uid://cj6251nhvsiy8" path="res://resources/movement types/straight_enemy_movement.tres" id="2_ban3f"]
+[ext_resource type="Script" uid="uid://58cfsa1tna1q" path="res://scripts/resources/base resources/enemy_type.gd" id="3_b5odh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p4euu"]
+radius = 40.0
+
+[resource]
+script = ExtResource("3_b5odh")
+movement_type = ExtResource("2_ban3f")
+speed = 100.0
+contact_damage = 1.0
+death_effect = ExtResource("1_26a6o")
+collision = SubResource("CircleShape2D_p4euu")
+metadata/_custom_type_script = "uid://58cfsa1tna1q"

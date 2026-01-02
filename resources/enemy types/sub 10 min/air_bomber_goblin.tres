@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="EnemyType" load_steps=6 format=3 uid="uid://c6qqqoynid1fh"]
+
+[ext_resource type="Resource" uid="uid://d17rqm0p4fegy" path="res://resources/death effects/bomber_explosion.tres" id="1_5pt6f"]
+[ext_resource type="Resource" uid="uid://cj6251nhvsiy8" path="res://resources/movement types/straight_enemy_movement.tres" id="2_a7mkc"]
+[ext_resource type="Script" uid="uid://58cfsa1tna1q" path="res://scripts/resources/base resources/enemy_type.gd" id="3_erqsf"]
+[ext_resource type="Script" uid="uid://bdiusejrixhwa" path="res://scripts/enemy scripts/e_script_bomber.gd" id="4_5ofq4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nwiga"]
+radius = 50.0
+
+[resource]
+script = ExtResource("3_erqsf")
+movement_type = ExtResource("2_a7mkc")
+speed = 750.0
+xp_reward = 0.1
+death_effect = ExtResource("1_5pt6f")
+base_health = 5.0
+collision = SubResource("CircleShape2D_nwiga")
+unique_script = ExtResource("4_5ofq4")
+metadata/_custom_type_script = "uid://58cfsa1tna1q"

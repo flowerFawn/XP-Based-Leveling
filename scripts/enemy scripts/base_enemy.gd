@@ -34,13 +34,12 @@ func collision_entered(body:Node2D):
 	#If the enemy collides with the player, it does damage and then disappears
 	if body.is_in_group(&"Player") and enemy_type.collides_with_player:
 		var player:Player = body
-		if enemy_type.contact_damage > 0:
-			player.take_damage(enemy_type.contact_damage)
-			node_sprite.play(&"attack")
-			node_collision.disabled = true
-			await get_tree().create_timer(enemy_type.damage_cooldown).timeout
-			node_sprite.play(&"walk")
-			node_collision.disabled = false
+		player.take_damage(enemy_type.contact_damage)
+		node_sprite.play(&"attack")
+		node_collision.disabled = true
+		await get_tree().create_timer(enemy_type.damage_cooldown).timeout
+		node_sprite.play(&"walk")
+		node_collision.disabled = false
 			
 			
 #endregion
