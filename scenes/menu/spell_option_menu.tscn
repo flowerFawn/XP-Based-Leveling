@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://b56sq8u8n4g4d" path="res://scripts/spell_option_menu.gd" id="1_tpnae"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
+layer = 20
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 anchors_preset = -1

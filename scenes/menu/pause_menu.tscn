@@ -6,6 +6,7 @@
 
 [node name="PauseMenu" type="CanvasLayer"]
 process_mode = 2
+layer = 30
 
 [node name="PauseMenu" type="Control" parent="."]
 layout_mode = 3
