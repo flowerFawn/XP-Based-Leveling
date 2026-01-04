@@ -11,7 +11,7 @@
 [ext_resource type="Resource" uid="uid://cest0luawtgth" path="res://resources/characters/magic_missile.tres" id="7_aofas"]
 [ext_resource type="Resource" uid="uid://bd2xytxkapqbj" path="res://resources/characters/static_sphere.tres" id="7_i4i37"]
 [ext_resource type="Resource" uid="uid://c3dj5oh0trftg" path="res://resources/characters/earthquake.tres" id="10_8f1j4"]
-[ext_resource type="Resource" uid="uid://bpr6gdvod70xx" path="res://resources/characters/test_snowstorm.tres" id="12_edg0r"]
+[ext_resource type="Resource" uid="uid://bpr6gdvod70xx" path="res://resources/characters/test.tres" id="12_edg0r"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 

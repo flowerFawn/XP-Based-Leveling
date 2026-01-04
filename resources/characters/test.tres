@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="Character" load_steps=9 format=3 uid="uid://bpr6gdvod70xx"]
+
+[ext_resource type="Texture2D" uid="uid://07whejpe2a7c" path="res://assets/placeholders/endearingly pathetic goblin sprite 1.png" id="1_unjei"]
+[ext_resource type="Texture2D" uid="uid://cn0bsdbs5haw1" path="res://assets/placeholders/endearingly pathetic goblin sprite 2.png" id="2_1i3pc"]
+[ext_resource type="Texture2D" uid="uid://bqk63ry37mxe3" path="res://assets/placeholders/endearingly pathetic goblin sprite 3.png" id="3_s4xir"]
+[ext_resource type="Script" uid="uid://dse7vf0l5vfv0" path="res://scripts/resources/base resources/character.gd" id="4_h32v8"]
+[ext_resource type="Resource" uid="uid://bpa7drmk0sban" path="res://resources/ability pools/standard.tres" id="5_g6v7p"]
+[ext_resource type="Resource" uid="uid://buu4u5w3e3yf3" path="res://resources/magic items/bnb_handbook_1.tres" id="6_4vqr7"]
+[ext_resource type="Resource" uid="uid://cc6rq7tb4gcs" path="res://resources/spell/acid_trail_1.tres" id="7_v76w3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_76sif"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_unjei")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_1i3pc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_s4xir")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("4_h32v8")
+name = "test boy"
+starting_ability_pool = ExtResource("5_g6v7p")
+starting_spell = ExtResource("7_v76w3")
+starting_magic_item = ExtResource("6_4vqr7")
+animations = SubResource("SpriteFrames_76sif")
+icon = ExtResource("1_unjei")
+metadata/_custom_type_script = "uid://dse7vf0l5vfv0"

@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="SpellAcidtrail" load_steps=4 format=3 uid="uid://jyye3e88dg66"]
+
+[ext_resource type="Script" uid="uid://xxhkqprc4d0u" path="res://scripts/resources/inherited resources/spells/s_acid_trail.gd" id="1_saqxs"]
+[ext_resource type="Texture2D" uid="uid://kwfpi37sm6kr" path="res://assets/placeholders/goop.png" id="2_bvxkd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yf632"]
+radius = 50.0
+
+[resource]
+script = ExtResource("1_saqxs")
+acid_decay_time = 14.0
+cooldown = 0.3
+damage = 3.0
+projectile_pierce = 2
+shape = SubResource("CircleShape2D_yf632")
+texture = ExtResource("2_bvxkd")
+level_description = "Acid lasts longer before disappearing, and deals more damage"
+level = 4
+rarity = 2
+metadata/_custom_type_script = "uid://xxhkqprc4d0u"

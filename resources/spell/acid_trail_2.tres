@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="SpellAcidtrail" load_steps=5 format=3 uid="uid://d0ibytvu0b6p"]
+
+[ext_resource type="Script" uid="uid://xxhkqprc4d0u" path="res://scripts/resources/inherited resources/spells/s_acid_trail.gd" id="1_pmkm4"]
+[ext_resource type="Resource" uid="uid://b780trwm87kv8" path="res://resources/spell/acid_trail_3.tres" id="1_xap7a"]
+[ext_resource type="Texture2D" uid="uid://kwfpi37sm6kr" path="res://assets/placeholders/goop.png" id="2_xap7a"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yf632"]
+radius = 50.0
+
+[resource]
+script = ExtResource("1_pmkm4")
+acid_decay_time = 10.0
+cooldown = 0.5
+damage = 2.0
+projectile_pierce = 2
+shape = SubResource("CircleShape2D_yf632")
+texture = ExtResource("2_xap7a")
+level_description = "Acid can now affect a second goblin before expiring"
+level = 2
+rarity = 2
+next_upgrade = ExtResource("1_xap7a")
+metadata/_custom_type_script = "uid://xxhkqprc4d0u"

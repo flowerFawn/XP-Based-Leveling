@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="SpellAcidtrail" load_steps=5 format=3 uid="uid://cc6rq7tb4gcs"]
+
+[ext_resource type="Script" uid="uid://xxhkqprc4d0u" path="res://scripts/resources/inherited resources/spells/s_acid_trail.gd" id="1_f8wpj"]
+[ext_resource type="Resource" uid="uid://d0ibytvu0b6p" path="res://resources/spell/acid_trail_2.tres" id="1_yf632"]
+[ext_resource type="Texture2D" uid="uid://kwfpi37sm6kr" path="res://assets/placeholders/goop.png" id="2_t1pul"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yf632"]
+radius = 50.0
+
+[resource]
+script = ExtResource("1_f8wpj")
+acid_decay_time = 10.0
+cooldown = 0.5
+damage = 2.0
+projectile_pierce = 1
+shape = SubResource("CircleShape2D_yf632")
+texture = ExtResource("2_t1pul")
+rarity = 2
+next_upgrade = ExtResource("1_yf632")
+metadata/_custom_type_script = "uid://xxhkqprc4d0u"

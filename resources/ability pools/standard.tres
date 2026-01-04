@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="AbilityPool" load_steps=16 format=3 uid="uid://bpa7drmk0sban"]
+[gd_resource type="Resource" script_class="AbilityPool" load_steps=17 format=3 uid="uid://bpa7drmk0sban"]
 
 [ext_resource type="Script" uid="uid://i4vxs0c4oet7" path="res://scripts/resources/base resources/player_ability.gd" id="1_yyggw"]
 [ext_resource type="Script" uid="uid://cppbyt13invqd" path="res://scripts/resources/base resources/ability_pool.gd" id="2_8tfyf"]
@@ -15,8 +15,9 @@
 [ext_resource type="Resource" uid="uid://c8goyqapnpbgg" path="res://resources/spell/arc_lightning_1.tres" id="12_ymv1d"]
 [ext_resource type="Resource" uid="uid://chpv2wmyvj8h3" path="res://resources/spell/meteor_shower_1.tres" id="13_ht65c"]
 [ext_resource type="Resource" uid="uid://g4c6ybtbvm68" path="res://resources/spell/snowstorm_1.tres" id="14_aarl6"]
+[ext_resource type="Resource" uid="uid://cc6rq7tb4gcs" path="res://resources/spell/acid_trail_1.tres" id="15_jhxfy"]
 
 [resource]
 script = ExtResource("2_8tfyf")
-abilities = Array[ExtResource("1_yyggw")]([ExtResource("2_y8ce4"), ExtResource("3_in45v"), ExtResource("4_mqlwa"), ExtResource("5_s4t2w"), ExtResource("6_8tevm"), ExtResource("7_ymv1d"), ExtResource("8_mqlwa"), ExtResource("10_s4t2w"), ExtResource("10_8tevm"), ExtResource("11_8tevm"), ExtResource("12_ymv1d"), ExtResource("13_ht65c"), ExtResource("14_aarl6")])
+abilities = Array[ExtResource("1_yyggw")]([ExtResource("2_y8ce4"), ExtResource("3_in45v"), ExtResource("4_mqlwa"), ExtResource("5_s4t2w"), ExtResource("6_8tevm"), ExtResource("7_ymv1d"), ExtResource("8_mqlwa"), ExtResource("10_s4t2w"), ExtResource("10_8tevm"), ExtResource("11_8tevm"), ExtResource("12_ymv1d"), ExtResource("13_ht65c"), ExtResource("14_aarl6"), ExtResource("15_jhxfy")])
 metadata/_custom_type_script = "uid://cppbyt13invqd"
