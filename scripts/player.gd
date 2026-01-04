@@ -88,7 +88,8 @@ func get_closest_enemy() -> Enemy:
 		
 
 #region HEALTH
-func take_damage(amount:float) -> void:
+##Returns if still alive
+func take_damage(amount:float) -> bool:
 	if amount > 0:
 		var affected_damage:float = SpellShop.run_through_magic_items(amount, &"affect_incoming_damage")
 		
@@ -98,6 +99,9 @@ func take_damage(amount:float) -> void:
 			visual_damage()
 		if active_health <= 0:
 			die()
+			return false
+		return true
+	return true
 		
 func visual_damage() -> void:
 	const TIME_TO_FLASH:float = 0.2
@@ -108,8 +112,8 @@ func stop_flash() -> void:
 	node_sprite.material.set_shader_parameter(&"harmed", false)
 	
 func die():
-	print("You died! sucks to suck buddy")
-	queue_free()
+	#TODO: replace with a death screen
+	get_tree().call_deferred(&"change_scene_to_packed", load("uid://dj5n2ohldosah"))
 #endregion
 
 #region ABILITIES
