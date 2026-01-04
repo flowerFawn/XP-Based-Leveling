@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="SpellSnowstorm" load_steps=4 format=3 uid="uid://cry4vx62ffdy8"]
+
+[ext_resource type="Resource" uid="uid://o3lt21g8ea51" path="res://resources/spell/snowstorm_4.tres" id="1_f2m4j"]
+[ext_resource type="Script" uid="uid://dj673wkeo7s1r" path="res://scripts/resources/inherited resources/spells/s_snowstorm.gd" id="1_xhrlk"]
+[ext_resource type="Texture2D" uid="uid://cvkuotvkgky7g" path="res://assets/placeholders/snowflake.png" id="2_f2m4j"]
+
+[resource]
+script = ExtResource("1_xhrlk")
+speed_multiplier = 0.5
+speed_multiplier_time = 15.0
+cooldown = 80.0
+projectile_count = 512
+texture = ExtResource("2_f2m4j")
+level_description = "Decreased cooldown
+"
+level = 3
+rarity = 2
+next_upgrade = ExtResource("1_f2m4j")
+metadata/_custom_type_script = "uid://dj673wkeo7s1r"

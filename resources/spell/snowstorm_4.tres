@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SpellSnowstorm" load_steps=3 format=3 uid="uid://o3lt21g8ea51"]
+
+[ext_resource type="Script" uid="uid://dj673wkeo7s1r" path="res://scripts/resources/inherited resources/spells/s_snowstorm.gd" id="1_uchdw"]
+[ext_resource type="Texture2D" uid="uid://cvkuotvkgky7g" path="res://assets/placeholders/snowflake.png" id="2_bwqx7"]
+
+[resource]
+script = ExtResource("1_uchdw")
+speed_multiplier = 0.5
+speed_multiplier_time = 20.0
+cooldown = 80.0
+projectile_count = 1024
+texture = ExtResource("2_bwqx7")
+level_description = "Slows enemies for longer"
+level = 4
+rarity = 2
+metadata/_custom_type_script = "uid://dj673wkeo7s1r"

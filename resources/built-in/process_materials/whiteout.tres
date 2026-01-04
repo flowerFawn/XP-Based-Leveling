@@ -1,0 +1,23 @@
+[gd_resource type="ParticleProcessMaterial" format=3 uid="uid://dq455aon8wct8"]
+
+[resource]
+particle_flag_disable_z = true
+particle_flag_damping_as_friction = true
+emission_shape_offset = Vector3(-20, 324, 0)
+emission_shape = 3
+emission_box_extents = Vector3(1, 324, 1)
+spread = 4.0
+initial_velocity_min = 800.0
+initial_velocity_max = 900.0
+gravity = Vector3(0, 0, 0)
+radial_accel_min = 74.99999
+radial_accel_max = 99.99999
+scale_min = 0.79999995
+scale_max = 1.1999999
+hue_variation_min = -0.020000022
+hue_variation_max = 0.009999977
+turbulence_enabled = true
+turbulence_influence_min = 0.0
+turbulence_influence_max = 0.030000001
+turbulence_initial_displacement_min = 1.490116e-06
+turbulence_initial_displacement_max = 1.490116e-06

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="AbilityPool" load_steps=11 format=3 uid="uid://bwwyvlsexinen"]
+[gd_resource type="Resource" script_class="AbilityPool" load_steps=12 format=3 uid="uid://bwwyvlsexinen"]
 
 [ext_resource type="Script" uid="uid://i4vxs0c4oet7" path="res://scripts/resources/base resources/player_ability.gd" id="1_xsy38"]
 [ext_resource type="Script" uid="uid://cppbyt13invqd" path="res://scripts/resources/base resources/ability_pool.gd" id="2_8mi3s"]
@@ -10,8 +10,9 @@
 [ext_resource type="Resource" uid="uid://cnpu8eq5ibo8b" path="res://resources/magic items/crystal_collection_1.tres" id="7_wmgg2"]
 [ext_resource type="Resource" uid="uid://cbh1n057q23bg" path="res://resources/spell/firebolt_1.tres" id="8_ootwi"]
 [ext_resource type="Resource" uid="uid://chpv2wmyvj8h3" path="res://resources/spell/meteor_shower_1.tres" id="9_ootwi"]
+[ext_resource type="Resource" uid="uid://g4c6ybtbvm68" path="res://resources/spell/snowstorm_1.tres" id="10_sbktm"]
 
 [resource]
 script = ExtResource("2_8mi3s")
-abilities = Array[ExtResource("1_xsy38")]([ExtResource("2_b3faa"), ExtResource("3_b3faa"), ExtResource("4_ootwi"), ExtResource("5_sbktm"), ExtResource("6_nowvb"), ExtResource("7_wmgg2"), ExtResource("8_ootwi"), ExtResource("9_ootwi")])
+abilities = Array[ExtResource("1_xsy38")]([ExtResource("2_b3faa"), ExtResource("3_b3faa"), ExtResource("4_ootwi"), ExtResource("5_sbktm"), ExtResource("6_nowvb"), ExtResource("7_wmgg2"), ExtResource("8_ootwi"), ExtResource("9_ootwi"), ExtResource("10_sbktm")])
 metadata/_custom_type_script = "uid://cppbyt13invqd"

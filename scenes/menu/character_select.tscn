@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://caihircp2d6qc"]
+[gd_scene load_steps=13 format=3 uid="uid://caihircp2d6qc"]
 
 [ext_resource type="Script" uid="uid://do146oyuisrlu" path="res://scripts/menu/character_select_menu.gd" id="1_0frw4"]
 [ext_resource type="Theme" uid="uid://jtelj6fw1ph" path="res://resources/built-in/themes/character_select.tres" id="1_vffxf"]
@@ -11,6 +11,7 @@
 [ext_resource type="Resource" uid="uid://cest0luawtgth" path="res://resources/characters/magic_missile.tres" id="7_aofas"]
 [ext_resource type="Resource" uid="uid://bd2xytxkapqbj" path="res://resources/characters/static_sphere.tres" id="7_i4i37"]
 [ext_resource type="Resource" uid="uid://c3dj5oh0trftg" path="res://resources/characters/earthquake.tres" id="10_8f1j4"]
+[ext_resource type="Resource" uid="uid://bpr6gdvod70xx" path="res://resources/characters/test_snowstorm.tres" id="12_edg0r"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 
@@ -124,7 +125,7 @@ size_flags_vertical = 3
 action_mode = 0
 expand_icon = true
 script = ExtResource("2_fts7l")
-represents_character = ExtResource("2_vffxf")
+represents_character = ExtResource("12_edg0r")
 metadata/_custom_type_script = "uid://bd3o2cswmjmgn"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CharacterSelect"]

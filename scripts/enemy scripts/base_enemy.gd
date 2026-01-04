@@ -154,6 +154,13 @@ func change_value_multiplicative(value:StringName, multiplier:float, time_till_r
 	if time_till_reversed > 0:
 		await get_tree().create_timer(time_till_reversed).timeout
 		set(value, get(value) / multiplier)
+		
+##If time_till_reversed = 0 then it will never be reversed
+func change_modulate(new_color:Color, time_till_reversed:float = 0):
+	modulate = new_color
+	if time_till_reversed > 0:
+		await get_tree().create_timer(time_till_reversed).timeout
+		modulate = Color.WHITE
 
 	
 func die() -> void:

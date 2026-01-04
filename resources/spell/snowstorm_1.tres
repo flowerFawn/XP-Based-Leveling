@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SpellSnowstorm" load_steps=4 format=3 uid="uid://g4c6ybtbvm68"]
+
+[ext_resource type="Resource" uid="uid://dx2j0ymabf4jo" path="res://resources/spell/snowstorm_2.tres" id="1_fdc2d"]
+[ext_resource type="Script" uid="uid://dj673wkeo7s1r" path="res://scripts/resources/inherited resources/spells/s_snowstorm.gd" id="1_pe0er"]
+[ext_resource type="Texture2D" uid="uid://cvkuotvkgky7g" path="res://assets/placeholders/snowflake.png" id="2_aqrpw"]
+
+[resource]
+script = ExtResource("1_pe0er")
+speed_multiplier = 0.6
+speed_multiplier_time = 15.0
+cooldown = 90.0
+projectile_count = 128
+texture = ExtResource("2_aqrpw")
+rarity = 2
+next_upgrade = ExtResource("1_fdc2d")
+metadata/_custom_type_script = "uid://dj673wkeo7s1r"
