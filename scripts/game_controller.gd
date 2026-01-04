@@ -10,9 +10,9 @@ var enemy_type_and_weights_dict:Dictionary[EnemyType, Callable] = ({
 	preload("uid://cr5n22p055thh"):func (x) -> float: return -0.0005 * (x-60) * (x-240), #1 - goblin type 2
 	preload("uid://cbke16rl4k8ar"):func (x) -> float: return -0.0005 * (x-60) * (x-240), #2 - goblin type 3
 	preload("uid://7mdhf8llrlod"):func (x) -> float: return -0.0005 * (x-60) * (x-240), #3 - goblin type 4
-	preload("uid://c6qqqoynid1fh"):func (x) -> float: return sin(x * 0.02) * 1.5, #4 - goblin bomber
-	preload("uid://dqunbnln7x2n0"):func (x) -> float: return sin(x * 0.05) * 0.1, #5 - loot goblin
-	preload("uid://dc0p6fukw7bp6"):func (x) -> float: return sin(x * 0.01) * 1.5, # 6 martyr
+	preload("uid://c6qqqoynid1fh"):func (x) -> float: return sin(x * 0.02) * 1.2, #4 - goblin bomber
+	preload("uid://dqunbnln7x2n0"):func (x) -> float: return sin(x * 0.05) * 0.15, #5 - loot goblin
+	preload("uid://dc0p6fukw7bp6"):func (x) -> float: return sin(x * 0.01) * 1.2, # 6 martyr
 	preload("uid://dihnof1qd7oc1"):func (x) -> float: return -0.0005 * (x-180) * (x-360), #7 - mid goblin 1 
 	preload("uid://b5vdf6igrbsnr"):func (x) -> float: return -0.0005 * (x-180) * (x-360), #8 - mid goblin 2
 	preload("uid://diyifwsqyg152"):func (x) -> float: return -0.0005 * (x-180) * (x-360), #9 - mid goblin 3
@@ -38,8 +38,15 @@ func update_directions() -> void:
 
 func spawn_enemies() -> void:
 	var total_enemy_count:int = len(get_tree().get_nodes_in_group(&"Enemy"))
-	var enemy_quota:int = ceili((time_elapsed * 0.4) + 20)
-	var enemies_to_spawn:int = ceili((enemy_quota - total_enemy_count) * 0.2)
+	#0.1x + 50 -(cos^2(0.05x) * 30)
+	#most equations are on desmos
+	#starts at 10
+	var enemy_quota:int = ceili((time_elapsed * 0.1) + 40 - ((cos(0.05 * time_elapsed) ** 2) * 30))
+	var enemies_to_spawn:int = ceili((enemy_quota - total_enemy_count) * 0.1)
+	print(time_elapsed)
+	print(enemy_quota)
+	print(total_enemy_count)
+	print(enemies_to_spawn)
 	update_enemy_weights(time_elapsed)
 	for enemy_to_spawn:int in range(enemies_to_spawn):
 		spawn_enemy()
