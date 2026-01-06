@@ -14,4 +14,4 @@ ignore_time_scale = true
 autostart = true
 
 [connection signal="timeout" from="DirectionUpdateTimer" to="." method="update_directions"]
-[connection signal="timeout" from="SpawnTimer" to="." method="spawn_enemies"]
+[connection signal="timeout" from="SpawnTimer" to="." method="do_spawns"]

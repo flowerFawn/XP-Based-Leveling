@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://bt23ghxuadi2e"]
+
+[ext_resource type="Script" uid="uid://cw1voi8q5wgah" path="res://scripts/magic_flower.gd" id="1_isadt"]
+[ext_resource type="Texture2D" uid="uid://sww1w1n0s0bg" path="res://assets/placeholders/stem.png" id="2_lotlg"]
+[ext_resource type="Texture2D" uid="uid://bsuax81tfs8h5" path="res://assets/placeholders/flower.png" id="3_o36i7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7b3ki"]
+radius = 40.0
+
+[node name="MagicFlower" type="Area2D" node_paths=PackedStringArray("flower_sprite")]
+script = ExtResource("1_isadt")
+flower_sprite = NodePath("FlowerSprite")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_7b3ki")
+
+[node name="StemSprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_lotlg")
+
+[node name="FlowerSprite" type="Sprite2D" parent="."]
+modulate = Color(0, 1, 0, 1)
+texture = ExtResource("3_o36i7")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

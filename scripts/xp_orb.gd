@@ -20,12 +20,15 @@ func _init(given_xp_amount:float):
 	add_child(sprite_node)
 	body_entered.connect(be_picked_up)
 	xp_value = given_xp_amount
+	add_to_group(&"XPOrb")
 	
 func be_picked_up(body:Node2D) -> void:
 	var pickup_tween:Tween = create_tween()
+	#could be squared, but gets weird at long idstances
+	var distance_to_player:float = global_position.distance_to(body.global_position)
 	collision_node.disabled = true
 	pickup_tween.set_trans(Tween.TRANS_BACK)
-	pickup_tween.tween_property(self, "global_position", GameInfo.player_position, 0.25)
+	pickup_tween.tween_property(self, "global_position", GameInfo.player_position, distance_to_player * 0.00142)
 	await pickup_tween.finished
 	AudioHandler.play_sound(pick_up_noise, Vector2.ZERO, 2, 1)
 	SpellShop.spell_xp += xp_value

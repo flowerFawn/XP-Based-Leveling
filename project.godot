@@ -25,12 +25,14 @@ AudioHandler="*res://scripts/autoloads/audio_handler.gd"
 
 [display]
 
+window/size/mode=3
 window/stretch/mode="canvas_items"
 
 [global_group]
 
 Enemy="any kind of enemy"
 Player="the player. should only ever be one, preferably"
+XPOrb="orbs of xp on the floor"
 
 [input]
 

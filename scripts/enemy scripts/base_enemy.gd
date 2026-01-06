@@ -55,9 +55,9 @@ func move(velocity:Vector2) -> void:
 func update_direction() -> void:
 	current_direction = enemy_type.movement_type.get_enemy_direction(global_position, GameInfo.player_position)
 	if global_position.x < GameInfo.player_position.x:
-		node_sprite.flip_h = true
-	else:
 		node_sprite.flip_h = false
+	else:
+		node_sprite.flip_h = true
 	#makes the enemy disappear if they are 5000 or more units away from the player. mayhaps add a qualifier in enemy type for if they disappear?
 	if (global_position.x - GameInfo.player_position.x) ** 2 + (global_position.y - GameInfo.player_position.y) ** 2 > 5000 ** 2:
 		disappear()

@@ -6,8 +6,14 @@ class_name Player
 @export var node_red_flash_timer:Timer
 @export var node_fake_background:TextureRect
 var speed:int = 500
-var active_health:float = 100
-var max_health:float = 100
+var active_health:float = 100:
+	set(value):
+		active_health = value
+		node_progress.value = value
+var max_health:float = 100:
+	set(value):
+		max_health = value
+		node_progress.max_value = value
 ##The previous direction of the player. This can have values as zero
 var accurate_orientation:Vector2 = Vector2(1, 0)
 ##The last non-zero direction of the player on the x axis. Should always be 1 or -1
@@ -61,7 +67,7 @@ func get_direction() -> Vector2:
 		node_sprite.flip_h = x_orientation < 0
 			
 	if direction.y != 0:
-		y_orientation - round(direction.y)
+		y_orientation = round(direction.y)
 	return direction
 	
 func get_closest_enemy_position() -> Vector2:
@@ -94,7 +100,6 @@ func take_damage(amount:float) -> bool:
 		var affected_damage:float = SpellShop.run_through_magic_items(amount, &"affect_incoming_damage")
 		
 		active_health -= affected_damage
-		node_progress.value = active_health
 		if affected_damage > 0:
 			visual_damage()
 		if active_health <= 0:
@@ -102,6 +107,12 @@ func take_damage(amount:float) -> bool:
 			return false
 		return true
 	return true
+	
+func heal(amount:float) -> void:
+	if amount <= 0:
+		return
+	active_health += SpellShop.run_through_magic_items(amount, &"affect_incoming_healing")
+	active_health = clamp(active_health, 0, max_health)
 		
 func visual_damage() -> void:
 	const TIME_TO_FLASH:float = 0.2
@@ -113,7 +124,11 @@ func stop_flash() -> void:
 	
 func die():
 	#TODO: replace with a death screen
+	stop_flash()
+	get_tree().paused = true
 	get_tree().call_deferred(&"change_scene_to_packed", load("uid://dj5n2ohldosah"))
+	await get_tree().scene_changed
+	get_tree().paused = false
 #endregion
 
 #region ABILITIES

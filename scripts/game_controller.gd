@@ -35,6 +35,10 @@ func update_directions() -> void:
 	if GameInfo.player:
 		GameInfo.closest_enemy_to_player_point = GameInfo.player.get_closest_enemy_position()
 
+func do_spawns() -> void:
+	spawn_enemies()
+	if GameInfo.rnd.randf() <= GameInfo.player_level * 0.01:
+		spawn_flower()
 
 func spawn_enemies() -> void:
 	var total_enemy_count:int = len(get_tree().get_nodes_in_group(&"Enemy"))
@@ -43,10 +47,6 @@ func spawn_enemies() -> void:
 	#starts at 10
 	var enemy_quota:int = ceili((time_elapsed * 0.1) + 40 - ((cos(0.05 * time_elapsed) ** 2) * 30))
 	var enemies_to_spawn:int = ceili((enemy_quota - total_enemy_count) * 0.1)
-	print(time_elapsed)
-	print(enemy_quota)
-	print(total_enemy_count)
-	print(enemies_to_spawn)
 	update_enemy_weights(time_elapsed)
 	for enemy_to_spawn:int in range(enemies_to_spawn):
 		spawn_enemy()
@@ -74,6 +74,15 @@ func update_enemy_weights(seconds_survived:float) -> void:
 		else:
 			new_weights_array.append(0)
 	enemy_type_current_weight_array = new_weights_array
+	
+func spawn_flower() -> void:
+	print("flowey")
+	const type_array:Array[StringName] = [&"Heal", &"Magnet"]
+	var type_index:int = GameInfo.rnd.rand_weighted(PackedFloat32Array([0.75, 0.25]))
+	var type:StringName = type_array[type_index]
+	var new_flower:MagicFlower = MagicFlower.create_flower(type)
+	GameInfo.projectile_holder.add_child(new_flower)
+	new_flower.global_position = GameInfo.get_global_player_offset_position() * GameInfo.rnd.randf()
 	
 func _process(delta: float) -> void:
 	time_elapsed += delta
