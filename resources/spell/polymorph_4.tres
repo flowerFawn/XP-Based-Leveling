@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="SpellPolymorph" load_steps=3 format=3 uid="uid://c4xcisy7rjhp8"]
+
+[ext_resource type="Script" uid="uid://c1g3pmjjnoafj" path="res://scripts/resources/inherited resources/spells/s_polymorph.gd" id="1_kf0wj"]
+[ext_resource type="Texture2D" uid="uid://bvbu6r2nuuii7" path="res://assets/placeholders/zap.png" id="2_s1rcm"]
+
+[resource]
+script = ExtResource("1_kf0wj")
+max_power_affected = 2
+cooldown = 50.0
+projectile_count = 8
+texture = ExtResource("2_s1rcm")
+level_description = "Decreased cooldown"
+level = 4
+rarity = 3
+metadata/_custom_type_script = "uid://c1g3pmjjnoafj"

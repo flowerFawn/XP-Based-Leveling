@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="SpellPolymorph" load_steps=4 format=3 uid="uid://47j8eg3tr8re"]
+
+[ext_resource type="Resource" uid="uid://c4xcisy7rjhp8" path="res://resources/spell/polymorph_4.tres" id="1_ehiu6"]
+[ext_resource type="Script" uid="uid://c1g3pmjjnoafj" path="res://scripts/resources/inherited resources/spells/s_polymorph.gd" id="1_lq4rr"]
+[ext_resource type="Texture2D" uid="uid://bvbu6r2nuuii7" path="res://assets/placeholders/zap.png" id="2_ehiu6"]
+
+[resource]
+script = ExtResource("1_lq4rr")
+max_power_affected = 2
+cooldown = 60.0
+projectile_count = 5
+texture = ExtResource("2_ehiu6")
+level_description = "Can affect more powerful enemies"
+level = 3
+rarity = 3
+next_upgrade = ExtResource("1_ehiu6")
+metadata/_custom_type_script = "uid://c1g3pmjjnoafj"

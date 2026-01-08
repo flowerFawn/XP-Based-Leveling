@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="SpellPolymorph" load_steps=4 format=3 uid="uid://bf44xxifkxb73"]
+
+[ext_resource type="Script" uid="uid://c1g3pmjjnoafj" path="res://scripts/resources/inherited resources/spells/s_polymorph.gd" id="1_1v1ne"]
+[ext_resource type="Resource" uid="uid://2kk4x8s1nrja" path="res://resources/spell/polymorph_2.tres" id="1_wpscp"]
+[ext_resource type="Texture2D" uid="uid://bvbu6r2nuuii7" path="res://assets/placeholders/zap.png" id="2_kcm1u"]
+
+[resource]
+script = ExtResource("1_1v1ne")
+max_power_affected = 1
+cooldown = 60.0
+projectile_count = 2
+texture = ExtResource("2_kcm1u")
+rarity = 3
+next_upgrade = ExtResource("1_wpscp")
+metadata/_custom_type_script = "uid://c1g3pmjjnoafj"

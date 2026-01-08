@@ -8,6 +8,7 @@ radius = 150.0
 
 [resource]
 script = ExtResource("2_2hlsv")
+power_level = 2
 movement_type = ExtResource("1_dg8pp")
 speed = 60.0
 hitstop_time = 0.1

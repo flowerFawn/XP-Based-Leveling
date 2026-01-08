@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="EnemyType" load_steps=5 format=3 uid="uid://cani8x5j71ma8"]
+
+[ext_resource type="Script" uid="uid://58cfsa1tna1q" path="res://scripts/resources/base resources/enemy_type.gd" id="1_dshqe"]
+[ext_resource type="Texture2D" uid="uid://v0w70nr7dj03" path="res://assets/placeholders/baby.png" id="1_trij0"]
+[ext_resource type="Resource" uid="uid://bdqmc1w1j341l" path="res://resources/movement types/random_enemy_movement.tres" id="2_8inmy"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8inmy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_trij0")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("1_dshqe")
+power_level = 0
+movement_type = ExtResource("2_8inmy")
+speed = 25.0
+animations = SubResource("SpriteFrames_8inmy")
+disappear_time = 15.0
+harmless = true
+metadata/_custom_type_script = "uid://58cfsa1tna1q"

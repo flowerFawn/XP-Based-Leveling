@@ -2,6 +2,8 @@ extends Resource
 class_name EnemyType
 
 @export var enemy_name:String
+##Proportional to other other enemies spawning alongside it, how strong this enemy is. 0 for special things
+@export_range(0, 8) var power_level:int = 1
 ##Properties regarding movement
 @export_group("Movement")
 ##How the enemy moves. This determines direction, not speed
@@ -47,3 +49,5 @@ class_name EnemyType
 ##If the enemy will die on contact with the player.
 ##Generally this should be false, and only be true for enemies trying to die for an effect (such as the martyr)
 @export var dies_on_collision:bool = false
+##If the enemies collision will be disabled, stopping attacking and receiving damage (mainly for polymorph)
+@export var harmless:bool = false

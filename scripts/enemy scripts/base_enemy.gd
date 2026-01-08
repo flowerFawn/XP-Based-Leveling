@@ -70,7 +70,8 @@ static func new_enemy(enemy_type:EnemyType) -> Enemy:
 		new_enemy_instance.set_script(enemy_type.unique_script)
 	new_enemy_instance.add_to_group(&"Enemy")
 	new_enemy_instance.set_collision_layer_value(1, false)
-	new_enemy_instance.set_collision_layer_value(2, true)
+	if not enemy_type.harmless:
+		new_enemy_instance.set_collision_layer_value(2, true)
 	new_enemy_instance.node_sprite = AnimatedSprite2D.new()
 	new_enemy_instance.node_sprite.material = ShaderMaterial.new()
 	new_enemy_instance.node_sprite.material.shader = preload("uid://6bjklt2wni63")
@@ -181,8 +182,9 @@ func leave_xp() -> void:
 	xp_orb.global_position = global_position
 	
 ##Disappearing is different from dying, in that it causes no death effect and no xp reward
-func disappear():
-	await death_animation()
+func disappear(skip_animation:bool = false):
+	if not skip_animation:
+		await death_animation()
 	queue_free()
 #endregion
 

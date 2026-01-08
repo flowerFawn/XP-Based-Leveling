@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="EnemyType" load_steps=8 format=3 uid="uid://ct458b2vvhlu2"]
+
+[ext_resource type="Texture2D" uid="uid://jxf7r7ma1adc" path="res://assets/placeholders/sheep_1.png" id="1_lhrhx"]
+[ext_resource type="Script" uid="uid://58cfsa1tna1q" path="res://scripts/resources/base resources/enemy_type.gd" id="1_o81gi"]
+[ext_resource type="Texture2D" uid="uid://bd57h2qexbrue" path="res://assets/placeholders/sheep_2.png" id="2_etfwd"]
+[ext_resource type="Texture2D" uid="uid://cypoi6keh6xwb" path="res://assets/placeholders/sheep_3.png" id="3_3ce8k"]
+[ext_resource type="Resource" uid="uid://bdqmc1w1j341l" path="res://resources/movement types/random_enemy_movement.tres" id="4_etfwd"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lvaln"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_lhrhx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_etfwd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_3ce8k")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xv8ts"]
+radius = 50.0
+
+[resource]
+script = ExtResource("1_o81gi")
+power_level = 0
+movement_type = ExtResource("4_etfwd")
+speed = 25.0
+collision = SubResource("CircleShape2D_xv8ts")
+animations = SubResource("SpriteFrames_lvaln")
+disappear_time = 15.0
+harmless = true
+metadata/_custom_type_script = "uid://58cfsa1tna1q"

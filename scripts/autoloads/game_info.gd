@@ -4,6 +4,7 @@ var player_position:Vector2 = Vector2.ZERO
 var player:Player
 var rnd = RandomNumberGenerator.new()
 var projectile_holder:ProjectileHolder
+var game_controller:GameController
 var game_ui:InGameUI
 var enemy_holder:Node2D
 var player_level:int = 1

@@ -37,7 +37,7 @@ func update_directions() -> void:
 
 func do_spawns() -> void:
 	spawn_enemies()
-	if GameInfo.rnd.randf() <= GameInfo.player_level * 0.01:
+	if GameInfo.rnd.randf() <= 0.01:
 		spawn_flower()
 
 func spawn_enemies() -> void:
@@ -51,12 +51,19 @@ func spawn_enemies() -> void:
 	for enemy_to_spawn:int in range(enemies_to_spawn):
 		spawn_enemy()
 		
-func spawn_enemy():
+func spawn_enemy() -> void:
 	var spawn_position:Vector2
 	var new_enemy:Enemy = Enemy.new_enemy(pick_weighted_random_enemy())
 	spawn_position = GameInfo.get_global_player_offset_position()
 	GameInfo.enemy_holder.add_child(new_enemy)
 	new_enemy.global_position = spawn_position
+	
+func spawn_specific_enemy(type:EnemyType, global_spawn_position:Vector2 = Vector2.ZERO) -> void:
+	if global_spawn_position.is_zero_approx():
+		global_spawn_position = GameInfo.get_global_player_offset_position()
+	var new_enemy:Enemy = Enemy.new_enemy(type)
+	GameInfo.enemy_holder.add_child(new_enemy)
+	new_enemy.global_position = global_spawn_position
 
 func pick_weighted_random_enemy() -> EnemyType:
 	var enemy_type:EnemyType
