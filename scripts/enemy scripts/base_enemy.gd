@@ -42,7 +42,7 @@ func collision_entered(body:Node2D):
 		if player.take_damage(enemy_type.contact_damage):
 			node_sprite.play(&"attack")
 			on_damage_cooldown = true
-			await get_tree().create_timer(enemy_type.damage_cooldown).timeout
+			await get_tree().create_timer(enemy_type.damage_cooldown, false).timeout
 			if enemy_type.dies_on_collision:
 				die()
 				return
@@ -112,7 +112,7 @@ func pick_random_hurt_sound() -> AudioStreamWAV:
 	
 func disappear_after_time(time:float) -> void:
 	await tree_entered
-	await get_tree().create_timer(time).timeout
+	await get_tree().create_timer(time, false).timeout
 	disappear()
 	
 
@@ -129,7 +129,7 @@ func take_damage(amount:float) -> void:
 	node_sprite.material.set_shader_parameter(&"harmed", true)
 	hitstopped = true
 	active_hitstops += 1
-	await get_tree().create_timer(enemy_type.hitstop_time).timeout
+	await get_tree().create_timer(enemy_type.hitstop_time, false).timeout
 	active_hitstops -= 1
 	if active_hitstops <= 0:
 		node_sprite.material.set_shader_parameter(&"harmed", false)
@@ -138,7 +138,7 @@ func take_damage(amount:float) -> void:
 func register_was_hit_this_second() -> void:
 	hit_this_second = true
 	MagicItemInfo.register_enemy_hit_this_second()
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(1, false).timeout
 	hit_this_second = false
 
 
@@ -150,7 +150,7 @@ func visual_damage(damage:float) -> void:
 func change_value_additive(value:StringName, amount:float, time_till_reversed:float = 0) -> void:
 	set(value, get(value) + amount)
 	if time_till_reversed > 0:
-		await get_tree().create_timer(time_till_reversed).timeout
+		await get_tree().create_timer(time_till_reversed, false).timeout
 		set(value, get(value) - amount)
 		
 ##if the time_till_reversed = 0 then it will never be reversed. Due to the nature of mathematical operations, if this is mixed with the additive version on the same property, it may not be properly returned to it's original state
@@ -165,7 +165,7 @@ func change_value_multiplicative(value:StringName, multiplier:float, time_till_r
 func change_modulate(new_color:Color, time_till_reversed:float = 0):
 	modulate = new_color
 	if time_till_reversed > 0:
-		await get_tree().create_timer(time_till_reversed).timeout
+		await get_tree().create_timer(time_till_reversed, false).timeout
 		modulate = Color.WHITE
 
 	
@@ -198,4 +198,4 @@ func disappear(skip_animation:bool = false):
 func death_animation() -> void:
 	const TIME_DEATH_DISPLAYED:float = 0.5
 	node_sprite.play(&"die")
-	await get_tree().create_timer(TIME_DEATH_DISPLAYED).timeout
+	await get_tree().create_timer(TIME_DEATH_DISPLAYED, false).timeout

@@ -41,5 +41,5 @@ func damage_all_in_thorns():
 			damage_in_thorns(body)
 			
 func start_decay_timer(time_till_decay:float) -> void:
-	await get_tree().create_timer(time_till_decay).timeout
+	await get_tree().create_timer(time_till_decay, false).timeout
 	queue_free()

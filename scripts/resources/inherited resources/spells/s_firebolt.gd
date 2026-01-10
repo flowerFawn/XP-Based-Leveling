@@ -10,7 +10,7 @@ func cast() -> void:
 		return
 	for n in range(projectile_count):
 		shoot_firebolt(n)
-		await spell_handler.get_tree().create_timer(multi_projectile_delay).timeout
+		await spell_handler.get_tree().create_timer(multi_projectile_delay, false).timeout
 
 func shoot_firebolt(n:int):
 	if player:

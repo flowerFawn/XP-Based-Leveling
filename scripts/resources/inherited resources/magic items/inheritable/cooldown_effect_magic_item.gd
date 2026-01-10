@@ -8,5 +8,5 @@ var on_cooldown:bool = false
 
 func start_cooldown(time:float):
 	on_cooldown = true
-	await GameInfo.get_tree().create_timer(time).timeout
+	await GameInfo.get_tree().create_timer(time, false).timeout
 	on_cooldown = false

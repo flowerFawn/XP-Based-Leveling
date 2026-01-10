@@ -8,7 +8,7 @@ var total_enemies_killed:int = 0
 
 func register_enemy_hit_this_second() -> void:
 	enemies_hit_this_second += 1
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(1, false).timeout
 	enemies_hit_this_second -= 1
 
 func register_kill() -> void:

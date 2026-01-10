@@ -64,5 +64,5 @@ func hit_something(body:Node2D):
 ##Destroys the projectile, to avoid large amounts of particles causing lag
 func start_decay_timer(time_till_decay:float) -> void:
 	await tree_entered
-	await get_tree().create_timer(time_till_decay).timeout
+	await get_tree().create_timer(time_till_decay, false).timeout
 	queue_free()

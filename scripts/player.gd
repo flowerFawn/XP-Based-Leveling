@@ -28,7 +28,7 @@ var cooldown_multiplier:float = 1:
 	set(value):
 		#how much to multiply a preexisting cooldown to, to get it to the correct value
 		var change_multiplier:float = (1 / cooldown_multiplier) * value
-		cooldown_multiplier = value
+		cooldown_multiplier = clamp(value, 0.01, 1)
 		for spell_handler:SpellHandler in get_tree().get_nodes_in_group(&"SpellHandler"):
 			update_preexisting_spell_cooldown(spell_handler, change_multiplier)
 

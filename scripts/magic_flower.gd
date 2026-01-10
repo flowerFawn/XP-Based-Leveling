@@ -20,17 +20,30 @@ static func create_flower(given_effect:StringName) -> MagicFlower:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
-		do_effect(body)
+		visible = false
+		await do_effect(body)
 		queue_free()
 		
 func do_effect(player:Player) -> void:
 	match effect:
 		&"Heal":
-			player.heal(20)
+			heal(player)
 		&"Magnet":
-			for xp_orb:XPOrb in get_tree().get_nodes_in_group(&"XPOrb"):
-				xp_orb.be_picked_up(player)
+			magnet(player)
 		&"Rush":
-			player.cooldown_multiplier -= 0.6
-			await get_tree().create_timer(5).timeout
-			player.cooldown_multiplier += 0.6
+			await rush(player)
+			
+func heal(player:Player):
+	player.heal(20)
+	
+func magnet(player:Player):
+	for xp_orb:XPOrb in get_tree().get_nodes_in_group(&"XPOrb"):
+				xp_orb.be_picked_up(player)
+				
+func rush(player:Player):
+	#otherwise could hit the bottom limit of 1% and so increase above original when reverting
+	var original_cooldown:float = player.cooldown_multiplier
+	player.cooldown_multiplier -= 0.6
+	var difference:float = original_cooldown - player.cooldown_multiplier
+	await get_tree().create_timer(5, false).timeout
+	player.cooldown_multiplier += difference

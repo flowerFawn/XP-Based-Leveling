@@ -37,7 +37,7 @@ func update_directions() -> void:
 
 func do_spawns() -> void:
 	spawn_enemies()
-	if GameInfo.rnd.randf() <= 0.01:
+	if GameInfo.rnd.randf() <= 1.01:
 		spawn_flower()
 
 func spawn_enemies() -> void:
@@ -83,9 +83,8 @@ func update_enemy_weights(seconds_survived:float) -> void:
 	enemy_type_current_weight_array = new_weights_array
 	
 func spawn_flower() -> void:
-	print("flowey")
 	const type_array:Array[StringName] = [&"Heal", &"Magnet", &"Rush"]
-	var type_index:int = GameInfo.rnd.rand_weighted(PackedFloat32Array([0.725, 0.225, 0.05]))
+	var type_index:int = GameInfo.rnd.rand_weighted(PackedFloat32Array([0.725, 0.225, 10.05]))
 	var type:StringName = type_array[type_index]
 	var new_flower:MagicFlower = MagicFlower.create_flower(type)
 	GameInfo.projectile_holder.add_child(new_flower)
