@@ -33,6 +33,7 @@ window/stretch/mode="canvas_items"
 Enemy="any kind of enemy"
 Player="the player. should only ever be one, preferably"
 XPOrb="orbs of xp on the floor"
+SpellHandler="timers that handle spells"
 
 [input]
 

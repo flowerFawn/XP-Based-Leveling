@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("1_7wp3f")
+application_order = 10
 rarity = 2
 next_upgrade = ExtResource("1_x46nu")
 metadata/_custom_type_script = "uid://bfk2l7r80cua0"

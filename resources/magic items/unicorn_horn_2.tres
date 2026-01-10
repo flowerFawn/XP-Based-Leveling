@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="MIUnicornHorn" load_steps=3 format=3 uid="uid://curgs1k3qs4qb"]
+
+[ext_resource type="Resource" uid="uid://b0yrwb7evduip" path="res://resources/magic items/unicorn_horn_3.tres" id="1_dcj2q"]
+[ext_resource type="Script" uid="uid://d4i4c2013bg4s" path="res://scripts/resources/inherited resources/magic items/usable/unicorn_horn.gd" id="1_kvrra"]
+
+[resource]
+script = ExtResource("1_kvrra")
+increased_pierce = 2
+application_order = 10
+level_description = "One additional pierce"
+level = 2
+next_upgrade = ExtResource("1_dcj2q")
+metadata/_custom_type_script = "uid://d4i4c2013bg4s"

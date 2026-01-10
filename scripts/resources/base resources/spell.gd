@@ -16,7 +16,12 @@ class_name Spell
 	get:
 		return SpellShop.run_through_magic_items(projectile_count, &"affect_projectile_count")
 ##How many enemies a projectile can pierce through before disappearing. If set to zero this is infinite
-@export var projectile_pierce:int = 0
+@export var projectile_pierce:int = 0:
+	get:
+		if projectile_pierce > 0:
+			return SpellShop.run_through_magic_items(projectile_pierce, &"affect_projectile_pierce")
+		else:
+			return projectile_pierce
 ##An option delay between the creation of multiple projectiles in the same casting, in seconds.
 @export var multi_projectile_delay:float = 0
 ##The shape used for this spell. This includes hitboxes for things like earthquake, or projectile hitboxes
@@ -30,6 +35,8 @@ class_name Spell
 
 var spell_handler:SpellHandler
 var player:Player
+
+signal finished_casting
 
 func cast() -> void:
 	print("A")

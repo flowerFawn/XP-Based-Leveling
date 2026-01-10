@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MIHastySpellBook" load_steps=3 format=3 uid="uid://ht6eey7nq6ro"]
+
+[ext_resource type="Resource" uid="uid://2tmqxu31lyhm" path="res://resources/magic items/hasty_spellbook_2.tres" id="1_1trk0"]
+[ext_resource type="Script" uid="uid://da4v0ck85uj1y" path="res://scripts/resources/inherited resources/magic items/usable/hastily_written_spellbook.gd" id="1_iujkn"]
+
+[resource]
+script = ExtResource("1_iujkn")
+flat_percentage_decrease = 0.05
+level_description = "5% lower cooldown"
+next_upgrade = ExtResource("1_1trk0")
+metadata/_custom_type_script = "uid://da4v0ck85uj1y"

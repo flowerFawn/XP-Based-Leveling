@@ -6,8 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://cajh0qqfcj3ti" path="res://assets/placeholders/Archwizard 1 fixed updated.png" id="2_glieb"]
 [ext_resource type="Resource" uid="uid://fdx6pmmkh50r" path="res://resources/magic items/teachers_pet_1.tres" id="2_gurd5"]
 [ext_resource type="Texture2D" uid="uid://gm48qepn80lq" path="res://assets/placeholders/Archwizard 2.png" id="3_5cdnv"]
-[ext_resource type="Resource" uid="uid://bwwyvlsexinen" path="res://resources/ability pools/archmage.tres" id="4_62uj4"]
 [ext_resource type="Resource" uid="uid://cbh1n057q23bg" path="res://resources/spell/firebolt_1.tres" id="5_3fcys"]
+[ext_resource type="Resource" uid="uid://bpa7drmk0sban" path="res://resources/ability pools/standard.tres" id="6_glieb"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tkcu6"]
 animations = [{
@@ -29,8 +29,8 @@ animations = [{
 [resource]
 script = ExtResource("1_bsn0i")
 name = "Archmage"
-description = "The struggling archmage of the tutor group. In his old age, his memory has faded and he can no longer cast advanced and niche spells, but he is still an effective caster. He is protected from harm by a very overenthusiatic young student that accompanies him. In his pocket. He begins with the firebolt spell."
-starting_ability_pool = ExtResource("4_62uj4")
+description = "The struggling archmage of the tutor group. A simple man, he is guarded by a fierce and loyal student. Starts with the firebolt spell"
+starting_ability_pool = ExtResource("6_glieb")
 starting_spell = ExtResource("5_3fcys")
 starting_magic_item = ExtResource("2_gurd5")
 animations = SubResource("SpriteFrames_tkcu6")

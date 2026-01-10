@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="MICursedMirror" load_steps=2 format=3 uid="uid://djsiakfgu14kt"]
+
+[ext_resource type="Script" uid="uid://btplm55nhln1i" path="res://scripts/resources/inherited resources/magic items/usable/cursed_mirror.gd" id="1_otyge"]
+
+[resource]
+script = ExtResource("1_otyge")
+extra_projectiles = 1
+flat_damage_loss = 1
+level_description = "Duplicates all projectiles, but halves all damage"
+level = 2
+rarity = 3
+metadata/_custom_type_script = "uid://btplm55nhln1i"

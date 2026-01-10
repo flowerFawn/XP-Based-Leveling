@@ -11,3 +11,6 @@ class_name MagicItem
 ##Others should be self explanatory, or be implemented as the magic item is designed
 
 @export var application_order:int = 1
+
+func affect_player_stats(player:Player) -> void:
+	pass

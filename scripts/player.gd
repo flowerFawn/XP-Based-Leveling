@@ -12,7 +12,11 @@ var active_health:float = 100:
 		node_progress.value = value
 var max_health:float = 100:
 	set(value):
+		var change:float = value - max_health
 		max_health = value
+		active_health += change
+		if active_health > max_health:
+			active_health = max_health
 		node_progress.max_value = value
 ##The previous direction of the player. This can have values as zero
 var accurate_orientation:Vector2 = Vector2(1, 0)
@@ -20,6 +24,13 @@ var accurate_orientation:Vector2 = Vector2(1, 0)
 var x_orientation:int = 1
 ##The last non-zero direction of the player on the y axis. Should always be 1 or -1
 var y_orientation:int = 1
+var cooldown_multiplier:float = 1:
+	set(value):
+		#how much to multiply a preexisting cooldown to, to get it to the correct value
+		var change_multiplier:float = (1 / cooldown_multiplier) * value
+		cooldown_multiplier = value
+		for spell_handler:SpellHandler in get_tree().get_nodes_in_group(&"SpellHandler"):
+			update_preexisting_spell_cooldown(spell_handler, change_multiplier)
 
 ##Dictionary that stores the spells and their associated spell handlers. 
 ##This is a dictionary so that the spellhandlers can be found using their associated spell resource.
@@ -135,16 +146,22 @@ func die():
 ##Actually creates the spellhandler and starts the casting loop
 func start_spell(spell:Spell) -> void:
 	var new_spellhandler:SpellHandler = SpellHandler.new(spell)
+	spells[spell] = new_spellhandler
+	
 	spell.player = self
 	spell.spell_handler = new_spellhandler
-	spells[spell] = new_spellhandler
-	add_child(new_spellhandler, true)
+	add_child(new_spellhandler)
+	spell.initial_spell_setup()
+	new_spellhandler.trigger_spell()
+	new_spellhandler.start(spell.cooldown * cooldown_multiplier)
+
 	
 ##Removes a spell and stops it running. mainly used for lower upgrades of spells
 func remove_spell(spell:Spell) -> void:
 	if not spells.has(spell):
 		print("This spell is not there to be removed!")
 		return
+	await spell.finished_casting
 	spell.clean_up_for_removal()
 	spells[spell].queue_free()
 	spells.erase(spell)
@@ -187,7 +204,12 @@ func start_magic_item(magic_item:MagicItem) -> void:
 		else:
 			n += 1
 	magic_items.insert(n ,magic_item)
+	magic_item.affect_player_stats(self)
 	
+func update_preexisting_spell_cooldown(spell_handler:SpellHandler, change_multiplier:float) -> void:
+	spell_handler.start(spell_handler.time_left * change_multiplier) 
+	await spell_handler.timeout
+	spell_handler.start(spell_handler.spell.cooldown * cooldown_multiplier)
 	
 
 #endregion

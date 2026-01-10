@@ -188,6 +188,8 @@ func leave_xp() -> void:
 	
 ##Disappearing is different from dying, in that it causes no death effect and no xp reward
 func disappear(skip_animation:bool = false):
+	if dying:
+		return
 	if not skip_animation:
 		await death_animation()
 	queue_free()

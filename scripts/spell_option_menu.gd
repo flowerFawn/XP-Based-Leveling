@@ -6,7 +6,7 @@ func _input(event: InputEvent) -> void:
 	pass
 
 ##The different abilitys will be unique
-func show_random_ability_options(option_count:int = 3) -> void:
+func show_random_ability_options(option_count:int = 4) -> void:
 	get_tree().paused = true
 	var new_ability_option_box:AbilityOptionBox
 	get_parent().visible = true

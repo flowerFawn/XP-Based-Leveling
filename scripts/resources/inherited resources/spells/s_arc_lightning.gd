@@ -13,12 +13,14 @@ func cast() -> void:
 	
 	var arc_start:Vector2
 	var arc_affected_enemy:Enemy
+	var affected_enemy_position:Vector2
 	possible_targets[player.get_closest_enemy()] = player.global_position
 	if possible_targets.keys()[0] == null:
 		return
 	for n in range(remaining_possible_arcs):
 		if n <= remaining_possible_arcs and n < len(possible_targets):
 			arc_affected_enemy = possible_targets.keys()[n]
+			affected_enemy_position = arc_affected_enemy.global_position
 			arc_start = possible_targets[arc_affected_enemy]
 			draw_line_between_points(arc_start, arc_affected_enemy.global_position - arc_start, 100, 2)
 			arc_affected_enemy.take_damage(damage)
@@ -30,7 +32,7 @@ func cast() -> void:
 			for enemy:Node2D in get_shapecast_colliders(arc_shapecast):
 				if enemy is Enemy and not enemy in possible_targets.keys():
 					var arced_to_enemy:Enemy = enemy
-					possible_targets[arced_to_enemy] = arc_affected_enemy.global_position
+					possible_targets[arced_to_enemy] = affected_enemy_position
 			arc_shapecast.queue_free()
 			remaining_possible_arcs -= 1
 			await wait_time(multi_projectile_delay)

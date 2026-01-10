@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MIHolySymbol" load_steps=3 format=3 uid="uid://btjxrp0u4atuk"]
+
+[ext_resource type="Script" uid="uid://w0a3bgk6by6i" path="res://scripts/resources/inherited resources/magic items/usable/holy_symbol.gd" id="1_efluo"]
+[ext_resource type="Resource" uid="uid://bq8kib14rkd7w" path="res://resources/magic items/holy_symbol_8.tres" id="1_rs57w"]
+
+[resource]
+script = ExtResource("1_efluo")
+flat_health_increase = 40
+level = 7
+next_upgrade = ExtResource("1_rs57w")
+metadata/_custom_type_script = "uid://w0a3bgk6by6i"

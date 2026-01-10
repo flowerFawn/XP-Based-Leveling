@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="MIConductiveController" load_steps=2 format=3 uid="uid://c40s3mnlq10la"]
+
+[ext_resource type="Script" uid="uid://dn2cenp4tb56" path="res://scripts/resources/inherited resources/magic items/usable/conductive_controller.gd" id="1_f27jy"]
+
+[resource]
+script = ExtResource("1_f27jy")
+percentage_increase_per_enemy = 0.3
+level = 2
+rarity = 2
+metadata/_custom_type_script = "uid://dn2cenp4tb56"

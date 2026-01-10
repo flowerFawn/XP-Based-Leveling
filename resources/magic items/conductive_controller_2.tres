@@ -1,10 +1,12 @@
-[gd_resource type="Resource" script_class="MIConductiveController" load_steps=2 format=3 uid="uid://b2pjxtn5x3g0t"]
+[gd_resource type="Resource" script_class="MIConductiveController" load_steps=3 format=3 uid="uid://b2pjxtn5x3g0t"]
 
 [ext_resource type="Script" uid="uid://dn2cenp4tb56" path="res://scripts/resources/inherited resources/magic items/usable/conductive_controller.gd" id="1_lg128"]
+[ext_resource type="Resource" uid="uid://ch1n8nt376eh2" path="res://resources/magic items/conductive_controller_3.tres" id="1_u1w2y"]
 
 [resource]
 script = ExtResource("1_lg128")
-percentage_increase_per_enemy = 0.1
+percentage_increase_per_enemy = 0.2
 level = 2
 rarity = 2
+next_upgrade = ExtResource("1_u1w2y")
 metadata/_custom_type_script = "uid://dn2cenp4tb56"
