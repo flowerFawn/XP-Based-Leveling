@@ -37,7 +37,7 @@ func update_directions() -> void:
 
 func do_spawns() -> void:
 	spawn_enemies()
-	if GameInfo.rnd.randf() <= 1.01:
+	if GameInfo.rnd.randf() <= 0.01:
 		spawn_flower()
 
 func spawn_enemies() -> void:
