@@ -62,7 +62,7 @@ func give_ability(ability:Ability):
 	
 #currently always gives 3, maybe change the count?
 func award_ability_option() -> void:
-	spell_option_menu.show_random_ability_options()
+	spell_option_menu.show_random_ability_options(4)
 	
 func run_through_magic_items(value:Variant, method:StringName) -> Variant:
 	var new_value = value
