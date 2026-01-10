@@ -35,6 +35,7 @@ class_name Spell
 
 var spell_handler:SpellHandler
 var player:Player
+var tree:SceneTree
 
 signal finished_casting
 
@@ -57,7 +58,7 @@ func get_direction_to_nearest_enemy() -> Vector2:
 
 ##you need to await this function if you want to await it
 func wait_time(time:float) -> void:
-	await spell_handler.get_tree().create_timer(time, false).timeout
+	await tree.create_timer(time, false).timeout
 	
 func get_random_offset(intensity:float = 1.0) -> Vector2:
 	return Vector2(GameInfo.rnd.randi_range(-150, 150), GameInfo.rnd.randi_range(-150, 150)) * intensity

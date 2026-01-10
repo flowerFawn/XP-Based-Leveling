@@ -7,11 +7,11 @@ func _init() -> void:
 	base_description = "Shoots flurry of shards in all directions, randomly"
 
 func cast() -> void:
-	if not GameInfo.projectile_holder:
-		return
 	for n in range(projectile_count):
 		shoot_shard()
 		await wait_time(multi_projectile_delay)
 
 func shoot_shard():
+	if not GameInfo.projectile_holder:
+		return
 	GameInfo.projectile_holder.add_child(PlayerProjectile.new(projectile_speed, damage, shape, get_random_angle_vector(), texture, projectile_pierce))

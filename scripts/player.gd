@@ -147,7 +147,7 @@ func die():
 func start_spell(spell:Spell) -> void:
 	var new_spellhandler:SpellHandler = SpellHandler.new(spell)
 	spells[spell] = new_spellhandler
-	
+	spell.tree = get_tree()
 	spell.player = self
 	spell.spell_handler = new_spellhandler
 	add_child(new_spellhandler)

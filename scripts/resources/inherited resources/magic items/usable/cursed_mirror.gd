@@ -9,10 +9,10 @@ func _init() -> void:
 	ability_name = "Cursed Mirror"
 
 func affect_projectile_count(previous_count:int) -> int:
-	if level <= 1:
-		return previous_count + extra_projectiles
-	else:
-		return previous_count * 2
+	previous_count += extra_projectiles
+	if level >= 2:
+		previous_count *= 2
+	return previous_count
 
 func affect_outgoing_damage(previous_count:float) -> float:
 	if level <= 1:
