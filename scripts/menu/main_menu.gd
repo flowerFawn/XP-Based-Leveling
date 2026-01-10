@@ -17,6 +17,7 @@ var visuals_tween:Tween
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var fade_tween:Tween = create_tween()
+	get_tree().paused = false
 	play_button.grab_focus()
 	fade_tween.tween_property(big_fade_rect, "color", Color(0, 0, 0, 0), 0.5)
 

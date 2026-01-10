@@ -18,6 +18,11 @@ var active_health:float
 var current_direction:Vector2
 
 var dying:bool = false
+var on_damage_cooldown:bool = false:
+	set(value):
+		on_damage_cooldown = value
+		node_collision.disabled = true
+		node_collision.disabled = false
 var hitstopped:bool = false
 var active_hitstops:int = 0
 
@@ -32,18 +37,18 @@ func _physics_process(delta: float) -> void:
 #region COLLISION
 func collision_entered(body:Node2D):
 	#If the enemy collides with the player, it does damage and then disappears
-	if body.is_in_group(&"Player") and enemy_type.collides_with_player:
+	if body.is_in_group(&"Player") and not on_damage_cooldown and enemy_type.collides_with_player:
 		var player:Player = body
 		if player.take_damage(enemy_type.contact_damage):
 			node_sprite.play(&"attack")
-			node_collision.disabled = true
+			on_damage_cooldown = true
 			await get_tree().create_timer(enemy_type.damage_cooldown).timeout
 			if enemy_type.dies_on_collision:
 				die()
 				return
 			else:
 				node_sprite.play(&"walk")
-				node_collision.disabled = false
+				on_damage_cooldown = false
 			
 			
 #endregion
