@@ -84,7 +84,7 @@ func update_enemy_weights(seconds_survived:float) -> void:
 	
 func spawn_flower() -> void:
 	const type_array:Array[StringName] = [&"Heal", &"Magnet", &"Rush"]
-	var type_index:int = GameInfo.rnd.rand_weighted(PackedFloat32Array([0.725, 0.225, 10.05]))
+	var type_index:int = GameInfo.rnd.rand_weighted(PackedFloat32Array([0.725, 0.225, 0.05]))
 	var type:StringName = type_array[type_index]
 	var new_flower:MagicFlower = MagicFlower.create_flower(type)
 	GameInfo.projectile_holder.add_child(new_flower)
