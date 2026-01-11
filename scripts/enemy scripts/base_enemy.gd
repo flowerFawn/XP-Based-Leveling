@@ -15,7 +15,7 @@ var active_health:float
 
 
 ##so we don't recalculate direction every frame lol
-var current_direction:Vector2
+var current_desired_direction:Vector2
 
 var dying:bool = false
 var on_damage_cooldown:bool = false:
@@ -30,9 +30,29 @@ var active_hitstops:int = 0
 func misc_setup() -> void:
 	pass
 	
-func _physics_process(delta: float) -> void:
-	if not dying and not hitstopped:
-		move(current_direction * active_speed * delta)
+func do_movement(delta: float, all_enemies:Array[Enemy]) -> void:
+	const MIN_ENEMY_DISTANCE_SQUARED = 50 ** 2
+	var affecting_vectors:Array[Vector2]
+	
+	affecting_vectors.append(current_desired_direction)
+	if dying or hitstopped:
+		return
+	if enemy_type.avoidant:
+		for enemy:Enemy in all_enemies:
+			if enemy != self and enemy.position.distance_squared_to(position) < MIN_ENEMY_DISTANCE_SQUARED:
+				#adds a vector away from the offending enemy 
+				affecting_vectors.append(enemy.position.direction_to(position).normalized())
+	move(get_average_of_vectors(affecting_vectors).normalized() * active_speed * delta)
+	
+func get_average_of_vectors(vectors:Array[Vector2]) -> Vector2:
+	var total_x:float = 0
+	var total_y:float = 0
+	var average_vector:Vector2
+	for vector:Vector2 in vectors:
+		total_x += vector.x
+		total_y += vector.y
+	average_vector = Vector2(total_x / len(vectors), total_y / len(vectors))
+	return average_vector
 	
 #region COLLISION
 func collision_entered(body:Node2D):
@@ -57,8 +77,8 @@ func move(velocity:Vector2) -> void:
 	#no move and slide
 	position += velocity
 	
-func update_direction() -> void:
-	current_direction = enemy_type.movement_type.get_enemy_direction(global_position, GameInfo.player_position)
+func update_desired_direction() -> void:
+	current_desired_direction = enemy_type.movement_type.get_enemy_direction(global_position, GameInfo.player_position)
 	if global_position.x < GameInfo.player_position.x:
 		node_sprite.flip_h = false
 	else:

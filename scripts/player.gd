@@ -195,7 +195,6 @@ func add_magic_item(magic_item:MagicItem) -> void:
 	start_magic_item(magic_item)
 				
 func remove_magic_item(magic_item:MagicItem) -> void:
-	print("yup")
 	if not magic_item in magic_items:
 		print("Magic item not already there!")
 		return

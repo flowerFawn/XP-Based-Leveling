@@ -30,7 +30,7 @@ var enemy_type_current_weight_array:PackedFloat32Array = PackedFloat32Array([])
 func update_directions() -> void:
 	#updates enemies heading towards the player
 	for enemy:Enemy in get_tree().get_nodes_in_group("Enemy"):
-		enemy.update_direction()
+		enemy.update_desired_direction()
 	#updates where aimed spells will go
 	if GameInfo.player:
 		GameInfo.closest_enemy_to_player_point = GameInfo.player.get_closest_enemy_position()

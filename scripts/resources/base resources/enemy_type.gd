@@ -53,3 +53,5 @@ class_name EnemyType
 @export var harmless:bool = false
 ##If the enemy is flying, and so should be rendered infront of other enemies
 @export var flying:bool = false
+##If the enemy will attempt to avoid other enemies. Should normally be true, the only exception being flying enemies and such
+@export var avoidant:bool = true
