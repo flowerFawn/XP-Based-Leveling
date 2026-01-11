@@ -51,3 +51,5 @@ class_name EnemyType
 @export var dies_on_collision:bool = false
 ##If the enemies collision will be disabled, stopping attacking and receiving damage (mainly for polymorph)
 @export var harmless:bool = false
+##If the enemy is flying, and so should be rendered infront of other enemies
+@export var flying:bool = false

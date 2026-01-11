@@ -33,4 +33,5 @@ collision = SubResource("CircleShape2D_nwiga")
 animations = SubResource("SpriteFrames_erqsf")
 unique_script = ExtResource("4_5ofq4")
 dies_on_collision = true
+flying = true
 metadata/_custom_type_script = "uid://58cfsa1tna1q"

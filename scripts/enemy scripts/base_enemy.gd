@@ -83,6 +83,9 @@ static func new_enemy(enemy_type:EnemyType) -> Enemy:
 	#this is so the 200x200 pixel sprites by default take up the 100x100 pixel space we want them to
 	new_enemy_instance.node_sprite.scale = Vector2(0.5, 0.5)
 	new_enemy_instance.node_collision = CollisionShape2D.new()
+	new_enemy_instance.y_sort_enabled = true
+	if enemy_type.flying:
+		new_enemy_instance.z_index += 1
 	new_enemy_instance.add_child(new_enemy_instance.node_sprite)
 	new_enemy_instance.add_child(new_enemy_instance.node_collision)
 	new_enemy_instance.enemy_type = enemy_type
