@@ -18,6 +18,11 @@ var next_required_xp:float = 5
 
 var current_ability_weights:PackedFloat32Array
 
+#saves processing time by calculating them ahead of time and storing them, because they're used a lot
+const SQRT_ARRAY:Array[float] = [0, 
+1, sqrt(2), sqrt(3), sqrt(4),
+sqrt(5), sqrt(6), sqrt(7), sqrt(8), ]
+
 #Not used outside of testing
 #func award_random_spell() -> void:
 	#for now just fully random what spell you get
@@ -81,9 +86,11 @@ func update_ability_weights() -> void:
 	current_ability_weights = current_ability_pool.map(calculate_ability_rarity)
 
 ##Does the calculation for ability rarity. Believe it or not
-##It is the reciprocal of the square root of the level, all multiplied by the reciprocal of the rarity
-##This calculation should be the most simplified possible version, but mayhaps slow due to the square root?
-##wgaf
+##It is the reciprocal of the cube root of the level, all multiplied by the reciprocal of the rarity, to the power of t
+##t is a decimal representing how much of the "game time" till 30 minutes
+##t = 1 - time_elapsed / 1800
+##t cannot be below 0. T here causes the chance of getting better and higher level spells to increase over time.
 func calculate_ability_rarity(ability:Ability) -> float:
-	return (1.0 / (sqrt(ability.level) * ability.rarity))
+	var t:float = max(1 - GameInfo.game_controller.time_elapsed / 1800, 0)
+	return pow((1.0 / (SQRT_ARRAY[ability.level] * ability.rarity)), t)
 	
