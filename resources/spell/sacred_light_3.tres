@@ -8,8 +8,8 @@ radius = 25.0
 
 [resource]
 script = ExtResource("1_8qxuu")
-rotation_change = 135.0
-rotation_time = 3.0
+rotation_change = 540.0
+rotation_time = 4.5
 cooldown = 5.0
 damage = 8.0
 projectile_speed = 300.0

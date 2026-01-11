@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://ck34qaofp1ap" path="res://scripts/resources/inherited resources/death effect/de_explode.gd" id="1_y4w6s"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7fcpq"]
-radius = 250.0
+radius = 100.0
 
 [resource]
 script = ExtResource("1_y4w6s")
