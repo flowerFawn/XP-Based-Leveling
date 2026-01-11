@@ -50,18 +50,22 @@ text = "Play"
 [node name="SettingsButton" type="Button" parent="MainMenu/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+text = "Settings"
 
 [node name="BestiaryButton" type="Button" parent="MainMenu/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+text = "Bestiary"
 
 [node name="CreditsButton" type="Button" parent="MainMenu/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+text = "Credits"
 
 [node name="QuitButton" type="Button" parent="MainMenu/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+text = "Quit"
 
 [node name="Control" type="Control" parent="MainMenu/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(700, 0)

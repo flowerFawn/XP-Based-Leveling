@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://dgjvvqwas3gcv"]
+[gd_scene load_steps=3 format=3 uid="uid://dgjvvqwas3gcv"]
 
+[ext_resource type="Theme" uid="uid://bw2l7f67pn2it" path="res://resources/built-in/themes/settings.tres" id="1_dxr1k"]
 [ext_resource type="Script" uid="uid://dfpj32cpf0fxh" path="res://scripts/menu/settings.gd" id="1_rqcjd"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
@@ -11,34 +12,44 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_dxr1k")
 script = ExtResource("1_rqcjd")
-skip_check = NodePath("ScrollContainer/VBoxContainer/SkipIntroCheck")
+skip_check = NodePath("PanelContainer/PanelContainer/ScrollContainer/VBoxContainer/SkipIntroCheck")
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Control"]
+[node name="PanelContainer" type="PanelContainer" parent="Control"]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.1
-anchor_right = 0.9
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="Control/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/PanelContainer/PanelContainer"]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/PanelContainer/PanelContainer/ScrollContainer"]
+custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="SkipIntroCheck" type="CheckBox" parent="Control/ScrollContainer/VBoxContainer"]
+[node name="SkipIntroCheck" type="CheckBox" parent="Control/PanelContainer/PanelContainer/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 text = "Skip Intro"
 
-[node name="BackButton" type="Button" parent="Control"]
+[node name="BackButton" type="Button" parent="Control/PanelContainer"]
 custom_minimum_size = Vector2(100, 50)
-layout_mode = 1
-offset_right = 8.0
-offset_bottom = 8.0
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
 text = "Back
 "
 
-[connection signal="toggled" from="Control/ScrollContainer/VBoxContainer/SkipIntroCheck" to="Control" method="_on_skip_intro_check_toggled"]
-[connection signal="pressed" from="Control/BackButton" to="Control" method="_on_back_button_pressed"]
+[connection signal="toggled" from="Control/PanelContainer/PanelContainer/ScrollContainer/VBoxContainer/SkipIntroCheck" to="Control" method="_on_skip_intro_check_toggled"]
+[connection signal="pressed" from="Control/PanelContainer/BackButton" to="Control" method="_on_back_button_pressed"]
