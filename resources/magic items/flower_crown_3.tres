@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="MIFlowerCrown" load_steps=3 format=3 uid="uid://csjkp7fc8uevk"]
+
+[ext_resource type="Resource" uid="uid://rj5unxdqxbag" path="res://resources/magic items/flower_crown_4.tres" id="1_6wx0j"]
+[ext_resource type="Script" uid="uid://bmn3ouxd7kl2d" path="res://scripts/resources/inherited resources/magic items/usable/flower_crown.gd" id="1_7qtrq"]
+
+[resource]
+script = ExtResource("1_7qtrq")
+flower_multiplier_change = 1.0
+level = 3
+rarity = 2
+next_upgrade = ExtResource("1_6wx0j")
+metadata/_custom_type_script = "uid://bmn3ouxd7kl2d"

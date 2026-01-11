@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="AbilityPool" load_steps=22 format=3 uid="uid://bpa7drmk0sban"]
+[gd_resource type="Resource" script_class="AbilityPool" load_steps=23 format=3 uid="uid://bpa7drmk0sban"]
 
 [ext_resource type="Script" uid="uid://i4vxs0c4oet7" path="res://scripts/resources/base resources/player_ability.gd" id="1_yyggw"]
 [ext_resource type="Script" uid="uid://cppbyt13invqd" path="res://scripts/resources/base resources/ability_pool.gd" id="2_8tfyf"]
@@ -21,8 +21,9 @@
 [ext_resource type="Resource" uid="uid://cywd3ane645mq" path="res://resources/magic items/unicorn_horn_1.tres" id="18_0pur1"]
 [ext_resource type="Resource" uid="uid://b7mqtn133dr0n" path="res://resources/magic items/holy_symbol_1.tres" id="19_gxkd0"]
 [ext_resource type="Resource" uid="uid://ht6eey7nq6ro" path="res://resources/magic items/hasty_spellbook_1.tres" id="20_mwtu6"]
+[ext_resource type="Resource" uid="uid://bmwxl8twxj6bf" path="res://resources/magic items/flower_crown_1.tres" id="21_mwtu6"]
 
 [resource]
 script = ExtResource("2_8tfyf")
-abilities = Array[ExtResource("1_yyggw")]([ExtResource("2_y8ce4"), ExtResource("3_in45v"), ExtResource("4_mqlwa"), ExtResource("5_s4t2w"), ExtResource("6_8tevm"), ExtResource("7_ymv1d"), ExtResource("8_mqlwa"), ExtResource("10_s4t2w"), ExtResource("10_8tevm"), ExtResource("11_8tevm"), ExtResource("12_ymv1d"), ExtResource("13_ht65c"), ExtResource("14_aarl6"), ExtResource("15_jhxfy"), ExtResource("16_f1b4y"), ExtResource("17_fi1ve"), ExtResource("18_0pur1"), ExtResource("19_gxkd0"), ExtResource("20_mwtu6")])
+abilities = Array[ExtResource("1_yyggw")]([ExtResource("2_y8ce4"), ExtResource("3_in45v"), ExtResource("4_mqlwa"), ExtResource("5_s4t2w"), ExtResource("6_8tevm"), ExtResource("7_ymv1d"), ExtResource("8_mqlwa"), ExtResource("10_s4t2w"), ExtResource("10_8tevm"), ExtResource("11_8tevm"), ExtResource("12_ymv1d"), ExtResource("13_ht65c"), ExtResource("14_aarl6"), ExtResource("15_jhxfy"), ExtResource("16_f1b4y"), ExtResource("17_fi1ve"), ExtResource("18_0pur1"), ExtResource("19_gxkd0"), ExtResource("20_mwtu6"), ExtResource("21_mwtu6")])
 metadata/_custom_type_script = "uid://cppbyt13invqd"

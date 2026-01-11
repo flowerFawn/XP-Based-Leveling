@@ -8,8 +8,11 @@ class_name Player
 var speed:int = 500
 var active_health:float = 100:
 	set(value):
+		if value >= active_health:
+			GameInfo.projectile_holder.create_healing_label(global_position, value - active_health)
 		active_health = value
 		node_progress.value = value
+
 var max_health:float = 100:
 	set(value):
 		var change:float = value - max_health
@@ -18,6 +21,8 @@ var max_health:float = 100:
 		if active_health > max_health:
 			active_health = max_health
 		node_progress.max_value = value
+var flower_multiplier:float = 1
+
 ##The previous direction of the player. This can have values as zero
 var accurate_orientation:Vector2 = Vector2(1, 0)
 ##The last non-zero direction of the player on the x axis. Should always be 1 or -1

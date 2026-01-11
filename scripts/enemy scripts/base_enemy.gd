@@ -122,8 +122,7 @@ func disappear_after_time(time:float) -> void:
 #region HEALTH
 func take_damage(amount:float) -> void:
 	active_health -= amount
-	if not hit_this_second:
-		register_was_hit_this_second()
+	register_hit(amount)
 	visual_damage(amount)
 	play_sound(pick_random_hurt_sound())
 	if active_health <= 0:
@@ -138,11 +137,13 @@ func take_damage(amount:float) -> void:
 		node_sprite.material.set_shader_parameter(&"harmed", false)
 		hitstopped = false
 		
-func register_was_hit_this_second() -> void:
-	hit_this_second = true
-	MagicItemInfo.register_enemy_hit_this_second()
-	await get_tree().create_timer(1, false).timeout
-	hit_this_second = false
+func register_hit(damage:float) -> void:
+	MagicItemInfo.register_damage_done(damage)
+	if not hit_this_second:
+		hit_this_second = true
+		MagicItemInfo.register_enemy_hit_this_second()
+		await get_tree().create_timer(1, false).timeout
+		hit_this_second = false
 
 
 func visual_damage(damage:float) -> void:

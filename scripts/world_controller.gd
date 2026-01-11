@@ -15,6 +15,7 @@ func _ready() -> void:
 	GameInfo.game_controller = game_controller
 	SpellShop.spell_option_menu = spell_option_menu
 	game_ui.xp_progress.max_value = SpellShop.next_required_xp
+	MagicItemInfo.reset()
 
 func _input(event: InputEvent) -> void:
 	if event.is_action("ui_cancel"):
