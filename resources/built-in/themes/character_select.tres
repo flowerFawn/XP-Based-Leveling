@@ -1,6 +1,7 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://jtelj6fw1ph"]
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://jtelj6fw1ph"]
 
 [ext_resource type="StyleBox" uid="uid://de0icf8c5krx2" path="res://resources/built-in/themes/theme assets/ms_gold_stylebox.tres" id="1_tel3d"]
+[ext_resource type="StyleBox" uid="uid://dycye1txoljqo" path="res://resources/built-in/themes/theme assets/ms_gold_stylebox_text.tres" id="2_j0k6o"]
 
 [resource]
 Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
@@ -9,3 +10,7 @@ Button/styles/focus = ExtResource("1_tel3d")
 Button/styles/hover = ExtResource("1_tel3d")
 Button/styles/normal = ExtResource("1_tel3d")
 Button/styles/pressed = ExtResource("1_tel3d")
+Panel/styles/panel = ExtResource("1_tel3d")
+PanelContainer/styles/panel = ExtResource("1_tel3d")
+TextPanelContainer/base_type = &"PanelContainer"
+TextPanelContainer/styles/panel = ExtResource("2_j0k6o")

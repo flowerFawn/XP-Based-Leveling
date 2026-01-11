@@ -9,4 +9,6 @@ Button/styles/focus = ExtResource("1_u3l2f")
 Button/styles/hover = ExtResource("1_u3l2f")
 Button/styles/normal = ExtResource("1_u3l2f")
 Button/styles/pressed = ExtResource("1_u3l2f")
+Panel/styles/panel = ExtResource("1_u3l2f")
+PanelContainer/styles/panel = ExtResource("1_u3l2f")
 VBoxContainer/constants/separation = 10

@@ -1,0 +1,14 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://dycye1txoljqo"]
+
+[ext_resource type="Texture2D" uid="uid://bgt30n5rvxri2" path="res://assets/placeholders/ui.png" id="1_2v7lw"]
+
+[resource]
+content_margin_left = 30.0
+content_margin_top = 30.0
+content_margin_right = 30.0
+content_margin_bottom = 20.0
+texture = ExtResource("1_2v7lw")
+texture_margin_left = 40.0
+texture_margin_top = 40.0
+texture_margin_right = 40.0
+texture_margin_bottom = 40.0
