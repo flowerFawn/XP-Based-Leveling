@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5knnb2e1dqrm"
-path="res://.godot/imported/Archwizard 0.5.png-3ece51fa8a14b90e252b915b3ab73eca.ctex"
+uid="uid://c8xc1ig3caujm"
+path="res://.godot/imported/goblin_7.png-a8cbecef86fbbbd09c2b78eb57651f97.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/placeholders/Archwizard 0.5.png"
-dest_files=["res://.godot/imported/Archwizard 0.5.png-3ece51fa8a14b90e252b915b3ab73eca.ctex"]
+source_file="res://assets/enemies/goblin_7.png"
+dest_files=["res://.godot/imported/goblin_7.png-a8cbecef86fbbbd09c2b78eb57651f97.ctex"]
 
 [params]
 

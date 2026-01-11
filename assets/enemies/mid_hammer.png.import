@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://by2ac12stigey"
-path="res://.godot/imported/Archwizard 1 fixed.png-e39b89205c1d364eb9a93116a0c4bb85.ctex"
+uid="uid://ckxl1nrfmq4tj"
+path="res://.godot/imported/mid_hammer.png-3731030a86364d169d75724fc51f3927.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/placeholders/Archwizard 1 fixed.png"
-dest_files=["res://.godot/imported/Archwizard 1 fixed.png-e39b89205c1d364eb9a93116a0c4bb85.ctex"]
+source_file="res://assets/enemies/mid_hammer.png"
+dest_files=["res://.godot/imported/mid_hammer.png-3731030a86364d169d75724fc51f3927.ctex"]
 
 [params]
 

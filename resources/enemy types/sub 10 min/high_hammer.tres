@@ -1,7 +1,19 @@
-[gd_resource type="Resource" script_class="EnemyType" load_steps=4 format=3 uid="uid://dt45jm2b3fh5k"]
+[gd_resource type="Resource" script_class="EnemyType" load_steps=6 format=3 uid="uid://dt45jm2b3fh5k"]
 
+[ext_resource type="Texture2D" uid="uid://biici061nq3sv" path="res://assets/enemies/high_hammer.png" id="1_e8dca"]
 [ext_resource type="Resource" uid="uid://cj6251nhvsiy8" path="res://resources/movement types/straight_enemy_movement.tres" id="1_i5cka"]
 [ext_resource type="Script" uid="uid://58cfsa1tna1q" path="res://scripts/resources/base resources/enemy_type.gd" id="2_e8dca"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tqiu7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_e8dca")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_spm0e"]
 radius = 50.0
@@ -17,4 +29,5 @@ damage_cooldown = 2.0
 xp_reward = 4.0
 base_health = 40.0
 collision = SubResource("CircleShape2D_spm0e")
+animations = SubResource("SpriteFrames_tqiu7")
 metadata/_custom_type_script = "uid://58cfsa1tna1q"

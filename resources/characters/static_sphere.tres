@@ -1,10 +1,30 @@
-[gd_resource type="Resource" script_class="Character" load_steps=6 format=3 uid="uid://bd2xytxkapqbj"]
+[gd_resource type="Resource" script_class="Character" load_steps=10 format=3 uid="uid://bd2xytxkapqbj"]
 
 [ext_resource type="Texture2D" uid="uid://b0wntjnflxovc" path="res://assets/placeholders/static_sphere.png" id="1_1paso"]
+[ext_resource type="Texture2D" uid="uid://cddmuu5g0aw45" path="res://assets/placeholders/Archwizard 1.png" id="1_506u6"]
 [ext_resource type="Script" uid="uid://dse7vf0l5vfv0" path="res://scripts/resources/base resources/character.gd" id="1_l5ufh"]
+[ext_resource type="Texture2D" uid="uid://cajh0qqfcj3ti" path="res://assets/placeholders/Archwizard 2.png" id="2_646pl"]
 [ext_resource type="Resource" uid="uid://bpa7drmk0sban" path="res://resources/ability pools/standard.tres" id="2_fcbqn"]
+[ext_resource type="Texture2D" uid="uid://gm48qepn80lq" path="res://assets/placeholders/Archwizard 3.png" id="3_x7w1t"]
 [ext_resource type="Resource" uid="uid://w0ho83q0d1wt" path="res://resources/magic items/conductive_controller_1.tres" id="4_1paso"]
 [ext_resource type="Resource" uid="uid://b0hqt4bjas0qh" path="res://resources/spell/static_sphere_1.tres" id="5_m32i7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_562ip"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_506u6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_646pl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_x7w1t")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
 
 [resource]
 script = ExtResource("1_l5ufh")
@@ -12,5 +32,6 @@ description = "Using a strange device that conducts the electricity from her spe
 starting_ability_pool = ExtResource("2_fcbqn")
 starting_spell = ExtResource("5_m32i7")
 starting_magic_item = ExtResource("4_1paso")
+animations = SubResource("SpriteFrames_562ip")
 icon = ExtResource("1_1paso")
 metadata/_custom_type_script = "uid://dse7vf0l5vfv0"

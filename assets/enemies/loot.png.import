@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cddmuu5g0aw45"
-path="res://.godot/imported/Archwizard 0.5 transparent.png-7e0e84676397c4b3ec18788fa2579a26.ctex"
+uid="uid://cal3vwey7i0pu"
+path="res://.godot/imported/loot.png-798f622434e2e70a64ab04832649b3b6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/placeholders/Archwizard 0.5 transparent.png"
-dest_files=["res://.godot/imported/Archwizard 0.5 transparent.png-7e0e84676397c4b3ec18788fa2579a26.ctex"]
+source_file="res://assets/enemies/loot.png"
+dest_files=["res://.godot/imported/loot.png-798f622434e2e70a64ab04832649b3b6.ctex"]
 
 [params]
 

@@ -1,8 +1,20 @@
-[gd_resource type="Resource" script_class="EnemyType" load_steps=5 format=3 uid="uid://dqunbnln7x2n0"]
+[gd_resource type="Resource" script_class="EnemyType" load_steps=7 format=3 uid="uid://dqunbnln7x2n0"]
 
 [ext_resource type="Resource" uid="uid://bdqlvr5dgs8j3" path="res://resources/movement types/reverse_enemy_movement.tres" id="1_44eib"]
+[ext_resource type="Texture2D" uid="uid://cal3vwey7i0pu" path="res://assets/enemies/loot.png" id="1_fcogx"]
 [ext_resource type="Script" uid="uid://58cfsa1tna1q" path="res://scripts/resources/base resources/enemy_type.gd" id="2_fcogx"]
 [ext_resource type="AudioStream" uid="uid://dcgi7lrde6ix0" path="res://assets/placeholders/noise/loot_jingle.wav" id="3_4b07c"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4b07c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_fcogx")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_r0plg"]
 radius = 75.0
@@ -15,6 +27,7 @@ speed = 60.0
 xp_reward = 30.0
 base_health = 100.0
 collision = SubResource("CircleShape2D_r0plg")
+animations = SubResource("SpriteFrames_4b07c")
 spawn_sound = ExtResource("3_4b07c")
 disappear_time = 25.0
 collides_with_player = false

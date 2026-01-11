@@ -1,10 +1,30 @@
-[gd_resource type="Resource" script_class="Character" load_steps=6 format=3 uid="uid://c3dj5oh0trftg"]
+[gd_resource type="Resource" script_class="Character" load_steps=10 format=3 uid="uid://c3dj5oh0trftg"]
 
 [ext_resource type="Texture2D" uid="uid://bs2aw6atyld2d" path="res://assets/placeholders/earthquake.png" id="1_fn1io"]
+[ext_resource type="Texture2D" uid="uid://cddmuu5g0aw45" path="res://assets/placeholders/Archwizard 1.png" id="1_mkrdq"]
 [ext_resource type="Script" uid="uid://dse7vf0l5vfv0" path="res://scripts/resources/base resources/character.gd" id="1_rxewn"]
+[ext_resource type="Texture2D" uid="uid://cajh0qqfcj3ti" path="res://assets/placeholders/Archwizard 2.png" id="2_ox4o8"]
 [ext_resource type="Resource" uid="uid://bpa7drmk0sban" path="res://resources/ability pools/standard.tres" id="3_85dk0"]
+[ext_resource type="Texture2D" uid="uid://gm48qepn80lq" path="res://assets/placeholders/Archwizard 3.png" id="3_d56lb"]
 [ext_resource type="Resource" uid="uid://buu4u5w3e3yf3" path="res://resources/magic items/bnb_handbook_1.tres" id="4_wigij"]
 [ext_resource type="Resource" uid="uid://dh4308dsgb1xc" path="res://resources/spell/earthquake_1.tres" id="5_mkrdq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fn1io"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_mkrdq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ox4o8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_d56lb")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
 
 [resource]
 script = ExtResource("1_rxewn")
@@ -13,5 +33,6 @@ description = "Big eyebrows. Starts with the earthquake spell"
 starting_ability_pool = ExtResource("3_85dk0")
 starting_spell = ExtResource("5_mkrdq")
 starting_magic_item = ExtResource("4_wigij")
+animations = SubResource("SpriteFrames_fn1io")
 icon = ExtResource("1_fn1io")
 metadata/_custom_type_script = "uid://dse7vf0l5vfv0"

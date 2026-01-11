@@ -1,7 +1,19 @@
-[gd_resource type="Resource" script_class="EnemyType" load_steps=4 format=3 uid="uid://cbke16rl4k8ar"]
+[gd_resource type="Resource" script_class="EnemyType" load_steps=6 format=3 uid="uid://cbke16rl4k8ar"]
 
+[ext_resource type="Texture2D" uid="uid://ddnhrvvuythly" path="res://assets/enemies/goblin_3.png" id="1_goq2g"]
 [ext_resource type="Resource" uid="uid://cj6251nhvsiy8" path="res://resources/movement types/straight_enemy_movement.tres" id="1_ucgqw"]
 [ext_resource type="Script" uid="uid://58cfsa1tna1q" path="res://scripts/resources/base resources/enemy_type.gd" id="2_goq2g"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m6oa4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_goq2g")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nv008"]
 radius = 50.0
@@ -14,4 +26,5 @@ contact_damage = 8.0
 xp_reward = 2.0
 base_health = 16.0
 collision = SubResource("CircleShape2D_nv008")
+animations = SubResource("SpriteFrames_m6oa4")
 metadata/_custom_type_script = "uid://58cfsa1tna1q"

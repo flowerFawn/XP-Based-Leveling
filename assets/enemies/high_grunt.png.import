@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cajh0qqfcj3ti"
-path="res://.godot/imported/Archwizard 1 fixed updated.png-c96e9e187d4b072e6b1c1353390d0212.ctex"
+uid="uid://cw7nsuc8pehs0"
+path="res://.godot/imported/high_grunt.png-485a505644200c0954756357d83516fc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/placeholders/Archwizard 1 fixed updated.png"
-dest_files=["res://.godot/imported/Archwizard 1 fixed updated.png-c96e9e187d4b072e6b1c1353390d0212.ctex"]
+source_file="res://assets/enemies/high_grunt.png"
+dest_files=["res://.godot/imported/high_grunt.png-485a505644200c0954756357d83516fc.ctex"]
 
 [params]
 

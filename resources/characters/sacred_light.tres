@@ -1,10 +1,30 @@
-[gd_resource type="Resource" script_class="Character" load_steps=6 format=3 uid="uid://dguulqdo5x3a8"]
+[gd_resource type="Resource" script_class="Character" load_steps=10 format=3 uid="uid://dguulqdo5x3a8"]
 
+[ext_resource type="Texture2D" uid="uid://cddmuu5g0aw45" path="res://assets/placeholders/Archwizard 1.png" id="1_4g57b"]
 [ext_resource type="Script" uid="uid://dse7vf0l5vfv0" path="res://scripts/resources/base resources/character.gd" id="1_ex4cu"]
 [ext_resource type="Texture2D" uid="uid://37lbvgmhev70" path="res://assets/placeholders/sacred_light.png" id="1_v2168"]
+[ext_resource type="Texture2D" uid="uid://cajh0qqfcj3ti" path="res://assets/placeholders/Archwizard 2.png" id="2_ma5r4"]
+[ext_resource type="Texture2D" uid="uid://gm48qepn80lq" path="res://assets/placeholders/Archwizard 3.png" id="3_57vvv"]
 [ext_resource type="Resource" uid="uid://bpa7drmk0sban" path="res://resources/ability pools/standard.tres" id="3_foqyw"]
 [ext_resource type="Resource" uid="uid://buu4u5w3e3yf3" path="res://resources/magic items/bnb_handbook_1.tres" id="4_xechd"]
 [ext_resource type="Resource" uid="uid://c1ujqmd5kcxjw" path="res://resources/spell/sacred_light_1.tres" id="5_4g57b"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_82njj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_4g57b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ma5r4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_57vvv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [resource]
 script = ExtResource("1_ex4cu")
@@ -12,5 +32,6 @@ description = "Probably a deus vult tradlarper who would say Caesar's legion had
 starting_ability_pool = ExtResource("3_foqyw")
 starting_spell = ExtResource("5_4g57b")
 starting_magic_item = ExtResource("4_xechd")
+animations = SubResource("SpriteFrames_82njj")
 icon = ExtResource("1_v2168")
 metadata/_custom_type_script = "uid://dse7vf0l5vfv0"
