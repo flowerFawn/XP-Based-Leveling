@@ -26,9 +26,6 @@ func cast() -> void:
 		draw_line_from_player(enemy.global_position - player.global_position)
 
 func valid_to_polymorph(enemy:Enemy, picked_enemies:Array[Enemy]) -> bool:
-	print(enemy.enemy_type.power_level <= max_power_affected)
-	print(max_power_affected)
-	print(enemy.enemy_type.power_level)
 	if (not enemy in picked_enemies) and (enemy.enemy_type.power_level != 0) and (enemy.enemy_type.power_level <= max_power_affected) and (not enemy.enemy_type.harmless):
 		return true
 	return false

@@ -8,6 +8,11 @@ var skip_intro:bool:
 		return current_config.skip_intro
 	set(value):
 		current_config.skip_intro = value
+var input_buffer:float:
+	get:
+		return current_config.input_buffer
+	set(value):
+		current_config.input_buffer = value
 		
 		
 

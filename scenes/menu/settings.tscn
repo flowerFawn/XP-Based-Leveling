@@ -5,7 +5,7 @@
 
 [node name="CanvasLayer" type="CanvasLayer"]
 
-[node name="Control" type="Control" parent="." node_paths=PackedStringArray("skip_check")]
+[node name="Control" type="Control" parent="." node_paths=PackedStringArray("skip_check", "buffer_slider", "buffer_slider_label")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -15,6 +15,8 @@ grow_vertical = 2
 theme = ExtResource("1_dxr1k")
 script = ExtResource("1_rqcjd")
 skip_check = NodePath("PanelContainer/PanelContainer/ScrollContainer/VBoxContainer/SkipIntroCheck")
+buffer_slider = NodePath("PanelContainer/PanelContainer/ScrollContainer/VBoxContainer/PanelContainer/HBoxContainer/BufferSlider")
+buffer_slider_label = NodePath("PanelContainer/PanelContainer/ScrollContainer/VBoxContainer/PanelContainer/HBoxContainer/BufferLabel")
 
 [node name="PanelContainer" type="PanelContainer" parent="Control"]
 layout_mode = 1
@@ -43,6 +45,25 @@ custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 text = "Skip Intro"
 
+[node name="PanelContainer" type="PanelContainer" parent="Control/PanelContainer/PanelContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/PanelContainer/PanelContainer/ScrollContainer/VBoxContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="BufferLabel" type="Label" parent="Control/PanelContainer/PanelContainer/ScrollContainer/VBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+text = "Input Buffer: 0.0"
+
+[node name="BufferSlider" type="HSlider" parent="Control/PanelContainer/PanelContainer/ScrollContainer/VBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.1
+tick_count = 20
+ticks_on_borders = true
+ticks_position = 3
+
 [node name="BackButton" type="Button" parent="Control/PanelContainer"]
 custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
@@ -52,4 +73,5 @@ text = "Back
 "
 
 [connection signal="toggled" from="Control/PanelContainer/PanelContainer/ScrollContainer/VBoxContainer/SkipIntroCheck" to="Control" method="_on_skip_intro_check_toggled"]
+[connection signal="value_changed" from="Control/PanelContainer/PanelContainer/ScrollContainer/VBoxContainer/PanelContainer/HBoxContainer/BufferSlider" to="Control" method="_on_buffer_slider_value_changed"]
 [connection signal="pressed" from="Control/PanelContainer/BackButton" to="Control" method="_on_back_button_pressed"]

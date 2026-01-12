@@ -4,7 +4,10 @@ class_name Player
 @export var node_sprite:AnimatedSprite2D
 @export var node_progress:ProgressBar
 @export var node_red_flash_timer:Timer
+@export var node_input_buffer_timer:Timer
 @export var node_fake_background:TextureRect
+var buffer_time
+
 var speed:int = 500
 var active_health:float = 100:
 	set(value):
@@ -29,6 +32,9 @@ var accurate_orientation:Vector2 = Vector2(1, 0)
 var x_orientation:int = 1
 ##The last non-zero direction of the player on the y axis. Should always be 1 or -1
 var y_orientation:int = 1
+#diagonal input that has been released in the past second. if no diagonal input has been released it will be zero
+var released_diagonal_input:Vector2 = Vector2.ZERO
+var is_moving:bool = false
 var cooldown_multiplier:float = 1:
 	set(value):
 		#how much to multiply a preexisting cooldown to, to get it to the correct value
@@ -44,11 +50,14 @@ var magic_items:Array[MagicItem] = []
 
 func _ready() -> void:
 	GameInfo.player = self
+	buffer_time = Config.input_buffer
+	print(buffer_time)
 	set_character(GameInfo.character)
 	node_progress.min_value = 0
 	node_progress.max_value = max_health
 	node_progress.value = active_health
 	node_red_flash_timer.timeout.connect(stop_flash)
+	node_input_buffer_timer.timeout.connect(reset_diagonal_input_buffer)
 	
 func set_character(character:Character) -> void:
 	SpellShop.current_ability_pool = character.starting_ability_pool.abilities.duplicate()
@@ -74,9 +83,17 @@ func get_direction() -> Vector2:
 	var direction:Vector2 = Vector2(Input.get_axis("player_left", "player_right"), Input.get_axis("player_up", "player_down")).normalized()
 	direction = Vector2(direction.x * abs(Input.get_axis("player_left", "player_right")), direction.y * abs(Input.get_axis("player_up", "player_down")))
 	if not direction.is_zero_approx():
+		if abs(accurate_orientation.x) == 1 and abs(accurate_orientation.y) == 1 and accurate_orientation != released_diagonal_input and is_moving:
+			release_diagonal_input(accurate_orientation)
 		accurate_orientation = direction.snappedf(1)
+		is_moving = true
 		node_sprite.play()
 	else:
+		if not released_diagonal_input.is_zero_approx() and is_moving:
+			accurate_orientation = released_diagonal_input
+			node_input_buffer_timer.stop()
+			reset_diagonal_input_buffer()
+		is_moving = false
 		node_sprite.pause()
 	if direction.x != 0:
 		x_orientation = round(direction.x)
@@ -85,6 +102,15 @@ func get_direction() -> Vector2:
 	if direction.y != 0:
 		y_orientation = round(direction.y)
 	return direction
+	
+func release_diagonal_input(direction:Vector2) -> void:
+	if buffer_time == 0:
+		return
+	released_diagonal_input = direction
+	node_input_buffer_timer.start(buffer_time)
+
+func reset_diagonal_input_buffer() -> void:
+	released_diagonal_input = Vector2.ZERO
 	
 func get_closest_enemy_position() -> Vector2:
 	var closest_enemy = get_closest_enemy()
