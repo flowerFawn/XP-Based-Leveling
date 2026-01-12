@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="EnemyType" load_steps=6 format=3 uid="uid://b45uv8ytc8ydn"]
+
+[ext_resource type="Texture2D" uid="uid://6mj2k8gn3t1l" path="res://assets/enemies/placeholder_enemy.png" id="1_3huhq"]
+[ext_resource type="Script" uid="uid://58cfsa1tna1q" path="res://scripts/resources/base resources/enemy_type.gd" id="1_ijg3d"]
+[ext_resource type="Resource" uid="uid://cj6251nhvsiy8" path="res://resources/movement types/straight_enemy_movement.tres" id="2_p25xd"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o3a1g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_3huhq")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7kwx3"]
+radius = 70.0
+
+[resource]
+script = ExtResource("1_ijg3d")
+movement_type = ExtResource("2_p25xd")
+speed = 100.0
+contact_damage = 18.0
+xp_reward = 6.0
+base_health = 80.0
+collision = SubResource("CircleShape2D_7kwx3")
+animations = SubResource("SpriteFrames_o3a1g")
+metadata/_custom_type_script = "uid://58cfsa1tna1q"

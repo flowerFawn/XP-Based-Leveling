@@ -17,11 +17,12 @@ func register_enemy_hit_this_second() -> void:
 	enemies_hit_this_second -= 1
 	
 func register_damage_done(amount:float) -> void:
-	damage_done_this_second += amount
-	GameInfo.game_ui.set_dps_counter(damage_done_this_second)
-	await get_tree().create_timer(1, false).timeout
-	damage_done_this_second -= amount
-	GameInfo.game_ui.set_dps_counter(damage_done_this_second)
+	if GameInfo.game_ui:
+		damage_done_this_second += amount
+		GameInfo.game_ui.set_dps_counter(damage_done_this_second)
+		await get_tree().create_timer(1, false).timeout
+		damage_done_this_second -= amount
+		GameInfo.game_ui.set_dps_counter(damage_done_this_second)
 
 
 func register_kill() -> void:
