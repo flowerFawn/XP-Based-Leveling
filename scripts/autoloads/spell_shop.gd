@@ -8,11 +8,12 @@ var spell_xp:float = 0:
 		if spell_xp >= next_required_xp:
 			spell_xp -= next_required_xp
 			next_required_xp += 10
-			GameInfo.player_level += 1
-			GameInfo.game_ui.set_level_counter(GameInfo.player_level)
+			player_level += 1
+			GameInfo.game_ui.set_level_counter(player_level)
 			call_deferred(&"award_ability_option")
 			GameInfo.game_ui.xp_progress.value = spell_xp
 			GameInfo.game_ui.xp_progress.max_value = next_required_xp
+var player_level = 1
 var next_required_xp:float = 5
 @export var current_ability_pool:Array[Ability]
 
@@ -32,6 +33,12 @@ sqrt(5), sqrt(6), sqrt(7), sqrt(8), ]
 	#GameInfo.player.add_spell(new_spell)
 	#if new_spell.next_upgrade != null:
 		#add_spell_to_pool(new_spell.next_upgrade)
+		
+func reset() -> void:
+	next_required_xp = 5
+	spell_xp = 0
+	player_level = 1
+	
 		
 #region SPELLONLY
 		

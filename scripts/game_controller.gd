@@ -89,7 +89,7 @@ func spawn_flower() -> void:
 	var type:StringName = type_array[type_index]
 	var new_flower:MagicFlower = MagicFlower.create_flower(type)
 	GameInfo.projectile_holder.add_child(new_flower)
-	new_flower.global_position = GameInfo.get_global_player_offset_position() * GameInfo.rnd.randf()
+	new_flower.global_position = (GameInfo.get_global_player_offset_position() * GameInfo.rnd.randf())
 	
 func _process(delta: float) -> void:
 	time_elapsed += delta
