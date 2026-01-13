@@ -5,7 +5,7 @@
 
 [node name="CanvasLayer" type="CanvasLayer"]
 
-[node name="Control" type="Control" parent="." node_paths=PackedStringArray("skip_check", "buffer_slider", "buffer_slider_label")]
+[node name="Control" type="Control" parent="." node_paths=PackedStringArray("skip_check", "buffer_slider", "buffer_slider_label", "screen_option")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -17,6 +17,7 @@ script = ExtResource("1_rqcjd")
 skip_check = NodePath("PanelContainer/PanelContainer/ScrollContainer/VBoxContainer/SkipIntroCheck")
 buffer_slider = NodePath("PanelContainer/PanelContainer/ScrollContainer/VBoxContainer/PanelContainer/HBoxContainer/BufferSlider")
 buffer_slider_label = NodePath("PanelContainer/PanelContainer/ScrollContainer/VBoxContainer/PanelContainer/HBoxContainer/BufferLabel")
+screen_option = NodePath("PanelContainer/PanelContainer/ScrollContainer/VBoxContainer/ScreenOption")
 
 [node name="PanelContainer" type="PanelContainer" parent="Control"]
 layout_mode = 1
@@ -64,6 +65,14 @@ tick_count = 20
 ticks_on_borders = true
 ticks_position = 3
 
+[node name="ScreenOption" type="OptionButton" parent="Control/PanelContainer/PanelContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+item_count = 2
+popup/item_0/text = "Windowed"
+popup/item_0/id = 0
+popup/item_1/text = "Fullscreen"
+popup/item_1/id = 3
+
 [node name="BackButton" type="Button" parent="Control/PanelContainer"]
 custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
@@ -74,4 +83,5 @@ text = "Back
 
 [connection signal="toggled" from="Control/PanelContainer/PanelContainer/ScrollContainer/VBoxContainer/SkipIntroCheck" to="Control" method="_on_skip_intro_check_toggled"]
 [connection signal="value_changed" from="Control/PanelContainer/PanelContainer/ScrollContainer/VBoxContainer/PanelContainer/HBoxContainer/BufferSlider" to="Control" method="_on_buffer_slider_value_changed"]
+[connection signal="item_selected" from="Control/PanelContainer/PanelContainer/ScrollContainer/VBoxContainer/ScreenOption" to="Control" method="_on_fullscreen_option_item_selected"]
 [connection signal="pressed" from="Control/PanelContainer/BackButton" to="Control" method="_on_back_button_pressed"]
