@@ -27,8 +27,9 @@ func be_picked_up(body:Node2D) -> void:
 	#could be squared, but gets weird at long idstances
 	var distance_to_player:float = global_position.distance_to(body.global_position)
 	var original_global_position = global_position
-	collision_node.queue_free()
+	collision_node.disabled = true
 	pickup_tween.set_trans(Tween.TRANS_BACK)
+	await get_tree().physics_frame
 	get_parent().remove_child(self)
 	GameInfo.player.add_child(self)
 	global_position = original_global_position
