@@ -18,6 +18,11 @@ var screen_mode:int:
 		return current_config.screen_mode
 	set(value):
 		current_config.screen_mode = value
+var show_quadtree:bool:
+	get:
+		return current_config.show_quadtree
+	set(value):
+		current_config.show_quadtree = value
 		
 		
 

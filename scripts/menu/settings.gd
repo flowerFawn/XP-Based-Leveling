@@ -7,10 +7,14 @@ extends Control
 
 @export var screen_option:OptionButton
 
+@export var show_quadtree_check:CheckBox
+
 
 func _ready():
 	skip_check.button_pressed = Config.skip_intro
 	buffer_slider.set_value(Config.input_buffer)
+	show_quadtree_check.button_pressed = Config.show_quadtree
+	
 
 func _on_back_button_pressed() -> void:
 	Config.serialise()
@@ -31,3 +35,7 @@ func _on_buffer_slider_value_changed(value: float) -> void:
 
 func _on_fullscreen_option_item_selected(index: int) -> void:
 	Config.screen_mode = screen_option.get_item_id(index)
+
+
+func _on_show_quad_tree_check_toggled(toggled_on: bool) -> void:
+	Config.show_quadtree = toggled_on
