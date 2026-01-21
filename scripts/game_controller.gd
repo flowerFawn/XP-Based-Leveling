@@ -6,9 +6,9 @@ var time_elapsed:float = 0
 ##This helps keep them together in the code
 ##Unsure if there is another way to do this without having it hardcoded for the lambdas?
 var enemy_type_and_weights_dict:Dictionary[EnemyType, Callable] = ({
-	preload("uid://bg3osrk3a4ni5"):func (x) -> float: return -0.05 * x * (x - 60) + 1, #0 - goblin type 1
-	preload("uid://cr5n22p055thh"):func (x) -> float: return -0.0005 * (x-60) * (x-240), #1 - goblin type 2
-	preload("uid://cbke16rl4k8ar"):func (x) -> float: return -0.0005 * (x-60) * (x-240), #2 - goblin type 3
+	preload("uid://bg3osrk3a4ni5"):func (x) -> float: return -0.05 * x * (x - 90) + 1, #0 - goblin type 1
+	preload("uid://cr5n22p055thh"):func (x) -> float: return -0.0005 * (x-50) * (x-240), #1 - goblin type 2
+	preload("uid://cbke16rl4k8ar"):func (x) -> float: return -0.0005 * (x-50) * (x-240), #2 - goblin type 3
 	preload("uid://7mdhf8llrlod"):func (x) -> float: return -0.0005 * (x-60) * (x-240), #3 - goblin type 4
 	preload("uid://c6qqqoynid1fh"):func (x) -> float: return sin(x * 0.02) * 1.2, #4 - goblin bomber
 	preload("uid://dqunbnln7x2n0"):func (x) -> float: return sin(x * 0.05) * 0.15, #5 - loot goblin
@@ -18,15 +18,17 @@ var enemy_type_and_weights_dict:Dictionary[EnemyType, Callable] = ({
 	preload("uid://diyifwsqyg152"):func (x) -> float: return -0.0005 * (x-180) * (x-360), #9 - mid goblin 3
 	preload("uid://b5oji5bg8ylg0"):func (x) -> float: return -0.0002 * (x-200) * (x-350), #10 - mid grunt
 	preload("uid://d2vrg8gthvpw3"):func (x) -> float: return -0.0003 * (x-200) * (x-350), #11 - mid hammer
-	preload("uid://dohokgnvj25ka"):func (x) -> float: return -0.0005 * (x-350) * (x-600), #12 - high goblin 1
-	preload("uid://dnhuxtddshtli"):func (x) -> float: return -0.0005 * (x-350) * (x-600), #12 - high goblin 2
-	preload("uid://bssmo6phtbsds"):func (x) -> float: return -0.0005 * (x-350) * (x-600), #12 - high goblin 3
+	preload("uid://dohokgnvj25ka"):func (x) -> float: return -0.0005 * (x-340) * (x-600), #12 - high goblin 1
+	preload("uid://dnhuxtddshtli"):func (x) -> float: return -0.0005 * (x-340) * (x-600), #12 - high goblin 2
+	preload("uid://bssmo6phtbsds"):func (x) -> float: return -0.0005 * (x-340) * (x-600), #12 - high goblin 3
 	preload("uid://bsmucuhc10knl"):func (x) -> float: return -0.0002 * (x-360) * (x-590), #12 - high grunt
 	preload("uid://dt45jm2b3fh5k"):func (x) -> float: return -0.0003 * (x-360) * (x-590), #12 - high hammer
 	preload("uid://b45uv8ytc8ydn"):func (x) -> float: if x > 600: return 10 else: return false #13 placeholder strong
 })
 ##The most recently calculated enemy weights, based on enemy type weight functions array
 var enemy_type_current_weight_array:PackedFloat32Array = PackedFloat32Array([])
+##how many events are passed, so only the next event is checked for
+var event_count:int = 0
 
 func update_directions() -> void:
 	#updates enemies heading towards the player
@@ -36,22 +38,29 @@ func update_directions() -> void:
 	if GameInfo.player:
 		GameInfo.closest_enemy_to_player_point = GameInfo.player.get_closest_enemy_position()
 
+#region ENEMY_SPAWNS
 func do_spawns() -> void:
-	spawn_enemies()
+	check_for_events()
+	spawn_enemies(get_enemy_amount_to_spawn())
 	if GameInfo.rnd.randf() <= 0.015 * GameInfo.player.flower_multiplier:
 		spawn_flower()
 
-func spawn_enemies() -> void:
+func spawn_enemies(amount:int) -> void:
+	
+	update_enemy_weights(time_elapsed)
+	for enemy_to_spawn:int in range(amount):
+		spawn_enemy()
+	GameInfo.enemy_handler.update_quadtree()
+	
+func get_enemy_amount_to_spawn() -> int:
 	var total_enemy_count:int = len(get_tree().get_nodes_in_group(&"Enemy"))
 	#0.1x + 50 -(cos^2(0.05x) * 30)
 	#most equations are on desmos
 	#starts at 10
 	var enemy_quota:int = ceili((time_elapsed * 0.1) + 40 - ((cos(0.05 * time_elapsed) ** 2) * 30))
 	var enemies_to_spawn:int = ceili((enemy_quota - total_enemy_count) * 0.1)
-	update_enemy_weights(time_elapsed)
-	for enemy_to_spawn:int in range(enemies_to_spawn):
-		spawn_enemy()
-	GameInfo.enemy_handler.update_quadtree()
+	return enemies_to_spawn
+	
 		
 func spawn_enemy() -> void:
 	var spawn_position:Vector2
@@ -64,7 +73,7 @@ func spawn_specific_enemy(type:EnemyType, global_spawn_position:Vector2 = Vector
 	if global_spawn_position.is_zero_approx():
 		global_spawn_position = GameInfo.get_global_player_offset_position()
 	var new_enemy:Enemy = Enemy.new_enemy(type)
-	GameInfo.enemy_holder.add_child(new_enemy)
+	GameInfo.enemy_handler.add_child(new_enemy)
 	new_enemy.global_position = global_spawn_position
 
 func pick_weighted_random_enemy() -> EnemyType:
@@ -84,6 +93,8 @@ func update_enemy_weights(seconds_survived:float) -> void:
 			new_weights_array.append(0)
 	enemy_type_current_weight_array = new_weights_array
 	
+#endregion
+	
 func spawn_flower() -> void:
 	const type_array:Array[StringName] = [&"Heal", &"Magnet", &"Rush"]
 	var type_index:int = GameInfo.rnd.rand_weighted(PackedFloat32Array([0.725, 0.225, 0.05]))
@@ -91,6 +102,27 @@ func spawn_flower() -> void:
 	var new_flower:MagicFlower = MagicFlower.create_flower(type)
 	GameInfo.projectile_holder.add_child(new_flower)
 	new_flower.global_position = (GameInfo.get_global_player_offset_position() * GameInfo.rnd.randf())
+	
+func check_for_events() -> void:
+	match event_count:
+		0:
+			if time_elapsed >= 60:
+				do_event(&"small_goblin_swarm")
+		1:
+			if time_elapsed >= 120:
+				do_event(&"small_goblin_swarm")
+		2:
+			if time_elapsed >= 240:
+				do_event(&"small_goblin_boss")
+				
+func do_event(event_name:StringName) -> void:
+	match event_name:
+		&"small_goblin_swarm":
+			spawn_enemies(50)
+		&"small_goblin_boss":
+			spawn_specific_enemy(preload("uid://x3677epydygv"))
+	event_count += 1
+	
 	
 func _process(delta: float) -> void:
 	time_elapsed += delta

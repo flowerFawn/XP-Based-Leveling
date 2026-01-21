@@ -12,7 +12,7 @@ func _init(given_xp_amount:float):
 	var shape:Shape2D = CircleShape2D.new()
 	set_collision_layer_value(1, false)
 	set_collision_layer_value(3, true)
-	shape.radius = 50
+	shape.radius = 150
 	collision_node.shape = shape
 	sprite_node.texture = sprite
 	sprite_node.scale = Vector2(given_xp_amount / 2.0, given_xp_amount / 2.0)
