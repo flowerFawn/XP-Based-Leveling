@@ -96,11 +96,8 @@ func update_ability_weights() -> void:
 	current_ability_weights = current_ability_pool.map(calculate_ability_rarity)
 
 ##Does the calculation for ability rarity. Believe it or not
-##It is the reciprocal of the cube root of the level, all multiplied by the reciprocal of the rarity, to the power of t
-##t is a decimal representing how much of the "game time" till 30 minutes
-##t = 1 - time_elapsed / 1800
-##t cannot be below 0. T here causes the chance of getting better and higher level spells to increase over time.
+## the negative reciprocal of r, multiplied by a quadratic with x as level (x-1)(x-8), all + 1
+##1/r(x-1)(x-8) + 1
 func calculate_ability_rarity(ability:Ability) -> float:
-	var t:float = max(1 - GameInfo.game_controller.time_elapsed / 1800, 0)
-	return pow((1.0 / (SQRT_ARRAY[ability.level] * ability.rarity)), t)
+	return ((-1.0 / ability.rarity) * (ability.level - 1) * (ability.level - 8)) + 1
 	
