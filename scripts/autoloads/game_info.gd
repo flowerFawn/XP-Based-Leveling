@@ -6,7 +6,7 @@ var rnd = RandomNumberGenerator.new()
 var projectile_holder:ProjectileHolder
 var game_controller:GameController
 var game_ui:InGameUI
-var enemy_holder:Node2D
+var enemy_handler:EnemyHandler
 var player_level:int = 1
 var closest_enemy_to_player_point:Vector2
 var character:Character

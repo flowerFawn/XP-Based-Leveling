@@ -11,10 +11,10 @@
 
 [sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_i7141"]
 
-[node name="WorldController" type="Node2D" node_paths=PackedStringArray("projectile_holder", "enemy_holder", "game_controller", "game_ui", "pause_menu", "spell_option_menu")]
+[node name="WorldController" type="Node2D" node_paths=PackedStringArray("projectile_holder", "enemy_handler", "game_controller", "game_ui", "pause_menu", "spell_option_menu")]
 script = ExtResource("1_4wyf3")
 projectile_holder = NodePath("ProjectileHolder")
-enemy_holder = NodePath("EnemyHandler")
+enemy_handler = NodePath("EnemyHandler")
 game_controller = NodePath("GameController")
 game_ui = NodePath("InGameUI/Control")
 pause_menu = NodePath("PauseMenu/PauseMenu")

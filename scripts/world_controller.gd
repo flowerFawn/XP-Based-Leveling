@@ -1,7 +1,7 @@
 extends Node2D
 class_name WorldController
 @export var projectile_holder:ProjectileHolder
-@export var enemy_holder:Node2D
+@export var enemy_handler:EnemyHandler
 @export var game_controller:GameController
 @export var game_ui:InGameUI
 @export var pause_menu:PauseMenu
@@ -10,7 +10,7 @@ class_name WorldController
 func _ready() -> void:
 	GameInfo.world_controller = self
 	GameInfo.projectile_holder = projectile_holder
-	GameInfo.enemy_holder = enemy_holder
+	GameInfo.enemy_handler = enemy_handler
 	GameInfo.game_ui = game_ui
 	GameInfo.game_controller = game_controller
 	SpellShop.spell_option_menu = spell_option_menu

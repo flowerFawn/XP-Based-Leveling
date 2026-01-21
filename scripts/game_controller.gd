@@ -51,12 +51,13 @@ func spawn_enemies() -> void:
 	update_enemy_weights(time_elapsed)
 	for enemy_to_spawn:int in range(enemies_to_spawn):
 		spawn_enemy()
+	GameInfo.enemy_handler.update_quadtree()
 		
 func spawn_enemy() -> void:
 	var spawn_position:Vector2
 	var new_enemy:Enemy = Enemy.new_enemy(pick_weighted_random_enemy())
 	spawn_position = GameInfo.get_global_player_offset_position()
-	GameInfo.enemy_holder.add_child(new_enemy)
+	GameInfo.enemy_handler.add_child(new_enemy)
 	new_enemy.global_position = spawn_position
 	
 func spawn_specific_enemy(type:EnemyType, global_spawn_position:Vector2 = Vector2.ZERO) -> void:

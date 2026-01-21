@@ -5,10 +5,6 @@ var current_quadtree:QuadTreeBucket
 var current_leaves:Array[QuadTreeBucket]
 
 func _ready() -> void:
-	var quadtree_remake_timer:Timer = Timer.new()
-	add_child(quadtree_remake_timer, false, Node.INTERNAL_MODE_FRONT)
-	quadtree_remake_timer.timeout.connect(update_quadtree)
-	quadtree_remake_timer.start(1)
 	update_quadtree()
 
 func update_quadtree() -> void:
@@ -18,18 +14,15 @@ func update_quadtree() -> void:
 	current_leaves = get_leaves(current_quadtree)
 	if Config.show_quadtree:
 		queue_redraw()
-	print("hmm")
 
 func _physics_process(delta: float) -> void:
-	var all_enemies:Array[Enemy]
-	var leaves:Array[QuadTreeBucket]
-	all_enemies.assign(get_children())
+	var valid_enemies:Array[Enemy]
 	if current_leaves.is_empty():
 		return
 	for leaf:QuadTreeBucket in current_leaves:
-		for enemy:Enemy in leaf.enemies.filter(get_enemy_exists):
-			enemy.do_movement(delta, leaf.enemies.filter(get_enemy_exists))
-	#print(leaves.size())
+		valid_enemies = leaf.enemies.filter(get_enemy_exists)
+		for enemy:Enemy in valid_enemies:
+			enemy.do_movement(delta, valid_enemies)
 			
 func _draw() -> void:
 	for leaf:QuadTreeBucket in current_leaves:
@@ -79,32 +72,36 @@ class QuadTreeBucket:
 	const BUCKET_MAX:int = 10
 	var start:Vector2 #top left corner
 	var end:Vector2 #bottom right corner
+	var centre_x:float
+	var centre_y:float
 	var enemies:Array[Enemy]
 	var children:Array[QuadTreeBucket] #should have 4 or be empty
 	
-	func _init(given_start, given_end, possible_enemies:Array[Enemy]) -> void:
+	func _init(given_start, given_end, given_enemies:Array[Enemy]) -> void:
 		start = given_start
 		end = given_end
-		print(start, end)
-		enemies = possible_enemies.filter(is_enemy_in_bucket)
-		if enemies.size() > BUCKET_MAX:
-			enemies.clear()
-			partition(possible_enemies)
+		centre_x = start.x + 1/2.0 * (end.x - start.x)
+		centre_y = start.y + 1/2.0 * (end.y - start.y)
+		if given_enemies.size() > BUCKET_MAX:
+			partition(given_enemies)
+		else:
+			enemies = given_enemies
 			
 	func partition(enemies:Array[Enemy]) -> void:
 		children.resize(4)
 		#top left
-		children[0] = QuadTreeBucket.new(start, start + 1/2.0 * (end - start), enemies)
+		children[0] = QuadTreeBucket.new(
+			start, start + 1/2.0 * (end - start), enemies.filter(is_enemy_in_partition.bind(&"NW")))
 		#top right
 		children[1] = QuadTreeBucket.new(
 			Vector2(start.x + 1/2.0 * (end.x - start.x), start.y), 
-			Vector2(end.x, start.y + 1/2.0 * (end.y - start.y)), enemies)
+			Vector2(end.x, start.y + 1/2.0 * (end.y - start.y)), enemies.filter(is_enemy_in_partition.bind(&"NE")))
 		#bottom left
 		children[2] = QuadTreeBucket.new(
 			Vector2(start.x, start.y + 1/2.0 * (end.y - start.y)),
-			Vector2(start.x + 1/2.0 * (end.x - start.x), end.y), enemies)
+			Vector2(start.x + 1/2.0 * (end.x - start.x), end.y), enemies.filter(is_enemy_in_partition.bind(&"SW")))
 		#bottom right
-		children[3] = QuadTreeBucket.new(start + 1/2.0 * (end - start), end , enemies)
+		children[3] = QuadTreeBucket.new(start + 1/2.0 * (end - start), end , enemies.filter(is_enemy_in_partition.bind(&"SE")))
 	
 	#this may technicailly lead to an enemy in two buckets? wgaf
 	func is_enemy_in_bucket(enemy:Enemy) -> bool:
@@ -115,3 +112,22 @@ class QuadTreeBucket:
 				return false
 		else:
 			return false
+			
+	func is_enemy_in_partition(enemy:Enemy, partition:StringName) -> bool:
+		match partition:
+			&"NW":
+				if enemy.position.x < centre_x and enemy.position.y < centre_y:
+					return true
+			&"NE":
+				if centre_x <= enemy.position.x and enemy.position.y < centre_y:
+					return true
+			&"SW":
+				if enemy.position.x < centre_x and centre_y <= enemy.position.y:
+					return true
+			&"SE":
+				if centre_x <= enemy.position.x and centre_y <= enemy.position.y:
+					return true
+			_:
+				print("not a partition")
+				return false
+		return false
