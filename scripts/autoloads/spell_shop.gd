@@ -7,8 +7,11 @@ var spell_xp:float = 0:
 		GameInfo.game_ui.xp_progress.value = spell_xp
 		if spell_xp >= next_required_xp:
 			spell_xp -= next_required_xp
-			next_required_xp += 10
 			player_level += 1
+			if player_level < 20:
+				next_required_xp += 5
+			else:
+				next_required_xp += 10
 			GameInfo.game_ui.set_level_counter(player_level)
 			call_deferred(&"award_ability_option")
 			GameInfo.game_ui.xp_progress.value = spell_xp
