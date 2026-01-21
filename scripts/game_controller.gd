@@ -114,13 +114,20 @@ func check_for_events() -> void:
 		2:
 			if time_elapsed >= 240:
 				do_event(&"small_goblin_boss")
+		3:
+			if time_elapsed >= 360:
+				do_event(&"twin_small_goblin_boss")
 				
 func do_event(event_name:StringName) -> void:
 	match event_name:
 		&"small_goblin_swarm":
 			spawn_enemies(50)
 		&"small_goblin_boss":
-			spawn_specific_enemy(preload("uid://x3677epydygv"))
+			spawn_specific_enemy(load("uid://x3677epydygv"))
+		&"twin_small_goblin_boss":
+			var boss_type:EnemyType = load("uid://x3677epydygv")
+			spawn_specific_enemy(boss_type)
+			spawn_specific_enemy(boss_type)
 	event_count += 1
 	
 	

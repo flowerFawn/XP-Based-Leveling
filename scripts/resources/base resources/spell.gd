@@ -41,6 +41,7 @@ signal finished_casting
 
 func cast() -> void:
 	print("A")
+	await wait_time(multi_projectile_delay)
 	
 func initial_spell_setup() -> void:
 	pass
