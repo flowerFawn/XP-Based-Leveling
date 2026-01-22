@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="SpellStaticSphere" load_steps=4 format=3 uid="uid://d83ff2qg0nkd"]
+
+[ext_resource type="Script" uid="uid://cc7u28p7m70hs" path="res://scripts/resources/inherited resources/spells/s_static_sphere.gd" id="1_pjmpw"]
+[ext_resource type="Texture2D" uid="uid://b0wntjnflxovc" path="res://assets/placeholders/static_sphere.png" id="2_rv1pp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4ykdj"]
+radius = 325.0
+
+[resource]
+script = ExtResource("1_pjmpw")
+cooldown = 1.0
+damage = 18.0
+shape = SubResource("CircleShape2D_4ykdj")
+texture = ExtResource("2_rv1pp")
+visual_scale = 1.1
+level_description = "Increased damage.
+Decreased cooldown.
+"
+level = 8
+metadata/_custom_type_script = "uid://cc7u28p7m70hs"

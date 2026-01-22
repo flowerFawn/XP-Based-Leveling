@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="SpellFirebolt" load_steps=4 format=3 uid="uid://ixdndsawf863"]
+[gd_resource type="Resource" script_class="SpellFirebolt" load_steps=5 format=3 uid="uid://ixdndsawf863"]
 
 [ext_resource type="Script" uid="uid://ov4ev345t4bi" path="res://scripts/resources/inherited resources/spells/s_firebolt.gd" id="1_tccg0"]
+[ext_resource type="Resource" uid="uid://41yfnblw3hns" path="res://resources/spell/firebolt_4.tres" id="1_tqhiu"]
 [ext_resource type="Texture2D" uid="uid://cucf5rt5657d0" path="res://assets/placeholders/firebolt.png" id="2_tqhiu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gcpki"]
@@ -9,13 +10,15 @@ radius = 30.0
 [resource]
 script = ExtResource("1_tccg0")
 cooldown = 1.0
-damage = 8.0
+damage = 10.0
 projectile_speed = 40.0
 projectile_count = 3
 projectile_pierce = 1
 multi_projectile_delay = 0.1
 shape = SubResource("CircleShape2D_gcpki")
 texture = ExtResource("2_tqhiu")
-level_description = "Shoots another projectile."
+level_description = "Shoots another projectile.
+Increased damage"
 level = 3
+next_upgrade = ExtResource("1_tqhiu")
 metadata/_custom_type_script = "uid://ov4ev345t4bi"

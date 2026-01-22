@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="SpellStaticSphere" load_steps=5 format=3 uid="uid://dylvj34uo1jtf"]
+
+[ext_resource type="Script" uid="uid://cc7u28p7m70hs" path="res://scripts/resources/inherited resources/spells/s_static_sphere.gd" id="1_eipfq"]
+[ext_resource type="Resource" uid="uid://d83ff2qg0nkd" path="res://resources/spell/static_sphere_8.tres" id="1_nx7gy"]
+[ext_resource type="Texture2D" uid="uid://b0wntjnflxovc" path="res://assets/placeholders/static_sphere.png" id="2_nx7gy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4ykdj"]
+radius = 325.0
+
+[resource]
+script = ExtResource("1_eipfq")
+cooldown = 1.3
+damage = 14.0
+shape = SubResource("CircleShape2D_4ykdj")
+texture = ExtResource("2_nx7gy")
+visual_scale = 1.1
+level_description = "Increased radius."
+level = 7
+next_upgrade = ExtResource("1_nx7gy")
+metadata/_custom_type_script = "uid://cc7u28p7m70hs"

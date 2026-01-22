@@ -10,14 +10,14 @@ radius = 30.0
 [resource]
 script = ExtResource("1_8ddda")
 cooldown = 1.0
-damage = 8.0
+damage = 6.0
 projectile_speed = 40.0
 projectile_count = 2
 projectile_pierce = 1
 multi_projectile_delay = 0.1
 shape = SubResource("CircleShape2D_gcpki")
 texture = ExtResource("2_q0q15")
-level_description = "Shoots 1 more projectile. Deals 1 more damage."
+level_description = "Shoots 1 more projectile."
 level = 2
 next_upgrade = ExtResource("1_q0q15")
 metadata/_custom_type_script = "uid://ov4ev345t4bi"

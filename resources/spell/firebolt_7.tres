@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="SpellFirebolt" load_steps=5 format=3 uid="uid://dpngo3eqd333b"]
+
+[ext_resource type="Script" uid="uid://ov4ev345t4bi" path="res://scripts/resources/inherited resources/spells/s_firebolt.gd" id="1_6bah0"]
+[ext_resource type="Resource" uid="uid://dmnw05ltx4xip" path="res://resources/spell/firebolt_8.tres" id="1_aijyu"]
+[ext_resource type="Texture2D" uid="uid://cucf5rt5657d0" path="res://assets/placeholders/firebolt.png" id="2_aijyu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gcpki"]
+radius = 30.0
+
+[resource]
+script = ExtResource("1_6bah0")
+cooldown = 0.8
+damage = 24.0
+projectile_speed = 40.0
+projectile_count = 4
+projectile_pierce = 3
+multi_projectile_delay = 0.1
+shape = SubResource("CircleShape2D_gcpki")
+texture = ExtResource("2_aijyu")
+level_description = "Increased damage.
+Pierces one more enemy
+"
+level = 7
+next_upgrade = ExtResource("1_aijyu")
+metadata/_custom_type_script = "uid://ov4ev345t4bi"

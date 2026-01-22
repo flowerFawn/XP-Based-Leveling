@@ -9,8 +9,8 @@ radius = 250.0
 
 [resource]
 script = ExtResource("1_jpdvm")
-cooldown = 1.0
-damage = 3.0
+cooldown = 1.5
+damage = 10.0
 shape = SubResource("CircleShape2D_4ykdj")
 texture = ExtResource("2_ibrvp")
 visual_scale = 0.75
