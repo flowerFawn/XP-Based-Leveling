@@ -12,6 +12,7 @@ func _ready() -> void:
 	GameInfo.projectile_holder = projectile_holder
 	GameInfo.enemy_handler = enemy_handler
 	GameInfo.game_ui = game_ui
+	GameInfo.pause_menu = pause_menu
 	GameInfo.game_controller = game_controller
 	SpellShop.spell_option_menu = spell_option_menu
 	game_ui.xp_progress.max_value = SpellShop.next_required_xp

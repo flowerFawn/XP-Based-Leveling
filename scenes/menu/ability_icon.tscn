@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://ny3g87jvu4ac"]
+
+[ext_resource type="Theme" uid="uid://0x14wap1qyvs" path="res://resources/built-in/themes/pause.tres" id="1_eajjn"]
+[ext_resource type="Texture2D" uid="uid://clpfj7adba18n" path="res://assets/placeholders/icon.png" id="2_ghovd"]
+[ext_resource type="Script" uid="uid://bwd82ryjs1bjb" path="res://scripts/controls/ability_icon.gd" id="3_gptt1"]
+[ext_resource type="Texture2D" uid="uid://cwe5t63h1rr7d" path="res://assets/placeholders/icon_frame.png" id="4_5ko2t"]
+
+[node name="Icon" type="TextureRect" node_paths=PackedStringArray("level_label")]
+custom_minimum_size = Vector2(100, 100)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_eajjn")
+texture = ExtResource("2_ghovd")
+expand_mode = 1
+script = ExtResource("3_gptt1")
+level_label = NodePath("LevelLabel")
+
+[node name="IconCover" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("4_5ko2t")
+expand_mode = 1
+
+[node name="LevelLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -45.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_type_variation = &"LevelLabel"
+text = "I"
+horizontal_alignment = 2

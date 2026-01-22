@@ -8,7 +8,7 @@
 process_mode = 2
 layer = 30
 
-[node name="PauseMenu" type="Control" parent="."]
+[node name="PauseMenu" type="Control" parent="." node_paths=PackedStringArray("magic_item_icon_container", "spell_icon_container")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -17,6 +17,8 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_ux7g8")
 script = ExtResource("1_n54lc")
+magic_item_icon_container = NodePath("MagicItems/ScrollContainer/VBoxContainer")
+spell_icon_container = NodePath("Spells/ScrollContainer/VBoxContainer")
 
 [node name="PanelContainer" type="PanelContainer" parent="PauseMenu"]
 layout_mode = 1
@@ -67,6 +69,37 @@ size_flags_vertical = 10
 texture = ExtResource("3_xtxec")
 expand_mode = 2
 stretch_mode = 4
+
+[node name="MagicItems" type="PanelContainer" parent="PauseMenu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.85
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PauseMenu/MagicItems"]
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenu/MagicItems/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 0
+
+[node name="Spells" type="PanelContainer" parent="PauseMenu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.15
+anchor_bottom = 1.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PauseMenu/Spells"]
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenu/Spells/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 0
 
 [connection signal="pressed" from="PauseMenu/PanelContainer/VBoxContainer/PlayButton" to="PauseMenu" method="_on_play_button_pressed"]
 [connection signal="pressed" from="PauseMenu/PanelContainer/VBoxContainer/QuitButton" to="PauseMenu" method="_on_quit_button_pressed"]

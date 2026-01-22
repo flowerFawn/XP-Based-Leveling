@@ -46,12 +46,13 @@ var cooldown_multiplier:float = 1:
 ##Dictionary that stores the spells and their associated spell handlers. 
 ##This is a dictionary so that the spellhandlers can be found using their associated spell resource.
 var spells:Dictionary[Spell, SpellHandler] = {}
+var pause_ability_icons:Dictionary[Ability, AbilityIcon]
 var magic_items:Array[MagicItem] = []
 
 func _ready() -> void:
 	GameInfo.player = self
 	buffer_time = Config.input_buffer
-	print(buffer_time)
+	await get_tree().current_scene.ready
 	set_character(GameInfo.character)
 	node_progress.min_value = 0
 	node_progress.max_value = max_health
@@ -203,20 +204,22 @@ func add_ability(ability:Ability) -> void:
 		add_spell(ability)
 	elif ability is MagicItem: 
 		add_magic_item(ability)
+	pause_ability_icons[ability] = GameInfo.pause_menu.add_ability_icon(ability)
 	
 func add_spell(spell:Spell) -> void:
 	if spell.level > 1:
 		for old_spell:Spell in spells.keys():
 			if old_spell.next_upgrade == spell:
-				remove_spell(old_spell)
+				remove_ability(old_spell)
 				break
+
 	start_spell(spell)
 	
 func add_magic_item(magic_item:MagicItem) -> void:
 	if magic_item.level > 1:
 		for old_magic_item:MagicItem in magic_items:
 			if old_magic_item.next_upgrade == magic_item:
-				remove_magic_item(old_magic_item)
+				remove_ability(old_magic_item)
 				break
 	start_magic_item(magic_item)
 				
@@ -225,6 +228,13 @@ func remove_magic_item(magic_item:MagicItem) -> void:
 		print("Magic item not already there!")
 		return
 	magic_items.erase(magic_item)
+	
+func remove_ability(ability:Ability) -> void:
+	pause_ability_icons[ability].queue_free()
+	if ability is MagicItem:
+		remove_magic_item(ability)
+	if ability is Spell:
+		remove_spell(ability)
 	
 func start_magic_item(magic_item:MagicItem) -> void:
 	var n:int = 0
