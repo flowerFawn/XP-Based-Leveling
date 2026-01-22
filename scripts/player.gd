@@ -167,10 +167,6 @@ func stop_flash() -> void:
 func die():
 	#TODO: replace with a death screen
 	stop_flash()
-	for spell:Spell in spells.keys():
-		spells[spell].queue_free()
-		while spell.get_reference_count() > 0:
-			spell.unreference()
 	get_tree().paused = true
 	get_tree().call_deferred(&"change_scene_to_packed", load("uid://dj5n2ohldosah"))
 	await get_tree().scene_changed
