@@ -69,7 +69,7 @@ func get_enemy_exists(enemy:Variant) -> bool:
 	return is_instance_valid(enemy)
 
 class QuadTreeBucket:
-	const BUCKET_MAX:int = 10
+	const BUCKET_MAX:int = 15
 	var start:Vector2 #top left corner
 	var end:Vector2 #bottom right corner
 	var centre_x:float

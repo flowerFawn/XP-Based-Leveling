@@ -31,7 +31,7 @@ func misc_setup() -> void:
 	pass
 	
 func do_movement(delta: float, all_enemies:Array[Enemy]) -> void:
-	const MIN_ENEMY_DISTANCE_SQUARED = 75 ** 2
+	var min_enemy_distance = (enemy_type.collision.radius * 1.5) ** 2 #determined by collision
 	const MAX_DESIRED_CLUSTER_DISTANCE_SQUARED = 200 ** 2
 	var affecting_vectors:Array[Vector2]
 	
@@ -40,12 +40,13 @@ func do_movement(delta: float, all_enemies:Array[Enemy]) -> void:
 		return
 	if enemy_type.avoidant:
 		for enemy:Enemy in all_enemies:
-			if enemy != self and enemy.position.distance_squared_to(position) > MAX_DESIRED_CLUSTER_DISTANCE_SQUARED:
+			if enemy != self and enemy.position.distance_squared_to(position) < min_enemy_distance:
+				#adds a vector away from the offending enemy 
+				affecting_vectors.append(enemy.position.direction_to(position).normalized() * 10)
+			elif enemy != self and enemy.position.distance_squared_to(position) > MAX_DESIRED_CLUSTER_DISTANCE_SQUARED:
 				#adds a vector towards the offending enemy
 				affecting_vectors.append(position.direction_to(enemy.position).normalized() * 0.05)
-			elif enemy != self and enemy.position.distance_squared_to(position) < MIN_ENEMY_DISTANCE_SQUARED:
-				#adds a vector away from the offending enemy 
-				affecting_vectors.append(enemy.position.direction_to(position).normalized())
+
 	move(get_average_of_vectors(affecting_vectors).normalized() * active_speed * delta)
 	
 func get_average_of_vectors(vectors:Array[Vector2]) -> Vector2:

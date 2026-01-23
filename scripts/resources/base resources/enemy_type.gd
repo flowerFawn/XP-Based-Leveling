@@ -28,7 +28,7 @@ class_name EnemyType
 
 @export_group("Shape")
 ##The hitbox of the enemy
-@export var collision:Shape2D
+@export var collision:CircleShape2D
 
 @export_group("Appearance")
 ##The image used for the enemy

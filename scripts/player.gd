@@ -8,7 +8,7 @@ class_name Player
 @export var node_fake_background:TextureRect
 var buffer_time
 
-var speed:int = 500
+var speed:int = 350
 var active_health:float = 100:
 	set(value):
 		if value >= active_health:
