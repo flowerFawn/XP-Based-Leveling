@@ -16,6 +16,8 @@ func cast() -> void:
 func do_slash(other_direction:bool = false) -> void:
 	var flip_again:int = 1
 	var shapecast:ShapeCast2D = create_shapecast(shape)
+	if not is_instance_valid(shapecast):
+		return
 	if other_direction:
 		flip_again = -1
 	shapecast.target_position.x = player.x_orientation * projectile_speed * flip_again

@@ -96,8 +96,8 @@ func update_ability_weights() -> void:
 	current_ability_weights = current_ability_pool.map(calculate_ability_rarity)
 
 ##Does the calculation for ability rarity. Believe it or not
-## the negative reciprocal of r, multiplied by a quadratic with x as level (x-1)(x-8), all + 1
+## the negative reciprocal of r, multiplied by 0.05 multiplied by a quadratic with x as level (x-1)(x-8), all + 1
 ##1/r(x-1)(x-8) + 1
 func calculate_ability_rarity(ability:Ability) -> float:
-	return ((-1.0 / ability.rarity) * (ability.level - 1) * (ability.level - 8)) + 1
+	return ((-1.0 / ability.rarity) * 0.05 * (ability.level - 1) * (ability.level - 8)) + 1
 	

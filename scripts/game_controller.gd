@@ -54,10 +54,10 @@ func spawn_enemies(amount:int) -> void:
 	
 func get_enemy_amount_to_spawn() -> int:
 	var total_enemy_count:int = len(get_tree().get_nodes_in_group(&"Enemy"))
-	#0.1x + 50 -(cos^2(0.05x) * 30)
+	#0.2x + 50 -(cos^2(0.05x) * 30)
 	#most equations are on desmos
-	#starts at 10
-	var enemy_quota:int = ceili((time_elapsed * 0.1) + 40 - ((cos(0.05 * time_elapsed) ** 2) * 30))
+	#starts at 20
+	var enemy_quota:int = ceili((time_elapsed * 0.2) + 50 - ((cos(0.05 * time_elapsed) ** 2) * 30))
 	var enemies_to_spawn:int = ceili((enemy_quota - total_enemy_count) * 0.1)
 	return enemies_to_spawn
 	
@@ -116,18 +116,18 @@ func check_for_events() -> void:
 				do_event(&"small_goblin_boss")
 		3:
 			if time_elapsed >= 360:
-				do_event(&"twin_small_goblin_boss")
+				do_event(&"small_goblin_boss", 3)
 				
-func do_event(event_name:StringName) -> void:
+func do_event(event_name:StringName, value:int=1) -> void:
 	match event_name:
 		&"small_goblin_swarm":
 			spawn_enemies(50)
 		&"small_goblin_boss":
-			spawn_specific_enemy(load("uid://x3677epydygv"))
-		&"twin_small_goblin_boss":
 			var boss_type:EnemyType = load("uid://x3677epydygv")
-			spawn_specific_enemy(boss_type)
-			spawn_specific_enemy(boss_type)
+			for n in range(value):
+				spawn_specific_enemy(boss_type)
+		_:
+			print("Not an event")
 	event_count += 1
 	
 	
