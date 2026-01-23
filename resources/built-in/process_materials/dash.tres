@@ -1,0 +1,8 @@
+[gd_resource type="ParticleProcessMaterial" format=3 uid="uid://caugat1lb2emo"]
+
+[resource]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 150.0
+inherit_velocity_ratio = -10.0
+gravity = Vector3(0, 0, 0)

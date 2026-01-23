@@ -14,3 +14,4 @@ class_name MagicItem
 
 func affect_player_stats(player:Player) -> void:
 	pass
+	

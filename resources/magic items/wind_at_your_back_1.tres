@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="MIWindAtYourBack" load_steps=4 format=3 uid="uid://bmi36j26u0jas"]
+
+[ext_resource type="Script" uid="uid://cwtve60og7m7d" path="res://scripts/resources/inherited resources/magic items/usable/wind_at_your_back.gd" id="1_l30n4"]
+[ext_resource type="Material" uid="uid://caugat1lb2emo" path="res://resources/built-in/process_materials/dash.tres" id="1_p25v8"]
+[ext_resource type="Resource" uid="uid://pen6ps4kb62x" path="res://resources/magic items/wind_at_your_back_2.tres" id="1_s0ufo"]
+
+[resource]
+script = ExtResource("1_l30n4")
+speed_increase = 100
+acceleration_per_second = 10.0
+acceleration_damage_multiplier = 0.002
+particle_process_material = ExtResource("1_p25v8")
+rarity = 2
+next_upgrade = ExtResource("1_s0ufo")
+metadata/_custom_type_script = "uid://cwtve60og7m7d"

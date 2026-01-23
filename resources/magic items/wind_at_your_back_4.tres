@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="MIWindAtYourBack" load_steps=3 format=3 uid="uid://benxoetlnr4sw"]
+
+[ext_resource type="Material" uid="uid://caugat1lb2emo" path="res://resources/built-in/process_materials/dash.tres" id="1_a3d50"]
+[ext_resource type="Script" uid="uid://cwtve60og7m7d" path="res://scripts/resources/inherited resources/magic items/usable/wind_at_your_back.gd" id="2_ed73x"]
+
+[resource]
+script = ExtResource("2_ed73x")
+speed_increase = 200
+acceleration_per_second = 20.0
+acceleration_damage_multiplier = 0.004
+particle_process_material = ExtResource("1_a3d50")
+level_description = "Increased base speed and acceleration"
+level = 4
+rarity = 2
+metadata/_custom_type_script = "uid://cwtve60og7m7d"

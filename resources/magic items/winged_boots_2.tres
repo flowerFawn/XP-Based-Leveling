@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="MIWingedBoots" load_steps=3 format=3 uid="uid://c8por0rn0gaij"]
+
+[ext_resource type="Resource" uid="uid://blumui6nfit8w" path="res://resources/magic items/winged_boots_3.tres" id="1_ldski"]
+[ext_resource type="Script" uid="uid://dlqeq0hpgmcao" path="res://scripts/resources/inherited resources/magic items/usable/winged_boots.gd" id="1_urmjm"]
+
+[resource]
+script = ExtResource("1_urmjm")
+speed_increase = 100
+level = 2
+rarity = 3
+next_upgrade = ExtResource("1_ldski")
+metadata/_custom_type_script = "uid://dlqeq0hpgmcao"

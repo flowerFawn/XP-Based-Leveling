@@ -1,11 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://bhjkr1poaklh6"]
 
-[ext_resource type="Texture2D" uid="uid://cvkuotvkgky7g" path="res://assets/placeholders/snowflake.png" id="1_5jdl7"]
-[ext_resource type="Material" uid="uid://dq455aon8wct8" path="res://resources/built-in/process_materials/whiteout.tres" id="2_xwj11"]
+[ext_resource type="Texture2D" uid="uid://d3i02g42je0ld" path="res://assets/placeholders/dash.png" id="1_5jdl7"]
+[ext_resource type="Material" uid="uid://caugat1lb2emo" path="res://resources/built-in/process_materials/dash.tres" id="2_xwj11"]
 
 [node name="GPUParticles2D" type="GPUParticles2D"]
-amount = 128
 texture = ExtResource("1_5jdl7")
-lifetime = 4.0
-explosiveness = 0.7
+trail_enabled = true
 process_material = ExtResource("2_xwj11")

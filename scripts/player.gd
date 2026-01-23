@@ -183,7 +183,7 @@ func start_spell(spell:Spell) -> void:
 	spell.player = self
 	spell.spell_handler = new_spellhandler
 	add_child(new_spellhandler)
-	spell.initial_spell_setup()
+	spell.initial_ability_setup()
 	new_spellhandler.trigger_spell()
 	new_spellhandler.start(spell.cooldown * cooldown_multiplier)
 
@@ -227,6 +227,7 @@ func remove_magic_item(magic_item:MagicItem) -> void:
 	if not magic_item in magic_items:
 		print("Magic item not already there!")
 		return
+	magic_item.clean_up_for_removal()
 	magic_items.erase(magic_item)
 	
 func remove_ability(ability:Ability) -> void:
@@ -244,6 +245,7 @@ func start_magic_item(magic_item:MagicItem) -> void:
 		else:
 			n += 1
 	magic_items.insert(n ,magic_item)
+	magic_item.initial_ability_setup()
 	magic_item.affect_player_stats(self)
 	
 func update_preexisting_spell_cooldown(spell_handler:SpellHandler, change_multiplier:float) -> void:

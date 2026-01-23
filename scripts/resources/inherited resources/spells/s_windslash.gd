@@ -23,6 +23,8 @@ func do_slash(other_direction:bool = false) -> void:
 	shapecast.target_position.x = player.x_orientation * projectile_speed * flip_again
 	player.add_child(shapecast)
 	await spell_handler.get_tree().physics_frame
+	if not is_instance_valid(shapecast):
+		return
 	shapecast.force_shapecast_update()
 	for enemy:Enemy in get_shapecast_colliders(shapecast):
 		enemy.take_damage(damage)

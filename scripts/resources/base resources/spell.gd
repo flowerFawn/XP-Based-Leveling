@@ -43,11 +43,7 @@ func cast() -> void:
 	print("A")
 	await wait_time(multi_projectile_delay)
 	
-func initial_spell_setup() -> void:
-	pass
-	
-func clean_up_for_removal() -> void:
-	pass
+
 
 #region USEFUL SPELL FUNCTIONS
 	

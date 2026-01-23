@@ -12,7 +12,7 @@ func _init(new_spell:Spell) -> void:
 #now all done in the player side of things, to make updating cooldowns easier
 #func _ready() -> void:
 	#await get_tree().physics_frame
-	#spell.initial_spell_setup()
+	#spell.initial_ability_setup()
 	#trigger_spell()
 	#if not spell.cooldown == 0:
 		#start(spell.cooldown * GameInfo.)

@@ -6,8 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://cajh0qqfcj3ti" path="res://assets/placeholders/Archwizard 2.png" id="2_e2rab"]
 [ext_resource type="Resource" uid="uid://bpa7drmk0sban" path="res://resources/ability pools/standard.tres" id="3_idsvq"]
 [ext_resource type="Texture2D" uid="uid://gm48qepn80lq" path="res://assets/placeholders/Archwizard 3.png" id="3_jirqp"]
-[ext_resource type="Resource" uid="uid://buu4u5w3e3yf3" path="res://resources/magic items/bnb_handbook_1.tres" id="4_ar3qq"]
 [ext_resource type="Resource" uid="uid://bb3wur6d4qxcf" path="res://resources/spell/windslash_1.tres" id="5_vg6yu"]
+[ext_resource type="Resource" uid="uid://bmi36j26u0jas" path="res://resources/magic items/wind_at_your_back_1.tres" id="7_vg6yu"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_igv7j"]
 animations = [{
@@ -31,7 +31,7 @@ script = ExtResource("1_jfa2w")
 description = "starts with the wind slash spell."
 starting_ability_pool = ExtResource("3_idsvq")
 starting_spell = ExtResource("5_vg6yu")
-starting_magic_item = ExtResource("4_ar3qq")
+starting_magic_item = ExtResource("7_vg6yu")
 animations = SubResource("SpriteFrames_igv7j")
 icon = ExtResource("1_u616n")
 metadata/_custom_type_script = "uid://dse7vf0l5vfv0"

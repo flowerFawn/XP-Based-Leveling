@@ -13,7 +13,7 @@ func _init() -> void:
 	base_description = "Occasionally causes all enemies to be slowed"
 	ability_name = "Snowstorm"
 	
-func initial_spell_setup() -> void:
+func initial_ability_setup() -> void:
 	gpu_particles = GPUParticles2D.new()
 	gpu_particles.process_material = particle_process_material
 	gpu_particles.amount = projectile_count
