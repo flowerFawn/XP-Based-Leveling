@@ -25,6 +25,8 @@ func initial_ability_setup() -> void:
 	gpu_particles.emitting = false
 
 func clean_up_for_removal() -> void:
+	player_in_question.speed -= current_acceleration
+	current_acceleration = 0
 	gpu_particles.queue_free()
 	affect_acceleration_timer.queue_free()
 	
