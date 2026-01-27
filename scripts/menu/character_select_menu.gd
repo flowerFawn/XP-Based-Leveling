@@ -4,6 +4,7 @@ extends Control
 @export var node_start_button:Button
 @export var node_name_label:Label
 @export var node_desc_label:Label
+@export var node_selected_icon:TextureRect
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -21,6 +22,7 @@ func _on_back_button_pressed() -> void:
 func new_character_selected(character:Character):
 	node_name_label.text = character.name
 	node_desc_label.text = character.description
+	node_selected_icon.texture = character.icon
 	node_start_button.disabled = false
 
 func start_game_proper() -> void:
