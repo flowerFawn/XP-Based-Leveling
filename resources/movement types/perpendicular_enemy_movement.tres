@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="EnemyMovementRotated" load_steps=2 format=3 uid="uid://chgf21ugoid5x"]
+[gd_resource type="Resource" script_class="EnemyMovementRotated" format=3 uid="uid://chgf21ugoid5x"]
 
 [ext_resource type="Script" uid="uid://cpy1fruup6071" path="res://scripts/resources/inherited resources/enemy movement types/e_movement_perpendicular.gd" id="1_me32d"]
 

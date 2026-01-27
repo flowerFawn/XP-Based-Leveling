@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="AbilityPool" load_steps=24 format=3 uid="uid://bpa7drmk0sban"]
+[gd_resource type="Resource" script_class="AbilityPool" format=3 uid="uid://bpa7drmk0sban"]
 
 [ext_resource type="Script" uid="uid://i4vxs0c4oet7" path="res://scripts/resources/base resources/player_ability.gd" id="1_yyggw"]
 [ext_resource type="Script" uid="uid://cppbyt13invqd" path="res://scripts/resources/base resources/ability_pool.gd" id="2_8tfyf"]

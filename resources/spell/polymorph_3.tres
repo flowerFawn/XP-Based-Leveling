@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SpellPolymorph" load_steps=4 format=3 uid="uid://47j8eg3tr8re"]
+[gd_resource type="Resource" script_class="SpellPolymorph" format=3 uid="uid://47j8eg3tr8re"]
 
 [ext_resource type="Resource" uid="uid://c4xcisy7rjhp8" path="res://resources/spell/polymorph_4.tres" id="1_ehiu6"]
 [ext_resource type="Script" uid="uid://c1g3pmjjnoafj" path="res://scripts/resources/inherited resources/spells/s_polymorph.gd" id="1_lq4rr"]

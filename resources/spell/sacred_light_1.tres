@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SpellSacredLight" load_steps=5 format=3 uid="uid://c1ujqmd5kcxjw"]
+[gd_resource type="Resource" script_class="SpellSacredLight" format=3 uid="uid://c1ujqmd5kcxjw"]
 
 [ext_resource type="Script" uid="uid://b2dkid11uh6v2" path="res://scripts/resources/inherited resources/spells/s_sacred_light.gd" id="1_2uycv"]
 [ext_resource type="Resource" uid="uid://dsyiid455ik23" path="res://resources/spell/sacred_light_2.tres" id="1_068u6"]

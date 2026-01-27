@@ -1,11 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://bdm4suav3p5q6"]
+[gd_scene format=3 uid="uid://bdm4suav3p5q6"]
 
 [ext_resource type="Theme" uid="uid://bbd4wu6mpdafv" path="res://resources/built-in/themes/bestiary.tres" id="1_0gnlr"]
 [ext_resource type="Script" uid="uid://chlx85cu547yq" path="res://scripts/menu/bestiary.gd" id="1_8of4q"]
 [ext_resource type="Script" uid="uid://58cfsa1tna1q" path="res://scripts/resources/base resources/enemy_type.gd" id="2_ydr6e"]
 [ext_resource type="Resource" uid="uid://bg3osrk3a4ni5" path="res://resources/enemy types/sub 10 min/goblin_type_1.tres" id="3_0gnlr"]
 
-[node name="Bestiary" type="Control" node_paths=PackedStringArray("grid_container")]
+[node name="Bestiary" type="Control" unique_id=813418222 node_paths=PackedStringArray("grid_container")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -17,7 +17,7 @@ script = ExtResource("1_8of4q")
 enemies = Array[ExtResource("2_ydr6e")]([ExtResource("3_0gnlr"), ExtResource("3_0gnlr"), ExtResource("3_0gnlr"), ExtResource("3_0gnlr"), ExtResource("3_0gnlr"), ExtResource("3_0gnlr"), ExtResource("3_0gnlr"), ExtResource("3_0gnlr"), ExtResource("3_0gnlr"), ExtResource("3_0gnlr"), ExtResource("3_0gnlr"), ExtResource("3_0gnlr"), ExtResource("3_0gnlr"), ExtResource("3_0gnlr"), ExtResource("3_0gnlr"), ExtResource("3_0gnlr"), ExtResource("3_0gnlr"), ExtResource("3_0gnlr"), ExtResource("3_0gnlr"), ExtResource("3_0gnlr"), ExtResource("3_0gnlr"), ExtResource("3_0gnlr"), ExtResource("3_0gnlr"), ExtResource("3_0gnlr"), ExtResource("3_0gnlr"), ExtResource("3_0gnlr"), ExtResource("3_0gnlr"), ExtResource("3_0gnlr"), ExtResource("3_0gnlr"), ExtResource("3_0gnlr"), ExtResource("3_0gnlr"), ExtResource("3_0gnlr"), ExtResource("3_0gnlr"), ExtResource("3_0gnlr"), ExtResource("3_0gnlr"), ExtResource("3_0gnlr")])
 grid_container = NodePath("ScrollContainer/PanelContainer/GridContainer")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel" type="Panel" parent="." unique_id=1740355138]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -25,7 +25,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ScrollContainer" type="ScrollContainer" parent="."]
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1712859790]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.1
@@ -36,19 +36,19 @@ grow_horizontal = 2
 grow_vertical = 2
 vertical_scroll_mode = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="ScrollContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="ScrollContainer" unique_id=1432076493]
 custom_minimum_size = Vector2(921.6, 0)
 layout_mode = 2
 size_flags_horizontal = 2
 size_flags_vertical = 3
 
-[node name="GridContainer" type="GridContainer" parent="ScrollContainer/PanelContainer"]
+[node name="GridContainer" type="GridContainer" parent="ScrollContainer/PanelContainer" unique_id=1211021075]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 columns = 3
 
-[node name="Button" type="Button" parent="."]
+[node name="Button" type="Button" parent="." unique_id=1139290180]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 0
 offset_right = 8.0

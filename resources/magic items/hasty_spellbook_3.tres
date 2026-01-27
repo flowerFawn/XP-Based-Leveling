@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="MIHastySpellBook" load_steps=3 format=3 uid="uid://djs163wclxnb0"]
+[gd_resource type="Resource" script_class="MIHastySpellBook" format=3 uid="uid://djs163wclxnb0"]
 
 [ext_resource type="Script" uid="uid://da4v0ck85uj1y" path="res://scripts/resources/inherited resources/magic items/usable/hastily_written_spellbook.gd" id="1_6nkt8"]
 [ext_resource type="Resource" uid="uid://bgv4t4ju4epll" path="res://resources/magic items/hasty_spellbook_4.tres" id="1_b8weo"]

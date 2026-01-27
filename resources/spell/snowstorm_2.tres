@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SpellSnowstorm" load_steps=4 format=3 uid="uid://dx2j0ymabf4jo"]
+[gd_resource type="Resource" script_class="SpellSnowstorm" format=3 uid="uid://dx2j0ymabf4jo"]
 
 [ext_resource type="Script" uid="uid://dj673wkeo7s1r" path="res://scripts/resources/inherited resources/spells/s_snowstorm.gd" id="1_0nt2x"]
 [ext_resource type="Resource" uid="uid://cry4vx62ffdy8" path="res://resources/spell/snowstorm_3.tres" id="1_qlyyc"]

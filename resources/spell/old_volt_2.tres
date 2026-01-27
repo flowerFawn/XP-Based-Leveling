@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SpellVolt" load_steps=3 format=3 uid="uid://bp6x3lirjyyol"]
+[gd_resource type="Resource" script_class="SpellOldVolt" format=3 uid="uid://bp6x3lirjyyol"]
 
 [ext_resource type="Script" uid="uid://c5fmj23e652h8" path="res://scripts/resources/inherited resources/spells/s_old_volt.gd" id="1_bgio2"]
 [ext_resource type="Texture2D" uid="uid://dx2cxtrybrv2t" path="res://assets/placeholders/electricity.png" id="2_2cjqj"]

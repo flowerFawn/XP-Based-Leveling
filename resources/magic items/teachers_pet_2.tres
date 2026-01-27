@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="MITeachersPet" load_steps=2 format=3 uid="uid://cavui4lskgvsp"]
+[gd_resource type="Resource" script_class="MITeachersPet" format=3 uid="uid://cavui4lskgvsp"]
 
 [ext_resource type="Script" uid="uid://cama1y0lq66rl" path="res://scripts/resources/inherited resources/magic items/usable/teachers_pet.gd" id="1_kjbk8"]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dt2i2obb5kodu"]
+[gd_scene format=3 uid="uid://dt2i2obb5kodu"]
 
 [ext_resource type="Script" uid="uid://cprrck25bqwpi" path="res://scripts/player.gd" id="1_rkhd4"]
 [ext_resource type="Shader" uid="uid://wmypgnrpgule" path="res://scripts/shaders/player.gdshader" id="2_qhqgy"]
@@ -21,7 +21,7 @@ radius = 75.0
 shader = ExtResource("4_qlg0r")
 shader_parameter/scroll_uv = Vector2(0, 0)
 
-[node name="CharacterBody2D" type="CharacterBody2D" node_paths=PackedStringArray("node_sprite", "node_progress", "node_red_flash_timer", "node_input_buffer_timer", "node_fake_background") groups=["Player"]]
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1726390198 node_paths=PackedStringArray("node_sprite", "node_progress", "node_red_flash_timer", "node_input_buffer_timer", "node_fake_background") groups=["Player"]]
 collision_layer = 5
 script = ExtResource("1_rkhd4")
 node_sprite = NodePath("AnimatedSprite2D")
@@ -30,21 +30,21 @@ node_red_flash_timer = NodePath("RedFlashTimer")
 node_input_buffer_timer = NodePath("DiagonalInputBufferTimer")
 node_fake_background = NodePath("FakeBackgroundRect")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1896226649]
 zoom = Vector2(0.25, 0.25)
 
-[node name="Trianglewizard" type="Sprite2D" parent="."]
+[node name="Trianglewizard" type="Sprite2D" parent="." unique_id=1835201595]
 visible = false
 material = SubResource("ShaderMaterial_my7n2")
 texture = ExtResource("3_qlg0r")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2106464441]
 material = SubResource("ShaderMaterial_qlg0r")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=74073069]
 shape = SubResource("CircleShape2D_qlg0r")
 
-[node name="ProgressBar" type="ProgressBar" parent="."]
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1166257003]
 anchors_preset = -1
 anchor_right = 0.5
 offset_left = -110.0
@@ -55,16 +55,16 @@ grow_horizontal = 2
 grow_vertical = 2
 show_percentage = false
 
-[node name="AudioListener2D" type="AudioListener2D" parent="."]
+[node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=1283960844]
 current = true
 
-[node name="RedFlashTimer" type="Timer" parent="."]
+[node name="RedFlashTimer" type="Timer" parent="." unique_id=1685079618]
 wait_time = 0.3
 
-[node name="DiagonalInputBufferTimer" type="Timer" parent="."]
+[node name="DiagonalInputBufferTimer" type="Timer" parent="." unique_id=1173213260]
 one_shot = true
 
-[node name="FakeBackgroundRect" type="TextureRect" parent="."]
+[node name="FakeBackgroundRect" type="TextureRect" parent="." unique_id=1344061558]
 z_index = -5
 z_as_relative = false
 texture_repeat = 2

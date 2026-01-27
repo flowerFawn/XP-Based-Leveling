@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="EnemyType" load_steps=7 format=3 uid="uid://dc0p6fukw7bp6"]
+[gd_resource type="Resource" script_class="EnemyType" format=3 uid="uid://dc0p6fukw7bp6"]
 
 [ext_resource type="Texture2D" uid="uid://d1dd8livhow1e" path="res://assets/enemies/martyr.png" id="1_f1hda"]
 [ext_resource type="Resource" uid="uid://dkojg7se37iio" path="res://resources/death effects/martyr_explosion.tres" id="1_yi76o"]

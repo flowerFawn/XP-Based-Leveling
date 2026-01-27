@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SpellArcLightning" load_steps=5 format=3 uid="uid://c8goyqapnpbgg"]
+[gd_resource type="Resource" script_class="SpellArcLightning" format=3 uid="uid://c8goyqapnpbgg"]
 
 [ext_resource type="Resource" uid="uid://b1wjfnt1c50m" path="res://resources/spell/arc_lightning_2.tres" id="1_j6tkj"]
 [ext_resource type="Script" uid="uid://c8l8posic1hw8" path="res://scripts/resources/inherited resources/spells/s_arc_lightning.gd" id="1_mxn68"]

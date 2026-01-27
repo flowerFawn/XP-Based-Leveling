@@ -1,11 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://dgjvvqwas3gcv"]
+[gd_scene format=3 uid="uid://dgjvvqwas3gcv"]
 
 [ext_resource type="Theme" uid="uid://bw2l7f67pn2it" path="res://resources/built-in/themes/settings.tres" id="1_dxr1k"]
 [ext_resource type="Script" uid="uid://dfpj32cpf0fxh" path="res://scripts/menu/settings.gd" id="1_rqcjd"]
 
-[node name="CanvasLayer" type="CanvasLayer"]
+[node name="CanvasLayer" type="CanvasLayer" unique_id=652988485]
 
-[node name="Control" type="Control" parent="." node_paths=PackedStringArray("skip_check", "buffer_slider", "buffer_slider_label", "screen_option", "show_quadtree_check")]
+[node name="Control" type="Control" parent="." unique_id=1197820255 node_paths=PackedStringArray("skip_check", "buffer_slider", "buffer_slider_label", "screen_option", "show_quadtree_check")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -20,7 +20,7 @@ buffer_slider_label = NodePath("PanelContainer/PanelContainer/ScrollContainer/VB
 screen_option = NodePath("PanelContainer/PanelContainer/ScrollContainer/VBoxContainer/ScreenOption")
 show_quadtree_check = NodePath("PanelContainer/PanelContainer/ScrollContainer/VBoxContainer/ShowQuadTreeCheck")
 
-[node name="PanelContainer" type="PanelContainer" parent="Control"]
+[node name="PanelContainer" type="PanelContainer" parent="Control" unique_id=673505887]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -28,36 +28,36 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="Control/PanelContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="Control/PanelContainer" unique_id=634528639]
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Control/PanelContainer/PanelContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/PanelContainer/PanelContainer" unique_id=1846660626]
 custom_minimum_size = Vector2(600, 0)
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/PanelContainer/PanelContainer/ScrollContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/PanelContainer/PanelContainer/ScrollContainer" unique_id=495173135]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="SkipIntroCheck" type="CheckBox" parent="Control/PanelContainer/PanelContainer/ScrollContainer/VBoxContainer"]
+[node name="SkipIntroCheck" type="CheckBox" parent="Control/PanelContainer/PanelContainer/ScrollContainer/VBoxContainer" unique_id=191033324]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 text = "Skip Intro"
 
-[node name="PanelContainer" type="PanelContainer" parent="Control/PanelContainer/PanelContainer/ScrollContainer/VBoxContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="Control/PanelContainer/PanelContainer/ScrollContainer/VBoxContainer" unique_id=483268515]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/PanelContainer/PanelContainer/ScrollContainer/VBoxContainer/PanelContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/PanelContainer/PanelContainer/ScrollContainer/VBoxContainer/PanelContainer" unique_id=685637000]
 layout_mode = 2
 
-[node name="BufferLabel" type="Label" parent="Control/PanelContainer/PanelContainer/ScrollContainer/VBoxContainer/PanelContainer/HBoxContainer"]
+[node name="BufferLabel" type="Label" parent="Control/PanelContainer/PanelContainer/ScrollContainer/VBoxContainer/PanelContainer/HBoxContainer" unique_id=179210213]
 layout_mode = 2
 text = "Input Buffer: 0.0"
 
-[node name="BufferSlider" type="HSlider" parent="Control/PanelContainer/PanelContainer/ScrollContainer/VBoxContainer/PanelContainer/HBoxContainer"]
+[node name="BufferSlider" type="HSlider" parent="Control/PanelContainer/PanelContainer/ScrollContainer/VBoxContainer/PanelContainer/HBoxContainer" unique_id=288774316]
 layout_mode = 2
 size_flags_horizontal = 3
 max_value = 1.0
@@ -66,7 +66,7 @@ tick_count = 20
 ticks_on_borders = true
 ticks_position = 3
 
-[node name="ScreenOption" type="OptionButton" parent="Control/PanelContainer/PanelContainer/ScrollContainer/VBoxContainer"]
+[node name="ScreenOption" type="OptionButton" parent="Control/PanelContainer/PanelContainer/ScrollContainer/VBoxContainer" unique_id=1202731040]
 layout_mode = 2
 item_count = 2
 popup/item_0/text = "Windowed"
@@ -74,12 +74,12 @@ popup/item_0/id = 0
 popup/item_1/text = "Fullscreen"
 popup/item_1/id = 3
 
-[node name="ShowQuadTreeCheck" type="CheckBox" parent="Control/PanelContainer/PanelContainer/ScrollContainer/VBoxContainer"]
+[node name="ShowQuadTreeCheck" type="CheckBox" parent="Control/PanelContainer/PanelContainer/ScrollContainer/VBoxContainer" unique_id=1017870894]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 text = "Show QuadTree (Nerd Stuff)"
 
-[node name="BackButton" type="Button" parent="Control/PanelContainer"]
+[node name="BackButton" type="Button" parent="Control/PanelContainer" unique_id=1846035365]
 custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
 size_flags_horizontal = 0

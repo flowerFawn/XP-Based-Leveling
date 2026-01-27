@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SpellShard" load_steps=5 format=3 uid="uid://7vmgb80p33sl"]
+[gd_resource type="Resource" script_class="SpellShard" format=3 uid="uid://7vmgb80p33sl"]
 
 [ext_resource type="Resource" uid="uid://cpoi8gjs165jf" path="res://resources/spell/shard_2.tres" id="1_ynue0"]
 [ext_resource type="Script" uid="uid://cruvp1vxd4ktu" path="res://scripts/resources/inherited resources/spells/s_shard.gd" id="2_4q8fg"]

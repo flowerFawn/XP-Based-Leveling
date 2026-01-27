@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="MIHolySymbol" load_steps=3 format=3 uid="uid://b7mqtn133dr0n"]
+[gd_resource type="Resource" script_class="MIHolySymbol" format=3 uid="uid://b7mqtn133dr0n"]
 
 [ext_resource type="Resource" uid="uid://fwue6q5dqwpi" path="res://resources/magic items/holy_symbol_2.tres" id="1_gvv03"]
 [ext_resource type="Script" uid="uid://w0a3bgk6by6i" path="res://scripts/resources/inherited resources/magic items/usable/holy_symbol.gd" id="1_p4lat"]

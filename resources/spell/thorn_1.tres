@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SpellThorns" load_steps=5 format=3 uid="uid://clpu6qm1sv44b"]
+[gd_resource type="Resource" script_class="SpellThorns" format=3 uid="uid://clpu6qm1sv44b"]
 
 [ext_resource type="Script" uid="uid://c8b6qbje158fi" path="res://scripts/resources/inherited resources/spells/s_thorns.gd" id="1_ookwd"]
 [ext_resource type="Resource" uid="uid://b2qfbq106qsse" path="res://resources/spell/thorn_2.tres" id="1_x72et"]

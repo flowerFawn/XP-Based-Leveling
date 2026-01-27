@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="EnemyType" load_steps=6 format=3 uid="uid://b5oji5bg8ylg0"]
+[gd_resource type="Resource" script_class="EnemyType" format=3 uid="uid://b5oji5bg8ylg0"]
 
 [ext_resource type="Texture2D" uid="uid://b7ht13h53fh7b" path="res://assets/enemies/mid_grunt.png" id="1_2hlsv"]
 [ext_resource type="Resource" uid="uid://cj6251nhvsiy8" path="res://resources/movement types/straight_enemy_movement.tres" id="1_dg8pp"]

@@ -1,11 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://ny3g87jvu4ac"]
+[gd_scene format=3 uid="uid://ny3g87jvu4ac"]
 
 [ext_resource type="Theme" uid="uid://0x14wap1qyvs" path="res://resources/built-in/themes/pause.tres" id="1_eajjn"]
 [ext_resource type="Texture2D" uid="uid://clpfj7adba18n" path="res://assets/placeholders/icon.png" id="2_ghovd"]
 [ext_resource type="Script" uid="uid://bwd82ryjs1bjb" path="res://scripts/controls/ability_icon.gd" id="3_gptt1"]
 [ext_resource type="Texture2D" uid="uid://cwe5t63h1rr7d" path="res://assets/placeholders/icon_frame.png" id="4_5ko2t"]
 
-[node name="Icon" type="TextureRect" node_paths=PackedStringArray("level_label")]
+[node name="Icon" type="TextureRect" unique_id=1794823810 node_paths=PackedStringArray("level_label")]
 custom_minimum_size = Vector2(100, 100)
 anchors_preset = 8
 anchor_left = 0.5
@@ -26,7 +26,7 @@ expand_mode = 1
 script = ExtResource("3_gptt1")
 level_label = NodePath("LevelLabel")
 
-[node name="IconCover" type="TextureRect" parent="."]
+[node name="IconCover" type="TextureRect" parent="." unique_id=851664915]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 0
 offset_right = 40.0
@@ -34,7 +34,7 @@ offset_bottom = 40.0
 texture = ExtResource("4_5ko2t")
 expand_mode = 1
 
-[node name="LevelLabel" type="Label" parent="."]
+[node name="LevelLabel" type="Label" parent="." unique_id=1059014743]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0

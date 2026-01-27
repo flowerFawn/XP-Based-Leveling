@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="DeathExplosion" load_steps=4 format=3 uid="uid://dkojg7se37iio"]
+[gd_resource type="Resource" script_class="DeathExplosion" format=3 uid="uid://dkojg7se37iio"]
 
 [ext_resource type="Texture2D" uid="uid://dpksns3ugqtcw" path="res://assets/placeholders/explosion_2.png" id="1_najpy"]
 [ext_resource type="Script" uid="uid://ck34qaofp1ap" path="res://scripts/resources/inherited resources/death effect/de_explode.gd" id="1_pipw1"]

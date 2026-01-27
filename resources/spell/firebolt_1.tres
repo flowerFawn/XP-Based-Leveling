@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SpellFirebolt" load_steps=5 format=3 uid="uid://cbh1n057q23bg"]
+[gd_resource type="Resource" script_class="SpellFirebolt" format=3 uid="uid://cbh1n057q23bg"]
 
 [ext_resource type="Resource" uid="uid://bgjeubtbe8w1i" path="res://resources/spell/firebolt_2.tres" id="1_gcpki"]
 [ext_resource type="Script" uid="uid://ov4ev345t4bi" path="res://scripts/resources/inherited resources/spells/s_firebolt.gd" id="1_ho251"]

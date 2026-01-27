@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="MIWindAtYourBack" load_steps=4 format=3 uid="uid://pen6ps4kb62x"]
+[gd_resource type="Resource" script_class="MIWindAtYourBack" format=3 uid="uid://pen6ps4kb62x"]
 
 [ext_resource type="Material" uid="uid://caugat1lb2emo" path="res://resources/built-in/process_materials/dash.tres" id="1_axb4v"]
 [ext_resource type="Resource" uid="uid://bwg7kvnjrumjb" path="res://resources/magic items/wind_at_your_back_3.tres" id="1_y4opn"]

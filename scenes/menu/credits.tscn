@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://bd7helba444mi"]
+[gd_scene format=3 uid="uid://bd7helba444mi"]
 
 [ext_resource type="Script" uid="uid://clsi7xxwcnco8" path="res://scripts/menu/credits.gd" id="1_4y82v"]
 
-[node name="Control" type="Control" node_paths=PackedStringArray("credits_container", "background_color")]
+[node name="Control" type="Control" unique_id=1389257146 node_paths=PackedStringArray("credits_container", "background_color")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -13,7 +13,7 @@ script = ExtResource("1_4y82v")
 credits_container = NodePath("CreditsText")
 background_color = NodePath("Background")
 
-[node name="CreditsText" type="VBoxContainer" parent="."]
+[node name="CreditsText" type="VBoxContainer" parent="." unique_id=349424192]
 z_index = 2
 layout_mode = 1
 anchors_preset = 15
@@ -24,7 +24,7 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CreditsText"]
+[node name="RichTextLabel" type="RichTextLabel" parent="CreditsText" unique_id=1864607413]
 layout_mode = 2
 bbcode_enabled = true
 text = "Kris \"Beyond.Adonis\" Barton
@@ -69,7 +69,7 @@ fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="Background" type="ColorRect" parent="." unique_id=1173467079]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

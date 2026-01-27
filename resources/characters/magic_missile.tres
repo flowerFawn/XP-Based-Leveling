@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Character" load_steps=10 format=3 uid="uid://cest0luawtgth"]
+[gd_resource type="Resource" script_class="Character" format=3 uid="uid://cest0luawtgth"]
 
 [ext_resource type="Texture2D" uid="uid://xmadt3jeoget" path="res://assets/placeholders/bolt.png" id="1_2haky"]
 [ext_resource type="Script" uid="uid://dse7vf0l5vfv0" path="res://scripts/resources/base resources/character.gd" id="1_iqo07"]

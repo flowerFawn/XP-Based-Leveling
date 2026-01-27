@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://cs5x04qv7e47i"]
+[gd_scene format=3 uid="uid://cs5x04qv7e47i"]
 
 [ext_resource type="Theme" uid="uid://dlp88rsofwjtv" path="res://resources/built-in/themes/spell_select.tres" id="1_3ljot"]
 [ext_resource type="Script" uid="uid://c7yn1pfg4o48w" path="res://scripts/spell_option_box.gd" id="1_yofxw"]
 
-[node name="PanelContainer" type="PanelContainer" node_paths=PackedStringArray("name_label", "icon", "desc_label", "button")]
+[node name="PanelContainer" type="PanelContainer" unique_id=1662581026 node_paths=PackedStringArray("name_label", "icon", "desc_label", "button")]
 process_mode = 3
 offset_right = 53.0
 offset_bottom = 66.0
@@ -16,29 +16,29 @@ icon = NodePath("SpellOptionBox/SpellIcon")
 desc_label = NodePath("SpellOptionBox/SpellDesc")
 button = NodePath("SpellOptionBox/SpellButton")
 
-[node name="SpellOptionBox" type="VBoxContainer" parent="."]
+[node name="SpellOptionBox" type="VBoxContainer" parent="." unique_id=1483059325]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="SpellName" type="Label" parent="SpellOptionBox"]
+[node name="SpellName" type="Label" parent="SpellOptionBox" unique_id=1156138760]
 custom_minimum_size = Vector2(212, 0)
 layout_mode = 2
 size_flags_vertical = 3
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="SpellIcon" type="TextureRect" parent="SpellOptionBox"]
+[node name="SpellIcon" type="TextureRect" parent="SpellOptionBox" unique_id=943600615]
 layout_mode = 2
 size_flags_vertical = 3
 stretch_mode = 2
 
-[node name="SpellDesc" type="RichTextLabel" parent="SpellOptionBox"]
+[node name="SpellDesc" type="RichTextLabel" parent="SpellOptionBox" unique_id=2054933992]
 layout_mode = 2
 size_flags_vertical = 3
 bbcode_enabled = true
 fit_content = true
 
-[node name="SpellButton" type="Button" parent="SpellOptionBox"]
+[node name="SpellButton" type="Button" parent="SpellOptionBox" unique_id=1738165796]
 layout_mode = 2
 size_flags_vertical = 3
 text = "Learn"

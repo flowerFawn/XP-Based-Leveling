@@ -1,16 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://bedklbg6qvuot"]
+[gd_scene format=3 uid="uid://bedklbg6qvuot"]
 
 [ext_resource type="Script" uid="uid://dx25o3n085leo" path="res://scripts/game_controller.gd" id="1_vq0e2"]
 
-[node name="GameController" type="Node"]
+[node name="GameController" type="Node" unique_id=1796851325]
 script = ExtResource("1_vq0e2")
 
-[node name="DirectionUpdateTimer" type="Timer" parent="."]
+[node name="DirectionUpdateTimer" type="Timer" parent="." unique_id=1602919726]
 wait_time = 0.5
 autostart = true
 ignore_time_scale = true
 
-[node name="SpawnTimer" type="Timer" parent="."]
+[node name="SpawnTimer" type="Timer" parent="." unique_id=2129890179]
 autostart = true
 
 [connection signal="timeout" from="DirectionUpdateTimer" to="." method="update_directions"]

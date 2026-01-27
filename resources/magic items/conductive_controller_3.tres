@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="MIConductiveController" load_steps=3 format=3 uid="uid://ch1n8nt376eh2"]
+[gd_resource type="Resource" script_class="MIConductiveController" format=3 uid="uid://ch1n8nt376eh2"]
 
 [ext_resource type="Resource" uid="uid://c40s3mnlq10la" path="res://resources/magic items/conductive_controller_4.tres" id="1_bf4n7"]
 [ext_resource type="Script" uid="uid://dn2cenp4tb56" path="res://scripts/resources/inherited resources/magic items/usable/conductive_controller.gd" id="1_isqhr"]

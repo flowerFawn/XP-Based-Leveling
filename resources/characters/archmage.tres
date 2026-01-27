@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Character" load_steps=10 format=3 uid="uid://ml6ajkpkur4j"]
+[gd_resource type="Resource" script_class="Character" format=3 uid="uid://ml6ajkpkur4j"]
 
 [ext_resource type="Texture2D" uid="uid://clmxcj044sejr" path="res://assets/placeholders/big_wizard_placeholder.png" id="1_3fcys"]
 [ext_resource type="Script" uid="uid://dse7vf0l5vfv0" path="res://scripts/resources/base resources/character.gd" id="1_bsn0i"]

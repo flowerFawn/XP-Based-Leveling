@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="MIMagicalRevolver" load_steps=2 format=3 uid="uid://ksaal4yvae7w"]
+[gd_resource type="Resource" script_class="MIMagicalRevolver" format=3 uid="uid://ksaal4yvae7w"]
 
 [ext_resource type="Script" uid="uid://bfk2l7r80cua0" path="res://scripts/resources/inherited resources/magic items/usable/magic_revolver.gd" id="1_uego5"]
 

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="EnemyType" load_steps=6 format=3 uid="uid://d2vrg8gthvpw3"]
+[gd_resource type="Resource" script_class="EnemyType" format=3 uid="uid://d2vrg8gthvpw3"]
 
 [ext_resource type="Resource" uid="uid://cj6251nhvsiy8" path="res://resources/movement types/straight_enemy_movement.tres" id="1_nl41w"]
 [ext_resource type="Texture2D" uid="uid://ckxl1nrfmq4tj" path="res://assets/enemies/mid_hammer.png" id="1_yu1a2"]

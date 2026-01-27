@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Sketch Spell Survivors"
 run/main_scene="uid://cbx2d77h30sx7"
-config/features=PackedStringArray("4.5", "Mobile")
+config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
 
 [autoload]

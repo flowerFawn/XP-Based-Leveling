@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="EnemyType" load_steps=6 format=3 uid="uid://7mdhf8llrlod"]
+[gd_resource type="Resource" script_class="EnemyType" format=3 uid="uid://7mdhf8llrlod"]
 
 [ext_resource type="Texture2D" uid="uid://dcabt1m2vciid" path="res://assets/enemies/goblin_4.png" id="1_6ks5x"]
 [ext_resource type="Resource" uid="uid://cj6251nhvsiy8" path="res://resources/movement types/straight_enemy_movement.tres" id="1_miwir"]

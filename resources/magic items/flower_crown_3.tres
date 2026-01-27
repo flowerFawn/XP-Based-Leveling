@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="MIFlowerCrown" load_steps=3 format=3 uid="uid://csjkp7fc8uevk"]
+[gd_resource type="Resource" script_class="MIFlowerCrown" format=3 uid="uid://csjkp7fc8uevk"]
 
 [ext_resource type="Resource" uid="uid://rj5unxdqxbag" path="res://resources/magic items/flower_crown_4.tres" id="1_6wx0j"]
 [ext_resource type="Script" uid="uid://bmn3ouxd7kl2d" path="res://scripts/resources/inherited resources/magic items/usable/flower_crown.gd" id="1_7qtrq"]

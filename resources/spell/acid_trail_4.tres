@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SpellAcidtrail" load_steps=4 format=3 uid="uid://jyye3e88dg66"]
+[gd_resource type="Resource" script_class="SpellAcidtrail" format=3 uid="uid://jyye3e88dg66"]
 
 [ext_resource type="Script" uid="uid://xxhkqprc4d0u" path="res://scripts/resources/inherited resources/spells/s_acid_trail.gd" id="1_saqxs"]
 [ext_resource type="Texture2D" uid="uid://kwfpi37sm6kr" path="res://assets/placeholders/goop.png" id="2_bvxkd"]

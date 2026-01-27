@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SpellAcidtrail" load_steps=5 format=3 uid="uid://cc6rq7tb4gcs"]
+[gd_resource type="Resource" script_class="SpellAcidtrail" format=3 uid="uid://cc6rq7tb4gcs"]
 
 [ext_resource type="Script" uid="uid://xxhkqprc4d0u" path="res://scripts/resources/inherited resources/spells/s_acid_trail.gd" id="1_f8wpj"]
 [ext_resource type="Resource" uid="uid://d0ibytvu0b6p" path="res://resources/spell/acid_trail_2.tres" id="1_yf632"]

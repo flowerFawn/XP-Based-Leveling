@@ -1,12 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://bol0i1wwwklsj"]
+[gd_scene format=3 uid="uid://bol0i1wwwklsj"]
 
 [ext_resource type="Theme" uid="uid://dlp88rsofwjtv" path="res://resources/built-in/themes/spell_select.tres" id="1_thjrl"]
 [ext_resource type="Script" uid="uid://b56sq8u8n4g4d" path="res://scripts/spell_option_menu.gd" id="1_tpnae"]
 
-[node name="CanvasLayer" type="CanvasLayer"]
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1320571853]
 layer = 20
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=2012165283]
 anchors_preset = -1
 anchor_left = 0.15
 anchor_top = 0.15
@@ -15,6 +15,6 @@ anchor_bottom = 0.8
 grow_horizontal = 2
 theme = ExtResource("1_thjrl")
 
-[node name="SpellOptionMenu" type="HBoxContainer" parent="PanelContainer"]
+[node name="SpellOptionMenu" type="HBoxContainer" parent="PanelContainer" unique_id=184874879]
 layout_mode = 2
 script = ExtResource("1_tpnae")

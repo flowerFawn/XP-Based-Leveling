@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="EnemyMovementRandom" load_steps=2 format=3 uid="uid://bdqmc1w1j341l"]
+[gd_resource type="Resource" script_class="EnemyMovementRandom" format=3 uid="uid://bdqmc1w1j341l"]
 
 [ext_resource type="Script" uid="uid://dsfa252ewlvet" path="res://scripts/resources/inherited resources/enemy movement types/e_movement_random.gd" id="1_nh5te"]
 

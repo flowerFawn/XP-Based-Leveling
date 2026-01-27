@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="EnemyType" load_steps=7 format=3 uid="uid://dqunbnln7x2n0"]
+[gd_resource type="Resource" script_class="EnemyType" format=3 uid="uid://dqunbnln7x2n0"]
 
 [ext_resource type="Resource" uid="uid://bdqlvr5dgs8j3" path="res://resources/movement types/reverse_enemy_movement.tres" id="1_44eib"]
 [ext_resource type="Texture2D" uid="uid://cal3vwey7i0pu" path="res://assets/enemies/loot.png" id="1_fcogx"]

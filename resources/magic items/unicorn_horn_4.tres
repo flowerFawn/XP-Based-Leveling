@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="MIUnicornHorn" load_steps=2 format=3 uid="uid://b0hg7p2dkmja5"]
+[gd_resource type="Resource" script_class="MIUnicornHorn" format=3 uid="uid://b0hg7p2dkmja5"]
 
 [ext_resource type="Script" uid="uid://d4i4c2013bg4s" path="res://scripts/resources/inherited resources/magic items/usable/unicorn_horn.gd" id="1_4sk0f"]
 

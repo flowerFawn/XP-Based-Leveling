@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://caihircp2d6qc"]
+[gd_scene format=3 uid="uid://caihircp2d6qc"]
 
 [ext_resource type="Script" uid="uid://do146oyuisrlu" path="res://scripts/menu/character_select_menu.gd" id="1_0frw4"]
 [ext_resource type="Theme" uid="uid://jtelj6fw1ph" path="res://resources/built-in/themes/character_select.tres" id="1_vffxf"]
@@ -13,9 +13,9 @@
 [ext_resource type="Resource" uid="uid://c3dj5oh0trftg" path="res://resources/characters/earthquake.tres" id="10_8f1j4"]
 [ext_resource type="Resource" uid="uid://bpr6gdvod70xx" path="res://resources/characters/test.tres" id="12_edg0r"]
 
-[node name="CanvasLayer" type="CanvasLayer"]
+[node name="CanvasLayer" type="CanvasLayer" unique_id=291979337]
 
-[node name="CharacterSelect" type="Control" parent="." node_paths=PackedStringArray("node_start_button", "node_name_label", "node_desc_label")]
+[node name="CharacterSelect" type="Control" parent="." unique_id=1335892453 node_paths=PackedStringArray("node_start_button", "node_name_label", "node_desc_label")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -28,7 +28,7 @@ node_start_button = NodePath("PanelContainer/VBoxContainer/Button")
 node_name_label = NodePath("PanelContainer/VBoxContainer/NameLabel")
 node_desc_label = NodePath("PanelContainer/VBoxContainer/DescLabel")
 
-[node name="Panel" type="Panel" parent="CharacterSelect"]
+[node name="Panel" type="Panel" parent="CharacterSelect" unique_id=1594458835]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -36,7 +36,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="GridContainer" type="GridContainer" parent="CharacterSelect"]
+[node name="GridContainer" type="GridContainer" parent="CharacterSelect" unique_id=100399555]
 custom_minimum_size = Vector2(0, -0.405)
 layout_mode = 1
 anchors_preset = -1
@@ -48,7 +48,7 @@ grow_vertical = 2
 theme = ExtResource("3_8f1j4")
 columns = 4
 
-[node name="CharacterSelectButton" type="Button" parent="CharacterSelect/GridContainer"]
+[node name="CharacterSelectButton" type="Button" parent="CharacterSelect/GridContainer" unique_id=985410473]
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -59,7 +59,7 @@ script = ExtResource("2_fts7l")
 represents_character = ExtResource("2_vffxf")
 metadata/_custom_type_script = "uid://bd3o2cswmjmgn"
 
-[node name="CharacterSelectButton2" type="Button" parent="CharacterSelect/GridContainer"]
+[node name="CharacterSelectButton2" type="Button" parent="CharacterSelect/GridContainer" unique_id=326011347]
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -70,7 +70,7 @@ script = ExtResource("2_fts7l")
 represents_character = ExtResource("5_0frw4")
 metadata/_custom_type_script = "uid://bd3o2cswmjmgn"
 
-[node name="CharacterSelectButton3" type="Button" parent="CharacterSelect/GridContainer"]
+[node name="CharacterSelectButton3" type="Button" parent="CharacterSelect/GridContainer" unique_id=2105804286]
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -81,7 +81,7 @@ script = ExtResource("2_fts7l")
 represents_character = ExtResource("6_m7y3p")
 metadata/_custom_type_script = "uid://bd3o2cswmjmgn"
 
-[node name="CharacterSelectButton4" type="Button" parent="CharacterSelect/GridContainer"]
+[node name="CharacterSelectButton4" type="Button" parent="CharacterSelect/GridContainer" unique_id=541933328]
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -92,7 +92,7 @@ script = ExtResource("2_fts7l")
 represents_character = ExtResource("7_aofas")
 metadata/_custom_type_script = "uid://bd3o2cswmjmgn"
 
-[node name="CharacterSelectButton5" type="Button" parent="CharacterSelect/GridContainer"]
+[node name="CharacterSelectButton5" type="Button" parent="CharacterSelect/GridContainer" unique_id=1400618212]
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -103,7 +103,7 @@ script = ExtResource("2_fts7l")
 represents_character = ExtResource("6_nbeft")
 metadata/_custom_type_script = "uid://bd3o2cswmjmgn"
 
-[node name="CharacterSelectButton6" type="Button" parent="CharacterSelect/GridContainer"]
+[node name="CharacterSelectButton6" type="Button" parent="CharacterSelect/GridContainer" unique_id=2026286538]
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -114,7 +114,7 @@ script = ExtResource("2_fts7l")
 represents_character = ExtResource("7_i4i37")
 metadata/_custom_type_script = "uid://bd3o2cswmjmgn"
 
-[node name="CharacterSelectButton7" type="Button" parent="CharacterSelect/GridContainer"]
+[node name="CharacterSelectButton7" type="Button" parent="CharacterSelect/GridContainer" unique_id=1757186206]
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -125,7 +125,7 @@ script = ExtResource("2_fts7l")
 represents_character = ExtResource("10_8f1j4")
 metadata/_custom_type_script = "uid://bd3o2cswmjmgn"
 
-[node name="CharacterSelectButton8" type="Button" parent="CharacterSelect/GridContainer"]
+[node name="CharacterSelectButton8" type="Button" parent="CharacterSelect/GridContainer" unique_id=1578906700]
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -136,7 +136,7 @@ script = ExtResource("2_fts7l")
 represents_character = ExtResource("12_edg0r")
 metadata/_custom_type_script = "uid://bd3o2cswmjmgn"
 
-[node name="PanelContainer" type="PanelContainer" parent="CharacterSelect"]
+[node name="PanelContainer" type="PanelContainer" parent="CharacterSelect" unique_id=1814892754]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.2
@@ -147,27 +147,27 @@ offset_right = 40.0
 offset_bottom = 40.0
 theme_type_variation = &"TextPanelContainer"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CharacterSelect/PanelContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CharacterSelect/PanelContainer" unique_id=1538549151]
 layout_mode = 2
 
-[node name="NameLabel" type="Label" parent="CharacterSelect/PanelContainer/VBoxContainer"]
+[node name="NameLabel" type="Label" parent="CharacterSelect/PanelContainer/VBoxContainer" unique_id=402412351]
 layout_mode = 2
 text = "Name"
 
-[node name="DescLabel" type="Label" parent="CharacterSelect/PanelContainer/VBoxContainer"]
+[node name="DescLabel" type="Label" parent="CharacterSelect/PanelContainer/VBoxContainer" unique_id=1461871993]
 custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
 size_flags_vertical = 7
 text = "Big Long Description"
 autowrap_mode = 3
 
-[node name="Button" type="Button" parent="CharacterSelect/PanelContainer/VBoxContainer"]
+[node name="Button" type="Button" parent="CharacterSelect/PanelContainer/VBoxContainer" unique_id=480222616]
 layout_mode = 2
 size_flags_vertical = 7
 disabled = true
 text = "Begin!"
 
-[node name="BackButton" type="Button" parent="CharacterSelect"]
+[node name="BackButton" type="Button" parent="CharacterSelect" unique_id=366191767]
 layout_mode = 0
 offset_right = 113.0
 offset_bottom = 104.0

@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=9 format=3 uid="uid://bw2l7f67pn2it"]
+[gd_resource type="Theme" format=3 uid="uid://bw2l7f67pn2it"]
 
 [ext_resource type="StyleBox" uid="uid://de0icf8c5krx2" path="res://resources/built-in/themes/theme assets/ms_gold_stylebox.tres" id="1_2gxkd"]
 [ext_resource type="Texture2D" uid="uid://dqhg4oqbn5q8q" path="res://assets/placeholders/wood grain.png" id="2_l2t4s"]

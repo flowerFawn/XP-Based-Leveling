@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SpellMeteorShower" load_steps=5 format=3 uid="uid://bkf6nc55r187d"]
+[gd_resource type="Resource" script_class="SpellMeteorShower" format=3 uid="uid://bkf6nc55r187d"]
 
 [ext_resource type="Texture2D" uid="uid://c7vjb5acfyglb" path="res://assets/placeholders/meteor_explosion.png" id="1_17lxf"]
 [ext_resource type="Script" uid="uid://d0hbenaiagewi" path="res://scripts/resources/inherited resources/spells/s_meteor_shower.gd" id="2_fppp8"]

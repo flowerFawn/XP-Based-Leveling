@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="EnemyType" load_steps=5 format=3 uid="uid://cani8x5j71ma8"]
+[gd_resource type="Resource" script_class="EnemyType" format=3 uid="uid://cani8x5j71ma8"]
 
 [ext_resource type="Script" uid="uid://58cfsa1tna1q" path="res://scripts/resources/base resources/enemy_type.gd" id="1_dshqe"]
 [ext_resource type="Texture2D" uid="uid://v0w70nr7dj03" path="res://assets/placeholders/baby.png" id="1_trij0"]

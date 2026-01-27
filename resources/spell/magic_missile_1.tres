@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SpellMagicMissile" load_steps=5 format=3 uid="uid://ciomfgvjduepp"]
+[gd_resource type="Resource" script_class="SpellMagicMissile" format=3 uid="uid://ciomfgvjduepp"]
 
 [ext_resource type="Resource" uid="uid://dduhilr7qte0h" path="res://resources/spell/magic_missile_2.tres" id="1_v0md5"]
 [ext_resource type="Script" uid="uid://cyuaiwt5dess3" path="res://scripts/resources/inherited resources/spells/s_magic_missile.gd" id="2_wtx20"]

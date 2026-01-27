@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://pqjleu8sthqp"]
+[gd_scene format=3 uid="uid://pqjleu8sthqp"]
 
 [ext_resource type="Script" uid="uid://dc135j0xbfyn7" path="res://scripts/menu/bestiary_display.gd" id="1_rhj4j"]
 [ext_resource type="Texture2D" uid="uid://07whejpe2a7c" path="res://assets/placeholders/endearingly pathetic goblin sprite 1.png" id="2_yvsus"]
 
-[node name="VBoxContainer" type="VBoxContainer" node_paths=PackedStringArray("node_texture", "node_label")]
+[node name="VBoxContainer" type="VBoxContainer" unique_id=1685015203 node_paths=PackedStringArray("node_texture", "node_label")]
 custom_minimum_size = Vector2(250, 300)
 offset_left = -150.0
 offset_top = -167.0
@@ -16,7 +16,7 @@ script = ExtResource("1_rhj4j")
 node_texture = NodePath("EnemyTexture")
 node_label = NodePath("Label")
 
-[node name="EnemyTexture" type="TextureRect" parent="."]
+[node name="EnemyTexture" type="TextureRect" parent="." unique_id=1290065777]
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -24,7 +24,7 @@ size_flags_vertical = 0
 texture = ExtResource("2_yvsus")
 expand_mode = 1
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=1035159341]
 custom_minimum_size = Vector2(250, 30)
 layout_mode = 2
 text = "Name Goes Here!"

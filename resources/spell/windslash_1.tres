@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SpellWindSlash" load_steps=5 format=3 uid="uid://bb3wur6d4qxcf"]
+[gd_resource type="Resource" script_class="SpellWindSlash" format=3 uid="uid://bb3wur6d4qxcf"]
 
 [ext_resource type="Script" uid="uid://cpkamubmxnpfa" path="res://scripts/resources/inherited resources/spells/s_windslash.gd" id="1_f44ng"]
 [ext_resource type="Resource" uid="uid://pmeyf3est3gv" path="res://resources/spell/windslash_2.tres" id="1_iunwg"]

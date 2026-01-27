@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="EnemyType" load_steps=10 format=3 uid="uid://bg3osrk3a4ni5"]
+[gd_resource type="Resource" script_class="EnemyType" format=3 uid="uid://bg3osrk3a4ni5"]
 
 [ext_resource type="Texture2D" uid="uid://cxd2c6glws4w5" path="res://assets/placeholders/endearingly pathetic goblin sprite 4.png" id="1_ae5an"]
 [ext_resource type="Texture2D" uid="uid://b3r2xxgw2jt3d" path="res://assets/placeholders/endearingly pathetic goblin sprite 5.png" id="2_7kesf"]

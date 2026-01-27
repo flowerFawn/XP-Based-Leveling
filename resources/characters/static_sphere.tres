@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Character" load_steps=10 format=3 uid="uid://bd2xytxkapqbj"]
+[gd_resource type="Resource" script_class="Character" format=3 uid="uid://bd2xytxkapqbj"]
 
 [ext_resource type="Texture2D" uid="uid://b0wntjnflxovc" path="res://assets/placeholders/static_sphere.png" id="1_1paso"]
 [ext_resource type="Texture2D" uid="uid://cddmuu5g0aw45" path="res://assets/placeholders/Archwizard 1.png" id="1_506u6"]

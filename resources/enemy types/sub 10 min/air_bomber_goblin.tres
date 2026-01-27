@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="EnemyType" load_steps=8 format=3 uid="uid://c6qqqoynid1fh"]
+[gd_resource type="Resource" script_class="EnemyType" format=3 uid="uid://c6qqqoynid1fh"]
 
 [ext_resource type="Resource" uid="uid://d17rqm0p4fegy" path="res://resources/death effects/bomber_explosion.tres" id="1_5pt6f"]
 [ext_resource type="Texture2D" uid="uid://dbnabvrrd74ca" path="res://assets/enemies/bomber.png" id="1_a7mkc"]

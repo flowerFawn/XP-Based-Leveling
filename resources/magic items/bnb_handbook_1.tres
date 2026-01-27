@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="MIBastionsAndBugbearsHandbook" load_steps=3 format=3 uid="uid://buu4u5w3e3yf3"]
+[gd_resource type="Resource" script_class="MIBastionsAndBugbearsHandbook" format=3 uid="uid://buu4u5w3e3yf3"]
 
 [ext_resource type="Resource" uid="uid://jty3ynw153f3" path="res://resources/magic items/bnb_handbook_2.tres" id="1_41agf"]
 [ext_resource type="Script" uid="uid://65wm4f0srytb" path="res://scripts/resources/inherited resources/magic items/usable/bastions_and_bugbears_handbook.gd" id="1_vxiqq"]

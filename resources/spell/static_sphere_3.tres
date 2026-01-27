@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SpellStaticSphere" load_steps=5 format=3 uid="uid://c1drtvl16qs35"]
+[gd_resource type="Resource" script_class="SpellStaticSphere" format=3 uid="uid://c1drtvl16qs35"]
 
 [ext_resource type="Resource" uid="uid://dlmtgy2xsgclc" path="res://resources/spell/static_sphere_4.tres" id="1_ibrvp"]
 [ext_resource type="Script" uid="uid://cc7u28p7m70hs" path="res://scripts/resources/inherited resources/spells/s_static_sphere.gd" id="1_jpdvm"]

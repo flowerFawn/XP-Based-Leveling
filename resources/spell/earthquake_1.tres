@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SpellEarthquake" load_steps=5 format=3 uid="uid://dh4308dsgb1xc"]
+[gd_resource type="Resource" script_class="SpellEarthquake" format=3 uid="uid://dh4308dsgb1xc"]
 
 [ext_resource type="Resource" uid="uid://ylm4vp0kumm5" path="res://resources/spell/earthquake_2.tres" id="1_bfrpe"]
 [ext_resource type="Script" uid="uid://dqtj3553eq3ci" path="res://scripts/resources/inherited resources/spells/s_earthquake.gd" id="1_n651w"]

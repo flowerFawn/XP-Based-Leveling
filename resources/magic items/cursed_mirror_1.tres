@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="MICursedMirror" load_steps=3 format=3 uid="uid://ch0r8qw60ealk"]
+[gd_resource type="Resource" script_class="MICursedMirror" format=3 uid="uid://ch0r8qw60ealk"]
 
 [ext_resource type="Resource" uid="uid://djsiakfgu14kt" path="res://resources/magic items/cursed_mirror_2.tres" id="1_hklqh"]
 [ext_resource type="Script" uid="uid://btplm55nhln1i" path="res://scripts/resources/inherited resources/magic items/usable/cursed_mirror.gd" id="1_lxva5"]
