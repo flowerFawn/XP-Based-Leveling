@@ -55,6 +55,11 @@ func form_quad_tree(all_enemies:Array[Enemy]) -> QuadTreeBucket:
 	var all_enemy_y: Array = all_enemies.map(get_enemy_y)
 	var start:Vector2 = Vector2(all_enemy_x.min(), all_enemy_y.min())
 	var end:Vector2 = Vector2(all_enemy_x.max(), all_enemy_y.max())
+	if end.x - start.x >= end.y - start.y:
+		end.y = start.y + (end.x - start.x)
+	else:
+		end.x = start.x + (end.y - start.y)
+
 	root = QuadTreeBucket.new(start, end, all_enemies)
 	return root
 
