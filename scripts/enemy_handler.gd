@@ -44,6 +44,9 @@ func get_leaves(bucket:QuadTreeBucket) -> Array[QuadTreeBucket]:
 			for child in bucket.children:
 				leaves.append_array(get_leaves(child))
 	return leaves
+	
+func get_enemies_near_point(point:Vector2) -> Array[Enemy]:
+	return current_quadtree.get_enemies_near_point(point).filter(get_enemy_exists)
 		
 func form_quad_tree(all_enemies:Array[Enemy]) -> QuadTreeBucket:
 	var root:QuadTreeBucket 
@@ -117,6 +120,36 @@ class QuadTreeBucket:
 				return false
 		else:
 			return false
+			
+	func get_enemies_near_point(point:Vector2) -> Array[Enemy]:
+		var enemies_near_point:Array[Enemy]
+		if children.is_empty():
+			return enemies
+		else:
+			enemies_near_point = children[partition_point_is_in(point)].get_enemies_near_point(point)
+			if enemies_near_point.is_empty():
+				return get_enemies_in_partitions()
+			else:
+				return enemies_near_point
+			
+	func get_enemies_in_partitions() -> Array[Enemy]:
+		var enemies_in_partitions:Array[Enemy] = []
+		for child:QuadTreeBucket in children:
+			enemies_in_partitions.append_array(child.enemies)
+		return enemies_in_partitions
+		
+			
+	func partition_point_is_in(point:Vector2) -> int:
+		if point.x < centre_x and point.y < centre_y:
+			return 0
+		elif centre_x <= point.x and point.y < centre_y:
+			return 1
+		elif point.x < centre_x and centre_y <= point.y:
+			return 2
+		elif centre_x <= point.x and centre_y <= point.y:
+			return 3
+		else:
+			return 0
 			
 	func is_enemy_in_partition(enemy:Enemy, partition:StringName) -> bool:
 		match partition:

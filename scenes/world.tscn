@@ -20,10 +20,6 @@ game_ui = NodePath("InGameUI/Control")
 pause_menu = NodePath("PauseMenu/PauseMenu")
 spell_option_menu = NodePath("CanvasLayer/PanelContainer/SpellOptionMenu")
 
-[node name="CharacterBody2D" parent="." unique_id=1990818260 instance=ExtResource("1_nnsk1")]
-position = Vector2(1399, 1557)
-collision_mask = 0
-
 [node name="GameController" parent="." unique_id=445889301 instance=ExtResource("2_rwgxs")]
 
 [node name="ProjectileHolder" type="Node2D" parent="." unique_id=1157516958]
@@ -32,16 +28,20 @@ script = ExtResource("4_71j4m")
 [node name="EnemyHandler" type="Node2D" parent="." unique_id=901727112]
 script = ExtResource("5_4mrxx")
 
+[node name="CharacterBody2D" parent="." unique_id=1990818260 instance=ExtResource("1_nnsk1")]
+position = Vector2(1399, 1557)
+collision_mask = 0
+
 [node name="CanvasLayer" parent="." unique_id=1028091992 instance=ExtResource("4_k0juu")]
 
-[node name="PanelContainer" parent="CanvasLayer" index="0"]
+[node name="PanelContainer" parent="CanvasLayer" index="0" unique_id=2012165283]
 visible = false
 
 [node name="InGameUI" parent="." unique_id=1540152867 instance=ExtResource("6_qfnet")]
 
 [node name="PauseMenu" parent="." unique_id=1346021408 instance=ExtResource("7_i7141")]
 
-[node name="PauseMenu" parent="PauseMenu" index="0"]
+[node name="PauseMenu" parent="PauseMenu" index="0" unique_id=688620406]
 visible = false
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=95271041]
