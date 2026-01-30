@@ -1,16 +1,34 @@
 [gd_resource type="Resource" script_class="EnemyType" format=3 uid="uid://c6qqqoynid1fh"]
 
+[ext_resource type="Texture2D" uid="uid://jsqbittjpvb7" path="res://assets/placeholders/bomber goblin 2.png" id="1_5ofq4"]
 [ext_resource type="Resource" uid="uid://d17rqm0p4fegy" path="res://resources/death effects/bomber_explosion.tres" id="1_5pt6f"]
-[ext_resource type="Texture2D" uid="uid://dbnabvrrd74ca" path="res://assets/enemies/bomber.png" id="1_a7mkc"]
 [ext_resource type="Resource" uid="uid://cj6251nhvsiy8" path="res://resources/movement types/straight_enemy_movement.tres" id="2_a7mkc"]
+[ext_resource type="Texture2D" uid="uid://wccpf1apx8k1" path="res://assets/placeholders/bomber goblin 3.png" id="2_efbp3"]
 [ext_resource type="Script" uid="uid://58cfsa1tna1q" path="res://scripts/resources/base resources/enemy_type.gd" id="3_erqsf"]
+[ext_resource type="Texture2D" uid="uid://c4iuyse5tcoch" path="res://assets/placeholders/bomber goblin 1.png" id="3_mstpw"]
 [ext_resource type="Script" uid="uid://bdiusejrixhwa" path="res://scripts/enemy scripts/e_script_bomber.gd" id="4_5ofq4"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_erqsf"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_a7mkc")
+"texture": ExtResource("1_5ofq4")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_efbp3")
+}],
+"loop": true,
+"name": &"die",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_mstpw")
 }],
 "loop": true,
 "name": &"walk",

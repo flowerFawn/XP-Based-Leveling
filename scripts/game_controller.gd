@@ -49,7 +49,7 @@ func spawn_enemies(amount:int) -> void:
 	
 	update_enemy_weights(time_elapsed)
 	for enemy_to_spawn:int in range(amount):
-		spawn_enemy()
+		spawn_random_enemy()
 	GameInfo.enemy_handler.update_quadtree()
 	
 func get_enemy_amount_to_spawn() -> int:
@@ -61,15 +61,14 @@ func get_enemy_amount_to_spawn() -> int:
 	var enemies_to_spawn:int = ceili((enemy_quota - total_enemy_count) * 0.1)
 	return enemies_to_spawn
 	
-		
-func spawn_enemy() -> void:
-	var spawn_position:Vector2
-	var new_enemy:Enemy = Enemy.new_enemy(pick_weighted_random_enemy())
-	spawn_position = GameInfo.get_global_player_offset_position()
-	GameInfo.enemy_handler.add_child(new_enemy)
-	new_enemy.global_position = spawn_position
 	
-func spawn_specific_enemy(type:EnemyType, global_spawn_position:Vector2 = Vector2.ZERO) -> void:
+func spawn_random_enemy() -> void:
+	var spawn_position:Vector2
+	var type:EnemyType = pick_weighted_random_enemy()
+	spawn_position = GameInfo.get_global_player_offset_position()
+	spawn_enemy(type, spawn_position)
+	
+func spawn_enemy(type:EnemyType, global_spawn_position:Vector2 = Vector2.ZERO) -> void:
 	if global_spawn_position.is_zero_approx():
 		global_spawn_position = GameInfo.get_global_player_offset_position()
 	var new_enemy:Enemy = Enemy.new_enemy(type)
@@ -125,7 +124,7 @@ func do_event(event_name:StringName, value:int=1) -> void:
 		&"small_goblin_boss":
 			var boss_type:EnemyType = load("uid://x3677epydygv")
 			for n in range(value):
-				spawn_specific_enemy(boss_type)
+				spawn_enemy(boss_type)
 		_:
 			print("Not an event")
 	event_count += 1
