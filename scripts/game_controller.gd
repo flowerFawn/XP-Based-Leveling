@@ -57,7 +57,7 @@ func get_enemy_amount_to_spawn() -> int:
 	#0.2x + 50 -(cos^2(0.05x) * 30)
 	#most equations are on desmos
 	#starts at 20
-	var enemy_quota:int = ceili((time_elapsed * 0.2) + 50 - ((cos(0.05 * time_elapsed) ** 2) * 30))
+	var enemy_quota:int = ceili((time_elapsed * 0.1) + 50 - ((cos(0.05 * time_elapsed) ** 2) * 30))
 	var enemies_to_spawn:int = ceili((enemy_quota - total_enemy_count) * 0.1)
 	return enemies_to_spawn
 	

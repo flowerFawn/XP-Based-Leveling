@@ -6,11 +6,12 @@
 script = ExtResource("1_vq0e2")
 
 [node name="DirectionUpdateTimer" type="Timer" parent="." unique_id=1602919726]
-wait_time = 0.5
+wait_time = 0.1
 autostart = true
 ignore_time_scale = true
 
 [node name="SpawnTimer" type="Timer" parent="." unique_id=2129890179]
+wait_time = 0.5
 autostart = true
 
 [connection signal="timeout" from="DirectionUpdateTimer" to="." method="update_directions"]
