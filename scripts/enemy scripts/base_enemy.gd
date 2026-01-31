@@ -205,6 +205,7 @@ func die() -> void:
 		await enemy_type.death_effect.cause_effect(self)
 	MagicItemInfo.register_kill()
 	await death_animation()
+	begone()
 	queue_free()
 	
 func leave_xp() -> void:
@@ -218,8 +219,11 @@ func disappear(skip_animation:bool = false):
 		return
 	if not skip_animation:
 		await death_animation()
-	queue_free()
+	begone()
 #endregion
+
+func begone() -> void:
+	queue_free()
 
 func death_animation() -> void:
 	const TIME_DEATH_DISPLAYED:float = 0.5

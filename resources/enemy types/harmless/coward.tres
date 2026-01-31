@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="EnemyType" format=3 uid="uid://8ayxoa7kxcka"]
+
+[ext_resource type="Texture2D" uid="uid://brk70uirffaj3" path="res://assets/placeholders/coward.png" id="1_gbri7"]
+[ext_resource type="Script" uid="uid://58cfsa1tna1q" path="res://scripts/resources/base resources/enemy_type.gd" id="1_i67el"]
+[ext_resource type="Resource" uid="uid://bdqlvr5dgs8j3" path="res://resources/movement types/reverse_enemy_movement.tres" id="2_cg8y5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4ppwe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_gbri7")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gbri7"]
+
+[resource]
+script = ExtResource("1_i67el")
+enemy_name = "coward"
+power_level = 0
+movement_type = ExtResource("2_cg8y5")
+speed = 500.0
+collision = SubResource("CircleShape2D_gbri7")
+animations = SubResource("SpriteFrames_4ppwe")
+disappear_time = 5.0
+dies_on_collision = true
+harmless = true
+avoidant = false
+metadata/_custom_type_script = "uid://58cfsa1tna1q"

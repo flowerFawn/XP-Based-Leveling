@@ -1,6 +1,8 @@
 extends Node
 class_name GameController
 
+signal about_to_spawn
+
 var time_elapsed:float = 0
 ##List of polynomials and sine functions for determining enemy weights based on time survived, with the enemy type as the keys
 ##This helps keep them together in the code
@@ -40,6 +42,7 @@ func update_directions() -> void:
 
 #region ENEMY_SPAWNS
 func do_spawns() -> void:
+	emit_signal(&"about_to_spawn")
 	check_for_events()
 	spawn_enemies(get_enemy_amount_to_spawn())
 	if GameInfo.rnd.randf() <= 0.015 * GameInfo.player.flower_multiplier:
@@ -57,7 +60,7 @@ func get_enemy_amount_to_spawn() -> int:
 	#0.2x + 50 -(cos^2(0.05x) * 30)
 	#most equations are on desmos
 	#starts at 20
-	var enemy_quota:int = ceili((time_elapsed * 0.1) + 50 - ((cos(0.05 * time_elapsed) ** 2) * 30))
+	var enemy_quota:int = ceili((time_elapsed * 0.2) + 50 - ((cos(0.05 * time_elapsed) ** 2) * 30))
 	var enemies_to_spawn:int = ceili((enemy_quota - total_enemy_count) * 0.1)
 	return enemies_to_spawn
 	
@@ -112,19 +115,21 @@ func check_for_events() -> void:
 				do_event(&"small_goblin_swarm")
 		2:
 			if time_elapsed >= 240:
-				do_event(&"small_goblin_boss")
+				do_event(&"spawn_boss", load("uid://x3677epydygv"))
 		3:
 			if time_elapsed >= 360:
-				do_event(&"small_goblin_boss", 3)
+				do_event(&"spawn_boss", load("uid://x3677epydygv"), 3)
+		4:
+			if time_elapsed >= 720:
+				do_event(&"spawn_boss", load("uid://csfiwhe30wpbk"))
 				
-func do_event(event_name:StringName, value:int=1) -> void:
+func do_event(event_name:StringName, enemy:EnemyType = null, value:int = 1) -> void:
 	match event_name:
 		&"small_goblin_swarm":
 			spawn_enemies(50)
-		&"small_goblin_boss":
-			var boss_type:EnemyType = load("uid://x3677epydygv")
+		&"spawn_boss":
 			for n in range(value):
-				spawn_enemy(boss_type)
+				spawn_enemy(enemy)
 		_:
 			print("Not an event")
 	event_count += 1
