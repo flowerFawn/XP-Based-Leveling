@@ -17,10 +17,12 @@ func update_quadtree() -> void:
 
 func _physics_process(delta: float) -> void:
 	var valid_enemies:Array[Enemy]
+	var non_flying_enemies:Array[Enemy]
 	if current_leaves.is_empty():
 		return
 	for leaf:QuadTreeBucket in current_leaves:
 		valid_enemies = leaf.enemies.filter(get_enemy_exists)
+		non_flying_enemies = valid_enemies.filter(get_enemy_not_flying)
 		for enemy:Enemy in valid_enemies:
 			enemy.do_movement(delta, valid_enemies)
 			
@@ -78,6 +80,9 @@ func get_enemy_y(enemy:Enemy) -> float:
 
 func get_enemy_exists(enemy:Variant) -> bool:
 	return is_instance_valid(enemy)
+	
+func get_enemy_not_flying(enemy:Enemy) -> bool:
+	return not enemy.enemy_type.flying
 
 class QuadTreeBucket:
 	const BUCKET_MAX:int = 15

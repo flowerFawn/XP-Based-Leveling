@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="EnemyType" format=3 uid="uid://pg2g85cj3eyf"]
+
+[ext_resource type="Texture2D" uid="uid://cmxi7b17wqd4r" path="res://assets/enemies/chimera.png" id="1_hfjon"]
+[ext_resource type="Script" uid="uid://58cfsa1tna1q" path="res://scripts/resources/base resources/enemy_type.gd" id="1_qm0li"]
+[ext_resource type="Resource" uid="uid://cj6251nhvsiy8" path="res://resources/movement types/straight_enemy_movement.tres" id="2_7j3jg"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k7sw0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_hfjon")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d6vsv"]
+radius = 200.0
+
+[resource]
+script = ExtResource("1_qm0li")
+enemy_name = "Chimera"
+power_level = 3
+movement_type = ExtResource("2_7j3jg")
+speed = 250.0
+hitstop_time = 0.1
+contact_damage = 18.0
+xp_reward = 50.0
+base_health = 800.0
+collision = SubResource("CircleShape2D_d6vsv")
+animations = SubResource("SpriteFrames_k7sw0")
+flying = true
+avoidant = false
+metadata/_custom_type_script = "uid://58cfsa1tna1q"

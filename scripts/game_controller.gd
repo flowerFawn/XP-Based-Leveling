@@ -120,6 +120,12 @@ func check_for_events() -> void:
 			if time_elapsed >= 360:
 				do_event(&"spawn_boss", load("uid://x3677epydygv"), 3)
 		4:
+			if time_elapsed >= 480:
+				do_event(&"spawn_boss", load("uid://pg2g85cj3eyf"))
+		5:
+			if time_elapsed >= 600:
+				do_event(&"spawn_boss", load("uid://c7omd3nnmtdal"))
+		6:
 			if time_elapsed >= 720:
 				do_event(&"spawn_boss", load("uid://csfiwhe30wpbk"))
 				

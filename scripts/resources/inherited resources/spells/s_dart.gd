@@ -6,6 +6,7 @@ class_name SpellDart
 
 func _init() -> void:
 	base_description = "Creates a dart of magical energy that homes in on enemies"
+	ability_name = "Dart"
 
 func cast() -> void:
 	for n:int in range(projectile_count):
