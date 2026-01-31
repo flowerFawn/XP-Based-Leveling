@@ -13,13 +13,13 @@
     },
     "res://resources/enemy types/sub 10 min/": {
       "metadata/_custom_type_script": {
-        "visibility": 0
+        "visibility": 0.0
       },
       "resource_local_to_scene": {
-        "visibility": 0
+        "visibility": 0.0
       },
       "resource_name": {
-        "visibility": 0
+        "visibility": 0.0
       }
     },
     "res://resources/spell/": {
@@ -44,7 +44,7 @@
       "return true"
     ],
     "process": [
-      "return res.speed * 1.5"
+      "return value"
     ]
   }
 }
