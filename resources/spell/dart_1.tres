@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="SpellDart" format=3 uid="uid://cdeat18ybv3ib"]
+
+[ext_resource type="Resource" uid="uid://dafo2fkkny88a" path="res://resources/spell/dart_2.tres" id="1_s2kih"]
+[ext_resource type="Script" uid="uid://pkhugh72qm68" path="res://scripts/resources/inherited resources/spells/s_dart.gd" id="1_yfkhm"]
+[ext_resource type="Texture2D" uid="uid://85imollwfwgd" path="res://assets/placeholders/dart.png" id="2_y4pn8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s2kih"]
+
+[resource]
+script = ExtResource("1_yfkhm")
+dart_force = 1.0
+cooldown = 2.0
+damage = 8.0
+projectile_speed = 800.0
+projectile_pierce = 1
+multi_projectile_delay = 0.05
+shape = SubResource("CircleShape2D_s2kih")
+texture = ExtResource("2_y4pn8")
+rarity = 2.0
+next_upgrade = ExtResource("1_s2kih")
+metadata/_custom_type_script = "uid://pkhugh72qm68"

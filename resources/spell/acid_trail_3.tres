@@ -1,5 +1,6 @@
 [gd_resource type="Resource" script_class="SpellAcidtrail" format=3 uid="uid://b780trwm87kv8"]
 
+[ext_resource type="Resource" uid="uid://jyye3e88dg66" path="res://resources/spell/acid_trail_4.tres" id="1_3atwh"]
 [ext_resource type="Script" uid="uid://xxhkqprc4d0u" path="res://scripts/resources/inherited resources/spells/s_acid_trail.gd" id="1_jvij8"]
 [ext_resource type="Texture2D" uid="uid://kwfpi37sm6kr" path="res://assets/placeholders/goop.png" id="2_3atwh"]
 
@@ -17,4 +18,5 @@ texture = ExtResource("2_3atwh")
 level_description = "Decreased cooldown"
 level = 3
 rarity = 2
+next_upgrade = ExtResource("1_3atwh")
 metadata/_custom_type_script = "uid://xxhkqprc4d0u"

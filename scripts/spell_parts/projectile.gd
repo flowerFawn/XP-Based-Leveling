@@ -10,7 +10,7 @@ var remaining_pierce:int
 var start_position
 var position_offset:Vector2
 
-func _init(speed:float, damage:float, shape:Shape2D, direction:Vector2, sprite:Texture2D, max_pierce:int = 0, offset:Vector2 = Vector2.ZERO, decay_time:float = 1,new_start_position:Vector2 = Vector2.ZERO) -> void:
+func _init(speed:float, damage:float, shape:Shape2D, direction:Vector2, sprite:Texture2D, max_pierce:int = 0, offset:Vector2 = Vector2.ZERO, decay_time:float = 4,new_start_position:Vector2 = Vector2.ZERO) -> void:
 	set_collision_layer_value(1, false)
 	set_collision_mask_value(1, false)
 	set_collision_mask_value(2, true)
@@ -42,7 +42,7 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	var direction:Vector2 = get_direction()
 	rotation = direction.angle()
-	move(direction * active_speed)
+	move(direction * active_speed * delta)
 	
 func get_direction() -> Vector2:
 	return active_direction

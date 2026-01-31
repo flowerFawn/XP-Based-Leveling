@@ -10,7 +10,7 @@
 script = ExtResource("1_6d8q1")
 cooldown = 1.0
 damage = 4.0
-projectile_speed = 60.0
+projectile_speed = 3000.0
 projectile_count = 5
 projectile_pierce = 1
 multi_projectile_delay = 0.05

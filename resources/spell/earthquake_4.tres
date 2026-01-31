@@ -14,5 +14,5 @@ shape = SubResource("CircleShape2D_cae2g")
 texture = ExtResource("2_vyhb7")
 visual_scale = 1.5
 level_description = "Decreased cooldown."
-level = 3
+level = 4
 metadata/_custom_type_script = "uid://dqtj3553eq3ci"

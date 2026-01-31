@@ -46,7 +46,10 @@ func get_leaves(bucket:QuadTreeBucket) -> Array[QuadTreeBucket]:
 	return leaves
 	
 func get_enemies_near_point(point:Vector2) -> Array[Enemy]:
-	return current_quadtree.get_enemies_near_point(point).filter(get_enemy_exists)
+	if current_quadtree:
+		return current_quadtree.get_enemies_near_point(point).filter(get_enemy_exists)
+	else:
+		return []
 		
 func form_quad_tree(all_enemies:Array[Enemy]) -> QuadTreeBucket:
 	var root:QuadTreeBucket 

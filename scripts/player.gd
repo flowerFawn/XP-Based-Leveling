@@ -72,7 +72,6 @@ func _physics_process(delta: float) -> void:
 	move_and_collide(movement_vector * delta)
 	fake_background(movement_vector * delta)
 	GameInfo.update_player_info(self)
-	print(GameInfo.enemy_handler.get_enemies_near_point(position))
 
 func fake_background(movement:Vector2) -> void:
 	var shader:ShaderMaterial = node_fake_background.material

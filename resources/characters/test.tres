@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://dse7vf0l5vfv0" path="res://scripts/resources/base resources/character.gd" id="4_h32v8"]
 [ext_resource type="Resource" uid="uid://bpa7drmk0sban" path="res://resources/ability pools/standard.tres" id="5_g6v7p"]
 [ext_resource type="Resource" uid="uid://buu4u5w3e3yf3" path="res://resources/magic items/bnb_handbook_1.tres" id="6_4vqr7"]
-[ext_resource type="Resource" uid="uid://bf44xxifkxb73" path="res://resources/spell/polymorph_1.tres" id="7_unjei"]
+[ext_resource type="Resource" uid="uid://cdeat18ybv3ib" path="res://resources/spell/dart_1.tres" id="7_unjei"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_76sif"]
 animations = [{

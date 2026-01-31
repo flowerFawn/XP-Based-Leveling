@@ -9,7 +9,7 @@
 script = ExtResource("1_pg51u")
 cooldown = 1.0
 damage = 4.0
-projectile_speed = 60.0
+projectile_speed = 3000.0
 projectile_count = 5
 projectile_pierce = 3
 multi_projectile_delay = 0.05

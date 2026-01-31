@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="SpellDart" format=3 uid="uid://dmkkfkc4wpjl6"]
+
+[ext_resource type="Script" uid="uid://pkhugh72qm68" path="res://scripts/resources/inherited resources/spells/s_dart.gd" id="1_sf1gv"]
+[ext_resource type="Texture2D" uid="uid://85imollwfwgd" path="res://assets/placeholders/dart.png" id="2_p6kk6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p887a"]
+
+[resource]
+script = ExtResource("1_sf1gv")
+dart_force = 4.0
+cooldown = 2.0
+damage = 8.0
+projectile_speed = 1000.0
+projectile_count = 6
+projectile_pierce = 1
+multi_projectile_delay = 0.05
+shape = SubResource("CircleShape2D_p887a")
+texture = ExtResource("2_p6kk6")
+level_description = "Increased amount of darts"
+level = 4
+rarity = 2.0
+metadata/_custom_type_script = "uid://pkhugh72qm68"
