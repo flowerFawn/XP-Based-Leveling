@@ -109,10 +109,10 @@ func check_for_events() -> void:
 	match event_count:
 		0:
 			if time_elapsed >= 60:
-				do_event(&"small_goblin_swarm")
+				do_event(&"swarm", null, 50)
 		1:
 			if time_elapsed >= 120:
-				do_event(&"small_goblin_swarm")
+				do_event(&"swarm", null, 50)
 		2:
 			if time_elapsed >= 240:
 				do_event(&"spawn_boss", load("uid://x3677epydygv"))
@@ -120,19 +120,30 @@ func check_for_events() -> void:
 			if time_elapsed >= 360:
 				do_event(&"spawn_boss", load("uid://x3677epydygv"), 3)
 		4:
+			if time_elapsed >= 420:
+				do_event(&"swarm", null, 75)
+		5:
 			if time_elapsed >= 480:
 				do_event(&"spawn_boss", load("uid://pg2g85cj3eyf"))
 		5:
 			if time_elapsed >= 600:
 				do_event(&"spawn_boss", load("uid://c7omd3nnmtdal"))
-		6:
+		7:
 			if time_elapsed >= 720:
 				do_event(&"spawn_boss", load("uid://csfiwhe30wpbk"))
+		8:
+			if time_elapsed >= 780:
+				do_event(&"swarm", null, 100)
+		9:
+			if time_elapsed >= 900:
+				pass
+				#big boss goes here
+			
 				
 func do_event(event_name:StringName, enemy:EnemyType = null, value:int = 1) -> void:
 	match event_name:
-		&"small_goblin_swarm":
-			spawn_enemies(50)
+		&"swarm":
+			spawn_enemies(value)
 		&"spawn_boss":
 			for n in range(value):
 				spawn_enemy(enemy)

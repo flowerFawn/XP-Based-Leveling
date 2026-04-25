@@ -21,7 +21,7 @@ func cast() -> void:
 	var transformation_type:EnemyType
 	for enemy:Enemy in picked_enemies:
 		transformation_type = transformations.pick_random()
-		GameInfo.game_controller.spawn_specific_enemy(transformation_type, enemy.position)
+		GameInfo.game_controller.spawn_enemy(transformation_type, enemy.position)
 		enemy.disappear(true)
 		draw_line_from_player(enemy.global_position - player.global_position)
 

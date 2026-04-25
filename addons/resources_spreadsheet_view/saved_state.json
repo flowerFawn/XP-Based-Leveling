@@ -11,6 +11,28 @@
         "visibility": 0.0
       }
     },
+    "res://resources/enemy types/": {
+      "metadata/_custom_type_script": {
+        "visibility": 0
+      },
+      "resource_local_to_scene": {
+        "visibility": 0
+      },
+      "resource_name": {
+        "visibility": 0
+      }
+    },
+    "res://resources/enemy types/event/": {
+      "metadata/_custom_type_script": {
+        "visibility": 0
+      },
+      "resource_local_to_scene": {
+        "visibility": 0
+      },
+      "resource_name": {
+        "visibility": 0
+      }
+    },
     "res://resources/enemy types/sub 10 min/": {
       "metadata/_custom_type_script": {
         "visibility": 0.0
@@ -37,7 +59,9 @@
   "recent_paths": [
     "res://assets/enemies/",
     "res://resources/spell/",
-    "res://resources/enemy types/sub 10 min/"
+    "res://resources/enemy types/sub 10 min/",
+    "res://resources/enemy types/event/",
+    "res://resources/enemy types/"
   ],
   "table_functions": {
     "filter": [

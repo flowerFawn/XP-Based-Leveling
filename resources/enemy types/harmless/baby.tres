@@ -15,11 +15,14 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_8inmy"]
+
 [resource]
 script = ExtResource("1_dshqe")
 power_level = 0
 movement_type = ExtResource("2_8inmy")
 speed = 25.0
+collision = SubResource("CircleShape2D_8inmy")
 animations = SubResource("SpriteFrames_8inmy")
 disappear_time = 15.0
 harmless = true
