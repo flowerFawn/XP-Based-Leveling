@@ -25,7 +25,7 @@ resources_spreadsheet_view/freeze_first_column=true
 
 config/name="Sketch Spell Survivors"
 run/main_scene="uid://cbx2d77h30sx7"
-config/features=PackedStringArray("4.6", "Mobile")
+config/features=PackedStringArray("4.7", "Mobile")
 config/icon="res://icon.svg"
 
 [autoload]
