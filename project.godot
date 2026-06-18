@@ -23,7 +23,7 @@ resources_spreadsheet_view/freeze_first_column=true
 
 [application]
 
-config/name="Sketch Spell Survivors"
+config/name="Experience Based Levelling"
 run/main_scene="uid://cbx2d77h30sx7"
 config/features=PackedStringArray("4.7", "Mobile")
 config/icon="res://icon.svg"
@@ -106,3 +106,4 @@ player_right={
 [rendering]
 
 renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true

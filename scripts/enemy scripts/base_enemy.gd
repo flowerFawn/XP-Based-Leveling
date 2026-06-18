@@ -22,7 +22,7 @@ var on_damage_cooldown:bool = false:
 	set(value):
 		on_damage_cooldown = value
 		node_collision.disabled = true
-		node_collision.disabled = false
+		node_collision.set_deferred(&"disabled", false)
 var hitstopped:bool = false
 var active_hitstops:int = 0
 

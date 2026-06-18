@@ -75,3 +75,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_dqkch")
+
+[node name="VirtualJoystick" type="VirtualJoystick" parent="." unique_id=787073547]
+offset_left = -2400.0
+offset_top = -1400.0
+offset_right = 2400.0
+offset_bottom = 1400.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+joystick_mode = 1
+action_left = &"player_left"
+action_right = &"player_right"
+action_up = &"player_up"
+action_down = &"player_down"
+visibility_mode = 1
