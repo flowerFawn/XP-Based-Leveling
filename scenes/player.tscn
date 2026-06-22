@@ -21,13 +21,12 @@ radius = 75.0
 shader = ExtResource("4_qlg0r")
 shader_parameter/scroll_uv = Vector2(0, 0)
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1726390198 node_paths=PackedStringArray("node_sprite", "node_progress", "node_red_flash_timer", "node_input_buffer_timer", "node_fake_background") groups=["Player"]]
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1726390198 node_paths=PackedStringArray("node_sprite", "node_progress", "node_red_flash_timer", "node_fake_background") groups=["Player"]]
 collision_layer = 5
 script = ExtResource("1_rkhd4")
 node_sprite = NodePath("AnimatedSprite2D")
 node_progress = NodePath("ProgressBar")
 node_red_flash_timer = NodePath("RedFlashTimer")
-node_input_buffer_timer = NodePath("DiagonalInputBufferTimer")
 node_fake_background = NodePath("FakeBackgroundRect")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1896226649]
@@ -61,9 +60,6 @@ current = true
 [node name="RedFlashTimer" type="Timer" parent="." unique_id=1685079618]
 wait_time = 0.3
 
-[node name="DiagonalInputBufferTimer" type="Timer" parent="." unique_id=1173213260]
-one_shot = true
-
 [node name="FakeBackgroundRect" type="TextureRect" parent="." unique_id=1344061558]
 z_index = -5
 z_as_relative = false
@@ -83,6 +79,8 @@ offset_right = 2400.0
 offset_bottom = 1400.0
 pivot_offset_ratio = Vector2(0.5, 0.5)
 joystick_mode = 1
+joystick_size = 300.0
+tip_size = 150.0
 action_left = &"player_left"
 action_right = &"player_right"
 action_up = &"player_up"

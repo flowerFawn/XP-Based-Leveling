@@ -15,8 +15,8 @@ grow_vertical = 2
 theme = ExtResource("1_dxr1k")
 script = ExtResource("1_rqcjd")
 skip_check = NodePath("PanelContainer/PanelContainer/ScrollContainer/VBoxContainer/SkipIntroCheck")
-buffer_slider = NodePath("PanelContainer/PanelContainer/ScrollContainer/VBoxContainer/PanelContainer/HBoxContainer/BufferSlider")
-buffer_slider_label = NodePath("PanelContainer/PanelContainer/ScrollContainer/VBoxContainer/PanelContainer/HBoxContainer/BufferLabel")
+buffer_slider = NodePath("")
+buffer_slider_label = NodePath("")
 screen_option = NodePath("PanelContainer/PanelContainer/ScrollContainer/VBoxContainer/ScreenOption")
 show_quadtree_check = NodePath("PanelContainer/PanelContainer/ScrollContainer/VBoxContainer/ShowQuadTreeCheck")
 
@@ -47,25 +47,6 @@ custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 text = "Skip Intro"
 
-[node name="PanelContainer" type="PanelContainer" parent="Control/PanelContainer/PanelContainer/ScrollContainer/VBoxContainer" unique_id=483268515]
-layout_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/PanelContainer/PanelContainer/ScrollContainer/VBoxContainer/PanelContainer" unique_id=685637000]
-layout_mode = 2
-
-[node name="BufferLabel" type="Label" parent="Control/PanelContainer/PanelContainer/ScrollContainer/VBoxContainer/PanelContainer/HBoxContainer" unique_id=179210213]
-layout_mode = 2
-text = "Input Buffer: 0.0"
-
-[node name="BufferSlider" type="HSlider" parent="Control/PanelContainer/PanelContainer/ScrollContainer/VBoxContainer/PanelContainer/HBoxContainer" unique_id=288774316]
-layout_mode = 2
-size_flags_horizontal = 3
-max_value = 1.0
-step = 0.1
-tick_count = 20
-ticks_on_borders = true
-ticks_position = 3
-
 [node name="ScreenOption" type="OptionButton" parent="Control/PanelContainer/PanelContainer/ScrollContainer/VBoxContainer" unique_id=1202731040]
 layout_mode = 2
 item_count = 2
@@ -88,7 +69,6 @@ text = "Back
 "
 
 [connection signal="toggled" from="Control/PanelContainer/PanelContainer/ScrollContainer/VBoxContainer/SkipIntroCheck" to="Control" method="_on_skip_intro_check_toggled"]
-[connection signal="value_changed" from="Control/PanelContainer/PanelContainer/ScrollContainer/VBoxContainer/PanelContainer/HBoxContainer/BufferSlider" to="Control" method="_on_buffer_slider_value_changed"]
 [connection signal="item_selected" from="Control/PanelContainer/PanelContainer/ScrollContainer/VBoxContainer/ScreenOption" to="Control" method="_on_fullscreen_option_item_selected"]
 [connection signal="toggled" from="Control/PanelContainer/PanelContainer/ScrollContainer/VBoxContainer/ShowQuadTreeCheck" to="Control" method="_on_show_quad_tree_check_toggled"]
 [connection signal="pressed" from="Control/PanelContainer/BackButton" to="Control" method="_on_back_button_pressed"]

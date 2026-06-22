@@ -21,7 +21,7 @@ var dying:bool = false
 var on_damage_cooldown:bool = false:
 	set(value):
 		on_damage_cooldown = value
-		node_collision.disabled = true
+		node_collision.set_deferred(&"disabled", true)
 		node_collision.set_deferred(&"disabled", false)
 var hitstopped:bool = false
 var active_hitstops:int = 0
@@ -199,7 +199,7 @@ func die() -> void:
 	if dying:
 		return
 	dying = true
-	node_collision.disabled = true
+	node_collision.set_deferred(&"disabled", true)
 	leave_xp()
 	if enemy_type.death_effect != null:
 		await enemy_type.death_effect.cause_effect(self)
@@ -210,7 +210,7 @@ func die() -> void:
 	
 func leave_xp() -> void:
 	var xp_orb:XPOrb = XPOrb.new(enemy_type.xp_reward)
-	GameInfo.projectile_holder.add_child(xp_orb)
+	GameInfo.projectile_holder.call_deferred(&"add_child", xp_orb)
 	xp_orb.global_position = global_position
 	
 ##Disappearing is different from dying, in that it causes no death effect and no xp reward
