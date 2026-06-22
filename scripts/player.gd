@@ -85,6 +85,7 @@ func get_direction() -> Vector2:
 		accurate_orientation.y = round(direction.y)
 		is_moving = true
 		node_sprite.play()
+	else:
 		is_moving = false
 		node_sprite.pause()
 	if direction.x != 0:
