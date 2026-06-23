@@ -21,6 +21,9 @@ func _ready() -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action("ui_cancel"):
+		pause_game()
+		
+func pause_game() -> void:
 		get_tree().paused = true
 		pause_menu.visible = true
 		await pause_menu.unpause

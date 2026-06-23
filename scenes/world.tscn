@@ -47,6 +47,8 @@ visible = false
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=95271041]
 stream = SubResource("AudioStreamPolyphonic_i7141")
 
+[connection signal="pressed" from="InGameUI/Control/VBoxContainer/PauseButton" to="." method="pause_game"]
+
 [editable path="CanvasLayer"]
 [editable path="InGameUI"]
 [editable path="PauseMenu"]
