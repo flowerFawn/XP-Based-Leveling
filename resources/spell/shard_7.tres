@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="SpellShard" format=3 uid="uid://dqhtmjique7bd"]
+
+[ext_resource type="Script" uid="uid://cruvp1vxd4ktu" path="res://scripts/resources/inherited resources/spells/s_shard.gd" id="1_2atae"]
+[ext_resource type="Resource" uid="uid://dt6hunlv65q2p" path="res://resources/spell/shard_8.tres" id="1_44x8o"]
+[ext_resource type="Texture2D" uid="uid://n0tbfppan7pj" path="res://assets/placeholders/shard.png" id="2_44x8o"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6ik21"]
+
+[resource]
+script = ExtResource("1_2atae")
+cooldown = 0.8
+damage = 5.0
+projectile_speed = 3000.0
+projectile_count = 7
+projectile_pierce = 3
+multi_projectile_delay = 0.05
+shape = SubResource("CircleShape2D_6ik21")
+texture = ExtResource("2_44x8o")
+level_description = "Increased projectile count"
+level = 7
+next_upgrade = ExtResource("1_44x8o")
+metadata/_custom_type_script = "uid://cruvp1vxd4ktu"

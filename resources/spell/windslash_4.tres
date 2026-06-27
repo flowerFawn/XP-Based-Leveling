@@ -1,5 +1,6 @@
 [gd_resource type="Resource" script_class="SpellWindSlash" format=3 uid="uid://cxudoootomklr"]
 
+[ext_resource type="Resource" uid="uid://65saq7is0rgu" path="res://resources/spell/windslash_5.tres" id="1_1o5yo"]
 [ext_resource type="Script" uid="uid://cpkamubmxnpfa" path="res://scripts/resources/inherited resources/spells/s_windslash.gd" id="1_nfxd7"]
 [ext_resource type="Texture2D" uid="uid://ciyc5edifs2db" path="res://assets/placeholders/windslash.png" id="2_1o5yo"]
 
@@ -17,5 +18,6 @@ shape = SubResource("RectangleShape2D_f44ng")
 texture = ExtResource("2_1o5yo")
 visual_scale = 1.2
 level_description = "Attacks an additional time"
-level = 3
+level = 4
+next_upgrade = ExtResource("1_1o5yo")
 metadata/_custom_type_script = "uid://cpkamubmxnpfa"

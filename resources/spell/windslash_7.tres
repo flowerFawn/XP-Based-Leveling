@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="SpellWindSlash" format=3 uid="uid://co2b1v3mi6i37"]
+
+[ext_resource type="Resource" uid="uid://dlga1shgex101" path="res://resources/spell/windslash_8.tres" id="1_icpuu"]
+[ext_resource type="Script" uid="uid://cpkamubmxnpfa" path="res://scripts/resources/inherited resources/spells/s_windslash.gd" id="1_x2qle"]
+[ext_resource type="Texture2D" uid="uid://ciyc5edifs2db" path="res://assets/placeholders/windslash.png" id="2_icpuu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xwkpj"]
+size = Vector2(20, 250)
+
+[resource]
+script = ExtResource("1_x2qle")
+cooldown = 1.5
+damage = 16.0
+projectile_speed = 600.0
+projectile_count = 3
+multi_projectile_delay = 0.5
+shape = SubResource("RectangleShape2D_xwkpj")
+texture = ExtResource("2_icpuu")
+visual_scale = 1.4
+level_description = "Decreased cooldown"
+level = 7
+next_upgrade = ExtResource("1_icpuu")
+metadata/_custom_type_script = "uid://cpkamubmxnpfa"

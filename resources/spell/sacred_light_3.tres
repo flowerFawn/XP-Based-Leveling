@@ -1,5 +1,6 @@
 [gd_resource type="Resource" script_class="SpellSacredLight" format=3 uid="uid://cb8yap36kq6j1"]
 
+[ext_resource type="Resource" uid="uid://chyv66t4c3abg" path="res://resources/spell/sacred_light_4.tres" id="1_7fb0d"]
 [ext_resource type="Script" uid="uid://b2dkid11uh6v2" path="res://scripts/resources/inherited resources/spells/s_sacred_light.gd" id="1_8qxuu"]
 [ext_resource type="Texture2D" uid="uid://37lbvgmhev70" path="res://assets/placeholders/sacred_light.png" id="2_7fb0d"]
 
@@ -18,4 +19,5 @@ shape = SubResource("CircleShape2D_068u6")
 texture = ExtResource("2_7fb0d")
 level_description = "Projectiles last longer"
 level = 3
+next_upgrade = ExtResource("1_7fb0d")
 metadata/_custom_type_script = "uid://b2dkid11uh6v2"

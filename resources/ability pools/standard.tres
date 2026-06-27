@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://i4vxs0c4oet7" path="res://scripts/resources/base resources/player_ability.gd" id="1_yyggw"]
 [ext_resource type="Script" uid="uid://cppbyt13invqd" path="res://scripts/resources/base resources/ability_pool.gd" id="2_8tfyf"]
 [ext_resource type="Resource" uid="uid://7vmgb80p33sl" path="res://resources/spell/shard_1.tres" id="2_y8ce4"]
-[ext_resource type="Resource" uid="uid://ciomfgvjduepp" path="res://resources/spell/magic_missile_1.tres" id="3_in45v"]
+[ext_resource type="Resource" uid="uid://ciomfgvjduepp" path="res://resources/spell/blast_1.tres" id="3_in45v"]
 [ext_resource type="Resource" uid="uid://dh4308dsgb1xc" path="res://resources/spell/earthquake_1.tres" id="4_mqlwa"]
 [ext_resource type="Resource" uid="uid://bb3wur6d4qxcf" path="res://resources/spell/windslash_1.tres" id="5_s4t2w"]
 [ext_resource type="Resource" uid="uid://cnpu8eq5ibo8b" path="res://resources/magic items/crystal_collection_1.tres" id="6_8tevm"]
@@ -23,7 +23,7 @@
 [ext_resource type="Resource" uid="uid://ht6eey7nq6ro" path="res://resources/magic items/hasty_spellbook_1.tres" id="20_mwtu6"]
 [ext_resource type="Resource" uid="uid://bmwxl8twxj6bf" path="res://resources/magic items/flower_crown_1.tres" id="21_mwtu6"]
 [ext_resource type="Resource" uid="uid://coysr5cd7luva" path="res://resources/magic items/winged_boots_1.tres" id="22_maq5a"]
-[ext_resource type="Resource" uid="uid://cdeat18ybv3ib" path="res://resources/spell/dart_1.tres" id="23_eycgo"]
+[ext_resource type="Resource" uid="uid://cdeat18ybv3ib" path="res://resources/spell/magic_missile_1.tres" id="23_eycgo"]
 
 [resource]
 script = ExtResource("2_8tfyf")

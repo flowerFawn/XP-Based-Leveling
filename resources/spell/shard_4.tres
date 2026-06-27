@@ -1,5 +1,6 @@
 [gd_resource type="Resource" script_class="SpellShard" format=3 uid="uid://cudhxsxhqenmq"]
 
+[ext_resource type="Resource" uid="uid://w5dcr7bv432j" path="res://resources/spell/shard_5.tres" id="1_f0sgm"]
 [ext_resource type="Script" uid="uid://cruvp1vxd4ktu" path="res://scripts/resources/inherited resources/spells/s_shard.gd" id="1_pg51u"]
 [ext_resource type="Texture2D" uid="uid://n0tbfppan7pj" path="res://assets/placeholders/shard.png" id="2_f0sgm"]
 
@@ -17,4 +18,5 @@ shape = SubResource("CircleShape2D_ynue0")
 texture = ExtResource("2_f0sgm")
 level_description = "Shards pierce two more times"
 level = 4
+next_upgrade = ExtResource("1_f0sgm")
 metadata/_custom_type_script = "uid://cruvp1vxd4ktu"

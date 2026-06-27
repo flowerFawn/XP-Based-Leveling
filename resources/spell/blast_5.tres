@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="SpellMagicMissile" format=3 uid="uid://b5lsl7a6mp4fa"]
+
+[ext_resource type="Resource" uid="uid://cbuyq8x3irgck" path="res://resources/spell/blast_6.tres" id="1_0epxb"]
+[ext_resource type="Script" uid="uid://cyuaiwt5dess3" path="res://scripts/resources/inherited resources/spells/s_blast.gd" id="1_tidso"]
+[ext_resource type="Texture2D" uid="uid://xmadt3jeoget" path="res://assets/placeholders/bolt.png" id="2_0epxb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_khaa7"]
+radius = 40.0
+
+[resource]
+script = ExtResource("1_tidso")
+cooldown = 5.0
+damage = 30.0
+projectile_speed = 1750.0
+projectile_count = 3
+projectile_pierce = 2
+multi_projectile_delay = 0.1
+shape = SubResource("CircleShape2D_khaa7")
+texture = ExtResource("2_0epxb")
+level_description = "Additional damage"
+level = 5
+next_upgrade = ExtResource("1_0epxb")
+metadata/_custom_type_script = "uid://cyuaiwt5dess3"

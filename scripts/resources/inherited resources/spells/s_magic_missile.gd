@@ -1,17 +1,18 @@
 extends Spell
-class_name SpellMagicMissile
+class_name SpellDart
+
+##affects how the dart can turn
+@export var dart_force:float
 
 func _init() -> void:
-	ability_name = "Magic Missile"
-	base_description = "Shoots a bolt"
+	base_description = "Creates a dart of magical energy that homes in on enemies"
+	ability_name = "Dart"
 
 func cast() -> void:
-	if not GameInfo.projectile_holder:
-		return
-	for n in range(projectile_count):
-		shoot_bolt(n)
+	for n:int in range(projectile_count):
+		shoot_dart(n)
 		await wait_time(multi_projectile_delay)
-
-func shoot_bolt(n:int):
-	GameInfo.projectile_holder.add_child(PlayerProjectile.new(
-projectile_speed, damage, shape, get_direction_to_nearest_enemy(), texture, projectile_pierce, get_random_offset(clampi(n, 0, 1))))
+		
+func shoot_dart(n:int) -> void:
+	if player:
+		GameInfo.projectile_holder.add_child(HomingPlayerProjectile.new(projectile_speed, dart_force, damage, shape, get_random_angle_vector(), texture, projectile_pierce, Vector2.ZERO, 10))

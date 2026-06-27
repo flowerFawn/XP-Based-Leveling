@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://i4vxs0c4oet7" path="res://scripts/resources/base resources/player_ability.gd" id="1_xsy38"]
 [ext_resource type="Script" uid="uid://cppbyt13invqd" path="res://scripts/resources/base resources/ability_pool.gd" id="2_8mi3s"]
-[ext_resource type="Resource" uid="uid://ciomfgvjduepp" path="res://resources/spell/magic_missile_1.tres" id="2_b3faa"]
+[ext_resource type="Resource" uid="uid://ciomfgvjduepp" path="res://resources/spell/blast_1.tres" id="2_b3faa"]
 [ext_resource type="Resource" uid="uid://7vmgb80p33sl" path="res://resources/spell/shard_1.tres" id="3_b3faa"]
 [ext_resource type="Resource" uid="uid://bb3wur6d4qxcf" path="res://resources/spell/windslash_1.tres" id="4_ootwi"]
 [ext_resource type="Resource" uid="uid://buu4u5w3e3yf3" path="res://resources/magic items/bnb_handbook_1.tres" id="5_sbktm"]

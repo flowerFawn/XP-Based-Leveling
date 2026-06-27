@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="SpellShard" format=3 uid="uid://b5hvlseb6dgu0"]
+
+[ext_resource type="Resource" uid="uid://dqhtmjique7bd" path="res://resources/spell/shard_7.tres" id="1_clymu"]
+[ext_resource type="Script" uid="uid://cruvp1vxd4ktu" path="res://scripts/resources/inherited resources/spells/s_shard.gd" id="1_o42y5"]
+[ext_resource type="Texture2D" uid="uid://n0tbfppan7pj" path="res://assets/placeholders/shard.png" id="2_clymu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_md3b1"]
+
+[resource]
+script = ExtResource("1_o42y5")
+cooldown = 0.8
+damage = 5.0
+projectile_speed = 3000.0
+projectile_count = 5
+projectile_pierce = 3
+multi_projectile_delay = 0.05
+shape = SubResource("CircleShape2D_md3b1")
+texture = ExtResource("2_clymu")
+level_description = "Decreased cooldown"
+level = 6
+next_upgrade = ExtResource("1_clymu")
+metadata/_custom_type_script = "uid://cruvp1vxd4ktu"

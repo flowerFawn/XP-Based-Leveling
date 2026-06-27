@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="SpellEarthquake" format=3 uid="uid://bkdfvph1axhar"]
+
+[ext_resource type="Script" uid="uid://dqtj3553eq3ci" path="res://scripts/resources/inherited resources/spells/s_earthquake.gd" id="1_34mwj"]
+[ext_resource type="Resource" uid="uid://ruxkgicxotir" path="res://resources/spell/earthquake_8.tres" id="1_def4g"]
+[ext_resource type="Texture2D" uid="uid://bs2aw6atyld2d" path="res://assets/placeholders/earthquake.png" id="2_def4g"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oabnd"]
+radius = 400.0
+
+[resource]
+script = ExtResource("1_34mwj")
+cooldown = 2.5
+damage = 30.0
+shape = SubResource("CircleShape2D_oabnd")
+texture = ExtResource("2_def4g")
+visual_scale = 2.0
+level_description = "Increased damage. Decreased cooldown."
+level = 7
+next_upgrade = ExtResource("1_def4g")
+metadata/_custom_type_script = "uid://dqtj3553eq3ci"

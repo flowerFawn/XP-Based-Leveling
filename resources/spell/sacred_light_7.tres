@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="SpellSacredLight" format=3 uid="uid://bm7ejd736lqav"]
+
+[ext_resource type="Resource" uid="uid://wl6bboia44xx" path="res://resources/spell/sacred_light_8.tres" id="1_dgj0i"]
+[ext_resource type="Script" uid="uid://b2dkid11uh6v2" path="res://scripts/resources/inherited resources/spells/s_sacred_light.gd" id="1_x6o45"]
+[ext_resource type="Texture2D" uid="uid://37lbvgmhev70" path="res://assets/placeholders/sacred_light.png" id="2_dgj0i"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jamh5"]
+radius = 25.0
+
+[resource]
+script = ExtResource("1_x6o45")
+rotation_change = 720.0
+rotation_time = 6.0
+cooldown = 4.0
+damage = 12.0
+projectile_speed = 300.0
+projectile_count = 4
+shape = SubResource("CircleShape2D_jamh5")
+texture = ExtResource("2_dgj0i")
+level_description = "Creates an addition projectile."
+level = 7
+next_upgrade = ExtResource("1_dgj0i")
+metadata/_custom_type_script = "uid://b2dkid11uh6v2"
