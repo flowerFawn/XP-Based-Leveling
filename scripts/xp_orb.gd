@@ -15,7 +15,8 @@ func _init(given_xp_amount:float):
 	shape.radius = 150
 	collision_node.shape = shape
 	sprite_node.texture = sprite
-	sprite_node.scale = Vector2(given_xp_amount / 2.0, given_xp_amount / 2.0)
+	var scale_to_use:float = sqrt(given_xp_amount)
+	sprite_node.scale = Vector2(scale_to_use, scale_to_use)
 	add_child(collision_node)
 	add_child(sprite_node)
 	body_entered.connect(be_picked_up)

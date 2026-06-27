@@ -30,7 +30,7 @@ node_red_flash_timer = NodePath("RedFlashTimer")
 node_fake_background = NodePath("FakeBackgroundRect")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1896226649]
-zoom = Vector2(0.25, 0.25)
+zoom = Vector2(0.33, 0.33)
 
 [node name="Trianglewizard" type="Sprite2D" parent="." unique_id=1835201595]
 visible = false

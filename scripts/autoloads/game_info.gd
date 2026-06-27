@@ -22,7 +22,10 @@ func update_player_info(player:Player) -> void:
 ##Returns a global position on the border of the camera, based on the player
 func get_local_player_offset_position() -> Vector2:
 	var spawn_offset:Vector2
-	const CAMERA_DISTANCE_VECTOR:Vector2 = Vector2(2350, 1350)
+	#based on screen size / zoom / 2
+	#1152 / 0.33 / 2 = 1745
+	#648 / 0.33 / 2 = 982
+	const CAMERA_DISTANCE_VECTOR:Vector2 = Vector2(1745, 982)
 	var neg_constant:int = [-1, 1][GameInfo.rnd.randi_range(0, 1)]
 	var appears_from_centre:bool = [false, true][GameInfo.rnd.randi_range(0, 1)]
 	if appears_from_centre:
