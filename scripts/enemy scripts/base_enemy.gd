@@ -65,14 +65,12 @@ func collision_entered(body:Node2D):
 	if body.is_in_group(&"Player") and not on_damage_cooldown and enemy_type.collides_with_player:
 		var player:Player = body
 		if player.take_damage(enemy_type.contact_damage):
-			node_sprite.play(&"attack")
 			on_damage_cooldown = true
 			await get_tree().create_timer(enemy_type.damage_cooldown, false).timeout
 			if enemy_type.dies_on_collision:
 				die()
 				return
 			else:
-				node_sprite.play(&"walk")
 				on_damage_cooldown = false
 			
 			
@@ -100,8 +98,7 @@ static func new_enemy(enemy_type:EnemyType) -> Enemy:
 	if not enemy_type.harmless:
 		new_enemy_instance.set_collision_layer_value(2, true)
 	new_enemy_instance.node_sprite = AnimatedSprite2D.new()
-	new_enemy_instance.node_sprite.material = ShaderMaterial.new()
-	new_enemy_instance.node_sprite.material.shader = preload("uid://6bjklt2wni63")
+	new_enemy_instance.node_sprite.material = preload("uid://dwb5iwax2p8kn")
 	#this is so the 200x200 pixel sprites by default take up the 100x100 pixel space we want them to
 	new_enemy_instance.node_sprite.scale = Vector2(0.5, 0.5)
 	new_enemy_instance.node_collision = CollisionShape2D.new()
@@ -150,13 +147,13 @@ func take_damage(amount:float) -> void:
 	if active_health <= 0:
 		die()
 		return
-	node_sprite.material.set_shader_parameter(&"harmed", true)
+	node_sprite.set_instance_shader_parameter(&"harmed", true)
 	hitstopped = true
 	active_hitstops += 1
 	await get_tree().create_timer(enemy_type.hitstop_time, false).timeout
 	active_hitstops -= 1
 	if active_hitstops <= 0:
-		node_sprite.material.set_shader_parameter(&"harmed", false)
+		node_sprite.set_instance_shader_parameter(&"harmed", false)
 		hitstopped = false
 		
 func register_hit(damage:float) -> void:
@@ -206,7 +203,6 @@ func die() -> void:
 	MagicItemInfo.register_kill()
 	await death_animation()
 	begone()
-	queue_free()
 	
 func leave_xp() -> void:
 	var xp_orb:XPOrb = XPOrb.new(enemy_type.xp_reward)
@@ -226,6 +222,10 @@ func begone() -> void:
 	queue_free()
 
 func death_animation() -> void:
-	const TIME_DEATH_DISPLAYED:float = 0.5
-	node_sprite.play(&"die")
-	await get_tree().create_timer(TIME_DEATH_DISPLAYED, false).timeout
+	var fade_time:float = pow(enemy_type.base_health, 0.33) * 0.5
+	var death_tween:Tween = create_tween()
+	death_tween.tween_method(set_death_shader_threshold, 0.0, 1.0, fade_time)
+	await death_tween.finished
+	
+func set_death_shader_threshold(value:float) -> void:
+	node_sprite.set_instance_shader_parameter(&"death_fade_threshold", value)

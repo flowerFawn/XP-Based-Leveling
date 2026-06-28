@@ -9,6 +9,8 @@ func _init():
 	ability_name = "Meteor Shower"
 	
 func cast() -> void:
+	if not is_instance_valid(spell_handler):
+		return
 	if len(spell_handler.get_tree().get_nodes_in_group(&"Enemy")) <= 0:
 		return
 	for n:int in range(projectile_count):
