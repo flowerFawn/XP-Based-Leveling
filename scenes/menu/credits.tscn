@@ -1,30 +1,32 @@
-[gd_scene format=3 uid="uid://bd7helba444mi"]
+[gd_scene format=3 uid="uid://ct6fuk6xb6s82"]
 
 [ext_resource type="Script" uid="uid://clsi7xxwcnco8" path="res://scripts/menu/credits.gd" id="1_4y82v"]
 
-[node name="Control" type="Control" unique_id=1389257146 node_paths=PackedStringArray("credits_container", "background_color")]
+[node name="Control" type="Control" unique_id=296296842 node_paths=PackedStringArray("credits_container", "background_color")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("1_4y82v")
 credits_container = NodePath("CreditsText")
 background_color = NodePath("Background")
 
-[node name="CreditsText" type="VBoxContainer" parent="." unique_id=349424192]
+[node name="CreditsText" type="VBoxContainer" parent="." unique_id=360036492]
 z_index = 2
+custom_maximum_size = Vector2(1152, 920)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_bottom = 226.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CreditsText" unique_id=1864607413]
+[node name="RichTextLabel" type="RichTextLabel" parent="CreditsText" unique_id=1112060167]
 layout_mode = 2
 bbcode_enabled = true
 text = "Kris \"Beyond.Adonis\" Barton
@@ -71,7 +73,7 @@ fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Background" type="ColorRect" parent="." unique_id=1173467079]
+[node name="Background" type="ColorRect" parent="." unique_id=536971555]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

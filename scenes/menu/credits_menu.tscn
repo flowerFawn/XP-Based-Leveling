@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://bd7helba444mi"]
+
+[ext_resource type="PackedScene" uid="uid://ct6fuk6xb6s82" path="res://scenes/menu/credits.tscn" id="1_ge00q"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_rxjn2"]
+viewport_path = NodePath("SubViewport")
+
+[node name="Control" type="Control" unique_id=1339485606]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1348703334]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("ViewportTexture_rxjn2")
+stretch_mode = 5
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=841165435]
+size = Vector2i(1152, 648)
+
+[node name="Control" parent="SubViewport" unique_id=296296842 instance=ExtResource("1_ge00q")]
