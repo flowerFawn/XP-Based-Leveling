@@ -7,6 +7,13 @@ class_name InGameUI
 @export var kill_count_label:Label
 @export var level_label:Label
 
+@export var tutorial:TextureButton
+
+func _ready() -> void:
+	if Config.show_tutorial:
+		get_tree().paused = true
+		tutorial.visible = true
+
 func set_kill_counter(value:int):
 	kill_count_label.text = "Kills:%02d" % value
 	
@@ -19,3 +26,10 @@ func set_timer(time_elapsed:float):
 
 func set_level_counter(value:int):
 	level_label.text = "LV:%d" % value
+
+
+func _on_texture_button_pressed() -> void:
+	tutorial.visible = false
+	get_tree().paused = false
+	Config.show_tutorial = false
+	Config.serialise()

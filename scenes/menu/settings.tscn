@@ -5,7 +5,7 @@
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=652988485]
 
-[node name="Control" type="Control" parent="." unique_id=1197820255 node_paths=PackedStringArray("skip_check", "buffer_slider", "buffer_slider_label", "screen_option", "show_quadtree_check")]
+[node name="Control" type="Control" parent="." unique_id=1197820255 node_paths=PackedStringArray("skip_check", "screen_option", "show_quadtree_check", "show_tutorial_check")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -15,10 +15,9 @@ grow_vertical = 2
 theme = ExtResource("1_dxr1k")
 script = ExtResource("1_rqcjd")
 skip_check = NodePath("PanelContainer/PanelContainer/ScrollContainer/VBoxContainer/SkipIntroCheck")
-buffer_slider = NodePath("")
-buffer_slider_label = NodePath("")
 screen_option = NodePath("PanelContainer/PanelContainer/ScrollContainer/VBoxContainer/ScreenOption")
 show_quadtree_check = NodePath("PanelContainer/PanelContainer/ScrollContainer/VBoxContainer/ShowQuadTreeCheck")
+show_tutorial_check = NodePath("PanelContainer/PanelContainer/ScrollContainer/VBoxContainer/TutorialCheck")
 
 [node name="PanelContainer" type="PanelContainer" parent="Control" unique_id=673505887]
 layout_mode = 1
@@ -60,6 +59,10 @@ custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 text = "Show QuadTree (Nerd Stuff)"
 
+[node name="TutorialCheck" type="CheckBox" parent="Control/PanelContainer/PanelContainer/ScrollContainer/VBoxContainer" unique_id=751672108]
+layout_mode = 2
+text = "Show Tutorial"
+
 [node name="BackButton" type="Button" parent="Control/PanelContainer" unique_id=1846035365]
 custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
@@ -71,4 +74,5 @@ text = "Back
 [connection signal="toggled" from="Control/PanelContainer/PanelContainer/ScrollContainer/VBoxContainer/SkipIntroCheck" to="Control" method="_on_skip_intro_check_toggled"]
 [connection signal="item_selected" from="Control/PanelContainer/PanelContainer/ScrollContainer/VBoxContainer/ScreenOption" to="Control" method="_on_fullscreen_option_item_selected"]
 [connection signal="toggled" from="Control/PanelContainer/PanelContainer/ScrollContainer/VBoxContainer/ShowQuadTreeCheck" to="Control" method="_on_show_quad_tree_check_toggled"]
+[connection signal="toggled" from="Control/PanelContainer/PanelContainer/ScrollContainer/VBoxContainer/TutorialCheck" to="Control" method="_on_tutorial_check_toggled"]
 [connection signal="pressed" from="Control/PanelContainer/BackButton" to="Control" method="_on_back_button_pressed"]

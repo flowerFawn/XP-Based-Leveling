@@ -7,10 +7,13 @@ extends Control
 
 @export var show_quadtree_check:CheckBox
 
+@export var show_tutorial_check:CheckBox
+
 
 func _ready():
 	skip_check.button_pressed = Config.skip_intro
 	show_quadtree_check.button_pressed = Config.show_quadtree
+	show_tutorial_check.button_pressed = Config.show_tutorial
 	
 
 func _on_back_button_pressed() -> void:
@@ -31,3 +34,7 @@ func _on_fullscreen_option_item_selected(index: int) -> void:
 
 func _on_show_quad_tree_check_toggled(toggled_on: bool) -> void:
 	Config.show_quadtree = toggled_on
+
+
+func _on_tutorial_check_toggled(toggled_on: bool) -> void:
+	Config.show_tutorial = toggled_on

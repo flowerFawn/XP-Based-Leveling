@@ -6,7 +6,6 @@ class_name Player
 @export var node_red_flash_timer:Timer
 @export var node_input_buffer_timer:Timer
 @export var node_fake_background:TextureRect
-var buffer_time
 
 var speed:int = 350
 var active_health:float = 100:
@@ -49,7 +48,6 @@ var magic_items:Array[MagicItem] = []
 
 func _ready() -> void:
 	GameInfo.player = self
-	buffer_time = Config.input_buffer
 	await get_tree().current_scene.ready
 	set_character(GameInfo.character)
 	node_progress.min_value = 0

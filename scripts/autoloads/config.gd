@@ -8,11 +8,6 @@ var skip_intro:bool:
 		return current_config.skip_intro
 	set(value):
 		current_config.skip_intro = value
-var input_buffer:float:
-	get:
-		return current_config.input_buffer
-	set(value):
-		current_config.input_buffer = value
 var screen_mode:int:
 	get:
 		return current_config.screen_mode
@@ -23,6 +18,11 @@ var show_quadtree:bool:
 		return current_config.show_quadtree
 	set(value):
 		current_config.show_quadtree = value
+var show_tutorial:bool:
+	get:
+		return current_config.show_tutorial
+	set(value):
+		current_config.show_tutorial = value
 		
 		
 

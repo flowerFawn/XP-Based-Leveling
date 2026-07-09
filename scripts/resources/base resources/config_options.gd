@@ -5,3 +5,4 @@ class_name ConfigOptions
 @export var input_buffer:float = 0.1
 @export var screen_mode:int = 3
 @export var show_quadtree:bool = false
+@export var show_tutorial:bool = true
