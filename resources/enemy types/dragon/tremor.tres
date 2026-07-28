@@ -11,7 +11,7 @@ animations = [{
 "texture": ExtResource("1_tk2s7")
 }],
 "loop": 1,
-"name": &"default",
+"name": &"walk",
 "speed": 5.0
 }]
 

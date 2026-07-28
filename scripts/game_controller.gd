@@ -111,7 +111,6 @@ func check_for_events() -> void:
 	match event_count:
 		0:
 			if time_elapsed >= 60:
-				do_event(&"spawn_boss", load("uid://0grtet4mh0rg"))
 				do_event(&"swarm", null, 50)
 		1:
 			if time_elapsed >= 120:
@@ -122,25 +121,29 @@ func check_for_events() -> void:
 		3:
 			if time_elapsed >= 360:
 				do_event(&"spawn_boss", load("uid://x3677epydygv"), 3)
+				do_event(&"spawn_boss", load("uid://csfiwhe30wpbk"))
 		4:
 			if time_elapsed >= 420:
 				do_event(&"swarm", null, 75)
 		5:
 			if time_elapsed >= 480:
+				do_event(&"spawn_boss", load("uid://c7omd3nnmtdal"), 2)
+		6:
+			if time_elapsed >= 540:
 				do_event(&"spawn_boss", load("uid://pg2g85cj3eyf"))
-		5:
+		7:
 			if time_elapsed >= 600:
 				do_event(&"spawn_boss", load("uid://c7omd3nnmtdal"))
-		7:
+		8:
 			if time_elapsed >= 720:
 				do_event(&"spawn_boss", load("uid://csfiwhe30wpbk"))
-		8:
+		9:
 			if time_elapsed >= 780:
 				do_event(&"swarm", null, 100)
-		9:
+		10:
 			if time_elapsed >= 900:
-				pass
-				#big boss goes here
+				do_event(&"dragon")
+				#dragon
 			
 				
 func do_event(event_name:StringName, enemy:EnemyType = null, value:int = 1) -> void:
@@ -150,6 +153,15 @@ func do_event(event_name:StringName, enemy:EnemyType = null, value:int = 1) -> v
 		&"spawn_boss":
 			for n in range(value):
 				spawn_enemy(enemy)
+		&"dragon":
+			event_count = -2
+			GameInfo.game_ui.play_animation(
+				[load("uid://ctjgu81dk3e5m"), load("uid://k57pcdsba2qk"), load("uid://b1xiyye6yqxwm"), load("uid://crufckcp2b67r")])
+			await get_tree().create_timer(1).timeout
+			GameInfo.enemy_handler.make_all_flee()
+			GameInfo.player.burn_background()
+			await get_tree().create_timer(1).timeout
+			spawn_enemy(load("uid://bvuoehkxbirhq"))
 		_:
 			print("Not an event")
 	event_count += 1

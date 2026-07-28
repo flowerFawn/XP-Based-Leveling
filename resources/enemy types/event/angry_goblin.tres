@@ -12,7 +12,7 @@ animations = [{
 "texture": ExtResource("1_i75wl")
 }],
 "loop": 1,
-"name": &"default",
+"name": &"walk",
 "speed": 5.0
 }]
 

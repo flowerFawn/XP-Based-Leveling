@@ -235,3 +235,6 @@ func update_preexisting_spell_cooldown(spell_handler:SpellHandler, change_multip
 	
 
 #endregion
+
+func burn_background() -> void:
+	node_fake_background.texture = load("uid://b2e6vsjuk2w5m")

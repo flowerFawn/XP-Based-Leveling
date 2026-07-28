@@ -26,6 +26,18 @@ func _physics_process(delta: float) -> void:
 		for enemy:Enemy in valid_enemies:
 			enemy.do_movement(delta, valid_enemies)
 			
+func make_all_flee() -> void:
+	var all_enemies:Array[Enemy]
+	all_enemies.assign(get_children())
+	for enemy:Enemy in all_enemies:
+		enemy.enemy_type.movement_type = preload("uid://bdqlvr5dgs8j3")
+		
+func make_all_begone() -> void:
+	var all_enemies:Array[Enemy]
+	all_enemies.assign(get_children())
+	for enemy:Enemy in all_enemies:
+		enemy.begone()
+			
 func _draw() -> void:
 	for leaf:QuadTreeBucket in current_leaves:
 		draw_line(leaf.start, leaf.end, Color.BLACK)

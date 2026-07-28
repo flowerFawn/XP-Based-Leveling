@@ -1,0 +1,43 @@
+[gd_resource type="Resource" script_class="EnemyType" format=3 uid="uid://gsmbtnvv8tal"]
+
+[ext_resource type="Texture2D" uid="uid://dqslexxugcykc" path="res://assets/enemies/dragon_fireball.png" id="1_2xn6x"]
+[ext_resource type="Script" uid="uid://58cfsa1tna1q" path="res://scripts/resources/base resources/enemy_type.gd" id="1_egjvw"]
+[ext_resource type="Script" uid="uid://dnh1inx0mt37h" path="res://scripts/resources/inherited resources/enemy movement types/e_movement_straight.gd" id="1_xuc3p"]
+[ext_resource type="Script" uid="uid://c6psn5epdkmi4" path="res://scripts/enemy scripts/e_enemy_projectile.gd" id="4_222fj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k35mi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_2xn6x")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rxjn2"]
+radius = 50.0
+
+[sub_resource type="Resource" id="Resource_xuc3p"]
+script = ExtResource("1_xuc3p")
+metadata/_custom_type_script = "uid://dnh1inx0mt37h"
+
+[resource]
+script = ExtResource("1_egjvw")
+enemy_name = "fireball"
+power_level = 0
+movement_type = SubResource("Resource_xuc3p")
+speed = 600.0
+hitstop_time = 0.0
+contact_damage = 20.0
+damage_cooldown = 0.0
+base_health = 30.0
+collision = SubResource("CircleShape2D_rxjn2")
+animations = SubResource("SpriteFrames_k35mi")
+unique_script = ExtResource("4_222fj")
+disappear_time = 15.0
+dies_on_collision = true
+flying = true
+avoidant = false
+metadata/_custom_type_script = "uid://58cfsa1tna1q"

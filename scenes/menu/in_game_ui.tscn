@@ -6,12 +6,18 @@
 [ext_resource type="Texture2D" uid="uid://ccxsabshh0hx5" path="res://assets/placeholders/xp_progress_under.png" id="2_wspi5"]
 [ext_resource type="Texture2D" uid="uid://bd7dci6fcskf5" path="res://assets/placeholders/xp_progress_over.png" id="3_ib547"]
 [ext_resource type="Texture2D" uid="uid://bc3g6cpvp0uq4" path="res://assets/placeholders/tutorial.png" id="6_ib547"]
+[ext_resource type="Script" uid="uid://dqadllkng3fw8" path="res://scripts/controls/animation_rect.gd" id="6_iix8x"]
+[ext_resource type="Texture2D" uid="uid://ctjgu81dk3e5m" path="res://assets/placeholders/flame_cover_1.png" id="7_k0g41"]
+[ext_resource type="Texture2D" uid="uid://k57pcdsba2qk" path="res://assets/placeholders/flame_cover_2.png" id="8_pwenj"]
+[ext_resource type="Texture2D" uid="uid://b1xiyye6yqxwm" path="res://assets/placeholders/flame_cover_3.png" id="9_m27ds"]
+[ext_resource type="Texture2D" uid="uid://crufckcp2b67r" path="res://assets/placeholders/flame_cover_4.png" id="10_io413"]
+[ext_resource type="Texture2D" uid="uid://xtu6mrnupsvj" path="res://assets/placeholders/flame_cover_5.png" id="11_lrext"]
 
 [node name="InGameUI" type="CanvasLayer" unique_id=530250151]
 process_mode = 3
 layer = 20
 
-[node name="Control" type="Control" parent="." unique_id=1781531315 node_paths=PackedStringArray("xp_progress", "timer_label", "dps_label", "kill_count_label", "level_label", "tutorial")]
+[node name="Control" type="Control" parent="." unique_id=1781531315 node_paths=PackedStringArray("xp_progress", "timer_label", "dps_label", "kill_count_label", "level_label", "animation_rect", "tutorial")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -27,6 +33,7 @@ timer_label = NodePath("VBoxContainer/HBoxContainer2/TimeLabel")
 dps_label = NodePath("VBoxContainer/HBoxContainer2/DpsLabel")
 kill_count_label = NodePath("VBoxContainer/HBoxContainer2/KillLabel")
 level_label = NodePath("LevelLabel")
+animation_rect = NodePath("AnimationRect")
 tutorial = NodePath("../TextureButton")
 
 [node name="LevelLabel" type="Label" parent="Control" unique_id=1840969812]
@@ -86,6 +93,19 @@ text = "  Pause  "
 layout_mode = 2
 size_flags_vertical = 3
 mouse_filter = 0
+
+[node name="AnimationRect" type="TextureRect" parent="Control" unique_id=874663901]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("6_iix8x")
+sprites = Array[Texture2D]([ExtResource("7_k0g41"), ExtResource("8_pwenj"), ExtResource("9_m27ds"), ExtResource("10_io413"), ExtResource("11_lrext")])
+fps = 2
+metadata/_custom_type_script = "uid://dqadllkng3fw8"
 
 [node name="TextureButton" type="TextureButton" parent="." unique_id=138223319]
 process_mode = 3

@@ -7,6 +7,7 @@ class_name InGameUI
 @export var kill_count_label:Label
 @export var level_label:Label
 
+@export var animation_rect:AnimationRect
 @export var tutorial:TextureButton
 
 func _ready() -> void:
@@ -33,3 +34,11 @@ func _on_texture_button_pressed() -> void:
 	get_tree().paused = false
 	Config.show_tutorial = false
 	Config.serialise()
+	
+func play_animation(animation:Array[Texture2D], fps:int = 2):
+	animation_rect.sprites = animation
+	animation_rect.fps = fps
+	animation_rect.visible = true
+	animation_rect.play_animation()
+	await animation_rect.finished
+	animation_rect.visible = false

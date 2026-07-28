@@ -1,0 +1,41 @@
+[gd_resource type="Resource" script_class="EnemyType" format=3 uid="uid://bvuoehkxbirhq"]
+
+[ext_resource type="Texture2D" uid="uid://c2maonoeymweo" path="res://assets/enemies/dragon.png" id="1_665kw"]
+[ext_resource type="Script" uid="uid://58cfsa1tna1q" path="res://scripts/resources/base resources/enemy_type.gd" id="1_ce1la"]
+[ext_resource type="Script" uid="uid://dnh1inx0mt37h" path="res://scripts/resources/inherited resources/enemy movement types/e_movement_straight.gd" id="2_lma82"]
+[ext_resource type="Script" uid="uid://cyy5cu8q7ofqr" path="res://scripts/enemy scripts/e_script_dragon.gd" id="4_lma82"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_665kw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_665kw")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lma82"]
+radius = 300.0
+
+[sub_resource type="Resource" id="Resource_dsk2g"]
+script = ExtResource("2_lma82")
+metadata/_custom_type_script = "uid://dnh1inx0mt37h"
+
+[resource]
+script = ExtResource("1_ce1la")
+enemy_name = "Dragon"
+power_level = 5
+movement_type = SubResource("Resource_dsk2g")
+speed = 350.0
+hitstop_time = 0.05
+contact_damage = 60.0
+damage_cooldown = 0.5
+xp_reward = 100000.0
+base_health = 1000.0
+collision = SubResource("CircleShape2D_lma82")
+animations = SubResource("SpriteFrames_665kw")
+unique_script = ExtResource("4_lma82")
+avoidant = false
+metadata/_custom_type_script = "uid://58cfsa1tna1q"
