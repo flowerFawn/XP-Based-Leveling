@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="EnemyType" format=3 uid="uid://0grtet4mh0rg"]
+
+[ext_resource type="Script" uid="uid://58cfsa1tna1q" path="res://scripts/resources/base resources/enemy_type.gd" id="1_5brwy"]
+[ext_resource type="Texture2D" uid="uid://c4v3jaxhkmbyi" path="res://assets/enemies/angry.png" id="1_i75wl"]
+[ext_resource type="Script" uid="uid://dnh1inx0mt37h" path="res://scripts/resources/inherited resources/enemy movement types/e_movement_straight.gd" id="2_tei8v"]
+[ext_resource type="Script" uid="uid://bdq57gu2a8j4d" path="res://scripts/enemy scripts/e_script_angry.gd" id="4_tei8v"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tei8v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_i75wl")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i75wl"]
+
+[sub_resource type="Resource" id="Resource_4g0as"]
+script = ExtResource("2_tei8v")
+metadata/_custom_type_script = "uid://dnh1inx0mt37h"
+
+[resource]
+script = ExtResource("1_5brwy")
+enemy_name = "Angry Goblin"
+power_level = 3
+movement_type = SubResource("Resource_4g0as")
+speed = 200.0
+hitstop_time = 0.3
+contact_damage = 20.0
+damage_cooldown = 1.0
+xp_reward = 20.0
+base_health = 300.0
+collision = SubResource("CircleShape2D_i75wl")
+animations = SubResource("SpriteFrames_tei8v")
+unique_script = ExtResource("4_tei8v")
+avoidant = false
+metadata/_custom_type_script = "uid://58cfsa1tna1q"

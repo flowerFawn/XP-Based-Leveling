@@ -20,6 +20,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("3_h05kn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_5cdnv")
 }],
 "loop": 1,
 "name": &"walk",

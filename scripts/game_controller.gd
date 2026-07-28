@@ -25,7 +25,9 @@ var enemy_type_and_weights_dict:Dictionary[EnemyType, Callable] = ({
 	preload("uid://bssmo6phtbsds"):func (x) -> float: return -0.0005 * (x-340) * (x-600), #12 - high goblin 3
 	preload("uid://bsmucuhc10knl"):func (x) -> float: return -0.0002 * (x-360) * (x-590), #12 - high grunt
 	preload("uid://dt45jm2b3fh5k"):func (x) -> float: return -0.0003 * (x-360) * (x-590), #12 - high hammer
-	preload("uid://b45uv8ytc8ydn"):func (x) -> float: if x > 600: return 10 else: return false #13 placeholder strong
+	preload("uid://b45uv8ytc8ydn"):func (x) -> float: if x > 600 and x < 900: return 10 else: return false, #13 placeholder strong
+	preload("uid://buioiep2k6dh8"):func (x) -> float: if x > 900: return 10 else: return false, #13 placeholder strong
+	preload("uid://ba7jhwdm1eqxj"):func (x) -> float: if x > 900: return 10 else: return false #13 placeholder strong
 })
 ##The most recently calculated enemy weights, based on enemy type weight functions array
 var enemy_type_current_weight_array:PackedFloat32Array = PackedFloat32Array([])
@@ -109,13 +111,14 @@ func check_for_events() -> void:
 	match event_count:
 		0:
 			if time_elapsed >= 60:
+				do_event(&"spawn_boss", load("uid://0grtet4mh0rg"))
 				do_event(&"swarm", null, 50)
 		1:
 			if time_elapsed >= 120:
 				do_event(&"swarm", null, 50)
 		2:
 			if time_elapsed >= 240:
-				do_event(&"spawn_boss", load("uid://x3677epydygv"))
+				do_event(&"spawn_boss", load("uid://0grtet4mh0rg"))
 		3:
 			if time_elapsed >= 360:
 				do_event(&"spawn_boss", load("uid://x3677epydygv"), 3)

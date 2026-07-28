@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="EnemyType" format=3 uid="uid://ba7jhwdm1eqxj"]
+
+[ext_resource type="Script" uid="uid://58cfsa1tna1q" path="res://scripts/resources/base resources/enemy_type.gd" id="1_7qyke"]
+[ext_resource type="Texture2D" uid="uid://bfbyokdpmtu8a" path="res://assets/enemies/tremor.png" id="1_tk2s7"]
+[ext_resource type="Resource" uid="uid://cj6251nhvsiy8" path="res://resources/movement types/straight_enemy_movement.tres" id="2_ndp43"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tk2s7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_tk2s7")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j6rsm"]
+radius = 30.0
+
+[resource]
+script = ExtResource("1_7qyke")
+enemy_name = "tremor"
+movement_type = ExtResource("2_ndp43")
+speed = 150.0
+hitstop_time = 0.0
+contact_damage = 20.0
+base_health = 100000.0
+collision = SubResource("CircleShape2D_j6rsm")
+animations = SubResource("SpriteFrames_tk2s7")
+disappear_time = 15.0
+dies_on_collision = true
+avoidant = false
+metadata/_custom_type_script = "uid://58cfsa1tna1q"

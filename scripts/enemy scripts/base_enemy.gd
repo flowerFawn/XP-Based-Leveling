@@ -100,7 +100,7 @@ static func new_enemy(enemy_type:EnemyType) -> Enemy:
 	new_enemy_instance.node_sprite = AnimatedSprite2D.new()
 	new_enemy_instance.node_sprite.material = preload("uid://dwb5iwax2p8kn")
 	#this is so the 200x200 pixel sprites by default take up the 100x100 pixel space we want them to
-	new_enemy_instance.node_sprite.scale = Vector2(0.5, 0.5)
+	new_enemy_instance.node_sprite.scale = Vector2(0.75, 0.75)
 	new_enemy_instance.node_collision = CollisionShape2D.new()
 	new_enemy_instance.y_sort_enabled = true
 	if enemy_type.flying:

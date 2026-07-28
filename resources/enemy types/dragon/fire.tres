@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="EnemyType" format=3 uid="uid://buioiep2k6dh8"]
+
+[ext_resource type="Texture2D" uid="uid://c5ldgtqdphs2w" path="res://assets/enemies/fire.png" id="1_horyf"]
+[ext_resource type="Resource" uid="uid://cs835w0gccdg6" path="res://resources/movement types/static.tres" id="1_rwy6f"]
+[ext_resource type="Script" uid="uid://58cfsa1tna1q" path="res://scripts/resources/base resources/enemy_type.gd" id="1_yb02a"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i4c7i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_horyf")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d7nbq"]
+
+[resource]
+script = ExtResource("1_yb02a")
+enemy_name = "Fire"
+power_level = 0
+movement_type = ExtResource("1_rwy6f")
+hitstop_time = 0.0
+contact_damage = 10.0
+damage_cooldown = 0.1
+base_health = 100000.0
+collision = SubResource("CircleShape2D_d7nbq")
+animations = SubResource("SpriteFrames_i4c7i")
+disappear_time = 60.0
+metadata/_custom_type_script = "uid://58cfsa1tna1q"

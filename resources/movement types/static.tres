@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="EnemyMovementStatic" format=3 uid="uid://cs835w0gccdg6"]
+
+[ext_resource type="Script" uid="uid://gwce71g83tno" path="res://scripts/resources/inherited resources/enemy movement types/e_movement_static.gd" id="1_jij34"]
+
+[resource]
+script = ExtResource("1_jij34")
+metadata/_custom_type_script = "uid://gwce71g83tno"
