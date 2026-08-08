@@ -6,6 +6,7 @@ class_name InGameUI
 @export var dps_label:Label
 @export var kill_count_label:Label
 @export var level_label:Label
+@export var game_over_menu:GameOverMenu
 
 @export var animation_rect:AnimationRect
 @export var tutorial:TextureButton
@@ -27,6 +28,15 @@ func set_timer(time_elapsed:float):
 
 func set_level_counter(value:int):
 	level_label.text = "LV:%d" % value
+	
+func game_over() -> void:
+	game_over_menu.game_finished()
+	game_over_menu.offset_transform_position.y = -500
+	var move_tween:Tween = create_tween()
+	move_tween.set_trans(Tween.TRANS_ELASTIC)
+	move_tween.set_ease(Tween.EASE_IN_OUT)
+	move_tween.tween_property(game_over_menu, "offset_transform_position", Vector2(0, 0), 3)
+	game_over_menu.visible = true
 
 
 func _on_texture_button_pressed() -> void:

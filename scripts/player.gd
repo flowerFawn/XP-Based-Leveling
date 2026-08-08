@@ -149,9 +149,7 @@ func die():
 	#TODO: replace with a death screen
 	stop_flash()
 	get_tree().paused = true
-	get_tree().call_deferred(&"change_scene_to_packed", load("uid://dj5n2ohldosah"))
-	await get_tree().scene_changed
-	get_tree().paused = false
+	GameInfo.game_ui.game_over()
 #endregion
 
 #region ABILITIES

@@ -12,12 +12,13 @@
 [ext_resource type="Texture2D" uid="uid://b1xiyye6yqxwm" path="res://assets/placeholders/flame_cover_3.png" id="9_m27ds"]
 [ext_resource type="Texture2D" uid="uid://crufckcp2b67r" path="res://assets/placeholders/flame_cover_4.png" id="10_io413"]
 [ext_resource type="Texture2D" uid="uid://xtu6mrnupsvj" path="res://assets/placeholders/flame_cover_5.png" id="11_lrext"]
+[ext_resource type="PackedScene" uid="uid://dreehivc7ld13" path="res://scenes/menu/game_over.tscn" id="12_k0g41"]
 
 [node name="InGameUI" type="CanvasLayer" unique_id=530250151]
 process_mode = 3
 layer = 20
 
-[node name="Control" type="Control" parent="." unique_id=1781531315 node_paths=PackedStringArray("xp_progress", "timer_label", "dps_label", "kill_count_label", "level_label", "animation_rect", "tutorial")]
+[node name="Control" type="Control" parent="." unique_id=1781531315 node_paths=PackedStringArray("xp_progress", "timer_label", "dps_label", "kill_count_label", "level_label", "game_over_menu", "animation_rect", "tutorial")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -33,6 +34,7 @@ timer_label = NodePath("VBoxContainer/HBoxContainer2/TimeLabel")
 dps_label = NodePath("VBoxContainer/HBoxContainer2/DpsLabel")
 kill_count_label = NodePath("VBoxContainer/HBoxContainer2/KillLabel")
 level_label = NodePath("LevelLabel")
+game_over_menu = NodePath("GameOver")
 animation_rect = NodePath("AnimationRect")
 tutorial = NodePath("../TextureButton")
 
@@ -106,6 +108,12 @@ script = ExtResource("6_iix8x")
 sprites = Array[Texture2D]([ExtResource("7_k0g41"), ExtResource("8_pwenj"), ExtResource("9_m27ds"), ExtResource("10_io413"), ExtResource("11_lrext")])
 fps = 2
 metadata/_custom_type_script = "uid://dqadllkng3fw8"
+
+[node name="GameOver" parent="Control" unique_id=1751389412 instance=ExtResource("12_k0g41")]
+visible = false
+layout_mode = 1
+offset_transform_enabled = true
+mouse_behavior_recursive = 2
 
 [node name="TextureButton" type="TextureButton" parent="." unique_id=138223319]
 process_mode = 3
