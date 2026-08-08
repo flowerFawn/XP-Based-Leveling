@@ -1,15 +1,15 @@
 [gd_resource type="Resource" script_class="Character" format=3 uid="uid://1p35pb8pnkv7"]
 
-[ext_resource type="Texture2D" uid="uid://cddmuu5g0aw45" path="res://assets/placeholders/Archwizard 1.png" id="1_8xpge"]
+[ext_resource type="Texture2D" uid="uid://cvqfh51etfg8b" path="res://assets/placeholders/Sterling 1.png" id="1_8xpge"]
 [ext_resource type="Texture2D" uid="uid://n0tbfppan7pj" path="res://assets/placeholders/shard.png" id="1_o8s6k"]
 [ext_resource type="Script" uid="uid://dse7vf0l5vfv0" path="res://scripts/resources/base resources/character.gd" id="1_orhn5"]
-[ext_resource type="Texture2D" uid="uid://cajh0qqfcj3ti" path="res://assets/placeholders/Archwizard 2.png" id="2_v25lr"]
-[ext_resource type="Texture2D" uid="uid://gm48qepn80lq" path="res://assets/placeholders/Archwizard 3.png" id="3_auw7y"]
+[ext_resource type="Texture2D" uid="uid://de4bnaifoqi5v" path="res://assets/placeholders/Sterling 2.png" id="2_v25lr"]
+[ext_resource type="Texture2D" uid="uid://c5oqrgqvtofem" path="res://assets/placeholders/Sterling 3.png" id="3_auw7y"]
 [ext_resource type="Resource" uid="uid://bpa7drmk0sban" path="res://resources/ability pools/standard.tres" id="3_q8oqf"]
 [ext_resource type="Resource" uid="uid://cmuy48b8p10l" path="res://resources/magic items/magic_revolver_1.tres" id="4_xv5lu"]
 [ext_resource type="Resource" uid="uid://7vmgb80p33sl" path="res://resources/spell/shard_1.tres" id="5_8xpge"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_g0emk"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_8xpge"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -20,6 +20,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("3_auw7y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_v25lr")
 }],
 "loop": 1,
 "name": &"walk",
@@ -33,6 +36,6 @@ description = "Mastering the ancient art of fanning the hammer, Sterling creates
 starting_ability_pool = ExtResource("3_q8oqf")
 starting_spell = ExtResource("5_8xpge")
 starting_magic_item = ExtResource("4_xv5lu")
-animations = SubResource("SpriteFrames_g0emk")
+animations = SubResource("SpriteFrames_8xpge")
 icon = ExtResource("1_o8s6k")
 metadata/_custom_type_script = "uid://dse7vf0l5vfv0"

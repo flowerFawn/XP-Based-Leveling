@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="Character" format=3 uid="uid://bd2xytxkapqbj"]
 
 [ext_resource type="Texture2D" uid="uid://b0wntjnflxovc" path="res://assets/placeholders/static_sphere.png" id="1_1paso"]
-[ext_resource type="Texture2D" uid="uid://cddmuu5g0aw45" path="res://assets/placeholders/Archwizard 1.png" id="1_506u6"]
+[ext_resource type="Texture2D" uid="uid://6vqaorbyhetr" path="res://assets/placeholders/Bonnie 1.png" id="1_506u6"]
 [ext_resource type="Script" uid="uid://dse7vf0l5vfv0" path="res://scripts/resources/base resources/character.gd" id="1_l5ufh"]
-[ext_resource type="Texture2D" uid="uid://cajh0qqfcj3ti" path="res://assets/placeholders/Archwizard 2.png" id="2_646pl"]
+[ext_resource type="Texture2D" uid="uid://b0t8comg3yicb" path="res://assets/placeholders/Bonnie 2.png" id="2_646pl"]
 [ext_resource type="Resource" uid="uid://bpa7drmk0sban" path="res://resources/ability pools/standard.tres" id="2_fcbqn"]
-[ext_resource type="Texture2D" uid="uid://gm48qepn80lq" path="res://assets/placeholders/Archwizard 3.png" id="3_x7w1t"]
+[ext_resource type="Texture2D" uid="uid://b1lko0flf31kj" path="res://assets/placeholders/Bonnie 3.png" id="3_x7w1t"]
 [ext_resource type="Resource" uid="uid://w0ho83q0d1wt" path="res://resources/magic items/conductive_controller_1.tres" id="4_1paso"]
 [ext_resource type="Resource" uid="uid://b0hqt4bjas0qh" path="res://resources/spell/static_sphere_1.tres" id="5_m32i7"]
 
@@ -20,6 +20,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("3_x7w1t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_646pl")
 }],
 "loop": 1,
 "name": &"walk",

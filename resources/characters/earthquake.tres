@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="Character" format=3 uid="uid://c3dj5oh0trftg"]
 
 [ext_resource type="Texture2D" uid="uid://bs2aw6atyld2d" path="res://assets/placeholders/earthquake.png" id="1_fn1io"]
-[ext_resource type="Texture2D" uid="uid://cddmuu5g0aw45" path="res://assets/placeholders/Archwizard 1.png" id="1_mkrdq"]
+[ext_resource type="Texture2D" uid="uid://b6dwq56560dm" path="res://assets/placeholders/Emmanuel 1.png" id="1_mkrdq"]
 [ext_resource type="Script" uid="uid://dse7vf0l5vfv0" path="res://scripts/resources/base resources/character.gd" id="1_rxewn"]
-[ext_resource type="Texture2D" uid="uid://cajh0qqfcj3ti" path="res://assets/placeholders/Archwizard 2.png" id="2_ox4o8"]
+[ext_resource type="Texture2D" uid="uid://darlwxi4xwcii" path="res://assets/placeholders/Emmanuel 2.png" id="2_ox4o8"]
 [ext_resource type="Resource" uid="uid://bpa7drmk0sban" path="res://resources/ability pools/standard.tres" id="3_85dk0"]
-[ext_resource type="Texture2D" uid="uid://gm48qepn80lq" path="res://assets/placeholders/Archwizard 3.png" id="3_d56lb"]
+[ext_resource type="Texture2D" uid="uid://clsaq8xjmmn8q" path="res://assets/placeholders/Emmanuel 3.png" id="3_d56lb"]
 [ext_resource type="Resource" uid="uid://buu4u5w3e3yf3" path="res://resources/magic items/bnb_handbook_1.tres" id="4_wigij"]
 [ext_resource type="Resource" uid="uid://dh4308dsgb1xc" path="res://resources/spell/earthquake_1.tres" id="5_mkrdq"]
 
@@ -20,6 +20,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("3_d56lb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ox4o8")
 }],
 "loop": 1,
 "name": &"walk",
