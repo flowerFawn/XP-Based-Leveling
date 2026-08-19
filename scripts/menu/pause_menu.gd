@@ -12,7 +12,7 @@ func _on_play_button_pressed() -> void:
 
 func _on_quit_button_pressed() -> void:
 	get_tree().paused = false
-	GameInfo.player.die()
+	get_tree().change_scene_to_file("uid://dj5n2ohldosah")
 
 func add_ability_icon(ability:Ability) -> AbilityIcon:
 	var ability_icon:AbilityIcon = AbilityIcon.new_ability_icon(ability.icon, ability.level)
